@@ -10,8 +10,9 @@ const FRAME_SUFFIX = "_delay-0.066s.png";
 export default function ScrollyCanvas() {
     const containerRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const [images, setImages] = useState<HTMLImageElement[]>([]);
-    const [imagesLoaded, setImagesLoaded] = useState(false);
+    // Use an array of nulls to track frame loading status
+    const [images, setImages] = useState<(HTMLImageElement | null)[]>(new Array(FRAME_COUNT).fill(null));
+    const [isPriorityLoaded, setIsPriorityLoaded] = useState(false);
     const [isInitialFrameDrawn, setIsInitialFrameDrawn] = useState(false);
 
     // Scroll mapping
@@ -22,54 +23,87 @@ export default function ScrollyCanvas() {
 
     const frameIndex = useTransform(scrollYProgress, [0, 1], [0, FRAME_COUNT - 1]);
 
-    // Preload images
+    // Priority + Background Preloading
     useEffect(() => {
-        const loadedImages: HTMLImageElement[] = [];
-        let loadedCount = 0;
         let isAborted = false;
+        const priorityFrames = 15; // Load first 15 frames immediately
+        let priorityLoadedCount = 0;
 
-        const handleImageLoad = () => {
-            if (isAborted) return;
-            loadedCount++;
-            if (loadedCount === FRAME_COUNT) {
-                setImages(loadedImages.filter(Boolean));
-                setImagesLoaded(true);
-            }
-        };
-
-        const safetyTimeout = setTimeout(() => {
-            if (loadedCount < FRAME_COUNT) {
-                console.warn(`Preloading timed out. Loaded ${loadedCount}/${FRAME_COUNT} frames.`);
-                setImages(loadedImages.filter(Boolean));
-                setImagesLoaded(true);
-                isAborted = true;
-            }
-        }, 5000);
-
-        for (let i = 0; i < FRAME_COUNT; i++) {
+        const loadFrame = (i: number, isPriority: boolean) => {
             const img = new Image();
             const formattedNum = i.toString().padStart(2, "0");
-            img.onload = handleImageLoad;
-            img.onerror = () => handleImageLoad();
+
+            img.onload = () => {
+                if (isAborted) return;
+                setImages(prev => {
+                    const next = [...prev];
+                    next[i] = img;
+                    return next;
+                });
+
+                if (isPriority) {
+                    priorityLoadedCount++;
+                    if (priorityLoadedCount >= priorityFrames) {
+                        setIsPriorityLoaded(true);
+                    }
+                }
+            };
+
+            img.onerror = () => {
+                if (isPriority) {
+                    priorityLoadedCount++;
+                    if (priorityLoadedCount >= priorityFrames) {
+                        setIsPriorityLoaded(true);
+                    }
+                }
+            };
+
             img.src = `/sequence/${FRAME_PREFIX}${formattedNum}${FRAME_SUFFIX}`;
-            loadedImages.push(img);
+        };
+
+        // 1. Kick off Priority Loading
+        for (let i = 0; i < priorityFrames; i++) {
+            loadFrame(i, true);
         }
 
+        // 2. Kick off Background Loading after a short delay to prioritize priority frames
+        const bgTimer = setTimeout(() => {
+            for (let i = priorityFrames; i < FRAME_COUNT; i++) {
+                if (isAborted) break;
+                loadFrame(i, false);
+            }
+        }, 500);
+
         return () => {
-            clearTimeout(safetyTimeout);
             isAborted = true;
+            clearTimeout(bgTimer);
         };
     }, []);
 
+    // Helper to find the closest available frame if target is not yet loaded
+    const getAvailableFrame = useCallback((targetIndex: number) => {
+        const index = Math.floor(targetIndex);
+        if (images[index]) return images[index];
+
+        // Search for nearest loaded neighbor
+        for (let i = 1; i < FRAME_COUNT; i++) {
+            const prev = index - i;
+            const next = index + i;
+            if (prev >= 0 && images[prev]) return images[prev];
+            if (next < FRAME_COUNT && images[next]) return images[next];
+        }
+        return null;
+    }, [images]);
+
     // Draw frame to canvas based on scroll position
     const drawFrame = useCallback((index: number) => {
-        if (!canvasRef.current || images.length === 0) return false;
+        if (!canvasRef.current) return false;
 
         const canvas = canvasRef.current;
         const ctx = canvas.getContext("2d");
         if (!ctx) return false;
 
-        const img = images[Math.floor(index)];
+        const img = getAvailableFrame(index);
         if (!img) return false;
 
         // Ensure canvas size is synchronized
@@ -101,11 +135,11 @@ export default function ScrollyCanvas() {
 
         ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
         return true;
-    }, [images]);
+    }, [getAvailableFrame]);
 
-    // Initial draw once images are loaded
+    // Initial draw once priority images are loaded
     useEffect(() => {
-        if (imagesLoaded && images.length > 0) {
+        if (isPriorityLoaded && images[0]) {
             // Give the browser a moment to ensure canvas is properly in DOM
             const timer = setTimeout(() => {
                 const drawn = drawFrame(0);
@@ -115,7 +149,7 @@ export default function ScrollyCanvas() {
             }, 50);
             return () => clearTimeout(timer);
         }
-    }, [imagesLoaded, images, drawFrame]);
+    }, [isPriorityLoaded, images, drawFrame]);
 
     // Handle window resize
     useEffect(() => {
@@ -129,7 +163,7 @@ export default function ScrollyCanvas() {
         return () => window.removeEventListener("resize", handleResize);
     }, [isInitialFrameDrawn, drawFrame, frameIndex]);
 
-    // Subscribe to motion value changes explicitly to force canvas redraw
+    // Redraw on scroll
     useMotionValueEvent(frameIndex, "change", (latest) => {
         if (isInitialFrameDrawn) {
             requestAnimationFrame(() => drawFrame(latest));
