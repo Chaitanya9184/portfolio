@@ -1,3 +1,8 @@
+"use client";
+
+import React from 'react';
+import { motion } from 'framer-motion';
+
 const ChallengesIcon = () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
         <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
@@ -13,6 +18,45 @@ const StrategyIcon = () => (
         <circle cx="12" cy="12" r="2" />
     </svg>
 );
+
+const CircularProgress = ({ value, label, color, size = 120 }: { value: string, label: string, color: string, size?: number }) => {
+    const rawValue = parseFloat(value.replace('%', ''));
+    const radius = 45;
+    const circumference = 2 * Math.PI * radius;
+    // Cap percentage at 100 for visual ring, though data can be higher
+    const percentage = Math.min(rawValue, 100);
+    const offset = circumference - (percentage / 100) * circumference;
+
+    return (
+        <div className="flex flex-col items-center gap-4">
+            <div className="relative" style={{ width: size, height: size }}>
+                <svg className="w-full h-full -rotate-90 transform" viewBox="0 0 100 100">
+                    {/* Background track */}
+                    <circle
+                        cx="50" cy="50" r={radius}
+                        className="stroke-zinc-800"
+                        strokeWidth="8" fill="transparent"
+                    />
+                    {/* Animated Progress */}
+                    <motion.circle
+                        cx="50" cy="50" r={radius}
+                        className={`stroke-current ${color}`}
+                        strokeWidth="8" fill="transparent"
+                        strokeDasharray={circumference}
+                        initial={{ strokeDashoffset: circumference }}
+                        whileInView={{ strokeDashoffset: offset }}
+                        transition={{ duration: 2, ease: "easeOut" }}
+                        strokeLinecap="round"
+                    />
+                </svg>
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-xl font-bold text-white">+{value}</span>
+                </div>
+            </div>
+            <span className="text-xs font-bold uppercase tracking-widest text-zinc-500">{label}</span>
+        </div>
+    );
+};
 
 export default function AgencyCaseStudy() {
     const challenges = [
@@ -39,15 +83,6 @@ export default function AgencyCaseStudy() {
             category: "CRO & UX Optimisation",
             items: ["Designed dedicated CTAs with service-specific messaging", "Improved CTA placement for better conversions", "Enhanced overall user flow for lead actions"]
         }
-    ];
-
-    // Data for the visual graph
-    const metrics = [
-        { label: "Key Events", value: "380%", height: "h-[100%]", color: "from-emerald-400 to-emerald-600", delay: "delay-[100ms]" },
-        { label: "Impressions", value: "296%", height: "h-[85%]", color: "from-blue-400 to-blue-600", delay: "delay-[200ms]" },
-        { label: "Engagement Time", value: "40%", height: "h-[35%]", color: "from-indigo-400 to-indigo-600", delay: "delay-[300ms]" },
-        { label: "Organic Clicks", value: "18%", height: "h-[20%]", color: "from-purple-400 to-purple-600", delay: "delay-[400ms]" },
-        { label: "Total Users", value: "9.5%", height: "h-[12%]", color: "from-pink-400 to-pink-600", delay: "delay-[500ms]" },
     ];
 
     return (
@@ -123,57 +158,67 @@ export default function AgencyCaseStudy() {
                     </div>
                 </div>
 
-                {/* Growth Graphs Section */}
-                <div className="p-10 rounded-3xl bg-zinc-950/80 border border-zinc-900 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent opacity-50" />
-
+                {/* Growth Impact Dashboard */}
+                <div className="relative">
                     <div className="text-center mb-16">
-                        <h3 className="text-3xl font-bold text-white mb-2">6-Month Performance Growth</h3>
-                        <p className="text-zinc-400">Year-over-Year improvements across key digital metrics.</p>
+                        <h3 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tighter">6-Month Impact Dashboard</h3>
+                        <p className="text-zinc-400 text-lg font-light">Performance growth across high-intent conversion metrics.</p>
                     </div>
 
-                    {/* Visual CSS Bar Chart */}
-                    <div className="relative h-[300px] w-full max-w-4xl mx-auto flex items-end justify-between gap-4 md:gap-8 pb-10 border-b border-zinc-800">
-                        {/* Y-Axis Guidelines (absolute, behind bars) */}
-                        <div className="absolute inset-0 flex flex-col justify-between pb-10 pointer-events-none">
-                            {[400, 300, 200, 100, 0].map((val, idx) => (
-                                <div key={idx} className="flex items-center gap-4 w-full">
-                                    <span className="text-[10px] text-zinc-600 font-mono w-8 text-right hidden md:block">{val}%</span>
-                                    <div className="flex-1 border-t border-zinc-800/50 border-dashed" />
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* The Bars */}
-                        {metrics.map((metric, idx) => (
-                            <div key={idx} className="group relative flex flex-col items-center justify-end flex-1 h-full z-10 transition-transform duration-500 hover:-translate-y-2 cursor-default">
-
-                                {/* Floating Value Tag (Hover/Persistent) */}
-                                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-12 bg-white text-black text-sm font-bold py-1 px-3 rounded-md shadow-xl whitespace-nowrap">
-                                    +{metric.value}
-                                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 border-border-t border-x-4 border-t-4 border-x-transparent border-white" />
-                                </div>
-
-                                {/* The Bar Itself */}
-                                <div className={`w-full max-w-[80px] rounded-t-lg bg-gradient-to-t ${metric.color} shadow-lg shadow-black/50 relative overflow-hidden ${metric.height}`}>
-                                    {/* Glass overlay */}
-                                    <div className="absolute inset-0 bg-white/10" />
-                                    {/* Persistent value text inside bar for larger screens if it fits, else hidden */}
-                                    <span className="absolute top-4 left-1/2 -translate-x-1/2 text-white font-bold text-lg hidden md:block drop-shadow-md">
-                                        +{metric.value.replace('%', '')}
-                                    </span>
-                                </div>
-
-                                {/* Label below axis */}
-                                <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-center w-full">
-                                    <span className="text-xs md:text-sm font-medium text-zinc-400 group-hover:text-white transition-colors">
-                                        {metric.label}
-                                    </span>
-                                </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        {/* Hero Metric: Key Events */}
+                        <motion.div
+                            whileHover={{ scale: 1.02 }}
+                            className="md:col-span-2 lg:row-span-2 p-12 rounded-[2.5rem] bg-gradient-to-br from-emerald-500/20 to-zinc-900 border border-emerald-500/30 flex flex-col justify-between relative overflow-hidden group shadow-2xl shadow-emerald-500/10"
+                        >
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -mr-20 -mt-20 group-hover:bg-emerald-500/20 transition-colors duration-500" />
+                            <div>
+                                <h4 className="text-emerald-400 font-bold text-xs uppercase tracking-[0.2em] mb-4">Core Objective</h4>
+                                <h3 className="text-3xl font-bold text-white mb-2 tracking-tight">Key Events Increase</h3>
+                                <p className="text-zinc-400 text-sm font-light">Direct attribution to conversion-focused local SEO optimizations.</p>
                             </div>
-                        ))}
-                    </div>
+                            <div className="mt-12 flex items-baseline gap-2">
+                                <motion.span
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    className="text-8xl md:text-9xl font-black text-emerald-500 tracking-tighter drop-shadow-2xl"
+                                >
+                                    +380<span className="text-4xl md:text-5xl ml-1">%</span>
+                                </motion.span>
+                            </div>
+                        </motion.div>
 
+                        {/* Impressions Card */}
+                        <motion.div
+                            whileHover={{ scale: 1.02 }}
+                            className="p-10 rounded-[2.5rem] bg-zinc-900/50 border border-zinc-800 flex flex-col justify-center gap-4 relative group"
+                        >
+                            <div className="text-5xl font-bold text-blue-400 tracking-tighter drop-shadow-lg">+296%</div>
+                            <div>
+                                <h4 className="text-zinc-200 font-bold text-sm tracking-tight mb-1">Impressions</h4>
+                                <p className="text-zinc-500 text-xs font-light">Expanded reach via high-intent keyword ranking improvements.</p>
+                            </div>
+                        </motion.div>
+
+                        {/* Engagement Time Card */}
+                        <motion.div
+                            whileHover={{ scale: 1.02 }}
+                            className="p-10 rounded-[2.5rem] bg-zinc-900/50 border border-zinc-800 flex flex-col justify-center gap-4 relative group"
+                        >
+                            <div className="text-5xl font-bold text-indigo-400 tracking-tighter drop-shadow-lg">+40%</div>
+                            <div>
+                                <h4 className="text-zinc-200 font-bold text-sm tracking-tight mb-1">Engagement</h4>
+                                <p className="text-zinc-500 text-xs font-light">Improved user flow and page-level UX enhancements.</p>
+                            </div>
+                        </motion.div>
+
+                        {/* Circular Metrics (Bottom Row) */}
+                        <div className="md:col-span-2 p-10 rounded-[2.5rem] bg-zinc-900/30 border border-zinc-800 flex items-center justify-around gap-8 md:gap-12 flex-wrap">
+                            <CircularProgress value="18%" label="Organic Clicks" color="text-purple-500" />
+                            <div className="w-px h-16 bg-zinc-800 hidden sm:block" />
+                            <CircularProgress value="9.5%" label="Total Users" color="text-pink-500" />
+                        </div>
+                    </div>
                 </div>
 
             </div>
