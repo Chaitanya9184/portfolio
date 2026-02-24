@@ -11,7 +11,8 @@ export default function ScrollyCanvas() {
     const containerRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [images, setImages] = useState<HTMLImageElement[]>([]);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [imagesLoaded, setImagesLoaded] = useState(false);
+    const [isInitialFrameDrawn, setIsInitialFrameDrawn] = useState(false);
 
     // Scroll mapping
     const { scrollYProgress } = useScroll({
@@ -32,16 +33,15 @@ export default function ScrollyCanvas() {
             loadedCount++;
             if (loadedCount === FRAME_COUNT) {
                 setImages(loadedImages.filter(Boolean));
-                setIsLoaded(true);
+                setImagesLoaded(true);
             }
         };
 
-        // Safety timeout: if images take more than 5 seconds, just show what we have
         const safetyTimeout = setTimeout(() => {
             if (loadedCount < FRAME_COUNT) {
                 console.warn(`Preloading timed out. Loaded ${loadedCount}/${FRAME_COUNT} frames.`);
                 setImages(loadedImages.filter(Boolean));
-                setIsLoaded(true);
+                setImagesLoaded(true);
                 isAborted = true;
             }
         }, 5000);
@@ -49,13 +49,8 @@ export default function ScrollyCanvas() {
         for (let i = 0; i < FRAME_COUNT; i++) {
             const img = new Image();
             const formattedNum = i.toString().padStart(2, "0");
-
             img.onload = handleImageLoad;
-            img.onerror = (e) => {
-                console.error(`Failed to load frame ${formattedNum}`, e);
-                handleImageLoad();
-            };
-
+            img.onerror = () => handleImageLoad();
             img.src = `/sequence/${FRAME_PREFIX}${formattedNum}${FRAME_SUFFIX}`;
             loadedImages.push(img);
         }
@@ -68,18 +63,24 @@ export default function ScrollyCanvas() {
 
     // Draw frame to canvas based on scroll position
     const drawFrame = useCallback((index: number) => {
-        if (!canvasRef.current || images.length === 0) return;
+        if (!canvasRef.current || images.length === 0) return false;
 
         const canvas = canvasRef.current;
         const ctx = canvas.getContext("2d");
-        if (!ctx) return;
+        if (!ctx) return false;
+
+        const img = images[Math.floor(index)];
+        if (!img) return false;
+
+        // Ensure canvas size is synchronized
+        if (canvas.width !== window.innerWidth || canvas.height !== window.innerHeight) {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
 
         // Always fill background black to blend
         ctx.fillStyle = "#121212";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        const img = images[Math.floor(index)];
-        if (!img) return;
 
         // Object-fit: cover logic
         const canvasRatio = canvas.width / canvas.height;
@@ -91,69 +92,71 @@ export default function ScrollyCanvas() {
         let offsetY = 0;
 
         if (canvasRatio > imgRatio) {
-            // Canvas is wider than image
             drawHeight = canvas.width / imgRatio;
             offsetY = (canvas.height - drawHeight) / 2;
         } else {
-            // Canvas is taller than image
             drawWidth = canvas.height * imgRatio;
             offsetX = (canvas.width - drawWidth) / 2;
         }
 
         ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+        return true;
     }, [images]);
 
-    // Initial draw once loaded
+    // Initial draw once images are loaded
     useEffect(() => {
-        if (isLoaded) {
-            // Set canvas size correctly on mount
-            if (canvasRef.current) {
-                canvasRef.current.width = window.innerWidth;
-                canvasRef.current.height = window.innerHeight;
-            }
-            drawFrame(0);
+        if (imagesLoaded && images.length > 0) {
+            // Give the browser a moment to ensure canvas is properly in DOM
+            const timer = setTimeout(() => {
+                const drawn = drawFrame(0);
+                if (drawn) {
+                    setIsInitialFrameDrawn(true);
+                }
+            }, 50);
+            return () => clearTimeout(timer);
         }
-    }, [isLoaded, drawFrame]);
+    }, [imagesLoaded, images, drawFrame]);
 
     // Handle window resize
     useEffect(() => {
         const handleResize = () => {
-            if (canvasRef.current) {
-                canvasRef.current.width = window.innerWidth;
-                canvasRef.current.height = window.innerHeight;
+            if (canvasRef.current && isInitialFrameDrawn) {
                 drawFrame(frameIndex.get());
             }
         };
 
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
-    }, [isLoaded, drawFrame, frameIndex]);
+    }, [isInitialFrameDrawn, drawFrame, frameIndex]);
 
     // Subscribe to motion value changes explicitly to force canvas redraw
     useMotionValueEvent(frameIndex, "change", (latest) => {
-        if (isLoaded) {
-            // requestAnimationFrame ensures we paint synchronously with browser rendering
+        if (isInitialFrameDrawn) {
             requestAnimationFrame(() => drawFrame(latest));
         }
     });
 
     return (
         <div ref={containerRef} className="relative w-full" style={{ height: "400vh" }}>
-            {/* Sticky container that tracks scroll */}
             <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#121212]">
-                {!isLoaded && (
-                    <div className="absolute inset-0 flex items-center justify-center text-zinc-500 font-medium">
-                        Loading sequence...
+                {/* 
+                  Only show loader if initial frame hasn't been drawn yet.
+                  This ensures a seamless transition.
+                */}
+                {!isInitialFrameDrawn && (
+                    <div className="absolute inset-0 z-50 flex items-center justify-center bg-[#121212] text-zinc-500 font-medium transition-opacity duration-500">
+                        <div className="flex flex-col items-center gap-4">
+                            <div className="w-12 h-12 border-2 border-zinc-800 border-t-emerald-500 rounded-full animate-spin" />
+                            <span className="text-xs tracking-widest uppercase opacity-60">Initializing Experience...</span>
+                        </div>
                     </div>
                 )}
+
                 <canvas
                     ref={canvasRef}
                     className="w-full h-full object-cover"
                 />
 
-                {/* Parallax Overlay Content */}
-                {/* This will be extracted into OverlayComponent if needed, but rendering here 
-            simplifies synchronizing with the same scroll container context */}
                 <Overlay scrollYProgress={scrollYProgress} />
             </div>
         </div>
