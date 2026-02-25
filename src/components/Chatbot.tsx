@@ -117,8 +117,20 @@ const Chatbot = () => {
         return "TRIGGER_FORM";
     };
 
+    const sanitize = (str: string) => str.replace(/[<>]/g, '').trim();
+
     const handleFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+
+        // Basic sanitization
+        const cleanData = {
+            website: sanitize(formData.website),
+            competitors: sanitize(formData.competitors),
+            keywords: sanitize(formData.keywords)
+        };
+
+        console.log('Sanitized Lead Data:', cleanData);
+
         setView('chat');
         const botMsg: Message = {
             id: Date.now(),
