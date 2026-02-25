@@ -49,6 +49,21 @@ const industries = [
         color: 'text-purple-400',
         bgColor: 'bg-purple-500/10',
         borderColor: 'border-purple-500/20'
+    },
+    {
+        name: 'Local Businesses',
+        slug: 'local-seo',
+        description: 'Dominate local search results and Google Maps with hyper-targeted Local SEO, Google Business Profile optimisation, and geo-specific content strategies.',
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+            </svg>
+        ),
+        color: 'text-amber-400',
+        bgColor: 'bg-amber-500/10',
+        borderColor: 'border-amber-500/20',
+        href: '/service-areas'
     }
 ];
 
@@ -81,7 +96,7 @@ export default function IndustriesSection() {
                 </div>
 
                 {/* Industries Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {industries.map((industry, index) => (
                         <motion.div
                             key={industry.slug}
@@ -90,7 +105,7 @@ export default function IndustriesSection() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
-                            <Link href={`/industries/${industry.slug}`} className="group block h-full text-left">
+                            <Link href={(industry as { href?: string }).href ?? `/industries/${industry.slug}`} className="group block h-full text-left">
                                 <div className={`h-full bg-zinc-900/40 border border-zinc-800 rounded-3xl p-8 hover:bg-zinc-800/60 transition-all duration-300 relative overflow-hidden flex flex-col`}>
 
                                     {/* Icon */}
