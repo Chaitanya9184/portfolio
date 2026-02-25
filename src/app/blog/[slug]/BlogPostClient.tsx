@@ -197,20 +197,26 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                     </motion.div>
                 </div>
 
-                {/* FAQs — immediately after Expert Verdict */}
+                {/* FAQs + On This Page — side by side */}
                 {post.faqs && post.faqs.length > 0 && (
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
-                        className="mt-20"
+                        className="mt-20 flex flex-col lg:flex-row gap-10 items-start"
                     >
-                        {/* Compact inline Table of Contents — shown before FAQs */}
-                        <div className="mb-10 p-6 rounded-2xl bg-zinc-900/40 border border-white/5 backdrop-blur-sm">
-                            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500 mb-5">On This Page</p>
-                            <TableOfContents content={post.content} inline />
+                        {/* Left: sticky On This Page index */}
+                        <aside className="w-full lg:w-56 shrink-0 lg:sticky lg:top-32 self-start">
+                            <div className="p-5 rounded-2xl bg-zinc-900/40 border border-white/5 backdrop-blur-sm">
+                                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500 mb-5">On This Page</p>
+                                <TableOfContents content={post.content} inline />
+                            </div>
+                        </aside>
+
+                        {/* Right: FAQ accordion */}
+                        <div className="flex-1 min-w-0">
+                            <FAQSection faqs={post.faqs} title="Topic Frequently Asked Questions" />
                         </div>
-                        <FAQSection faqs={post.faqs} title="Topic Frequently Asked Questions" />
                     </motion.div>
                 )}
 
