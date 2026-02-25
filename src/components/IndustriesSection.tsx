@@ -62,8 +62,7 @@ const industries = [
         ),
         color: 'text-amber-400',
         bgColor: 'bg-amber-500/10',
-        borderColor: 'border-amber-500/20',
-        href: '/service-areas'
+        borderColor: 'border-amber-500/20'
     }
 ];
 
