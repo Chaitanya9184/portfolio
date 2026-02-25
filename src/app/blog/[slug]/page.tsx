@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useParams, notFound } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { blogPosts } from '@/lib/blog-data';
+import VoiceReader from '@/components/VoiceReader';
 
 const BlogPostPage = () => {
     const { slug } = useParams();
@@ -50,6 +51,8 @@ const BlogPostPage = () => {
                             {post.title}
                         </h1>
                     </motion.div>
+
+                    <VoiceReader title={post.title} content={post.content} />
                 </div>
 
                 {/* Content */}
