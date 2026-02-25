@@ -115,108 +115,112 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
 
     return (
         <main className="min-h-screen bg-[#0a0a0a] pt-32 pb-0 px-6 md:px-12 lg:px-24">
-            {/* Single-column content wrapper */}
-            <div className="max-w-4xl mx-auto">
 
-                {/* Back Link */}
-                <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    className="mb-12"
-                >
-                    <Link href="/blog" className="text-zinc-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest flex items-center gap-2">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 rotate-180">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                        Back to Insights
-                    </Link>
-                </motion.div>
+            {/* ── ZONE 1: Two-column — sticky TOC left + article content right ── */}
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-start">
 
-                {/* Header */}
-                <div className="mb-16">
+                {/* Left: sticky On This Page index */}
+                <aside className="hidden lg:block w-56 shrink-0 sticky top-32 self-start">
+                    <div className="p-5 rounded-2xl bg-zinc-900/40 border border-white/5 backdrop-blur-sm">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500 mb-5">On This Page</p>
+                        <TableOfContents content={post.content} inline />
+                    </div>
+                </aside>
+
+                {/* Right: article content */}
+                <div className="flex-1 min-w-0 max-w-4xl">
+
+                    {/* Back Link */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        className="mb-12"
                     >
-                        <div className="flex items-center gap-3 mb-6">
-                            <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest ${post.category === 'GEO' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' :
-                                post.category === 'AEO' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' :
-                                    'bg-purple-500/10 text-purple-400 border border-purple-500/20'
-                                }`}>
-                                {post.category}
-                            </span>
-                            <span className="text-zinc-600 text-[10px] uppercase font-bold tracking-widest">{post.date}</span>
-                        </div>
-                        <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-8 leading-tight">
-                            {post.title}
-                        </h1>
-                        <h2 className="sr-only">{post.metaTitle || post.title}</h2>
+                        <Link href="/blog" className="text-zinc-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 rotate-180">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                            Back to Insights
+                        </Link>
                     </motion.div>
 
-                    <VoiceReader title={post.title} content={post.content} />
-                </div>
+                    {/* Header */}
+                    <div className="mb-16">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                        >
+                            <div className="flex items-center gap-3 mb-6">
+                                <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest ${post.category === 'GEO' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' :
+                                    post.category === 'AEO' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' :
+                                        'bg-purple-500/10 text-purple-400 border border-purple-500/20'
+                                    }`}>
+                                    {post.category}
+                                </span>
+                                <span className="text-zinc-600 text-[10px] uppercase font-bold tracking-widest">{post.date}</span>
+                            </div>
+                            <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-8 leading-tight">
+                                {post.title}
+                            </h1>
+                            <h2 className="sr-only">{post.metaTitle || post.title}</h2>
+                        </motion.div>
 
-                {/* Article Body */}
-                <div className="prose prose-invert max-w-none">
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.2 }}
-                        className="space-y-4"
-                    >
-                        {renderContent(post.content)}
-                    </motion.div>
+                        <VoiceReader title={post.title} content={post.content} />
+                    </div>
 
-                    {/* Expert Verdict Section */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.4 }}
-                        className="mt-16 p-8 md:p-12 rounded-3xl bg-blue-600/5 border border-blue-500/20 relative overflow-hidden group"
-                    >
-                        <div className="relative z-10">
-                            <h4 className="text-blue-400 font-bold uppercase tracking-widest text-xs mb-6 flex items-center gap-2">
-                                <span className="w-8 h-[1px] bg-blue-500/50" />
-                                Expert Verdict
-                            </h4>
-                            <p className="text-white text-xl md:text-2xl font-medium leading-normal italic">
-                                &quot;{post.verdict}&quot;
-                            </p>
-                            <div className="mt-8 flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[10px] font-bold text-zinc-400">CK</div>
-                                <div>
-                                    <p className="text-white text-sm font-bold">Chaitanya Kore</p>
-                                    <p className="text-zinc-500 text-xs">Senior SEO &amp; AI Search Professional</p>
+                    {/* Article Body */}
+                    <div className="prose prose-invert max-w-none">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                            className="space-y-4"
+                        >
+                            {renderContent(post.content)}
+                        </motion.div>
+
+                        {/* Expert Verdict */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.4 }}
+                            className="mt-16 p-8 md:p-12 rounded-3xl bg-blue-600/5 border border-blue-500/20 relative overflow-hidden group"
+                        >
+                            <div className="relative z-10">
+                                <h4 className="text-blue-400 font-bold uppercase tracking-widest text-xs mb-6 flex items-center gap-2">
+                                    <span className="w-8 h-[1px] bg-blue-500/50" />
+                                    Expert Verdict
+                                </h4>
+                                <p className="text-white text-xl md:text-2xl font-medium leading-normal italic">
+                                    &quot;{post.verdict}&quot;
+                                </p>
+                                <div className="mt-8 flex items-center gap-3">
+                                    <div className="w-10 h-10 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-[10px] font-bold text-zinc-400">CK</div>
+                                    <div>
+                                        <p className="text-white text-sm font-bold">Chaitanya Kore</p>
+                                        <p className="text-zinc-500 text-xs">Senior SEO &amp; AI Search Professional</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        {/* Background Glows */}
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-[120px] rounded-full" />
-                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/5 blur-[120px] rounded-full" />
-                    </motion.div>
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-[120px] rounded-full" />
+                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/5 blur-[120px] rounded-full" />
+                        </motion.div>
+                    </div>
                 </div>
+            </div>
+            {/* ── END ZONE 1 ── */}
 
-                {/* FAQs + On This Page — side by side */}
+            {/* ── ZONE 2: Full-width — FAQs, CTA, Footer ── */}
+            <div className="max-w-7xl mx-auto mt-24">
+
+                {/* FAQs */}
                 {post.faqs && post.faqs.length > 0 && (
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
-                        className="mt-20 flex flex-col lg:flex-row gap-10 items-start"
                     >
-                        {/* Left: sticky On This Page index */}
-                        <aside className="w-full lg:w-56 shrink-0 lg:sticky lg:top-32 self-start">
-                            <div className="p-5 rounded-2xl bg-zinc-900/40 border border-white/5 backdrop-blur-sm">
-                                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500 mb-5">On This Page</p>
-                                <TableOfContents content={post.content} inline />
-                            </div>
-                        </aside>
-
-                        {/* Right: FAQ accordion */}
-                        <div className="flex-1 min-w-0">
-                            <FAQSection faqs={post.faqs} title="Topic Frequently Asked Questions" />
-                        </div>
+                        <FAQSection faqs={post.faqs} title="Topic Frequently Asked Questions" />
                     </motion.div>
                 )}
 
@@ -226,7 +230,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                 </div>
             </div>
 
-            {/* Page-level Footer — full width, outside the content column */}
+            {/* Page-level Footer */}
             <footer className="w-full mt-0 py-10 border-t border-zinc-900 border-dashed">
                 <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-500 text-sm">
                     <p className="text-xs">© 2026 AI Search Insights. Professional Analysis by Chaitanya Kore.</p>
@@ -239,3 +243,4 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
         </main>
     );
 }
+
