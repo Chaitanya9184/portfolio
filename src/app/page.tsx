@@ -95,12 +95,13 @@ export default function Home() {
       {/* High-impact AIO/AEO/GEO Section */}
       <AiExpertise />
 
-      {/* 
-        The Experience component sits below the Expertise section
-      */}
-      <Experience />
+      {/* Industries Section */}
+      <IndustriesSection />
 
-      {/* Peer Endorsements Section (Moved UP per request) */}
+      {/* SEO Philosophy / User Intent Section */}
+      <SeoPhilosophy />
+
+      {/* Peer Endorsements Section */}
       <Recommendations />
 
       {/* --- RECENT IMPACT / CASE STUDIES --- */}
@@ -118,23 +119,22 @@ export default function Home() {
       {/* Community Organization Case Study */}
       <CommunityCaseStudy />
 
+      {/* 
+        The Experience component sits below the Expertise section
+      */}
+      <Experience />
+
       {/* Tech Stack Component */}
       <TechStack />
-
-      {/* SEO Philosophy / User Intent Section */}
-      <SeoPhilosophy />
-
-      {/* Strong Call To Action Banner */}
-      <CallToAction />
 
       {/* Featured Blog Insights Carousel */}
       <BlogCarousel />
 
-      {/* Industries Section */}
-      <IndustriesSection />
-
       {/* FAQs */}
       <FAQSection faqs={homeFaqs} title="SEO & Technical Expertise FAQs" />
+
+      {/* Strong Call To Action Banner */}
+      <CallToAction />
 
       {/* JSON-LD Schema */}
       <SchemaMarkup schema={homeSchema} />
