@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             title: post.title,
             description: post.excerpt,
             type: 'article',
-            url: `https://chaitanyakore.com/blog/${post.slug}/`,
+            url: `https://www.chaitanyakore.in/blog/${post.slug}/`,
             images: [
                 {
                     url: post.image || '/blog-placeholder.jpg',

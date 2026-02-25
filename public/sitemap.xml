@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://chaitanyakore.com/</loc>
+
     <lastmod>2026-02-25</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://chaitanyakore.com/blog/</loc>
+
     <lastmod>2026-02-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chaitanyakore.com/roi-calculator/</loc>
+    <loc>https://www.chaitanyakore.in/roi-calculator/</loc>
     <lastmod>2026-02-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chaitanyakore.com/industries/</loc>
+    <loc>https://www.chaitanyakore.in/industries/</loc>
     <lastmod>2026-02-25</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://chaitanyakore.com/industries/saas/</loc>
+    <loc>https://www.chaitanyakore.in/industries/saas/</loc>
     <lastmod>2026-02-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chaitanyakore.com/industries/ecommerce/</loc>
+    <loc>https://www.chaitanyakore.in/industries/ecommerce/</loc>
     <lastmod>2026-02-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chaitanyakore.com/industries/b2b-tech/</loc>
+    <loc>https://www.chaitanyakore.in/industries/b2b-tech/</loc>
     <lastmod>2026-02-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chaitanyakore.com/service-areas/</loc>
+    <loc>https://www.chaitanyakore.in/service-areas/</loc>
     <lastmod>2026-02-25</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://chaitanyakore.com/service-areas/mumbai/</loc>
+    <loc>https://www.chaitanyakore.in/service-areas/mumbai/</loc>
     <lastmod>2026-02-25</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chaitanyakore.com/service-areas/pune/</loc>
+    <loc>https://www.chaitanyakore.in/service-areas/pune/</loc>
     <lastmod>2026-02-25</lastmod>
     <priority>0.8</priority>
   </url>
   <!-- Dynamically inferred blog posts could be added here manually if not using a dynamic sitemap.ts -->
-  <url><loc>https://chaitanyakore.com/blog/the-geo-era-google-2026-core-update/</loc><lastmod>2026-02-25</lastmod><priority>0.7</priority></url>
-  <url><loc>https://chaitanyakore.com/blog/aeo-dominance-google-gemini-search-upgrades/</loc><lastmod>2026-02-25</lastmod><priority>0.7</priority></url>
-  <url><loc>https://chaitanyakore.com/blog/perplexity-ai-publisher-revenue-share/</loc><lastmod>2026-02-25</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.chaitanyakore.in/blog/the-geo-era-google-2026-core-update/</loc><lastmod>2026-02-25</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.chaitanyakore.in/blog/aeo-dominance-google-gemini-search-upgrades/</loc><lastmod>2026-02-25</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.chaitanyakore.in/blog/perplexity-ai-publisher-revenue-share/</loc><lastmod>2026-02-25</lastmod><priority>0.7</priority></url>
 </urlset>
