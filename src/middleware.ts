@@ -5,15 +5,13 @@ export function middleware(request: NextRequest) {
     const url = request.nextUrl.clone();
     const host = request.headers.get('host') || '';
 
-    // 1. Force HTTPS and normalize domain (WWW to non-WWW)
+    // 1. Force HTTPS
     // Avoid redirecting on localhost
     const isLocalhost = host.includes('localhost') || host.includes('127.0.0.1');
-    const isWww = host.startsWith('www.');
     const isHttp = request.headers.get('x-forwarded-proto') === 'http';
 
-    if (!isLocalhost && (isWww || isHttp)) {
+    if (!isLocalhost && isHttp) {
         url.protocol = 'https:';
-        url.host = host.replace(/^www\./, '');
         return NextResponse.redirect(url, 301);
     }
 
