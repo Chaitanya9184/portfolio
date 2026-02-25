@@ -1,4 +1,11 @@
 import Link from "next/link";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Chaitanya Kore | Senior SEO & AI Search (AEO/GEO) Professional',
+  description: 'Specializing in Technical SEO, AI Search Optimization (GEO/AEO), and organic acquisition for SaaS, eCommerce, and B2B Enterprise brands.',
+};
+
 import ScrollyCanvas from "@/components/ScrollyCanvas";
 import AiExpertise from "@/components/AiExpertise";
 import Experience from "@/components/Experience";

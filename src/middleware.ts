@@ -2,6 +2,21 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
+    const url = request.nextUrl.clone();
+    const host = request.headers.get('host') || '';
+
+    // 1. Force HTTPS and normalize domain (WWW to non-WWW)
+    // Avoid redirecting on localhost
+    const isLocalhost = host.includes('localhost') || host.includes('127.0.0.1');
+    const isWww = host.startsWith('www.');
+    const isHttp = request.headers.get('x-forwarded-proto') === 'http';
+
+    if (!isLocalhost && (isWww || isHttp)) {
+        url.protocol = 'https:';
+        url.host = host.replace(/^www\./, '');
+        return NextResponse.redirect(url, 301);
+    }
+
     const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
 
     // Content Security Policy (CSP)
