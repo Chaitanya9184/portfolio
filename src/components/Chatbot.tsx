@@ -10,12 +10,6 @@ const BotIcon = () => (
     </svg>
 );
 
-const UserIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-zinc-400">
-        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-        <circle cx="12" cy="7" r="4" />
-    </svg>
-);
 
 const CloseIcon = () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -286,7 +280,7 @@ const Chatbot = () => {
                                         <SendIcon />
                                     </button>
                                 </div>
-                                <p className="text-[9px] text-zinc-600 text-center mt-3 uppercase tracking-widest font-bold font-mono">Powered by Chaitanya's AI Knowledge Base</p>
+                                <p className="text-[9px] text-zinc-600 text-center mt-3 uppercase tracking-widest font-bold font-mono">Powered by Chaitanya&apos;s AI Knowledge Base</p>
                             </div>
                         )}
                     </motion.div>
