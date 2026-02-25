@@ -64,9 +64,10 @@ export default function IndustriesSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-5xl font-bold text-white tracking-tighter mb-4"
+                        className="text-4xl md:text-5xl font-bold text-white tracking-tighter mb-4 relative inline-block"
                     >
                         Industries & <span className="text-emerald-500">Expertise.</span>
+                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-emerald-500 to-transparent rounded-full" />
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
