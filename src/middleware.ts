@@ -10,7 +10,7 @@ export function middleware(request: NextRequest) {
     default-src 'self';
     script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com;
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    img-src 'self' blob: data: https://www.googletagmanager.com;
+    img-src 'self' blob: data: https://www.googletagmanager.com https://grainy-gradients.vercel.app;
     font-src 'self' https://fonts.gstatic.com;
     connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com;
     frame-src 'self' https://www.googletagmanager.com;

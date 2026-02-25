@@ -30,7 +30,7 @@ export default function CaseStudy() {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="mb-20">
-                    <h3 className="text-zinc-500 text-sm tracking-widest uppercase mb-4 font-semibold">Featured Case Study</h3>
+                    <p className="text-zinc-500 text-sm tracking-widest uppercase mb-4 font-semibold">Featured Case Study</p>
                     <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6 relative inline-block">
                         Scaling an <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">eCommerce Brand</span>
                         <div className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-blue-400 to-transparent rounded-full" />

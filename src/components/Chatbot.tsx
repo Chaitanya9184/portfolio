@@ -42,6 +42,9 @@ const Chatbot = () => {
 
     // Form State
     const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
         website: '',
         competitors: '',
         keywords: ''
@@ -119,17 +122,28 @@ const Chatbot = () => {
 
     const sanitize = (str: string) => str.replace(/[<>]/g, '').trim();
 
-    const handleFormSubmit = (e: React.FormEvent) => {
+    const handleFormSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         // Basic sanitization
         const cleanData = {
+            name: sanitize(formData.name),
+            email: sanitize(formData.email),
+            phone: sanitize(formData.phone),
             website: sanitize(formData.website),
             competitors: sanitize(formData.competitors),
             keywords: sanitize(formData.keywords)
         };
 
-        console.log('Sanitized Lead Data:', cleanData);
+        try {
+            await fetch('/api/leads', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(cleanData)
+            });
+        } catch (error) {
+            console.error('Failed to save lead', error);
+        }
 
         setView('chat');
         const botMsg: Message = {
@@ -166,6 +180,7 @@ const Chatbot = () => {
                                 </div>
                             </div>
                             <button
+                                aria-label="Close Chat"
                                 onClick={() => setIsOpen(false)}
                                 className="w-8 h-8 rounded-full hover:bg-zinc-800 flex items-center justify-center text-zinc-500 hover:text-white transition-colors"
                             >
@@ -222,9 +237,41 @@ const Chatbot = () => {
                                     </h5>
                                     <form onSubmit={handleFormSubmit} className="space-y-4">
                                         <div>
-                                            <label className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-1.5 block">Website URL</label>
+                                            <label className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-1.5 block">Name</label>
                                             <input
                                                 required
+                                                type="text"
+                                                placeholder="Your Name"
+                                                className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors"
+                                                value={formData.name}
+                                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-1.5 block">Email</label>
+                                            <input
+                                                required
+                                                type="email"
+                                                placeholder="you@company.com"
+                                                className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors"
+                                                value={formData.email}
+                                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-1.5 block">Phone Number</label>
+                                            <input
+                                                required
+                                                type="tel"
+                                                placeholder="+1 (555) 000-0000"
+                                                className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors"
+                                                value={formData.phone}
+                                                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-1.5 block">Website URL (Optional)</label>
+                                            <input
                                                 type="url"
                                                 placeholder="https://yourbrand.com"
                                                 className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors"
@@ -233,9 +280,8 @@ const Chatbot = () => {
                                             />
                                         </div>
                                         <div>
-                                            <label className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-1.5 block">Top 3 Competitors</label>
+                                            <label className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-1.5 block">Top 3 Competitors (Optional)</label>
                                             <input
-                                                required
                                                 type="text"
                                                 placeholder="Competitor A, B, C"
                                                 className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors"
@@ -244,9 +290,8 @@ const Chatbot = () => {
                                             />
                                         </div>
                                         <div>
-                                            <label className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-1.5 block">Top 3 Target Keywords</label>
+                                            <label className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-1.5 block">Top 3 Target Keywords (Optional)</label>
                                             <input
-                                                required
                                                 type="text"
                                                 placeholder="Keyword 1, 2, 3"
                                                 className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors"
@@ -285,6 +330,7 @@ const Chatbot = () => {
                                         className="w-full bg-zinc-900 border border-zinc-800 rounded-2xl py-3 pl-4 pr-12 text-sm text-white focus:outline-none focus:border-blue-500 transition-colors"
                                     />
                                     <button
+                                        aria-label="Send Message"
                                         onClick={handleSend}
                                         disabled={!inputText.trim()}
                                         className="absolute right-2 w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center hover:bg-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
@@ -301,6 +347,7 @@ const Chatbot = () => {
 
             {/* Toggle Button */}
             <motion.button
+                aria-label={isOpen ? "Close Chatbot" : "Open Chatbot"}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}

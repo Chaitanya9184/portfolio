@@ -40,7 +40,7 @@ const AwardIcon = () => (
 export default function Experience() {
     const experiences = [
         {
-            role: "SEO Strategist / Team Lead",
+            role: "AI and SEO Strategist",
             company: "WSI ALM Corp",
             period: "Jun 2024 – Present",
             description: [
@@ -101,7 +101,7 @@ export default function Experience() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h3 className="text-blue-500 text-xs tracking-[0.3em] uppercase mb-4 font-bold">Personal Profile</h3>
+                            <p className="text-blue-500 text-xs tracking-[0.3em] uppercase mb-4 font-bold">Personal Profile</p>
                             <h2 className="text-4xl md:text-5xl text-white font-bold tracking-tighter mb-6 leading-tight relative inline-block">
                                 Senior SEO &<br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">AI Search Expert</span>
@@ -149,10 +149,10 @@ export default function Experience() {
                             transition={{ duration: 0.6, delay: 0.3 }}
                             className="space-y-4"
                         >
-                            <h4 className="text-white text-sm font-bold tracking-widest uppercase flex items-center gap-2">
+                            <h3 className="text-white text-sm font-bold tracking-widest uppercase flex items-center gap-2">
                                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                                 Core Expertise
-                            </h4>
+                            </h3>
                             <div className="flex flex-wrap gap-2">
                                 {["Growth Strategy", "AI Search (AEO/GEO)", "Technical SEO Audit", "Leadership & Mentoring"].map(skill => (
                                     <span key={skill} className="px-4 py-2 bg-gradient-to-r from-zinc-900 to-zinc-950 border border-white/5 rounded-xl text-[11px] text-zinc-400 font-semibold tracking-wide hover:border-emerald-500/30 hover:text-emerald-400 transition-all cursor-default">
@@ -174,7 +174,7 @@ export default function Experience() {
                             <div className="p-6 rounded-3xl bg-zinc-900/20 border border-white/5 space-y-4">
                                 <div className="flex items-center gap-3 text-zinc-400 mb-2">
                                     <AcademicIcon />
-                                    <h4 className="text-white text-xs font-bold uppercase tracking-widest">Education</h4>
+                                    <h3 className="text-white text-xs font-bold uppercase tracking-widest">Education</h3>
                                 </div>
                                 <div>
                                     <p className="text-sm text-white font-semibold">BBA (Marketing)</p>
@@ -186,7 +186,7 @@ export default function Experience() {
                             <div className="p-6 rounded-3xl bg-zinc-900/20 border border-white/5 space-y-4">
                                 <div className="flex items-center gap-3 text-zinc-400 mb-2">
                                     <AwardIcon />
-                                    <h4 className="text-white text-xs font-bold uppercase tracking-widest">Certifications</h4>
+                                    <h3 className="text-white text-xs font-bold uppercase tracking-widest">Certifications</h3>
                                 </div>
                                 <div className="grid grid-cols-1 gap-2">
                                     {["Google Analytics & GTM", "HubSpot Inbound Marketing", "Technical SEO Specialist"].map(cert => (
@@ -203,10 +203,10 @@ export default function Experience() {
 
                 {/* Right Side: Timeline */}
                 <div className="lg:w-2/3">
-                    <h3 className="text-zinc-500 text-sm tracking-widest uppercase mb-12 relative inline-block">
+                    <h2 className="text-zinc-500 text-sm tracking-widest uppercase mb-12 relative inline-block">
                         Work Experience
                         <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-zinc-700 to-transparent rounded-full" />
-                    </h3>
+                    </h2>
 
                     <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-zinc-800 before:to-transparent">
                         {experiences.map((exp, idx) => (
@@ -220,7 +220,7 @@ export default function Experience() {
                                 <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl border border-zinc-800/60 bg-zinc-900/40 backdrop-blur-sm transition-all duration-300 group-hover:border-zinc-700 group-hover:bg-zinc-800/60">
                                     <div className="flex flex-col mb-4">
                                         <span className="text-blue-400 text-[10px] font-mono tracking-widest mb-1 uppercase opacity-80">{exp.period}</span>
-                                        <h4 className="text-xl text-white font-bold tracking-tight">{exp.role}</h4>
+                                        <h3 className="text-xl text-white font-bold tracking-tight">{exp.role}</h3>
                                         <span className="text-zinc-400 text-sm font-medium">{exp.company}</span>
                                     </div>
                                     <ul className="list-disc pl-4 space-y-3 text-zinc-400 text-[13px] leading-relaxed font-normal group-hover:text-zinc-300 transition-colors">
@@ -240,7 +240,7 @@ export default function Experience() {
                             <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl border border-zinc-800/60 bg-zinc-900/40 backdrop-blur-sm transition-all duration-300 group-hover:border-zinc-700 group-hover:bg-zinc-800/60">
                                 <div className="flex flex-col mb-4">
                                     <span className="text-blue-400 text-[10px] font-mono tracking-widest mb-1 uppercase opacity-80">May 2021 – Dec 2021</span>
-                                    <h4 className="text-xl text-white font-bold tracking-tight">Team Lead – SEO</h4>
+                                    <h3 className="text-xl text-white font-bold tracking-tight">Team Lead – SEO</h3>
                                     <span className="text-zinc-400 text-sm font-medium">Tradebuilder Technology Pvt. Ltd.</span>
                                 </div>
                                 <ul className="list-disc pl-4 space-y-3 text-zinc-400 text-[13px] leading-relaxed font-normal group-hover:text-zinc-300 transition-colors">

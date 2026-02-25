@@ -223,7 +223,7 @@ function Overlay({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) 
             >
                 <div className="text-center text-white drop-shadow-2xl">
                     <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-4 uppercase drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">Chaitanya Kore.</h1>
-                    <p className="text-xl md:text-2xl text-emerald-400 font-medium tracking-wide uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">SEO Strategist / Team Lead</p>
+                    <p className="text-xl md:text-2xl text-emerald-400 font-medium tracking-wide uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">AI and SEO Strategist</p>
                 </div>
             </motion.div>
 

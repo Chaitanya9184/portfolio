@@ -64,7 +64,7 @@ export default function AiExpertise() {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="text-center mb-20">
-                    <h3 className="text-emerald-400 text-sm tracking-widest uppercase mb-4 font-semibold">The Future of Search</h3>
+                    <p className="text-emerald-400 text-sm tracking-widest uppercase mb-4 font-semibold">The Future of Search</p>
                     <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6 relative inline-block">
                         Mastering AI-Driven Discovery
                         <div className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-emerald-500 to-transparent rounded-full" />

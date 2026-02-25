@@ -33,7 +33,7 @@ export default function SeoPhilosophy() {
 
                 {/* Philosophy Content */}
                 <div className="w-full md:w-1/2 text-center md:text-left">
-                    <h3 className="text-emerald-500 text-sm tracking-widest uppercase mb-4 font-semibold">SEO Philosophy</h3>
+                    <p className="text-emerald-500 text-sm tracking-widest uppercase mb-4 font-semibold">SEO Philosophy</p>
                     <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tighter mb-6 relative inline-block">
                         Beyond the Keywords.
                         <div className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-emerald-500 to-transparent rounded-full" />

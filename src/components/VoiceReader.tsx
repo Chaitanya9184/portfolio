@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface VoiceReaderProps {
     title: string;
@@ -135,6 +135,7 @@ const VoiceReader: React.FC<VoiceReaderProps> = ({ title, content }) => {
                 <div className="flex items-center gap-3">
                     {!isPlaying ? (
                         <button
+                            aria-label="Listen to Narration"
                             onClick={handlePlay}
                             className="bg-zinc-800/80 hover:bg-zinc-700 text-white p-2 rounded-full transition-colors flex items-center justify-center group"
                             title="Listen"
@@ -145,6 +146,7 @@ const VoiceReader: React.FC<VoiceReaderProps> = ({ title, content }) => {
                         </button>
                     ) : (
                         <button
+                            aria-label="Pause Narration"
                             onClick={handlePause}
                             className="bg-zinc-800/80 hover:bg-zinc-700 text-white p-2 rounded-full transition-colors flex items-center justify-center"
                             title="Pause"
@@ -157,6 +159,7 @@ const VoiceReader: React.FC<VoiceReaderProps> = ({ title, content }) => {
 
                     {(isPlaying || isPaused) && (
                         <button
+                            aria-label="Stop Narration"
                             onClick={handleStop}
                             className="bg-zinc-800/30 hover:bg-red-500/20 text-zinc-400 hover:text-red-400 p-2 rounded-full transition-all border border-transparent hover:border-red-500/30"
                             title="Stop"

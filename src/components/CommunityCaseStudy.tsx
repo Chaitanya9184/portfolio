@@ -81,7 +81,7 @@ export default function CommunityCaseStudy() {
 
                 {/* Header Section */}
                 <div className="text-center mb-20 max-w-4xl mx-auto">
-                    <h3 className="text-amber-500 text-sm tracking-widest uppercase mb-4 font-semibold">Featured Case Study</h3>
+                    <p className="text-amber-500 text-sm tracking-widest uppercase mb-4 font-semibold">Featured Case Study</p>
                     <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6 relative inline-block">
                         Hyper-Local Growth for a <br className="hidden md:block" />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Community Organization</span>
@@ -99,7 +99,7 @@ export default function CommunityCaseStudy() {
                     {/* Conversions Highlight (Spans 4 cols on desktop) */}
                     <div className="col-span-1 lg:col-span-4 p-8 rounded-3xl bg-amber-950/20 border border-amber-900/30 backdrop-blur-sm relative overflow-hidden group flex flex-col justify-center text-center">
                         <div className="absolute inset-0 bg-gradient-to-t from-amber-500/5 to-transparent pointer-events-none" />
-                        <h4 className="text-amber-500 font-bold mb-2 uppercase tracking-[0.2em] text-[10px]">Conversion Explosion</h4>
+                        <h3 className="text-amber-500 font-bold mb-2 uppercase tracking-[0.2em] text-[10px]">Conversion Explosion</h3>
                         <div className="mb-8">
                             <span className="text-6xl md:text-7xl font-bold text-white tracking-tighter group-hover:text-amber-400 transition-colors duration-300">+436%</span>
                             <p className="text-zinc-400 mt-2 font-medium tracking-tight">Organic Key Events</p>

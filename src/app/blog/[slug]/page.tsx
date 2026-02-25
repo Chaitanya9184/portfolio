@@ -64,7 +64,7 @@ const BlogPostPage = () => {
                         className="text-zinc-300 text-lg md:text-xl leading-relaxed space-y-8"
                     >
                         {post.content.split('\n\n').map((paragraph, i) => (
-                            <p key={i}>{paragraph}</p>
+                            <p key={i} className="whitespace-pre-wrap">{paragraph}</p>
                         ))}
                     </motion.div>
 

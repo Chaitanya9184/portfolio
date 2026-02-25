@@ -96,7 +96,7 @@ export default function AgencyCaseStudy() {
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row gap-12 items-end mb-20">
                     <div className="flex-1">
-                        <h3 className="text-emerald-500 text-sm tracking-widest uppercase mb-4 font-semibold">Featured Case Study</h3>
+                        <p className="text-emerald-500 text-sm tracking-widest uppercase mb-4 font-semibold">Featured Case Study</p>
                         <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6 relative inline-block">
                             Growth Strategy for a <br className="hidden md:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-indigo-400">Digital Marketing Agency</span>
@@ -177,9 +177,9 @@ export default function AgencyCaseStudy() {
                         >
                             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -mr-20 -mt-20 group-hover:bg-emerald-500/20 transition-colors duration-500" />
                             <div>
-                                <h4 className="text-emerald-400 font-bold text-xs uppercase tracking-[0.2em] mb-4">Core Objective</h4>
+                                <p className="text-emerald-400 font-bold text-xs uppercase tracking-[0.2em] mb-4">Core Objective</p>
                                 <h3 className="text-3xl font-bold text-white mb-2 tracking-tight">Key Events Increase</h3>
-                                <p className="text-zinc-400 text-sm font-light">Direct attribution to conversion-focused local SEO optimizations.</p>
+                                <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium">Direct attribution to conversion-focused local SEO optimizations.</p>
                             </div>
                             <div className="mt-12 flex items-baseline gap-2">
                                 <motion.span

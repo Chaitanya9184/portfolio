@@ -28,7 +28,7 @@ export default function Projects() {
 
             <div className="max-w-7xl mx-auto">
                 <div className="mb-20">
-                    <h3 className="text-zinc-500 text-sm tracking-widest uppercase mb-4">Selected Work</h3>
+                    <p className="text-zinc-500 text-sm tracking-widest uppercase mb-4">Selected Work</p>
                     <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter">Case Studies</h2>
                 </div>
 
@@ -52,7 +52,7 @@ export default function Projects() {
                                         ))}
                                     </div>
                                 </div>
-                                <h4 className="text-2xl text-white font-semibold mb-3 tracking-tight">{project.title}</h4>
+                                <h3 className="text-2xl text-white font-semibold mb-3 tracking-tight">{project.title}</h3>
                                 <p className="text-zinc-400 text-sm leading-relaxed mb-6 group-hover:text-zinc-300 transition-colors">
                                     {project.description}
                                 </p>
