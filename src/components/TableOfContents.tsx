@@ -9,7 +9,7 @@ interface Heading {
     level: number;
 }
 
-export default function TableOfContents({ content }: { content: string }) {
+export default function TableOfContents({ content, inline = false }: { content: string; inline?: boolean }) {
     const [headings, setHeadings] = useState<Heading[]>([]);
     const [activeId, setActiveId] = useState<string>("");
 
@@ -52,6 +52,29 @@ export default function TableOfContents({ content }: { content: string }) {
 
     if (headings.length === 0) return null;
 
+    // ─── Inline mode: compact two-column grid placed inside the article ───
+    if (inline) {
+        return (
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
+                {headings.map((heading) => (
+                    <li key={heading.id} style={{ paddingLeft: `${(heading.level - 2) * 0.75}rem` }}>
+                        <a
+                            href={`#${heading.id}`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById(heading.id)?.scrollIntoView({ behavior: 'smooth' });
+                            }}
+                            className="text-xs text-zinc-400 hover:text-white transition-colors leading-relaxed block py-0.5 border-b border-zinc-800/50 hover:border-zinc-600 hover:pl-1 transition-all"
+                        >
+                            {heading.text}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
+    // ─── Default: sticky sidebar ───
     return (
         <nav className="hidden lg:block sticky top-32 self-start w-64 mr-12 shrink-0">
             <motion.div

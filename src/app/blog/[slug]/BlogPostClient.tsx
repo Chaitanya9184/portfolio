@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import VoiceReader from '@/components/VoiceReader';
+import TableOfContents from '@/components/TableOfContents';
 import FAQSection from '@/components/FAQSection';
 import BlogCTA from '@/components/BlogCTA';
 import type { BlogPost } from '@/lib/blog-data';
@@ -204,6 +205,11 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                         transition={{ delay: 0.5 }}
                         className="mt-20"
                     >
+                        {/* Compact inline Table of Contents — shown before FAQs */}
+                        <div className="mb-10 p-6 rounded-2xl bg-zinc-900/40 border border-white/5 backdrop-blur-sm">
+                            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500 mb-5">On This Page</p>
+                            <TableOfContents content={post.content} inline />
+                        </div>
                         <FAQSection faqs={post.faqs} title="Topic Frequently Asked Questions" />
                     </motion.div>
                 )}
