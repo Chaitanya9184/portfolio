@@ -52,25 +52,36 @@ export default function TableOfContents({ content, inline = false }: { content: 
 
     if (headings.length === 0) return null;
 
-    // ─── Inline mode: compact two-column grid placed inside the article ───
+    // ─── Inline mode: clean single-column list with accent bar ───
     if (inline) {
         return (
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
-                {headings.map((heading) => (
-                    <li key={heading.id} style={{ paddingLeft: `${(heading.level - 2) * 0.75}rem` }}>
-                        <a
-                            href={`#${heading.id}`}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                document.getElementById(heading.id)?.scrollIntoView({ behavior: 'smooth' });
-                            }}
-                            className="text-xs text-zinc-400 hover:text-white transition-colors leading-relaxed block py-0.5 border-b border-zinc-800/50 hover:border-zinc-600 hover:pl-1 transition-all"
-                        >
-                            {heading.text}
-                        </a>
-                    </li>
-                ))}
-            </ul>
+            <div className="relative pl-3">
+                {/* Left accent bar */}
+                <div className="absolute left-0 top-0 bottom-0 w-[2px] rounded-full bg-gradient-to-b from-blue-500/60 via-zinc-700/40 to-transparent" />
+                <ul className="space-y-1.5">
+                    {headings.map((heading) => {
+                        const indent = (heading.level - 2) * 10;
+                        const isH2 = heading.level === 2;
+                        return (
+                            <li key={heading.id} style={{ paddingLeft: `${indent}px` }}>
+                                <a
+                                    href={`#${heading.id}`}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        document.getElementById(heading.id)?.scrollIntoView({ behavior: 'smooth' });
+                                    }}
+                                    className={`block text-xs leading-snug py-1 transition-all duration-200 hover:text-white hover:translate-x-0.5 ${isH2
+                                            ? 'text-zinc-300 font-semibold'
+                                            : 'text-zinc-500 font-normal'
+                                        }`}
+                                >
+                                    {heading.text}
+                                </a>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
         );
     }
 

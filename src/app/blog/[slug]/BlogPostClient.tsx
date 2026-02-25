@@ -120,9 +120,9 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-start">
 
                 {/* Left: sticky On This Page index */}
-                <aside className="hidden lg:block w-56 shrink-0 sticky top-32 self-start">
-                    <div className="p-5 rounded-2xl bg-zinc-900/40 border border-white/5 backdrop-blur-sm">
-                        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500 mb-5">On This Page</p>
+                <aside className="hidden lg:block w-64 shrink-0 sticky top-32 self-start">
+                    <div className="p-5 rounded-2xl bg-zinc-900/50 border border-zinc-800/60 backdrop-blur-sm">
+                        <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-zinc-500 mb-4 pb-3 border-b border-zinc-800/60">On This Page</p>
                         <TableOfContents content={post.content} inline />
                     </div>
                 </aside>
