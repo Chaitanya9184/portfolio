@@ -1,5 +1,56 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import FAQSection from "@/components/FAQSection";
+import SchemaMarkup from "@/components/SchemaMarkup";
+
+const ecommerceFaqs = [
+    {
+        question: "What makes eCommerce SEO different from regular SEO?",
+        answer: "eCommerce SEO involves managing massive scale. Instead of optimizing 50 pages, we're optimizing 50,000 product pages and dynamic category filters. It heavily involves technical architecture, crawl budget management, handling duplicate content (like faceted navigation), and Product Schema markup to win rich snippets."
+    },
+    {
+        question: "How do you handle out-of-stock products for SEO?",
+        answer: "It depends on whether the item is permanently discontinued or temporarily out of stock. For temporary shortages, we keep the page live with an email capture/waitlist. For permanently discontinued items, we implement 301 redirects to the most relevant parent category or an upgraded replacement product to preserve link equity."
+    },
+    {
+        question: "What is the impact of Core Web Vitals on eCommerce?",
+        answer: "Core Web Vitals (site speed, interactivity, and visual stability) directly impact Google rankings and, more importantly, your conversion rates. Slow eCommerce sites suffer from high bounce rates and cart abandonment. A 1-second delay in page load time can reduce conversions by up to 7%."
+    },
+    {
+        question: "How do you optimize for Answer Engine Optimization (AEO) in eCommerce?",
+        answer: "AEO for retail means ensuring AI shopping assistants (like Google's SGE or ChatGPT) understand exactly what you sell. We achieve this by enriching technical Product formatting, implementing detailed semantic HTML, and building comprehensive 'Buying Guides' that answer the complex questions users ask before purchasing."
+    },
+    {
+        question: "How long does it take to see results for an eCommerce SEO campaign?",
+        answer: "Technical improvements—like fixing indexation bloat or canonical issues—often show traffic increases within 30-60 days. Broader category authority and content-driven strategies typically take 3 to 6 months to yield significant compounding revenue."
+    }
+];
+
+const ecommerceSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "name": "eCommerce SEO & AI Search Optimization",
+            "provider": {
+                "@type": "Person",
+                "name": "Chaitanya Kore"
+            },
+            "description": "Technical SEO, Faceted Navigation, and AI Discovery strategies specifically designed to scale eCommerce organic revenue."
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": ecommerceFaqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer
+                }
+            }))
+        }
+    ]
+};
 
 export const metadata: Metadata = {
     title: 'eCommerce SEO & AI Search Solutions | Chaitanya Kore',
@@ -57,13 +108,19 @@ export default function EcommerceIndustryPage() {
                     </div>
                 </div>
 
-                <div className="p-12 text-center rounded-3xl bg-zinc-900/30 border border-zinc-800">
+                <div className="p-12 text-center rounded-3xl bg-zinc-900/30 border border-zinc-800 mb-24">
                     <h2 className="text-3xl font-bold text-white mb-4">Ready to scale your store?</h2>
                     <p className="text-zinc-400 mb-8 max-w-xl mx-auto">Discover how technical SEO can unlock compounding growth for your retail business.</p>
                     <a href="mailto:korechaitanya10@gmail.com" className="inline-flex items-center justify-center px-8 py-4 bg-emerald-500 text-zinc-950 font-bold rounded-xl hover:bg-emerald-400 transition-colors">
                         Request a Technical E-commerce Audit
                     </a>
                 </div>
+
+                {/* FAQs */}
+                <FAQSection faqs={ecommerceFaqs} title="eCommerce SEO FAQs" />
+
+                {/* Schema Markup */}
+                <SchemaMarkup schema={ecommerceSchema} />
 
             </div>
         </main>

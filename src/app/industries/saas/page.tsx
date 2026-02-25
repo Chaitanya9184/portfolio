@@ -1,5 +1,56 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import FAQSection from "@/components/FAQSection";
+import SchemaMarkup from "@/components/SchemaMarkup";
+
+const saasFaqs = [
+    {
+        question: "Why is traditional SEO no longer enough for SaaS companies?",
+        answer: "SaaS buyers are increasingly turning to AI tools (like ChatGPT or Perplexity) to discover and compare software. Traditional SEO only targets standard search engines. Our approach incorporates Generative Engine Optimization (GEO) to ensure your product is cited as the premier solution in AI-driven answers."
+    },
+    {
+        question: "What is Programmatic SEO for SaaS?",
+        answer: "Programmatic SEO involves creating hundreds or thousands of high-quality, intent-driven landing pages (such as 'Your Product vs. Competitor' or 'Software for [Specific Industry]') at scale, capturing long-tail BOFU (Bottom of Funnel) search demand efficiently."
+    },
+    {
+        question: "How do you reduce Customer Acquisition Cost (CAC) through SEO?",
+        answer: "By building a compounding organic traffic engine. While paid ads stop generating leads the moment you stop paying, organic content continues to attract high-intent buyers month over month, significantly lowering your blended CAC over time."
+    },
+    {
+        question: "Do you help with technical SEO for Next.js and React marketing sites?",
+        answer: "Yes. Many modern SaaS marketing sites are built on JavaScript frameworks (Next.js, React). If not configured correctly (using SSR or SSG), search engines struggle to render and index the content. I specialize in fixing these JavaScript SEO issues."
+    },
+    {
+        question: "How do we measure the success of an organic SaaS campaign?",
+        answer: "We focus on pipeline revenue and MRR (Monthly Recurring Revenue), not just traffic. We track organic sign-ups, demo requests, and the conversion rate of non-branded BOFU terms to ensure organic efforts directly impact the bottom line."
+    }
+];
+
+const saasSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "name": "SaaS SEO & AI Search Optimization",
+            "provider": {
+                "@type": "Person",
+                "name": "Chaitanya Kore"
+            },
+            "description": "Specialized SEO and Generative Engine Optimization strategies for SaaS companies to reduce CAC and drive MRR."
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": saasFaqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer
+                }
+            }))
+        }
+    ]
+};
 
 export const metadata: Metadata = {
     title: 'SaaS SEO & AI Search Solutions | Chaitanya Kore',
@@ -57,7 +108,7 @@ export default function SaaSIndustryPage() {
                 </div>
 
                 {/* Call To Action */}
-                <div className="p-12 text-center rounded-3xl bg-gradient-to-b from-zinc-900/80 to-[#0a0a0a] border border-zinc-800 relative overflow-hidden">
+                <div className="p-12 text-center rounded-3xl bg-gradient-to-b from-zinc-900/80 to-[#0a0a0a] border border-zinc-800 relative overflow-hidden mb-24">
                     <div className="absolute inset-0 bg-blue-500/5 blur-3xl pointer-events-none" />
                     <h2 className="text-3xl font-bold text-white mb-4 relative z-10">Stop Renting Your Traffic. Own It.</h2>
                     <p className="text-zinc-400 max-w-xl mx-auto mb-8 relative z-10">
@@ -67,6 +118,12 @@ export default function SaaSIndustryPage() {
                         Calculate Your Organic ROI
                     </Link>
                 </div>
+
+                {/* FAQs */}
+                <FAQSection faqs={saasFaqs} title="SaaS SEO FAQs" />
+
+                {/* Schema Markup */}
+                <SchemaMarkup schema={saasSchema} />
 
             </div>
         </main>

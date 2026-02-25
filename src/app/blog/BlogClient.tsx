@@ -4,6 +4,15 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { blogPosts } from '@/lib/blog-data';
+import SchemaMarkup from "@/components/SchemaMarkup";
+
+const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "AI Search Insights | AEO, GEO & Technical SEO Blog",
+    "description": "Expert analysis and deep dives into the evolution of AI-driven search (GEO/AEO) and advanced technical SEO strategies for 2026.",
+    "url": "https://www.chaitanyakore.in/blog/"
+};
 
 export default function BlogClient() {
     return (
@@ -80,6 +89,8 @@ export default function BlogClient() {
                     </Link>
                 </div>
             </div>
+
+            <SchemaMarkup schema={blogSchema} />
         </main>
     );
 }

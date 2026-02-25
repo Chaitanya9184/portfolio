@@ -18,6 +18,70 @@ import SeoPhilosophy from "@/components/SeoPhilosophy";
 import CallToAction from "@/components/CallToAction";
 import BlogCarousel from "@/components/BlogCarousel";
 import IndustriesSection from "@/components/IndustriesSection";
+import FAQSection from "@/components/FAQSection";
+import SchemaMarkup from "@/components/SchemaMarkup";
+
+const homeFaqs = [
+  {
+    question: "What is the difference between traditional SEO and Generative Engine Optimization (GEO)?",
+    answer: "Traditional SEO focuses on optimizing for 10 blue links via keywords and backlinks. GEO (Generative Engine Optimization) focuses on structuring data and content to be cited by AI engines like Google's AI Overviews, Perplexity, and ChatGPT. It requires deep semantic structuring and high 'Information Gain' to ensure your brand is the primary source."
+  },
+  {
+    question: "How long does it take to see ROI from technical SEO improvements?",
+    answer: "While content can take 3-6 months to mature, technical SEO fixes—such as resolving indexation bloat, improving Core Web Vitals, and repairing broken architecture—often yield measurable traffic and ranking improvements within 4 to 8 weeks as search engines re-crawl the optimized foundation."
+  },
+  {
+    question: "What platforms do you specialize in for Enterprise SEO?",
+    answer: "My expertise spans enterprise CMS and eCommerce platforms including Shopify Plus, WordPress (VIP), Magento (Adobe Commerce), and custom Next.js/React headless architectures. Strategy is platform-agnostic, but technical execution requires deep platform-specific knowledge."
+  },
+  {
+    question: "How do Entity SEO and AEO benefit B2B SaaS companies?",
+    answer: "Answer Engine Optimization (AEO) and Entity SEO help establish your brand and key features as distinct 'entities' in the Google Knowledge Graph. For SaaS, this means when enterprise buyers ask complex, multi-layered questions, AI engines recognize your product as the authoritative solution, dominating the AI Overview."
+  },
+  {
+    question: "Do you guarantee top rankings on Google?",
+    answer: "No reputable SEO professional guarantees specific rankings, as Google's algorithm is proprietary and constantly changing. I guarantee the implementation of best-in-class technical infrastructure, modern GEO strategies, and data-driven content architectures that historically drive significant organic growth and pipeline value."
+  }
+];
+
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.chaitanyakore.in/#website",
+      "url": "https://www.chaitanyakore.in/",
+      "name": "Chaitanya Kore",
+      "description": "Senior SEO & AI Search Professional specializing in Technical SEO, GEO, and organic acquisition."
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.chaitanyakore.in/#service",
+      "name": "Chaitanya Kore - SEO Consulting",
+      "image": "https://www.chaitanyakore.in/sequence/frame_00_delay-0.066s.png",
+      "url": "https://www.chaitanyakore.in/",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mumbai",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.chaitanyakore.in/#faq",
+      "mainEntity": homeFaqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    }
+  ]
+};
 
 export default function Home() {
   return (
@@ -68,6 +132,12 @@ export default function Home() {
 
       {/* Industries Section */}
       <IndustriesSection />
+
+      {/* FAQs */}
+      <FAQSection faqs={homeFaqs} title="SEO & Technical Expertise FAQs" />
+
+      {/* JSON-LD Schema */}
+      <SchemaMarkup schema={homeSchema} />
 
       {/* Simple Footer */}
       <footer className="w-full py-12 bg-[#050505] border-t border-zinc-900 border-dashed">

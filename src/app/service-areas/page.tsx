@@ -1,5 +1,14 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import SchemaMarkup from "@/components/SchemaMarkup";
+
+const serviceAreasSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Local SEO Service Areas | Chaitanya Kore",
+    "description": "Strategic Local SEO and AI Search consulting across key Indian markets including Mumbai and Pune.",
+    "url": "https://www.chaitanyakore.in/service-areas/"
+};
 
 export const metadata: Metadata = {
     title: 'SEO Services in India | Chaitanya Kore',
@@ -63,6 +72,8 @@ export default function ServiceAreasPage() {
                 </div>
 
             </div>
+
+            <SchemaMarkup schema={serviceAreasSchema} />
         </main>
     );
 }

@@ -3,6 +3,60 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import FAQSection from "@/components/FAQSection";
+import SchemaMarkup from "@/components/SchemaMarkup";
+
+const roiFaqs = [
+    {
+        question: "How accurate is this SEO ROI calculator?",
+        answer: "This calculator provides a directional forecast based on standard industry CTR curves (like the Advanced Web Ranking CTR study) and your specific business metrics. While it's a powerful tool for projecting potential revenue, real-world rankings fluctuate daily based on algorithm updates and competitor actions."
+    },
+    {
+        question: "What is the source of the Click-Through Rate (CTR) data?",
+        answer: "We use a blended average of modern CTR studies, weighted towards non-branded, commercial intent queries. For example, Rank #1 typically sees a ~39% CTR, while Rank #5 drops to ~5%. These metrics reflect a standard desktop/mobile blend without heavy AI Overview interference."
+    },
+    {
+        question: "Should I input AOV or LTV for the 'Avg. Customer Value'?",
+        answer: "It depends on your business model. For eCommerce, use Average Order Value (AOV) unless you have high recurring purchases. For SaaS or B2B Enterprise, always use Customer Lifetime Value (LTV), as the initial monthly subscription fee does not reflect the true value of acquiring an organic customer."
+    },
+    {
+        question: "Why is the target position only up to #10?",
+        answer: "Page 2 of Google captures less than 1% of total clicks. Ranking #11 or #50 generates functionally the same amount of traffic (near zero). SEO ROI focuses on moving keywords from Page 2 to Page 1, or moving them from the bottom of Page 1 to the top 3 spots."
+    },
+    {
+        question: "How should I calculate my Monthly SEO Investment?",
+        answer: "Factor in the fully loaded cost of your organic growth program. This includes retainer fees for an SEO consultant/agency, content production costs (freelancers, tools), and technical development hours required to implement the recommended optimizations."
+    }
+];
+
+const roiSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "SoftwareApplication",
+            "name": "SEO ROI Calculator",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "description": "Calculate the potential revenue and ROI of your SEO investment based on search volume, CTR distributions, and conversion metrics."
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": roiFaqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer
+                }
+            }))
+        }
+    ]
+};
 
 const SeoRoiCalculatorClient = () => {
     // Advanced Calculator States
@@ -239,12 +293,20 @@ const SeoRoiCalculatorClient = () => {
 
                 </div>
 
+                {/* FAQs */}
+                <div className="mt-24">
+                    <FAQSection faqs={roiFaqs} title="Calculator FAQs" />
+                </div>
+
                 {/* Footnote */}
                 <div className="mt-24 pt-12 border-t border-zinc-900 text-center">
                     <p className="text-zinc-500 text-sm max-w-2xl mx-auto italic">
                         Disclaimer: This calculator provides estimates based on your inputs. Real-world SEO ROI depends on competition, technical health, and market volatility in 2026 search ecosystems (AEO/GEO).
                     </p>
                 </div>
+
+                {/* Schema Markup */}
+                <SchemaMarkup schema={roiSchema} />
             </div>
         </main>
     );

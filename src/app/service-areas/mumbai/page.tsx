@@ -1,5 +1,61 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import FAQSection from "@/components/FAQSection";
+import SchemaMarkup from "@/components/SchemaMarkup";
+
+const mumbaiFaqs = [
+    {
+        question: "Why is local SEO important for Mumbai businesses?",
+        answer: "Mumbai is a massive, highly competitive market. Users search with hyper-local intent (e.g., 'Financial consultant in BKC' or 'Software agency Andheri'). Local SEO ensures you capture this high-intent traffic by dominating the Google Map Pack and localized organic search results."
+    },
+    {
+        question: "How do you rank a Google Business Profile in a saturated market like Mumbai?",
+        answer: "Ranking in the 'Local Pack' requires more than just filling out a profile. We focus on continuous profile optimization, managing local citations (NAP consistency), generating targeted reviews, and building strong localized backlinks from relevant Indian domains."
+    },
+    {
+        question: "Can you help with SEO for multi-location chains in Maharashtra?",
+        answer: "Yes, we specialize in multi-location architecture. If you have branches in Mumbai, Pune, and Nagpur, we build localized landing pages and manage distinct Google Business Profiles for each location to ensure you rank no matter where the searcher is located."
+    },
+    {
+        question: "What is the difference between local SEO and Enterprise SEO in Mumbai?",
+        answer: "Enterprise SEO focuses on scaling massive websites (like eCommerce or national news portals) to capture broad market share. Local SEO focuses intensely on geographic relevance. However, large Mumbai-based corporations often need a hybrid approach: enterprise-grade technical architecture combined with localized relevance."
+    },
+    {
+        question: "How long does it take to see results from local SEO?",
+        answer: "Visible improvements in Google Maps and local listings often occur within 45 to 90 days as we clean up citations and optimize the GBP profile. Broader organic rankings for competitive local terms typically take 3 to 6 months to stabilize."
+    }
+];
+
+const mumbaiSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "name": "Local SEO Consulting Mumbai",
+            "provider": {
+                "@type": "Person",
+                "name": "Chaitanya Kore"
+            },
+            "areaServed": {
+                "@type": "City",
+                "name": "Mumbai",
+                "sameAs": "https://en.wikipedia.org/wiki/Mumbai"
+            },
+            "description": "Expert Local SEO and AI Search consulting for businesses based in Mumbai and the surrounding MMR region."
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": mumbaiFaqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer
+                }
+            }))
+        }
+    ]
+};
 
 export const metadata: Metadata = {
     title: 'SEO Expert in Mumbai | Top SEO Consultant | Chaitanya Kore',
@@ -58,7 +114,7 @@ export default function MumbaiSEOPage() {
                     </div>
                 </div>
 
-                <div className="p-12 text-center rounded-3xl bg-gradient-to-b from-zinc-900/80 to-[#0a0a0a] border border-zinc-800 relative overflow-hidden">
+                <div className="p-12 text-center rounded-3xl bg-gradient-to-b from-zinc-900/80 to-[#0a0a0a] border border-zinc-800 relative overflow-hidden mb-24">
                     <h2 className="text-3xl font-bold text-white mb-4 relative z-10">Dominate the Local SERP</h2>
                     <p className="text-zinc-400 max-w-xl mx-auto mb-8 relative z-10">
                         Are you a Mumbai business losing digital market share? Let&apos;s discuss a custom growth roadmap.
@@ -67,6 +123,12 @@ export default function MumbaiSEOPage() {
                         Get a Local Audit
                     </Link>
                 </div>
+
+                {/* FAQs */}
+                <FAQSection faqs={mumbaiFaqs} title="Mumbai SEO FAQs" />
+
+                {/* Schema Markup */}
+                <SchemaMarkup schema={mumbaiSchema} />
 
             </div>
         </main>

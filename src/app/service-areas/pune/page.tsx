@@ -1,5 +1,61 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import FAQSection from "@/components/FAQSection";
+import SchemaMarkup from "@/components/SchemaMarkup";
+
+const puneFaqs = [
+    {
+        question: "What kind of SEO works best for Pune-based IT companies?",
+        answer: "For IT service providers and B2B SaaS companies in Pune, content-led enterprise SEO works best. This involves creating deep technical 'Hub and Spoke' content architectures, optimizing for long-tail commercial intent, and executing high-level digital PR to outrank offshore competitors."
+    },
+    {
+        question: "How do you help SaaS startups in Hinjewadi or Baner get global traction?",
+        answer: "Startups need aggressive growth. We focus on Programmatic SEO and vs-competitor landing pages to capture Bottom of Funnel (BOFU) traffic immediately. We also ensure your framework (React/Next.js) is technically sound for Googlebot rendering."
+    },
+    {
+        question: "What is the role of International SEO for Pune businesses?",
+        answer: "Many Pune IT companies target clients in the US, UK, and Australia. International SEO ensures your website signals the correct geographic intent using 'hreflang' tags, localized content variations, and targeted international link building so you rank in your target markets, not just in India."
+    },
+    {
+        question: "Do you provide SEO services for educational institutes in Pune?",
+        answer: "Yes. Pune is the 'Oxford of the East'. Educational SEO focuses on capturing student intent through detailed course pages, optimizing for 'AI overviews' comparing universities, and strong local map pack performance for campus tours."
+    },
+    {
+        question: "How does AEO (Answer Engine Optimization) help B2B tech firms?",
+        answer: "AEO ensures that when enterprise buyers ask tools like ChatGPT or Google's AI Overview 'What are the top IT service providers in India?', your brand is cited as a primary source. This requires structuring your site's data into clear, machine-readable 'Entities'."
+    }
+];
+
+const puneSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "name": "B2B & Tech SEO Consulting Pune",
+            "provider": {
+                "@type": "Person",
+                "name": "Chaitanya Kore"
+            },
+            "areaServed": {
+                "@type": "City",
+                "name": "Pune",
+                "sameAs": "https://en.wikipedia.org/wiki/Pune"
+            },
+            "description": "Expert SEO consulting specializing in B2B SaaS, IT companies, and educational institutes in the Pune region."
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": puneFaqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer
+                }
+            }))
+        }
+    ]
+};
 
 export const metadata: Metadata = {
     title: 'SEO Services in Pune | Expert B2B & Tech SEO | Chaitanya Kore',
@@ -58,7 +114,7 @@ export default function PuneSEOPage() {
                     </div>
                 </div>
 
-                <div className="p-12 text-center rounded-3xl bg-gradient-to-b from-zinc-900/80 to-[#0a0a0a] border border-zinc-800 relative overflow-hidden">
+                <div className="p-12 text-center rounded-3xl bg-gradient-to-b from-zinc-900/80 to-[#0a0a0a] border border-zinc-800 relative overflow-hidden mb-24">
                     <h2 className="text-3xl font-bold text-white mb-4 relative z-10">Scale Your Startup Organically</h2>
                     <p className="text-zinc-400 max-w-xl mx-auto mb-8 relative z-10">
                         Stop burning venture capital on high-CAC ads. Build an organic engine that compounds over time.
@@ -67,6 +123,12 @@ export default function PuneSEOPage() {
                         Book a Growth Consultation
                     </Link>
                 </div>
+
+                {/* FAQs */}
+                <FAQSection faqs={puneFaqs} title="Pune SEO FAQs" />
+
+                {/* Schema Markup */}
+                <SchemaMarkup schema={puneSchema} />
 
             </div>
         </main>

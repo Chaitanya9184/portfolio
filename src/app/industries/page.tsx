@@ -1,5 +1,14 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import SchemaMarkup from "@/components/SchemaMarkup";
+
+const industriesSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Industries We Serve | SEO & AI Search Solutions",
+    "description": "Specialized SEO, AEO, and GEO strategies tailored for SaaS, eCommerce, B2B Tech, and local businesses.",
+    "url": "https://www.chaitanyakore.in/industries/"
+};
 
 export const metadata: Metadata = {
     title: 'Industries We Serve | SEO & AI Search Solutions',
@@ -70,6 +79,8 @@ export default function IndustriesPage() {
                 </div>
 
             </div>
+
+            <SchemaMarkup schema={industriesSchema} />
         </main>
     );
 }
