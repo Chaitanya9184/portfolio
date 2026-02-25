@@ -67,7 +67,7 @@ export default function AiExpertise() {
                     <p className="text-emerald-400 text-sm tracking-widest uppercase mb-4 font-semibold">The Future of Search</p>
                     <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6 relative inline-block">
                         Mastering AI-Driven Discovery
-                        <div className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-emerald-500 to-transparent rounded-full" />
+                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-emerald-500 to-transparent rounded-full" />
                     </h2>
                     <p className="max-w-2xl mx-auto text-zinc-400 text-lg leading-relaxed font-light">
                         Search is changing from simple links to fast AI answers. To grow today, you need a new plan. I build smart content systems to help you dominate AI search platforms.
