@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Chaitanya Kore | Senior SEO & AI Search (AEO/GEO) Professional',
+  title: 'Chaitanya Kore | SEO & AI Search Expert',
   description: 'Specializing in Technical SEO, AI Search Optimization (GEO/AEO), and organic acquisition for SaaS, eCommerce, and B2B Enterprise brands.',
 };
 

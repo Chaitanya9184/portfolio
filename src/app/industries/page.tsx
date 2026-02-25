@@ -13,6 +13,9 @@ const industriesSchema = {
 export const metadata: Metadata = {
     title: 'Industries We Serve | SEO & AI Search Solutions',
     description: 'Specialized SEO, AEO, and GEO strategies tailored for SaaS, eCommerce, B2B Tech, and local businesses.',
+    alternates: {
+        canonical: '/industries',
+    },
 };
 
 const industries = [
@@ -54,7 +57,7 @@ export default function IndustriesPage() {
                 </div>
 
                 {/* Industry Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
                     {industries.map((ind) => (
                         <Link
                             href={`/industries/${ind.slug}`}
@@ -76,6 +79,31 @@ export default function IndustriesPage() {
                             </span>
                         </Link>
                     ))}
+                </div>
+
+                {/* Additional SEO Content Section */}
+                <div className="mt-24 pt-16 border-t border-zinc-900 border-dashed">
+                    <h2 className="text-3xl md:text-4xl text-white font-bold tracking-tighter mb-8">
+                        Why Industry-Specific Search Strategies Matter
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-zinc-400 text-lg leading-relaxed font-light">
+                        <div>
+                            <p className="mb-6">
+                                A one-size-fits-all approach to SEO no longer works. Modern search engines use advanced machine learning, like Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO), to understand the specific intent behind every search. The intent of a user looking for B2B enterprise software is fundamentally different than a user shopping for retail goods.
+                            </p>
+                            <p>
+                                For SaaS brands, the goal is often capturing high-intent traffic at the bottom of the funnel to reduce Customer Acquisition Cost (CAC). We focus heavily on integrating product features into deep, semantic topic clusters. We build a network of content that proves your software is the definitive answer to complex business problems.
+                            </p>
+                        </div>
+                        <div>
+                            <p className="mb-6">
+                                eCommerce requires a completely different technical foundation. We optimize faceted navigation, ensuring search engine bots can efficiently crawl massive product catalogs without wasting crawl budget. Advanced Product Schema markup is critical to secure rich snippets and visibility in AI Overviews, where users increasingly compare prices directly on the search results page.
+                            </p>
+                            <p>
+                                B2B Tech and Enterprise markets face long, complex sales cycles. Research shows that B2B buyers conduct over a dozen searches before ever reaching out to sales. Our strategy focuses on establishing unshakeable topical authority. By answering nuanced technical questions through structured data and expert-led content, we ensure your brand is cited as the primary authority throughout the buyer&apos;s journey.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
