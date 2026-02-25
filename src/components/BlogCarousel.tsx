@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import Link from 'next/link';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import { blogPosts } from '@/lib/blog-data';
 
 export default function BlogCarousel() {
@@ -72,8 +72,8 @@ export default function BlogCarousel() {
                             <div className="relative h-full p-8 rounded-3xl bg-zinc-900/30 border border-white/5 hover:border-blue-500/30 hover:bg-zinc-900/50 transition-all flex flex-col">
                                 <div className="flex items-center gap-3 mb-6">
                                     <span className={`px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-widest ${post.category === 'GEO' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' :
-                                            post.category === 'AEO' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' :
-                                                'bg-purple-500/10 text-purple-400 border border-purple-500/20'
+                                        post.category === 'AEO' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' :
+                                            'bg-purple-500/10 text-purple-400 border border-purple-500/20'
                                         }`}>
                                         {post.category}
                                     </span>
