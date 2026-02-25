@@ -8,6 +8,7 @@ export interface BlogPost {
     content: string;
     verdict: string;
     image?: string;
+    faqs?: { question: string; answer: string }[];
 }
 
 const generateExtensiveContent = (intro: string, takeaways: string[], bodyParas: string[], category: string) => {
@@ -56,7 +57,21 @@ export const blogPosts: BlogPost[] = [
             'GEO'
         ),
         verdict: "This is the formal death of generic content. If your data isn't unique enough for an LLM to cite as a primary source, you are effectively invisible in the GEO era. Focus on proprietary data and first-person experience.",
-        image: '/blog/geo-era.jpg'
+        image: '/blog/geo-era.jpg',
+        faqs: [
+            {
+                question: "What exactly is 'Cite-Worthiness' in the 2026 update?",
+                answer: "It is the measure of how unique, verifiable, and primary your data is. AI Overviews prioritize content that introduces net-new facts to the web rather than just summarizing existing articles."
+            },
+            {
+                question: "Does keyword density still matter?",
+                answer: "Keyword density has essentially zero impact on Generative Engine Optimization. The LLM focuses on semantic entities, concept relationships, and Information Gain."
+            },
+            {
+                question: "How can small brands win against massive publishers?",
+                answer: "By becoming the definitive source for highly specific niche data. If you conduct a unique survey of 500 local customers and publish the results, AI engines will cite you over a Forbes article that lacks original data."
+            }
+        ]
     },
     {
         slug: 'aeo-dominance-google-gemini-search-upgrades',
@@ -80,7 +95,21 @@ export const blogPosts: BlogPost[] = [
             'AEO'
         ),
         verdict: "Stop fighting the SGE; embrace it. If the user doesn't click but walks away knowing your brand provided the solution, you've won the attention game. Measure impressions and mentions, not just clicks.",
-        image: '/blog/aeo-search.jpg'
+        image: '/blog/aeo-search.jpg',
+        faqs: [
+            {
+                question: "Why is traditional CTR dropping so fast?",
+                answer: "Because Gemini 1.5 Ultra parses complex queries and answers them entirely within the search interface. The user gets exactly what they need without having to open a new tab or click a blue link."
+            },
+            {
+                question: "How do we measure success if we aren't getting clicks?",
+                answer: "You must track 'Generative Share of Voice' (GSOV) and Brand Mentions. If Gemini cites your brand as the recommended solution inside the top-level chat interface, you are building immense upper-funnel awareness."
+            },
+            {
+                question: "What is an 'Answer First' UI?",
+                answer: "It is a search engine layout where the generative text response occupies the entire top fold (often covering 80% of a mobile screen), pushing traditional organic links far below the scroll line."
+            }
+        ]
     },
     {
         slug: 'perplexity-ai-publisher-revenue-share',
@@ -104,7 +133,21 @@ export const blogPosts: BlogPost[] = [
             'GEO'
         ),
         verdict: "This validates GEO as a legitimate, direct revenue channel. We are moving from an 'Ad Click' economy to a 'Knowledge Citation' economy. Proprietary research is now your most valuable asset.",
-        image: '/blog/perplexity-ads.jpg'
+        image: '/blog/perplexity-ads.jpg',
+        faqs: [
+            {
+                question: "How does the Perplexity Revenue Share model work?",
+                answer: "When an AI response heavily relies on your proprietary facts or data, Perplexity allocates a portion of the ad revenue generated from that specific chat session directly to the cited publisher."
+            },
+            {
+                question: "Does this replace Google AdSense?",
+                answer: "Not entirely, but it diversifies publisher income. It creates a secondary revenue stream for investigative journalism and deep-data reports that traditionally struggled with banner ad click-through rates."
+            },
+            {
+                question: "How do I optimize specifically for Perplexity?",
+                answer: "Publish 'Load-Bearing Data'. Write definitive, stat-heavy answers to highly complex queries that require intense synthesis. Avoid fluff; Perplexity engines scan for empirical density, not word count."
+            }
+        ]
     },
     {
         slug: 'searchgpt-higher-education-seo',
@@ -128,7 +171,21 @@ export const blogPosts: BlogPost[] = [
             'AEO'
         ),
         verdict: "In the research space, being 'findable' is no longer enough; you must be 'extractable'. If an AI can't verify your data via a trusted source graph, it won't show you at all.",
-        image: '/blog/search-research.jpg'
+        image: '/blog/search-research.jpg',
+        faqs: [
+            {
+                question: "Why do students prefer SearchGPT over standard Google?",
+                answer: "SearchGPT provides direct, footnote-style citations attached to specific claims, which is a requirement for academic research. Standard search requires students to manually hunt through marketing copy to find facts."
+            },
+            {
+                question: "What is 'extractable' vs 'discoverable' data?",
+                answer: "Discoverable means a page ranks on Google. Extractable means the core data (like tuition costs, faculty names, or program dates) is structured semantically (JSON-LD or API) so an LLM can pull it flawlessly without hallucinating."
+            },
+            {
+                question: "Should universities still write long 'SEO pillar pages'?",
+                answer: "Yes, but they must be architected differently. The top of the page should function as a highly structured data repository for AI scrapers, while the narrative content is moved downward for human readers."
+            }
+        ]
     },
     {
         slug: 'zero-click-intent-new-seo-king',
@@ -152,7 +209,21 @@ export const blogPosts: BlogPost[] = [
             'SEO'
         ),
         verdict: "Visibility IS the new conversion. Optimize your 'Sentence 1' to be the definitive answer that the AI wants to quote. If you win the summary, you win the long-term trust.",
-        image: '/blog/zero-click.jpg'
+        image: '/blog/zero-click.jpg',
+        faqs: [
+            {
+                question: "Is 'Zero-Click' bad for business?",
+                answer: "Only if your business model relies entirely on ad impressions. For SaaS, B2B, and service businesses, a zero-click interaction still builds massive 'Mindshare' by positioning you as the authority in the AI's answer."
+            },
+            {
+                question: "What is 'Sentence 1' Optimization?",
+                answer: "It is the practice of ensuring the very first sentence immediately following any sub-heading directly and comprehensively answers the implied question before adding nuance or marketing spin."
+            },
+            {
+                question: "How do you map user interactions if they don't visit the site?",
+                answer: "You focus on correlation rather than direct attribution. Monitor the rise in direct brand-name searches or direct-to-site traffic in the days following a spike in Generative Overview impressions."
+            }
+        ]
     },
     {
         slug: 'ai-overview-ecommerce-product-discovery',
@@ -176,7 +247,21 @@ export const blogPosts: BlogPost[] = [
             'GEO'
         ),
         verdict: "Structure is everything. If the AI can't compare your price, shipping, and unique value props instantly against competitors in a single table, you've lost the sale before the user ever visits your site.",
-        image: '/blog/ecommerce-ai.jpg'
+        image: '/blog/ecommerce-ai.jpg',
+        faqs: [
+            {
+                question: "How do I get my products into AI Comparison Tables?",
+                answer: "Ensure your Google Merchant Center feed is immaculate and that your Product schema markup explicitly details specifications, live stock status, return policies, and shipping tiers."
+            },
+            {
+                question: "Do standard customer reviews still matter?",
+                answer: "Yes, but only if they contain 'attribute-level' sentiment. An AI cares less about '5 stars - great product!' and more about 'The waterproofing held up perfectly during a 3-day monsoon hike.'"
+            },
+            {
+                question: "Can AI Overviews handle complex B2B pricing?",
+                answer: "Yes, provided the data is exposed. If your B2B SaaS uses custom quote calculators, you must provide a baseline aggregate or structured tier list for the AI to parse, otherwise it will recommend highly transparent competitors."
+            }
+        ]
     },
     {
         slug: 'semantic-content-clustering-geo-age',
@@ -200,7 +285,21 @@ export const blogPosts: BlogPost[] = [
             'GEO'
         ),
         verdict: "Think like an encyclopedia, not a blog. Build deep, interlinked hubs of information. Topical depth is the ultimate SEO moat against generic AI competitors.",
-        image: '/blog/clustering.jpg'
+        image: '/blog/clustering.jpg',
+        faqs: [
+            {
+                question: "Why do Semantic Clusters perform better in GEO?",
+                answer: "LLMs look for 'Topic Authority Graphing'. A standalone page might be a fluke, but a network of 40 intricately linked resources signals to the AI that the domain possesses deep expertise on the subject."
+            },
+            {
+                question: "What is a 'recursive question' map?",
+                answer: "It is an architecture where answering one query introduces the next logical intent. For example, answering 'What is SOC2?' should immediately link to 'How much does a SOC2 audit cost?' as a natural exploration path."
+            },
+            {
+                question: "Does anchor text still matter for internal clusters?",
+                answer: "Yes, but semantic phrasing matters more than exact-match optimization. Use descriptive, conversational anchor links rather than stuffing identical keywords repeatedly."
+            }
+        ]
     },
     {
         slug: 'google-discover-experience-update',
@@ -224,7 +323,21 @@ export const blogPosts: BlogPost[] = [
             'SEO'
         ),
         verdict: "Discover is the pulse of the internet. Multimedia isn't an 'extra' anymore; it's a requirement for feed visibility. If you don't have human-led video or data, you're invisible in the personalized feed.",
-        image: '/blog/discover-update.jpg'
+        image: '/blog/discover-update.jpg',
+        faqs: [
+            {
+                question: "Why is Google downgrading text-only AI articles in Discover?",
+                answer: "To combat the flood of generic AI slop. Discover is a passive, entertaining feed. Users swipe through it for novel, human experiences, which machines fundamentally cannot replicate."
+            },
+            {
+                question: "What counts as a strong 'Experience' signal?",
+                answer: "First-person perspective ('I tested this'), custom high-resolution photography of the actual product in use, embedded short-form vertical video, and verifiable author identity."
+            },
+            {
+                question: "How long does it take to enter the Discover feed?",
+                answer: "If a URL exhibits high initial velocity (shares, high dwell time) and passes the 'Experience' threshold, it can trigger the Discover algorithm within 24 to 48 hours of publication."
+            }
+        ]
     },
     {
         slug: 'aeo-question-graph-mapping',
@@ -248,7 +361,21 @@ export const blogPosts: BlogPost[] = [
             'AEO'
         ),
         verdict: "Modern search is a conversation. Your content needs to be the 'best next step' in that dialogue. Use H2s as questions and ensure your first sentences are clear, quotable declarations.",
-        image: '/blog/question-graph.jpg'
+        image: '/blog/question-graph.jpg',
+        faqs: [
+            {
+                question: "What exactly is Answer Engine Optimization (AEO)?",
+                answer: "AEO is the specialized practice of optimizing content to be cited by conversational search interfaces (like ChatGPT, Gemini) focusing on direct, factual responses to complex interrogative queries."
+            },
+            {
+                question: "How do you anticipate a user's next question?",
+                answer: "By mapping common sales objections or support tickets. If the initial query is top-of-funnel ('What is CRM?'), the immediate follow-ups are mid-funnel ('How long does a CRM take to setup?')."
+            },
+            {
+                question: "Is FAQPage schema still relevant in 2026?",
+                answer: "More than ever. While standard Google search drops classic rich snippets, AI parsers rely heavily on JSON-LD to train their models on specific Q&A pairs to serve during rapid-fire chat interactions."
+            }
+        ]
     },
     {
         slug: 'citation-engine-building-brand-llm-era',
@@ -272,6 +399,20 @@ export const blogPosts: BlogPost[] = [
             'GEO'
         ),
         verdict: "Data ownership is the ultimate competitive advantage. If you publish the most comprehensive data in your industry, you own the search results—even if the results are written by an AI.",
-        image: '/blog/citation-magnet.jpg'
+        image: '/blog/citation-magnet.jpg',
+        faqs: [
+            {
+                question: "What makes a dataset a 'Citation Magnet'?",
+                answer: "It must be primary (you gathered it), proprietary (you own it), statistically significant, and directly relevant to high-commercial-intent questions within your specific industry."
+            },
+            {
+                question: "Should we gate our research behind email forms?",
+                answer: "No. If you gate the data behind a PDF or lead form, LLM crawlers cannot read it, which means they cannot cite it. The SEO value of being cited as the primary source far outweighs a few email addresses."
+            },
+            {
+                question: "How do we compete with huge data aggregation sites like Statista?",
+                answer: "Aggregators provide shallow, generalized data across thousands of topics. You must provide impossibly deep, hyper-verticalized data that only an embedded industry expert could access or interpret."
+            }
+        ]
     }
 ];

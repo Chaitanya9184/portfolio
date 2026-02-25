@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import VoiceReader from '@/components/VoiceReader';
 import TableOfContents from '@/components/TableOfContents';
-import CallToAction from '@/components/CallToAction';
+import FAQSection from '@/components/FAQSection';
+import BlogCTA from '@/components/BlogCTA';
 import type { BlogPost } from '@/lib/blog-data';
 
 interface BlogPostClientProps {
@@ -195,22 +196,34 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-[120px] rounded-full" />
                             <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/5 blur-[120px] rounded-full" />
                         </motion.div>
-                    </div>
 
-                    {/* Footer Navigation */}
-                    <div className="mt-24 pt-12 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-8 text-zinc-500 text-sm">
-                        <p>© 2026 AI Search Insights. Professional Analysis by Chaitanya Kore.</p>
-                        <div className="flex gap-8">
-                            <Link href="/blog" className="hover:text-white transition-colors font-bold uppercase tracking-widest text-[10px]">All Insights</Link>
-                            <Link href="/" className="hover:text-white transition-colors font-bold uppercase tracking-widest text-[10px]">Portfolio Home</Link>
+                        {/* Article Custom FAQs */}
+                        {post.faqs && post.faqs.length > 0 && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.5 }}
+                                className="mt-20 pt-16 border-t border-zinc-900/50 border-dashed"
+                            >
+                                <FAQSection faqs={post.faqs} title="Topic Frequently Asked Questions" />
+                            </motion.div>
+                        )}
+
+                        {/* Compact Blog CTA */}
+                        <div className="mt-24">
+                            <BlogCTA />
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Call To Action Banner */}
-            <div className="max-w-7xl mx-auto mt-24">
-                <CallToAction />
+                {/* Footer Navigation */}
+                <div className="mt-20 pt-12 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-8 text-zinc-500 text-sm w-full">
+                    <p>© 2026 AI Search Insights. Professional Analysis by Chaitanya Kore.</p>
+                    <div className="flex gap-8">
+                        <Link href="/blog" className="hover:text-white transition-colors font-bold uppercase tracking-widest text-[10px]">All Insights</Link>
+                        <Link href="/" className="hover:text-white transition-colors font-bold uppercase tracking-widest text-[10px]">Portfolio Home</Link>
+                    </div>
+                </div>
             </div>
         </main>
     );
