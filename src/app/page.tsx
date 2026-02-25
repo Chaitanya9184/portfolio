@@ -9,6 +9,7 @@ import CommunityCaseStudy from "@/components/CommunityCaseStudy";
 import TechStack from "@/components/TechStack";
 import SeoPhilosophy from "@/components/SeoPhilosophy";
 import CallToAction from "@/components/CallToAction";
+import BlogCarousel from "@/components/BlogCarousel";
 
 export default function Home() {
   return (
@@ -53,6 +54,9 @@ export default function Home() {
 
       {/* Strong Call To Action Banner */}
       <CallToAction />
+
+      {/* Featured Blog Insights Carousel */}
+      <BlogCarousel />
 
       {/* Simple Footer */}
       <footer className="w-full py-12 bg-[#050505] border-t border-zinc-900 border-dashed">

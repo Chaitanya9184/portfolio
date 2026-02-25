@@ -7,13 +7,13 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://portfolio-scrollytelling.vercel.app'),
+  metadataBase: new URL('https://chaitanyakore.com'),
   title: 'Chaitanya Kore | Senior SEO & AI Search Professional',
   description: '8+ years of experience driving organic growth for global brands through Technical SEO and AI Search (GEO/AEO) strategies.',
   openGraph: {
     title: 'Chaitanya Kore | Senior SEO & AI Search Professional',
     description: 'Expert in Technical SEO, Growth Strategy, and AI Search Optimization (GEO). Driving discoverability for global eCommerce and SaaS brands.',
-    url: 'https://portfolio-scrollytelling.vercel.app', // Placeholder, user will update if needed
+    url: 'https://chaitanyakore.com',
     siteName: 'Chaitanya Kore Portfolio',
     images: [
       {
