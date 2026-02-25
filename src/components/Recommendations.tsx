@@ -31,7 +31,10 @@ export default function Recommendations() {
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-20">
                     <h3 className="text-blue-400 text-sm tracking-widest uppercase mb-4 font-semibold">Endorsements</h3>
-                    <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6">Proven Influence</h2>
+                    <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6 relative inline-block">
+                        Proven Influence
+                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-blue-400 to-transparent rounded-full" />
+                    </h2>
                     <p className="max-w-2xl mx-auto text-zinc-400 text-lg leading-relaxed font-light">
                         Collaborating with leaders across the globe to redefine what search success looks like.
                         Here is what partners and clients have to say.

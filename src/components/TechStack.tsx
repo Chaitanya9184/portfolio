@@ -148,9 +148,10 @@ export default function TechStack() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6"
+                        className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6 relative inline-block"
                     >
                         Tech & Tools Stack
+                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

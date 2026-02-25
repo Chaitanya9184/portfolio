@@ -97,9 +97,10 @@ export default function AgencyCaseStudy() {
                 <div className="flex flex-col md:flex-row gap-12 items-end mb-20">
                     <div className="flex-1">
                         <h3 className="text-emerald-500 text-sm tracking-widest uppercase mb-4 font-semibold">Featured Case Study</h3>
-                        <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6">
+                        <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6 relative inline-block">
                             Growth Strategy for a <br className="hidden md:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-indigo-400">Digital Marketing Agency</span>
+                            <div className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-emerald-400 to-transparent rounded-full" />
                         </h2>
                         <p className="text-zinc-400 text-lg leading-relaxed max-w-2xl font-light">
                             A comprehensive 6-month engagement focusing on technical SEO, targeted content strategy,
@@ -161,7 +162,10 @@ export default function AgencyCaseStudy() {
                 {/* Growth Impact Dashboard */}
                 <div className="relative">
                     <div className="text-center mb-16">
-                        <h3 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tighter">6-Month Impact Dashboard</h3>
+                        <h3 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tighter relative inline-block">
+                            6-Month Impact Dashboard
+                            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-zinc-500 to-transparent rounded-full" />
+                        </h3>
                         <p className="text-zinc-400 text-lg font-light">Performance growth across high-intent conversion metrics.</p>
                     </div>
 

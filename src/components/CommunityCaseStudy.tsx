@@ -82,9 +82,10 @@ export default function CommunityCaseStudy() {
                 {/* Header Section */}
                 <div className="text-center mb-20 max-w-4xl mx-auto">
                     <h3 className="text-amber-500 text-sm tracking-widest uppercase mb-4 font-semibold">Featured Case Study</h3>
-                    <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6">
+                    <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6 relative inline-block">
                         Hyper-Local Growth for a <br className="hidden md:block" />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Community Organization</span>
+                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-amber-400 to-transparent rounded-full" />
                     </h2>
                     <p className="text-zinc-400 text-lg leading-relaxed font-light">
                         A testament to efficiency. Tasked with growing a vibrant local community portal on an extremely limited

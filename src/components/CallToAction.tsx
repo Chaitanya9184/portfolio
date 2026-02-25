@@ -18,8 +18,9 @@ export default function CallToAction() {
                         {/* Inner subtle grid */}
                         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]" />
 
-                        <h2 className="text-5xl md:text-7xl font-extrabold text-white tracking-tighter mb-6 relative z-10">
+                        <h2 className="text-5xl md:text-7xl font-extrabold text-white tracking-tighter mb-6 relative z-10 inline-block">
                             Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Scale?</span>
+                            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-blue-400 to-transparent rounded-full" />
                         </h2>
 
                         <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl mb-12 relative z-10 font-medium">

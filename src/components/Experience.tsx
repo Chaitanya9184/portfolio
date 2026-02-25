@@ -102,9 +102,10 @@ export default function Experience() {
                             transition={{ duration: 0.6 }}
                         >
                             <h3 className="text-blue-500 text-xs tracking-[0.3em] uppercase mb-4 font-bold">Personal Profile</h3>
-                            <h2 className="text-4xl md:text-5xl text-white font-bold tracking-tighter mb-6 leading-tight">
+                            <h2 className="text-4xl md:text-5xl text-white font-bold tracking-tighter mb-6 leading-tight relative inline-block">
                                 Senior SEO &<br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">AI Search Expert</span>
+                                <div className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-blue-400 to-transparent rounded-full" />
                             </h2>
                             <p className="text-zinc-400 text-base leading-[1.8] font-light">
                                 8+ years of experience driving organic growth for e-commerce, SaaS, and enterprise brands globally.
@@ -202,7 +203,10 @@ export default function Experience() {
 
                 {/* Right Side: Timeline */}
                 <div className="lg:w-2/3">
-                    <h3 className="text-zinc-500 text-sm tracking-widest uppercase mb-12">Work Experience</h3>
+                    <h3 className="text-zinc-500 text-sm tracking-widest uppercase mb-12 relative inline-block">
+                        Work Experience
+                        <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-zinc-700 to-transparent rounded-full" />
+                    </h3>
 
                     <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-zinc-800 before:to-transparent">
                         {experiences.map((exp, idx) => (
