@@ -150,7 +150,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                             <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-8 leading-tight">
                                 {post.title}
                             </h1>
-                            <h2 className="sr-only">Detailed Analysis: {post.title}</h2>
+                            <h2 className="sr-only">{post.metaTitle || post.title}</h2>
                         </motion.div>
 
                         <VoiceReader title={post.title} content={post.content} />
