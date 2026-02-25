@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     description: 'AI Search Expert (GEO/AEO) and Technical SEO Specialist driving organic growth.',
     images: ['/sequence/frame_00_delay-0.066s.png'],
   },
+  verification: {
+    google: 'mFrh7hnvV53ueOyll9--hmMbFEnXvCUvAPrV0zO4EVQ',
+  },
 }
 
 export default function RootLayout({
