@@ -37,11 +37,11 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
 
                         <div className="relative mb-8">
                             <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-500/60 block mb-4">Strategic Brief</span>
-                            <h2 className="!mt-0 !mb-0 text-3xl md:text-5xl font-bold text-white tracking-tighter !bg-none [background-clip:unset] [-webkit-text-fill-color:unset] [-webkit-background-clip:unset] border-none after:hidden flex items-center gap-4">
+                            <p className="!mt-0 !mb-0 text-3xl md:text-5xl font-bold text-white tracking-tighter !bg-none [background-clip:unset] [-webkit-text-fill-color:unset] [-webkit-background-clip:unset] border-none after:hidden flex items-center gap-4">
                                 {title.toLowerCase().includes('summary') ? 'Executive Analysis' :
                                     title.toLowerCase().includes('takeaways') ? 'Key Takeaways' : title}
                                 <span className="h-[1px] bg-gradient-to-r from-blue-500/30 to-transparent flex-1" />
-                            </h2>
+                            </p>
                         </div>
                         {contentText.includes('\n• ') ? (
                             <ul className="space-y-4">
@@ -69,17 +69,17 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
             if (trimmed.startsWith('## ')) {
                 const text = trimmed.replace('## ', '');
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                rendered.push(<h2 key={i} id={id} className="scroll-mt-32 ">{text}</h2>);
+                rendered.push(<p key={i} id={id} className="scroll-mt-32 text-3xl font-bold text-white mt-12 mb-6 tracking-tight">{text}</p>);
             }
             else if (trimmed.startsWith('### ')) {
                 const text = trimmed.replace('### ', '');
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                rendered.push(<h3 key={i} id={id} className="scroll-mt-32">{text}</h3>);
+                rendered.push(<p key={i} id={id} className="scroll-mt-32 text-2xl font-bold text-white mt-10 mb-4 tracking-tight">{text}</p>);
             }
             else if (trimmed.startsWith('#### ')) {
                 const text = trimmed.replace('#### ', '');
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                rendered.push(<h4 key={i} id={id} className="scroll-mt-32 text-zinc-400">{text}</h4>);
+                rendered.push(<p key={i} id={id} className="scroll-mt-32 text-xl font-bold text-zinc-400 mt-8 mb-4">{text}</p>);
             }
             // Bullet points (fallback for other sections)
             else if (trimmed.includes('\n• ')) {
@@ -150,6 +150,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                             <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-8 leading-tight">
                                 {post.title}
                             </h1>
+                            <h2 className="sr-only">Detailed Analysis: {post.title}</h2>
                         </motion.div>
 
                         <VoiceReader title={post.title} content={post.content} />
