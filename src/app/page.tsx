@@ -4,6 +4,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Chaitanya Kore | SEO & AI Search Expert',
   description: 'Specializing in Technical SEO, AI Search Optimization (GEO/AEO), and organic acquisition for SaaS, eCommerce, and B2B Enterprise brands.',
+  alternates: {
+    canonical: '/',
+  },
 };
 
 import ScrollyCanvas from "@/components/ScrollyCanvas";

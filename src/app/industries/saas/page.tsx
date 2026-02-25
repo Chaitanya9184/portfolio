@@ -55,6 +55,9 @@ const saasSchema = {
 export const metadata: Metadata = {
     title: 'SaaS SEO & AI Search Solutions | Chaitanya Kore',
     description: 'Specialized SEO and Generative Engine Optimization strategies for SaaS companies to reduce CAC and drive MRR.',
+    alternates: {
+        canonical: '/industries/saas',
+    },
 };
 
 export default function SaaSIndustryPage() {

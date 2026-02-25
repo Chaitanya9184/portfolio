@@ -11,9 +11,6 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.chaitanyakore.in'),
   title: 'Chaitanya Kore | Senior SEO & AI Search Professional',
   description: '8+ years of experience driving organic growth for global brands through Technical SEO and AI Search (GEO/AEO) strategies.',
-  alternates: {
-    canonical: '/',
-  },
   openGraph: {
     title: 'Chaitanya Kore | Senior SEO & AI Search Professional',
     description: 'Expert in Technical SEO, Growth Strategy, and AI Search Optimization (GEO). Driving discoverability for global eCommerce and SaaS brands.',

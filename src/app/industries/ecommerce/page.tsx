@@ -55,6 +55,9 @@ const ecommerceSchema = {
 export const metadata: Metadata = {
     title: 'eCommerce SEO & AI Search Solutions | Chaitanya Kore',
     description: 'Technical SEO, Faceted Navigation, and AI Discovery strategies specifically designed to scale eCommerce organic revenue.',
+    alternates: {
+        canonical: '/industries/ecommerce',
+    },
 };
 
 export default function EcommerceIndustryPage() {

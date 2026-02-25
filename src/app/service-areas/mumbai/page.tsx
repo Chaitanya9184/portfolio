@@ -60,6 +60,9 @@ const mumbaiSchema = {
 export const metadata: Metadata = {
     title: 'SEO Expert in Mumbai | Top SEO Consultant | Chaitanya Kore',
     description: 'Looking for a Top SEO Expert in Mumbai? I provide enterprise SEO, local search optimization, and AI SEO consulting for Mumbai-based businesses.',
+    alternates: {
+        canonical: '/service-areas/mumbai',
+    },
 };
 
 export default function MumbaiSEOPage() {

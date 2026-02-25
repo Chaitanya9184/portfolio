@@ -55,6 +55,9 @@ const b2bSchema = {
 export const metadata: Metadata = {
     title: 'B2B Tech SEO & Content Strategy | Chaitanya Kore',
     description: 'Expert SEO and Thought Leadership content strategies for B2B Technology and Enterprise organizations.',
+    alternates: {
+        canonical: '/industries/b2b-tech',
+    },
 };
 
 export default function B2BTechIndustryPage() {
