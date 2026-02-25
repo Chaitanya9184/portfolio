@@ -17,6 +17,7 @@ import TechStack from "@/components/TechStack";
 import SeoPhilosophy from "@/components/SeoPhilosophy";
 import CallToAction from "@/components/CallToAction";
 import BlogCarousel from "@/components/BlogCarousel";
+import IndustriesSection from "@/components/IndustriesSection";
 
 export default function Home() {
   return (
@@ -64,6 +65,9 @@ export default function Home() {
 
       {/* Featured Blog Insights Carousel */}
       <BlogCarousel />
+
+      {/* Industries Section */}
+      <IndustriesSection />
 
       {/* Simple Footer */}
       <footer className="w-full py-12 bg-[#050505] border-t border-zinc-900 border-dashed">

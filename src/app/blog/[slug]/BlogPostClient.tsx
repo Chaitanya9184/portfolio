@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import VoiceReader from '@/components/VoiceReader';
 import TableOfContents from '@/components/TableOfContents';
+import CallToAction from '@/components/CallToAction';
 import type { BlogPost } from '@/lib/blog-data';
 
 interface BlogPostClientProps {
@@ -203,6 +204,11 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                             <Link href="/" className="hover:text-white transition-colors font-bold uppercase tracking-widest text-[10px]">Portfolio Home</Link>
                         </div>
                     </div>
+                </div>
+
+                {/* Call To Action Banner */}
+                <div className="mt-24">
+                    <CallToAction />
                 </div>
             </div>
         </main>
