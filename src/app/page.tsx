@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ScrollyCanvas from "@/components/ScrollyCanvas";
 import AiExpertise from "@/components/AiExpertise";
 import Experience from "@/components/Experience";
@@ -57,8 +58,9 @@ export default function Home() {
       <footer className="w-full py-12 bg-[#050505] border-t border-zinc-900 border-dashed">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex flex-col md:flex-row justify-between items-center opacity-50">
           <p className="text-zinc-500 text-sm tracking-wide">© 2026 Chaitanya Kore. All Rights Reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0 text-sm font-medium hover:text-white transition-colors">
-            <a href="https://linkedin.com/in/chaitanya-kore-342069140" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">LinkedIn</a>
+          <div className="flex gap-8 mt-4 md:mt-0 text-[10px] uppercase tracking-widest font-bold">
+            <Link href="/blog" className="text-zinc-500 hover:text-blue-400 transition-colors">AI Insights & Updates</Link>
+            <a href="https://linkedin.com/in/chaitanya-kore-342069140" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-blue-400 transition-colors">LinkedIn</a>
           </div>
         </div>
       </footer>
