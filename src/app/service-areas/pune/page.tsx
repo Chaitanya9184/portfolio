@@ -58,7 +58,7 @@ const puneSchema = {
 };
 
 export const metadata: Metadata = {
-    title: 'SEO Services in Pune | Expert B2B & Tech SEO | Chaitanya Kore',
+    title: 'SEO Expert Pune | B2B & Tech SEO | Chaitanya Kore',
     description: 'Looking to hire an SEO Expert in Pune? Specializing in B2B SaaS, IT companies, and educational institutes in the Pune region.',
     alternates: {
         canonical: '/service-areas/pune',
