@@ -59,14 +59,13 @@ export default function BlogCarousel() {
                 className="flex gap-6 overflow-x-auto pb-12 px-6 md:px-12 lg:px-24 no-scrollbar snap-x snap-mandatory"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-                {blogPosts.map((post, index) => (
+                {blogPosts.map((post) => (
                     <motion.div
                         key={post.slug}
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: index * 0.1 }}
-                        className="min-w-[300px] md:min-w-[400px] snap-start"
+                        className="w-[85vw] md:w-[550px] shrink-0 snap-start"
                     >
                         <Link href={`/blog/${post.slug}`} className="block group h-full">
                             <div className="relative h-full p-8 rounded-3xl bg-zinc-900/30 border border-white/5 hover:border-blue-500/30 hover:bg-zinc-900/50 transition-all flex flex-col">
@@ -79,10 +78,10 @@ export default function BlogCarousel() {
                                     </span>
                                     <span className="text-zinc-600 text-[9px] uppercase font-bold tracking-widest">{post.date}</span>
                                 </div>
-                                <h3 className="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors line-clamp-2 leading-tight">
+                                <h3 className="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors leading-tight">
                                     {post.title}
                                 </h3>
-                                <p className="text-zinc-500 text-sm leading-relaxed mb-8 line-clamp-3">
+                                <p className="text-zinc-500 text-sm leading-relaxed mb-8 flex-1">
                                     {post.excerpt}
                                 </p>
                                 <div className="mt-auto flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-zinc-400 group-hover:text-white transition-colors">
@@ -113,6 +112,6 @@ export default function BlogCarousel() {
                     />
                 </div>
             </div>
-        </section>
+        </section >
     );
 }

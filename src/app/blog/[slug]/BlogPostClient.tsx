@@ -205,11 +205,11 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                         </div>
                     </div>
                 </div>
+            </div>
 
-                {/* Call To Action Banner */}
-                <div className="mt-24">
-                    <CallToAction />
-                </div>
+            {/* Call To Action Banner */}
+            <div className="max-w-7xl mx-auto mt-24">
+                <CallToAction />
             </div>
         </main>
     );
