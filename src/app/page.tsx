@@ -27,23 +27,23 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 const homeFaqs = [
   {
     question: "What is the difference between traditional SEO and Generative Engine Optimization (GEO)?",
-    answer: "Traditional SEO focuses on optimizing for 10 blue links via keywords and backlinks. GEO (Generative Engine Optimization) focuses on structuring data and content to be cited by AI engines like Google's AI Overviews, Perplexity, and ChatGPT. It requires deep semantic structuring and high 'Information Gain' to ensure your brand is the primary source."
+    answer: "Old SEO tries to rank for 10 blue links using keywords and backlinks. GEO (Generative Engine Optimization) builds content that AI tools like Google AI Overviews and ChatGPT trust and cite. It needs clear data structure and deep, direct answers so your brand becomes the top source."
   },
   {
     question: "How long does it take to see ROI from technical SEO improvements?",
-    answer: "While content can take 3-6 months to mature, technical SEO fixes—such as resolving indexation bloat, improving Core Web Vitals, and repairing broken architecture—often yield measurable traffic and ranking improvements within 4 to 8 weeks as search engines re-crawl the optimized foundation."
+    answer: "Content takes 3 to 6 months to rank. But technical SEO fixes—like fixing dead links, making the site faster, and clearing index bloat—often show results much faster. Search engines re-crawl the fixed site, bringing new traffic in just 4 to 8 weeks."
   },
   {
     question: "What platforms do you specialize in for Enterprise SEO?",
-    answer: "My expertise spans enterprise CMS and eCommerce platforms including Shopify Plus, WordPress (VIP), Magento (Adobe Commerce), and custom Next.js/React headless architectures. Strategy is platform-agnostic, but technical execution requires deep platform-specific knowledge."
+    answer: "I work deeply with big CMS and eCommerce platforms like Shopify Plus, WordPress, Adobe Commerce, and custom Next.js sites. The core SEO strategy stays the same, but fixing technical issues requires deep knowledge of how each system is built."
   },
   {
     question: "How do Entity SEO and AEO benefit B2B SaaS companies?",
-    answer: "Answer Engine Optimization (AEO) and Entity SEO help establish your brand and key features as distinct 'entities' in the Google Knowledge Graph. For SaaS, this means when enterprise buyers ask complex, multi-layered questions, AI engines recognize your product as the authoritative solution, dominating the AI Overview."
+    answer: "Answer Engine Optimization (AEO) and Entity SEO train the Google Knowledge Graph to see your brand and features as clear facts. For SaaS, this means when big buyers ask complex questions, AI engines recommend your tool faster than competitors."
   },
   {
     question: "Do you guarantee top rankings on Google?",
-    answer: "No reputable SEO professional guarantees specific rankings, as Google's algorithm is proprietary and constantly changing. I guarantee the implementation of best-in-class technical infrastructure, modern GEO strategies, and data-driven content architectures that historically drive significant organic growth and pipeline value."
+    answer: "No honest SEO expert guarantees exact rankings, because Google's system changes every day. What I do guarantee is strong technical setups, modern AI strategies, and smart content plans that have a proven history of driving huge organic growth and sales."
   }
 ];
 
@@ -110,7 +110,7 @@ export default function Home() {
       {/* --- RECENT IMPACT / CASE STUDIES --- */}
       <div className="w-full pt-32 pb-16 bg-[#050505] text-center border-t border-zinc-900 border-dashed">
         <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tighter mb-4">Proven Impact.</h2>
-        <p className="text-zinc-500 max-w-2xl mx-auto text-lg">Real-world growth strategies executed across B2B agencies, direct-to-consumer enterprise eCommerce, and local organizations.</p>
+        <p className="text-zinc-500 max-w-2xl mx-auto text-lg">Real-world growth plans put to work across top B2B agencies, major direct-to-buyer eCommerce stores, and local groups.</p>
       </div>
 
       {/* Agency Marketing Growth Case Study */}

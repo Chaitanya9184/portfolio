@@ -6,23 +6,23 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 const ecommerceFaqs = [
     {
         question: "What makes eCommerce SEO different from regular SEO?",
-        answer: "eCommerce SEO involves managing massive scale. Instead of optimizing 50 pages, we're optimizing 50,000 product pages and dynamic category filters. It heavily involves technical architecture, crawl budget management, handling duplicate content (like faceted navigation), and Product Schema markup to win rich snippets."
+        answer: "eCommerce SEO involves managing massive scale. You are not just optimizing 50 pages. You are managing 50,000 product pages and dynamic filters. We fix technical architecture and handle duplicate content like faceted search. We also build Product Schema markup to help you win rich snippets."
     },
     {
         question: "How do you handle out-of-stock products for SEO?",
-        answer: "It depends on whether the item is permanently discontinued or temporarily out of stock. For temporary shortages, we keep the page live with an email capture/waitlist. For permanently discontinued items, we implement 301 redirects to the most relevant parent category or an upgraded replacement product to preserve link equity."
+        answer: "It depends if the item is gone forever or just out of stock for now. For short gaps, we keep the page live and add an email waitlist. For items that are gone for good, we use 301 redirects. We point them to the best parent category or a similar new product to save your SEO value."
     },
     {
         question: "What is the impact of Core Web Vitals on eCommerce?",
-        answer: "Core Web Vitals (site speed, interactivity, and visual stability) directly impact Google rankings and, more importantly, your conversion rates. Slow eCommerce sites suffer from high bounce rates and cart abandonment. A 1-second delay in page load time can reduce conversions by up to 7%."
+        answer: "Core Web Vitals measure site speed, interactivity, and visual stability. They directly influence Google rankings and your conversion rates. Slow eCommerce sites face high bounce rates and lost sales. A 1-second delay in page load time can reduce your sales by up to 7%."
     },
     {
         question: "How do you optimize for Answer Engine Optimization (AEO) in eCommerce?",
-        answer: "AEO for retail means ensuring AI shopping assistants (like Google's SGE or ChatGPT) understand exactly what you sell. We achieve this by enriching technical Product formatting, implementing detailed semantic HTML, and building comprehensive 'Buying Guides' that answer the complex questions users ask before purchasing."
+        answer: "AEO means making sure AI shopping tools (like Google SGE or ChatGPT) understand what you sell. We fix your technical product formatting and build detailed buying guides. These guides answer the exact complex questions buyers ask before they make a purchase."
     },
     {
         question: "How long does it take to see results for an eCommerce SEO campaign?",
-        answer: "Technical improvements—like fixing indexation bloat or canonical issues—often show traffic increases within 30-60 days. Broader category authority and content-driven strategies typically take 3 to 6 months to yield significant compounding revenue."
+        answer: "Technical fixes—like stopping index bloat or fixing canonical tags—often bring more traffic in 30 to 60 days. Broader category growth and content plans usually take 3 to 6 months to start driving strong, steady revenue."
     }
 ];
 
@@ -80,7 +80,7 @@ export default function EcommerceIndustryPage() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">Organic Revenue</span>
                     </h1>
                     <p className="text-zinc-400 text-xl font-light max-w-2xl leading-relaxed">
-                        eCommerce SEO isn&apos;t just about keywords; it&apos;s about managing crawl budget, structuring millions of SKUs, and ensuring product discoverability across Google, Shopping graphs, and AI Answer Engines.
+                        eCommerce SEO is more than just adding keywords. It is about guiding crawl bots, structuring millions of products, and making sure buyers find you on Google, Shopping cards, and AI Answer Engines.
                     </p>
                 </div>
 
@@ -89,10 +89,10 @@ export default function EcommerceIndustryPage() {
                     <div className="p-8 rounded-3xl bg-zinc-900/40 border border-zinc-800">
                         <h2 className="text-2xl font-bold text-white mb-4">The eCommerce Dilemma</h2>
                         <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                            Massive, dynamic sites often struggle with technical debt. Duplicate content from faceted filtering, wasted crawl capacity on low-value sorting options, and poor site speed can destroy rankings. E-commerce brands also face the threat of users demanding direct product recommendations from AI, bypassing standard search results entirely.
+                            Huge, dynamic stores often have deep technical flaws. Duplicate pages from search filters, wasted crawl time on basic sorting tabs, and slow loading speeds will sink your rankings. Online stores also face a new threat: users asking AI tools for direct product suggestions instead of standard web searches.
                         </p>
                         <ul className="space-y-3">
-                            {["Faceted Navigation cannibalization", "Indexation issues for large SKU counts", "Missing or invalid Schema Markup"].map((issue, i) => (
+                            {["Faceted search making duplicate content", "Index issues for millions of product pages", "Missing or broken Schema Markup"].map((issue, i) => (
                                 <li key={i} className="flex gap-2 text-sm text-zinc-500">
                                     <span className="text-zinc-700">✗</span> {issue}
                                 </li>
@@ -104,9 +104,9 @@ export default function EcommerceIndustryPage() {
                     <div className="p-8 rounded-3xl bg-gradient-to-br from-emerald-900/20 to-zinc-900/40 border border-emerald-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4">The Technical Edge</h2>
                         <ul className="space-y-4 text-zinc-300 text-sm leading-relaxed mb-6">
-                            <li><strong>Advanced Crawl Management:</strong> Implementing strategic canonicalization, robots.txt directives, and optimized internal linking to ensure Google crawls what matters most.</li>
-                            <li><strong>Semantic Product Data (GEO):</strong> Enriching product schema (Product, Review, Offer, AggregateRating) so AI shopping assistants and Google&apos;s Merchant Center can parse your inventory perfectly.</li>
-                            <li><strong>Category Dominance:</strong> Elevating collection/category pages to serve as high-converting landing pages for broad commercial queries.</li>
+                            <li><strong>Smart Crawl Management:</strong> We use strict canonical tags, tight robots.txt rules, and smart internal links so Google only crawls your best pages.</li>
+                            <li><strong>AI Product Data (GEO):</strong> We build out rich product schema (Product, Review, Offer, AggregateRating). This helps AI shopping bots and Google Merchant Center read your sales inventory perfectly.</li>
+                            <li><strong>Category Dominance:</strong> We turn simple collection pages into highly tuned landing pages that rank for big, profitable search terms.</li>
                         </ul>
                     </div>
                 </div>

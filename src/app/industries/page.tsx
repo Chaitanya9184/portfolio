@@ -22,20 +22,20 @@ const industries = [
     {
         title: 'SaaS (Software as a Service)',
         slug: 'saas',
-        description: 'Reducing CAC and driving high-intent MRR through targeted technical SEO and AI Search (AEO/GEO) visibility.',
-        stats: '70% of B2B buyers start with a generic search. Is your SaaS tool the answer they find?',
+        description: 'Lowering your customer costs and driving strong MRR through focused technical SEO and AI Search visibility.',
+        stats: '70% of B2B buyers start with a broad search. Is your SaaS tool the first answer they find?',
     },
     {
         title: 'eCommerce & Retail',
         slug: 'ecommerce',
-        description: 'Scaling organic revenue with advanced faceted navigation SEO, schema markup, and optimized product discovery.',
-        stats: 'Organic search drives 39% of all digital purchases. Dominate the SERP and capture high-intent shoppers.',
+        description: 'Growing organic sales with smart faceted search fixes, deep schema tools, and tuned product placement.',
+        stats: 'Organic search drives 39% of all digital purchases. Dominate the search page and capture active buyers.',
     },
     {
         title: 'B2B Tech & Enterprise',
         slug: 'b2b-tech',
-        description: 'Building topical authority and establishing thought leadership in complex, long-sales-cycle B2B environments.',
-        stats: 'B2B researchers do 12 searches on average prior to engaging on a specific brand&apos;s site.',
+        description: 'Building deep trust and showing clear thought leadership in long, complex B2B sales pipelines.',
+        stats: 'B2B buyers do 12 searches on average before they ever talk to a sales team on a brand website.',
     }
 ];
 
@@ -52,7 +52,7 @@ export default function IndustriesPage() {
                         <div className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-emerald-500 to-transparent rounded-full" />
                     </h1>
                     <p className="text-zinc-400 text-lg leading-relaxed font-light">
-                        Every industry faces unique digital acquisition challenges. Whether it&apos;s the high CAC of SaaS, the complex architectures of eCommerce, or the long sales cycles of B2B Enterprise—I engineer tailored SEO and AI Search strategies to ensure you dominate your specific market.
+                        Every industry faces unique digital growth problems. SaaS struggles with high ad costs. eCommerce faces huge technical site grids. B2B Enterprise deals with slow, complex sales cycles. I build custom SEO and AI Search plans to help you beat your specific market challenges.
                     </p>
                 </div>
 
@@ -89,18 +89,18 @@ export default function IndustriesPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-zinc-400 text-lg leading-relaxed font-light">
                         <div>
                             <p className="mb-6">
-                                A one-size-fits-all approach to SEO no longer works. Modern search engines use advanced machine learning, like Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO), to understand the specific intent behind every search. The intent of a user looking for B2B enterprise software is fundamentally different than a user shopping for retail goods.
+                                A simple keyword strategy no longer works. Modern search engines use advanced machine learning, like GEO and AEO, to understand exactly what a user wants. A leader looking for enterprise software searches very differently than someone buying retail shoes. We plan for that.
                             </p>
                             <p>
-                                For SaaS brands, the goal is often capturing high-intent traffic at the bottom of the funnel to reduce Customer Acquisition Cost (CAC). We focus heavily on integrating product features into deep, semantic topic clusters. We build a network of content that proves your software is the definitive answer to complex business problems.
+                                For SaaS brands, the goal is catching high-intent traffic near the end of the buying cycle. This lowers your customer acquisition cost (CAC). We link your product features into deep, connected topic clusters. This proves your software is the definitive answer to complex business problems.
                             </p>
                         </div>
                         <div>
                             <p className="mb-6">
-                                eCommerce requires a completely different technical foundation. We optimize faceted navigation, ensuring search engine bots can efficiently crawl massive product catalogs without wasting crawl budget. Advanced Product Schema markup is critical to secure rich snippets and visibility in AI Overviews, where users increasingly compare prices directly on the search results page.
+                                eCommerce requires a completely different technical foundation. We optimize your store filters so search engine bots can efficiently crawl massive product lists without wasting their limit. Advanced Product Schema code is crucial holding rich snippets and visibility in AI Overviews, where users increasingly compare prices directly on the search results page.
                             </p>
                             <p>
-                                B2B Tech and Enterprise markets face long, complex sales cycles. Research shows that B2B buyers conduct over a dozen searches before ever reaching out to sales. Our strategy focuses on establishing unshakeable topical authority. By answering nuanced technical questions through structured data and expert-led content, we ensure your brand is cited as the primary authority throughout the buyer&apos;s journey.
+                                B2B Tech and Enterprise markets face long, complex sales journeys. Research shows that B2B buyers do over a dozen searches before ever reaching out to sales. Our strategy focuses on holding unshakeable trust and brand authority. By answering hard technical questions through structured data and expert-led content, we ensure your brand is cited as the primary authority throughout the buyer&apos;s journey.
                             </p>
                         </div>
                     </div>

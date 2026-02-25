@@ -40,19 +40,19 @@ export default function AiExpertise() {
         {
             title: "AIO",
             subtitle: "Artificial Intelligence Optimization",
-            description: "Proven experience in optimizing content architectures for seamless understanding by AI models like ChatGPT and Gemini. I focus on structural and semantic enhancements that ensure AI bots can crawl, index, and trust your digital presence.",
+            description: "I build content that AI models like ChatGPT and Gemini easily read and understand. Clear structure and smart data setup ensure bots find, crawl, and trust your brand.",
             icon: <AioIcon />
         },
         {
             title: "AEO",
             subtitle: "Answer Engine Optimization",
-            description: "Successfully capturing 'Position Zero' and featured summaries by engineering content for direct, concise user query fulfillment. My strategies focus on conversational, long-tail search behaviors specifically for Perplexity and Google's AI Overviews.",
+            description: "I help you win 'Position Zero' by writing direct, clear answers to common questions. I focus on how people talk and search using tools like Perplexity and Google AI Overviews.",
             icon: <AeoIcon />
         },
         {
             title: "GEO",
             subtitle: "Generative Engine Optimization",
-            description: "Pioneering work in ensuring brands are cited and recommended within generative UI and chatbot environments. I transition digital content from simple link-ranking to authoritative featured source status in AI-generated answers.",
+            description: "I make sure your brand is named and linked inside AI chatbots. I help your content grow from just another web link into a top, trusted source for AI-generated answers.",
             icon: <GeoIcon />
         }
     ];
@@ -70,8 +70,7 @@ export default function AiExpertise() {
                         <div className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-emerald-500 to-transparent rounded-full" />
                     </h2>
                     <p className="max-w-2xl mx-auto text-zinc-400 text-lg leading-relaxed font-light">
-                        As search evolves from traditional links to generative answers, survival requires a new playbook.
-                        I specialize in optimizing content architecture to dominate AI platforms.
+                        Search is changing from simple links to fast AI answers. To grow today, you need a new plan. I build smart content systems to help you dominate AI search platforms.
                     </p>
                 </div>
 

@@ -41,13 +41,13 @@ export default function SeoPhilosophy() {
 
                     <div className="space-y-6 text-zinc-400 text-lg leading-[1.8] mt-8 font-light">
                         <p>
-                            The era of optimizing for arbitrary word counts and keyword density is over. Modern search engines are powered by complex Language Models designed to understand meaning, context, and satisfaction.
+                            The days of chasing strict word counts and keyword stuffing are over. Today, search engines use smart AI models to understand true meaning, context, and user satisfaction.
                         </p>
                         <p>
                             My philosophy is simple: <strong className="text-zinc-200 font-semibold">Optimize for the human, structure for the bot.</strong>
                         </p>
                         <p>
-                            When we shift our focus from &quot;How many times does this keyword appear?&quot; to <strong className="text-emerald-400 font-medium">&quot;Does this piece of content comprehensively answer the user&apos;s underlying question?&quot;</strong>, we stop chasing algorithm updates and start building resilient, authoritative digital properties.
+                            We must stop asking &quot;How many times does this keyword appear?&quot;. Instead, we should ask <strong className="text-emerald-400 font-medium">&quot;Does this content clearly answer the user&apos;s true question?&quot;</strong>. This simple mindset shift builds strong, lasting digital brand trust.
                         </p>
                     </div>
                 </div>
