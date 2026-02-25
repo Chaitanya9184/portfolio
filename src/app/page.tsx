@@ -109,7 +109,10 @@ export default function Home() {
 
       {/* --- RECENT IMPACT / CASE STUDIES --- */}
       <div className="w-full pt-32 pb-16 bg-[#050505] text-center border-t border-zinc-900 border-dashed">
-        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tighter mb-4">Proven Impact.</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tighter mb-4 relative inline-block">
+          Proven Impact.
+          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
+        </h2>
         <p className="text-zinc-500 max-w-2xl mx-auto text-lg">Real-world growth plans put to work across top B2B agencies, major direct-to-buyer eCommerce stores, and local groups.</p>
       </div>
 

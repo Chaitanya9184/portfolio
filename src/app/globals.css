@@ -40,22 +40,12 @@
     -webkit-text-fill-color: transparent;
   }
 
-  h2::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-24 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full;
-  }
-
   h3 {
     @apply text-xl md:text-2xl font-bold tracking-tight mt-12 mb-8 relative pb-4 inline-block w-full;
     background: linear-gradient(to right, #fff, #71717a);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
-
-  h3::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-16 h-[1px] bg-gradient-to-r from-emerald-500/50 to-transparent rounded-full;
   }
 
   h4 {
