@@ -56,9 +56,9 @@ export default function BlogClient() {
                                         <span className="text-zinc-600 text-[10px] uppercase font-bold tracking-widest">{post.date}</span>
                                     </div>
 
-                                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors leading-tight">
+                                    <h2 className="text-xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors leading-tight">
                                         {post.title}
-                                    </h3>
+                                    </h2>
 
                                     <p className="text-zinc-500 text-sm leading-relaxed mb-8 flex-1">
                                         {post.excerpt}

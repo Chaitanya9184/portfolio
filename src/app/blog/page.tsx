@@ -17,10 +17,5 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-    return (
-        <>
-            <h2 className="sr-only">Latest AI Search Insights</h2>
-            <BlogClient />
-        </>
-    );
+    return <BlogClient />
 }
