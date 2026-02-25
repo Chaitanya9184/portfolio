@@ -1,6 +1,7 @@
 export interface BlogPost {
     slug: string;
     title: string;
+    metaTitle?: string;
     date: string;
     category: 'SEO' | 'GEO' | 'AEO';
     excerpt: string;
@@ -36,6 +37,7 @@ export const blogPosts: BlogPost[] = [
     {
         slug: 'the-geo-era-google-2026-core-update',
         title: "The GEO Era: Google's 2026 Core Update & Search Citations",
+        metaTitle: "The GEO Era: 2026 Core Update & Citations",
         date: 'January 15, 2026',
         category: 'GEO',
         excerpt: "Google's latest core update officially incorporates 'Cite-Worthiness' into its core ranking signals for AI Overviews.",
@@ -59,6 +61,7 @@ export const blogPosts: BlogPost[] = [
     {
         slug: 'aeo-dominance-google-gemini-search-upgrades',
         title: "AEO Dominance: Google Gemini Upgrades and CTR Shifts",
+        metaTitle: "AEO Dominance: Gemini Search Upgrades & CTR Shifts",
         date: 'January 28, 2026',
         category: 'AEO',
         excerpt: "New Gemini-driven search interfaces are reducing traditional click-through rates by 60% for informational queries.",
@@ -82,6 +85,7 @@ export const blogPosts: BlogPost[] = [
     {
         slug: 'perplexity-ai-publisher-revenue-share',
         title: "Perplexity AI 'Publisher Revenue Share' - A New SEO Era",
+        metaTitle: "Perplexity Revenue Share: A New SEO Era",
         date: 'February 5, 2026',
         category: 'GEO',
         excerpt: "Perplexity announced a new revenue-sharing model that pays publishers when their content powers high-intent brand answers.",
@@ -105,6 +109,7 @@ export const blogPosts: BlogPost[] = [
     {
         slug: 'searchgpt-higher-education-seo',
         title: "SearchGPT's Impact on Higher Education & Research SEO",
+        metaTitle: "SearchGPT Impact on Higher Education SEO",
         date: 'February 10, 2026',
         category: 'AEO',
         excerpt: "OpenAI's SearchGPT integration into the education sector has seen a 40% shift in how students research sources.",
@@ -128,6 +133,7 @@ export const blogPosts: BlogPost[] = [
     {
         slug: 'zero-click-intent-new-seo-king',
         title: "The Rise of 'Zero-Click Intent': Why CTR is No Longer King",
+        metaTitle: "Zero-Click Intent: Why CTR is No Longer King",
         date: 'February 14, 2026',
         category: 'SEO',
         excerpt: "Latest reports show 70% of informational searches in 2026 end in an AI Overview without a website click.",
@@ -151,6 +157,7 @@ export const blogPosts: BlogPost[] = [
     {
         slug: 'ai-overview-ecommerce-product-discovery',
         title: "AI Overviews in E-commerce: The New Discovery Funnel",
+        metaTitle: "AI Overviews in E-commerce: The Discovery Funnel",
         date: 'February 18, 2026',
         category: 'GEO',
         excerpt: "Google expanded SGE to handle live price comparisons and spec deep-dives within the search result.",
@@ -174,6 +181,7 @@ export const blogPosts: BlogPost[] = [
     {
         slug: 'semantic-content-clustering-geo-age',
         title: "Semantic Content Clustering: Winning in the GEO Age",
+        metaTitle: "Semantic Clustering: Winning in the GEO Age",
         date: 'February 20, 2026',
         category: 'GEO',
         excerpt: "New research shows clusters outperform standalone pages by 3x in AI Engine citation rates.",
@@ -197,6 +205,7 @@ export const blogPosts: BlogPost[] = [
     {
         slug: 'google-discover-experience-update',
         title: "Google Discover Update: Why Feeds are the New First Page",
+        metaTitle: "Google Discover: Why Feeds are the New First Page",
         date: 'February 22, 2026',
         category: 'SEO',
         excerpt: "February 2026 Discover update prioritizes 'Experience' signals (Human-written, video-backed) for all news content.",
@@ -220,6 +229,7 @@ export const blogPosts: BlogPost[] = [
     {
         slug: 'aeo-question-graph-mapping',
         title: "AEO Best Practices: Mapping the Question Graph",
+        metaTitle: "AEO Best Practices: Question Graph Mapping",
         date: 'February 23, 2026',
         category: 'AEO',
         excerpt: "Data shows 2026 searchers ask 5x more questions than 2025. Is your AEO ready?",
@@ -243,6 +253,7 @@ export const blogPosts: BlogPost[] = [
     {
         slug: 'citation-engine-building-brand-llm-era',
         title: "The 'Citation Engine': Building a Brand for the LLM Era",
+        metaTitle: "The Citation Engine: Brands in the LLM Era",
         date: 'February 24, 2026',
         category: 'GEO',
         excerpt: "Analysis shows top GEO brands rely heavily on proprietary data and 'Unique Data Assets'.",
