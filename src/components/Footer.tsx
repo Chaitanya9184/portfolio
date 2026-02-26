@@ -17,7 +17,13 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="flex flex-wrap justify-center gap-6 text-[10px] uppercase tracking-widest font-bold">
+                <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[10px] uppercase tracking-widest font-bold">
+                    <div className="flex gap-6 border-r border-zinc-800 pr-8 mr-2 overflow-hidden">
+                        <span className="text-zinc-600 block shrink-0">Pillars:</span>
+                        <Link href="/ai-search-seo-strategy" className="text-zinc-500 hover:text-white transition-colors">AI Search</Link>
+                        <Link href="/seo-for-revenue-growth" className="text-zinc-500 hover:text-emerald-400 transition-colors">Revenue SEO</Link>
+                        <Link href="/technical-seo-for-saas" className="text-zinc-500 hover:text-blue-400 transition-colors">SaaS Tech</Link>
+                    </div>
                     <Link href="/industries" className="text-zinc-500 hover:text-emerald-400 transition-colors">Industries</Link>
                     <Link href="/roi-calculator" className="text-zinc-500 hover:text-blue-400 transition-colors">ROI Predictor</Link>
                     <Link href="/blog" className="text-zinc-500 hover:text-blue-400 transition-colors">AI Insights</Link>
