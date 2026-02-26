@@ -129,6 +129,7 @@ const SeoRoiCalculatorClient = () => {
                         <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-6">
                             SEO ROI <span className="text-blue-500">Opportunity.</span>
                         </h1>
+                        <h2 className="sr-only">Predictive Revenue Forecasting</h2>
                         <p className="text-zinc-500 max-w-xl text-lg leading-relaxed">
                             Professional growth forecasting based on Search Volume and Ranking Opportunity. Calculate the hidden revenue trapped in your current search positions.
                         </p>
