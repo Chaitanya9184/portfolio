@@ -86,21 +86,28 @@ export default function IndustriesPage() {
                         <Link
                             href={`/industries/${ind.slug}`}
                             key={ind.slug}
-                            className="group block p-8 rounded-3xl bg-zinc-900/40 border border-zinc-800/80 hover:bg-zinc-800/60 hover:border-emerald-500/30 transition-all duration-300"
+                            className="group relative overflow-hidden flex flex-col h-full p-8 rounded-3xl bg-zinc-900/40 backdrop-blur-md border border-zinc-800/80 hover:bg-zinc-800/80 hover:border-emerald-500/50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-900/20 transition-all duration-500"
                         >
-                            <h2 className="text-2xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">{ind.title}</h2>
-                            <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                                {ind.description}
-                            </p>
-                            <div className="p-4 rounded-xl bg-emerald-900/10 border border-emerald-900/30 mb-6">
-                                <p className="text-xs text-emerald-300/80 font-medium italic">
-                                    &quot;{ind.stats}&quot;
+                            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                            <div className="relative z-10 mb-6">
+                                <h2 className="text-2xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors duration-300">{ind.title}</h2>
+                                <p className="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors duration-300">
+                                    {ind.description}
                                 </p>
                             </div>
-                            <span className="text-sm font-bold text-emerald-500 flex items-center gap-2 group-hover:gap-3 transition-all">
-                                View Strategy
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-                            </span>
+                            <div className="relative z-10 mt-auto">
+                                <div className="p-4 rounded-xl bg-emerald-900/10 border border-emerald-900/30 mb-6 group-hover:bg-emerald-900/20 group-hover:border-emerald-500/30 transition-all duration-300">
+                                    <p className="text-xs text-emerald-300/80 font-medium italic">
+                                        &quot;{ind.stats}&quot;
+                                    </p>
+                                </div>
+                                <div className="pt-4 border-t border-zinc-800/50 group-hover:border-emerald-500/30 transition-colors duration-300">
+                                    <span className="text-sm font-bold text-emerald-500 flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                                        View Strategy
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                                    </span>
+                                </div>
+                            </div>
                         </Link>
                     ))}
                 </div>

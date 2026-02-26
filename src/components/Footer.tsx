@@ -19,9 +19,9 @@ export default function Footer() {
 
                 <div className="flex flex-wrap justify-center gap-6 text-[10px] uppercase tracking-widest font-bold">
                     <Link href="/industries" className="text-zinc-500 hover:text-emerald-400 transition-colors">Industries</Link>
-                    <Link href="/service-areas" className="text-zinc-500 hover:text-orange-400 transition-colors">Service Areas</Link>
                     <Link href="/roi-calculator" className="text-zinc-500 hover:text-blue-400 transition-colors">ROI Predictor</Link>
                     <Link href="/blog" className="text-zinc-500 hover:text-blue-400 transition-colors">AI Insights</Link>
+                    <Link href="/contact" className="text-zinc-500 hover:text-purple-400 transition-colors">Contact</Link>
                     <a href="https://linkedin.com/in/chaitanya-kore-342069140" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-blue-400 transition-colors">LinkedIn</a>
                 </div>
             </div>
