@@ -7,19 +7,19 @@ export default function CaseStudy() {
     ];
 
     const challenges = [
-        { title: "Low Organic Visibility", text: "Low brand visibility to new users." },
-        { title: "Lack of Authority", text: "Lack of strong backlinks limited rankings." },
-        { title: "Weak EEAT Signals", text: "Low author credibility reduced trust." },
-        { title: "Suboptimal UI/UX", text: "Navigation issues led to poor user interaction." },
-        { title: "Inefficient Funnel", text: "Traffic did not convert well." }
+        { title: "Low Organic Visibility", text: "Minimal presence beyond branded terms, limiting new user discoverability." },
+        { title: "Lack of Authority", text: "Absence of strong backlinks and supporting content clusters restricted rankings." },
+        { title: "Weak EEAT Signals", text: "Limited author credibility and expert validation reduced search engine trust." },
+        { title: "Suboptimal UI/UX", text: "Navigation issues and unclear content hierarchy led to poor user interaction." },
+        { title: "Inefficient Funnel", text: "Traffic was not effectively guided toward key conversion actions." }
     ];
 
     const strategies = [
-        { title: "Technical SEO Fixes", text: "Fixed headings, meta tags, and broken pages." },
-        { title: "Content Optimization", text: "Optimized pages and wrote 12 new blogs to build authority." },
-        { title: "Authority Building", text: "Built backlinks via PR and removed bad links." },
-        { title: "Internal Linking", text: "Added internal links to help search engines find pages." },
-        { title: "Meta & Heading Optimization", text: "Rewrote titles to boost clicks and target keywords." }
+        { title: "Technical SEO Fixes", text: "Resolved heading structure issues, meta tag errors, and broken pages to improve site health." },
+        { title: "Content Optimization", text: "Optimized existing pages and published 12 new targeted blogs to increase topical authority." },
+        { title: "Authority Building", text: "Strengthened backlink profile through PR distribution and toxic link cleanup." },
+        { title: "Internal Linking", text: "Improved connections to help search engines navigate between product and category pages." },
+        { title: "Meta & Heading Optimization", text: "Rewrote meta titles and fixed H1 hierarchy to boost CTR and keyword targeting." }
     ];
 
     return (
@@ -36,7 +36,9 @@ export default function CaseStudy() {
                         <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-1/3 h-1 bg-gradient-to-r from-blue-400 to-transparent rounded-full" />
                     </h2>
                     <p className="max-w-3xl text-zinc-400 text-lg leading-relaxed font-light">
-                        An SEO growth strategy for a premium insoles retailer. By fixing technical issues, building authority, and improving the funnel, we achieved massive organic growth and first-page rankings.
+                        A comprehensive SEO and Growth strategy for an online retailer specializing in premium insoles.
+                        By addressing core technical debt, establishing topical authority, and optimizing the conversion funnel,
+                        we achieved massive organic growth and first-page dominance.
                     </p>
                 </div>
 

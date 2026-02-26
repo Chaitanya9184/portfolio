@@ -5,20 +5,20 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const financeFaqs = [
     {
-        question: "Why is finance SEO hard?",
-        answer: "Finance is a 'Your Money or Your Life' (YMYL) space. Google filters this content strictly. Your content needs verified trust and clear authors to rank well."
+        question: "Why is SEO for Finance harder than other industries?",
+        answer: "Finance is a strict 'Your Money or Your Life' (YMYL) space. Google heavily filters financial content for E-E-A-T. Without verified trust, clear authors, and great tech, your content will fail to rank."
     },
     {
-        question: "How do you optimize calculators?",
-        answer: "Calculators attract links and drive sales. We make them fast. We add proper schema and helpful content around them."
+        question: "How do you optimize financial calculators and tools?",
+        answer: "Calculators are strong link magnets and conversion tools. We optimize them for maximum speed. We add FinancialProduct schema and surround them with deeply helpful, intent-driven content."
     },
     {
-        question: "How does AI Search affect Fintech?",
-        answer: "People ask AI for financial advice directly. Generative Engine Optimization (GEO) structures your data. This helps AI tools cite your brand as a top choice."
+        question: "What is the role of AI Search (GEO) in Fintech?",
+        answer: "Users now ask AI platforms 'What is the best high-yield savings account?' directly. Generative Engine Optimization (GEO) ensures your product is structured properly. This forces AI tools to cite your brand as the safest, top recommendation."
     },
     {
-        question: "How do you handle SEO compliance?",
-        answer: "We build SEO plans that follow SEC and FINRA rules. We focus on a solid site setup and PR trust, avoiding risky content."
+        question: "How do you handle compliance and SEO at the same time?",
+        answer: "We build SEO strategies that align directly with SEC and FINRA rules. Rather than using aggressive, non-compliant content, we focus on rock-solid site architecture and PR authority building."
     }
 ];
 
@@ -72,11 +72,11 @@ export default function FinanceIndustryPage() {
                         Finance & Fintech
                     </div>
                     <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-6">
-                        Building Trust <br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-500">In Finance SEO</span>
+                        Engineering Trust <br className="hidden md:block" />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-500">In a YMYL Ecosystem</span>
                     </h1>
                     <p className="text-zinc-400 text-xl font-light max-w-2xl leading-relaxed">
-                        In finance, ranking means proving your trust to Google. We build strong SEO foundations for banks, wealth managers, and Fintech startups.
+                        In the financial sector, ranking requires proving absolute trust to Google. We build unshakeable E-E-A-T foundations for banks, wealth managers, and ambitious Fintech startups.
                     </p>
                 </div>
 
@@ -84,24 +84,24 @@ export default function FinanceIndustryPage() {
                     {/* The Problem */}
                     <div className="p-8 rounded-3xl bg-red-950/20 border border-red-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-red-500">⚠️</span> The SEO Challenge
+                            <span className="text-red-500">⚠️</span> The Financial Challenge
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Google's YMYL filters hide sites that lack strong trust signals.</li>
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Huge brands like NerdWallet dominate commercial search results.</li>
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Strict SEC and FINRA rules make fast content creation hard.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Google's ruthless YMYL filters algorithmically suppress sites lacking institutional trust signals.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Severe competition from legacy mega-brands (NerdWallet, Bankrate) monopolizing commercial intent queries.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Complex compliance (SEC/FINRA) restrictions paralyzing agile content creation.</li>
                         </ul>
                     </div>
 
                     {/* The Solution */}
                     <div className="p-8 rounded-3xl bg-violet-950/20 border border-violet-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-violet-400">⚡</span> Our Search Solution
+                            <span className="text-violet-400">⚡</span> The Organic Finance Solution
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
-                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>Strong E-E-A-T Engine:</strong> We use proper schema, expert reviews, and digital PR.</li>
-                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>Interactive Tools:</strong> We build fast financial tools that earn natural links.</li>
-                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>AI Citations:</strong> We optimize your data so AI models cite your platform as a top source.</li>
+                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>Authoritative E-E-A-T Engine:</strong> Integrating FinancialProduct schema, expert review frameworks, and digital PR.</li>
+                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>Calculators & Interactive Tools:</strong> Building indexable, high-performance financial tools that attract natural backlinks.</li>
+                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>Long-Tail AI Citations:</strong> Optimizing targeted data points so generative AI models cite your platform as the source of truth.</li>
                         </ul>
                     </div>
                 </div>
@@ -109,12 +109,12 @@ export default function FinanceIndustryPage() {
                 {/* Call To Action */}
                 <div className="p-12 text-center rounded-3xl bg-gradient-to-b from-zinc-900/80 to-[#0a0a0a] border border-zinc-800 relative overflow-hidden mb-24">
                     <div className="absolute inset-0 bg-violet-500/5 blur-3xl pointer-events-none" />
-                    <h2 className="text-3xl font-bold text-white mb-4 relative z-10">Gain Digital Authority.</h2>
+                    <h2 className="text-3xl font-bold text-white mb-4 relative z-10">Establish Digital Authority.</h2>
                     <p className="text-zinc-400 max-w-xl mx-auto mb-8 relative z-10">
-                        Stop losing investors to massive brands. Build an organic search engine that turns trust into steady growth.
+                        Stop losing highly qualified investors to aggregators. Let's build a flawless organic engine that converts trust into compounding financial growth.
                     </p>
                     <Link href="/roi-calculator" className="relative z-10 inline-flex items-center justify-center px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-zinc-200 transition-colors">
-                        Calculate Your ROI
+                        Calculate Your Organic ROI
                     </Link>
                 </div>
 

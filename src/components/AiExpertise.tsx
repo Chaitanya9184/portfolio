@@ -40,19 +40,19 @@ export default function AiExpertise() {
         {
             title: "AIO",
             subtitle: "Artificial Intelligence Optimization",
-            description: "I write content that AI models can read easily. Clear data helps bots find and trust your brand.",
+            description: "I build content that AI models like ChatGPT and Gemini easily read and understand. Clear structure and smart data setup ensure bots find, crawl, and trust your brand.",
             icon: <AioIcon />
         },
         {
             title: "AEO",
             subtitle: "Answer Engine Optimization",
-            description: "I help you win 'Position Zero' with clear answers. I focus on how people search using AI tools.",
+            description: "I help you win 'Position Zero' by writing direct, clear answers to common questions. I focus on how people talk and search using tools like Perplexity and Google AI Overviews.",
             icon: <AeoIcon />
         },
         {
             title: "GEO",
             subtitle: "Generative Engine Optimization",
-            description: "I make sure AI chatbots name and link your brand. I turn your content into a trusted source for AI answers.",
+            description: "I make sure your brand is named and linked inside AI chatbots. I help your content grow from just another web link into a top, trusted source for AI-generated answers.",
             icon: <GeoIcon />
         }
     ];
@@ -70,7 +70,7 @@ export default function AiExpertise() {
                         <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-emerald-500 to-transparent rounded-full" />
                     </h2>
                     <p className="max-w-2xl mx-auto text-zinc-400 text-lg leading-relaxed font-light">
-                        Search is moving to fast AI answers. To grow, you need a new plan. I build smart content to help you win on AI search.
+                        Search is changing from simple links to fast AI answers. To grow today, you need a new plan. I build smart content systems to help you dominate AI search platforms.
                     </p>
                 </div>
 
