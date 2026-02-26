@@ -49,6 +49,60 @@ const industries = [
         color: 'text-purple-400',
         bgColor: 'bg-purple-500/10',
         borderColor: 'border-purple-500/20'
+    },
+    {
+        name: 'Healthcare & MedTech',
+        slug: 'healthcare',
+        description: 'Drive secure patient acquisition through E-E-A-T optimization, strict medical schema, and YMYL authority building.',
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+        ),
+        color: 'text-emerald-400',
+        bgColor: 'bg-emerald-500/10',
+        borderColor: 'border-emerald-500/20'
+    },
+    {
+        name: 'Real Estate & PropTech',
+        slug: 'real-estate',
+        description: 'Outrank massive aggregators with hyper-local neighborhood strategies, property schema, and technical architecture.',
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+        ),
+        color: 'text-cyan-400',
+        bgColor: 'bg-cyan-500/10',
+        borderColor: 'border-cyan-500/20'
+    },
+    {
+        name: 'Finance & Fintech',
+        slug: 'finance',
+        description: 'Engineer digital trust and compliance-driven organic growth for banks, advisory firms, and complex Fintech products.',
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+        ),
+        color: 'text-violet-400',
+        bgColor: 'bg-violet-500/10',
+        borderColor: 'border-violet-500/20'
+    },
+    {
+        name: 'Home Services',
+        slug: 'home-services',
+        description: 'Dominate the Google Map Pack and local search to intercept high-intent customers and lower reliance on paid leads.',
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+            </svg>
+        ),
+        color: 'text-orange-400',
+        bgColor: 'bg-orange-500/10',
+        borderColor: 'border-orange-500/20'
     }
 ];
 

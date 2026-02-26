@@ -36,6 +36,30 @@ const industries = [
         slug: 'b2b-tech',
         description: 'Building deep trust and showing clear thought leadership in long, complex B2B sales pipelines.',
         stats: 'B2B buyers do 12 searches on average before they ever talk to a sales team on a brand website.',
+    },
+    {
+        title: 'Healthcare & MedTech',
+        slug: 'healthcare',
+        description: 'Driving patient acquisition through stringent E-E-A-T optimization, medical schema, and YMYL authority building.',
+        stats: '7% of all Google daily searches are health-related. Google demands absolute authority for these YMYL queries.',
+    },
+    {
+        title: 'Real Estate & PropTech',
+        slug: 'real-estate',
+        description: 'Outranking aggregators using hyper-local neighborhood hubs, property schema, and technical MLS architecture.',
+        stats: '97% of home buyers use the internet in their search. Local SEO ensures you capture them before the aggregators do.',
+    },
+    {
+        title: 'Finance & Fintech',
+        slug: 'finance',
+        description: 'Engineering digital trust and compliance-driven organic growth for banks, advisory firms, and Fintech platforms.',
+        stats: 'Financial algorithms actively suppress content without proven E-E-A-T. Trust is the only currency that ranks.',
+    },
+    {
+        title: 'Home Services',
+        slug: 'home-services',
+        description: 'Dominating the Google Map Pack and local search to intercept high-intent customers and lower reliance on paid leads.',
+        stats: 'Local Map Pack results capture over 44% of total clicks for home service queries. If you aren\'t there, you lose the job.',
     }
 ];
 
