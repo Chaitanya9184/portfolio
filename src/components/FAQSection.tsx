@@ -23,7 +23,7 @@ export default function FAQSection({ faqs, title = "Frequently Asked Questions" 
 
             <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
                 <div className="text-center mb-20">
-                    <motion.h2
+                    <motion.h3
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -32,7 +32,7 @@ export default function FAQSection({ faqs, title = "Frequently Asked Questions" 
                         {title.split(' ').map((word, i, arr) => (
                             i === arr.length - 1 ? <span key={i} className="text-blue-500"> {word}</span> : <span key={i}>{word} </span>
                         ))}
-                    </motion.h2>
+                    </motion.h3>
                 </div>
 
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
@@ -53,8 +53,8 @@ export default function FAQSection({ faqs, title = "Frequently Asked Questions" 
                                     {/* Number Node */}
                                     <div className="relative z-10 flex-shrink-0 hidden sm:block">
                                         <div className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-500 border ${isActive
-                                                ? 'bg-blue-500 border-blue-400 text-white shadow-[0_0_20px_rgba(59,130,246,0.3)]'
-                                                : 'bg-[#0a0a0a] border-zinc-800 text-zinc-500 group-hover:border-zinc-700'
+                                            ? 'bg-blue-500 border-blue-400 text-white shadow-[0_0_20px_rgba(59,130,246,0.3)]'
+                                            : 'bg-[#0a0a0a] border-zinc-800 text-zinc-500 group-hover:border-zinc-700'
                                             }`}>
                                             <span className="text-sm font-bold font-mono">0{index + 1}</span>
                                         </div>

@@ -497,7 +497,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
         slug: 'ai-internal-linking-automation',
-        title: 'AI-Powered Internal Linking: Automate Your Topical Authority Architecture',
+        title: 'AI Internal Linking Automation — Semantic Authority Guide',
         metaTitle: 'AI Internal Linking Automation — Topical Authority 2026',
         date: 'February 25, 2026',
         category: 'SEO',
@@ -535,7 +535,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
         slug: 'llm-keyword-clustering-workflow',
-        title: 'LLM Keyword Clustering: Replace Spreadsheets with Intent-Aware Grouping',
+        title: 'LLM Keyword Clustering for Intent-Driven Content Strategies',
         metaTitle: 'LLM Keyword Clustering for Intent-Aware SEO Groups',
         date: 'February 25, 2026',
         category: 'SEO',
