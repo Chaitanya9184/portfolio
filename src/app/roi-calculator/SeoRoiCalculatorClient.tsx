@@ -121,7 +121,7 @@ const SeoRoiCalculatorClient = () => {
                 </motion.div>
 
                 {/* Header & Live Ticker */}
-                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-20">
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-12">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}

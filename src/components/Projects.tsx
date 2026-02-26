@@ -22,12 +22,12 @@ export default function Projects() {
     ];
 
     return (
-        <section className="relative w-full bg-[#0a0a0a] py-32 px-6 md:px-12 lg:px-24">
+        <section className="relative w-full bg-[#0a0a0a] py-16 px-6 md:px-12 lg:px-24">
             {/* Subtle top gradient blending from #121212 to #0a0a0a */}
             <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#121212] to-transparent pointer-events-none" />
 
             <div className="max-w-7xl mx-auto">
-                <div className="mb-20">
+                <div className="mb-12">
                     <p className="text-zinc-500 text-sm tracking-widest uppercase mb-4">Selected Work</p>
                     <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter">Case Studies</h2>
                 </div>

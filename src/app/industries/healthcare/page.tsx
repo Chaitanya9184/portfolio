@@ -67,7 +67,7 @@ export default function HealthcareIndustryPage() {
                 </Link>
 
                 {/* Hero */}
-                <div className="mb-20">
+                <div className="mb-12">
                     <div className="inline-flex px-3 py-1 mb-6 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest">
                         Healthcare & MedTech
                     </div>

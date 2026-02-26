@@ -145,7 +145,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                     </motion.div>
 
                     {/* Header */}
-                    <div className="mb-16">
+                    <div className="mb-8">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -225,7 +225,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                 )}
 
                 {/* Compact Blog CTA */}
-                <div className="mt-12 mb-20">
+                <div className="mt-12 mb-12">
                     <BlogCTA />
                 </div>
             </div>

@@ -129,12 +129,12 @@ export default function TechStack() {
     ];
 
     return (
-        <section className="relative w-full py-32 px-6 md:px-12 lg:px-24 bg-[#0a0a0a] overflow-hidden border-t border-zinc-900 border-dashed">
+        <section className="relative w-full py-16 px-6 md:px-12 lg:px-24 bg-[#0a0a0a] overflow-hidden border-t border-zinc-900 border-dashed">
             {/* Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05)_0%,transparent_60%)] rounded-full blur-[100px] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="text-center mb-20">
+                <div className="text-center mb-12">
                     <motion.h3
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

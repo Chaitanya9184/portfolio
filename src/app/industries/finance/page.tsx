@@ -67,7 +67,7 @@ export default function FinanceIndustryPage() {
                 </Link>
 
                 {/* Hero */}
-                <div className="mb-20">
+                <div className="mb-12">
                     <div className="inline-flex px-3 py-1 mb-6 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs font-bold uppercase tracking-widest">
                         Finance & Fintech
                     </div>

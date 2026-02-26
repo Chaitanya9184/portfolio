@@ -27,9 +27,9 @@ export default function Recommendations() {
     ];
 
     return (
-        <section className="relative w-full py-32 px-6 md:px-12 lg:px-24 bg-[#0a0a0a] border-t border-zinc-900 border-dashed">
+        <section className="relative w-full py-16 px-6 md:px-12 lg:px-24 bg-[#0a0a0a] border-t border-zinc-900 border-dashed">
             <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-20">
+                <div className="text-center mb-12">
                     <p className="text-blue-400 text-sm tracking-widest uppercase mb-4 font-semibold">Endorsements</p>
                     <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6 relative inline-block">
                         LinkedIn Recommendations

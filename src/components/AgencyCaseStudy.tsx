@@ -86,7 +86,7 @@ export default function AgencyCaseStudy() {
     ];
 
     return (
-        <section className="relative w-full py-32 px-6 md:px-12 lg:px-24 bg-[#0a0a0a] overflow-hidden border-t border-zinc-900 border-dashed">
+        <section className="relative w-full py-16 px-6 md:px-12 lg:px-24 bg-[#0a0a0a] overflow-hidden border-t border-zinc-900 border-dashed">
             {/* Background accents */}
             <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none" />
@@ -94,7 +94,7 @@ export default function AgencyCaseStudy() {
             <div className="max-w-7xl mx-auto relative z-10">
 
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row gap-12 items-end mb-20">
+                <div className="flex flex-col md:flex-row gap-12 items-end mb-12">
                     <div className="flex-1">
                         <p className="text-emerald-500 text-sm tracking-widest uppercase mb-4 font-semibold">Featured Case Study</p>
                         <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6 relative inline-block">
@@ -110,7 +110,7 @@ export default function AgencyCaseStudy() {
                 </div>
 
                 {/* Challenges & Strategy Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
 
                     {/* Challenges */}
                     <div className="p-10 rounded-3xl bg-zinc-900/40 border border-zinc-800 backdrop-blur-sm">
@@ -161,7 +161,7 @@ export default function AgencyCaseStudy() {
 
                 {/* Growth Impact Dashboard */}
                 <div className="relative">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-8">
                         <h3 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tighter relative inline-block">
                             6-Month Impact Dashboard
                             <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-zinc-500 to-transparent rounded-full" />

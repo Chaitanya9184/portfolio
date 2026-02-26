@@ -69,7 +69,7 @@ export default function IndustriesPage() {
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
 
                 {/* Header */}
-                <div className="mb-20 max-w-3xl">
+                <div className="mb-12 max-w-3xl">
                     <p className="text-emerald-500 text-sm tracking-widest uppercase mb-4 font-semibold">Specialized Expertise</p>
                     <h1 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6 relative inline-block">
                         Industries & Solutions

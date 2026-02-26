@@ -19,14 +19,15 @@ export default function BlogClient() {
         <main className="min-h-screen bg-[#0a0a0a] pt-32 pb-24 px-6 md:px-12 lg:px-24">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
-                <div className="mb-20">
+                <div className="mb-12">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-6">
+                        <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-6 relative inline-block">
                             AI Search <span className="text-blue-500">Insights.</span>
+                            <div className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
                         </h1>
                         <p className="text-zinc-500 max-w-2xl text-lg md:text-xl leading-relaxed">
                             Deep dives into the evolution of AEO, GEO, and technical SEO in 2026. Expert analysis for the generative search era.

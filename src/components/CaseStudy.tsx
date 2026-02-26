@@ -23,13 +23,13 @@ export default function CaseStudy() {
     ];
 
     return (
-        <section className="relative w-full py-32 px-6 md:px-12 lg:px-24 bg-[#121212] overflow-hidden">
+        <section className="relative w-full py-16 px-6 md:px-12 lg:px-24 bg-[#121212] overflow-hidden">
             {/* Background accents */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="mb-20">
+                <div className="mb-12">
                     <p className="text-zinc-500 text-sm tracking-widest uppercase mb-4 font-semibold">Featured Case Study</p>
                     <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6 relative inline-block">
                         Scaling an <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">eCommerce Brand</span>

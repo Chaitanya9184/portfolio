@@ -86,10 +86,10 @@ export default function Experience() {
     ];
 
     return (
-        <section className="relative w-full bg-[#0a0a0a] py-32 px-6 md:px-12 lg:px-24">
+        <section className="relative w-full bg-[#0a0a0a] py-16 px-6 md:px-12 lg:px-24">
             <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#121212] to-transparent pointer-events-none" />
 
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8">
 
                 {/* Left Side: Intro and Personal Profile */}
                 <div className="lg:w-1/3">

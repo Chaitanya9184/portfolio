@@ -120,11 +120,11 @@ export default function IndustriesSection() {
     };
 
     return (
-        <section className="w-full py-24 bg-[#0a0a0a] relative overflow-hidden text-center border-t border-zinc-900 border-dashed">
+        <section className="w-full py-12 bg-[#0a0a0a] relative overflow-hidden text-center border-t border-zinc-900 border-dashed">
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
 
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-8">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

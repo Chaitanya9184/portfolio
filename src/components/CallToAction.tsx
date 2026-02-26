@@ -1,6 +1,6 @@
 export default function CallToAction() {
     return (
-        <section className="relative w-full py-32 px-6 md:px-12 lg:px-24 bg-[#050505] overflow-hidden flex items-center justify-center border-t border-zinc-900 border-dashed">
+        <section className="relative w-full py-16 px-6 md:px-12 lg:px-24 bg-[#050505] overflow-hidden flex items-center justify-center border-t border-zinc-900 border-dashed">
 
             {/* Dynamic Background Glow */}
             <div className="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">

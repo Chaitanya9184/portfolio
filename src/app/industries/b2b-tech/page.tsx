@@ -71,7 +71,7 @@ export default function B2BTechIndustryPage() {
                 </Link>
 
                 {/* Hero */}
-                <div className="mb-20">
+                <div className="mb-12">
                     <div className="inline-flex px-3 py-1 mb-6 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-bold uppercase tracking-widest">
                         B2B Enterprise Authority
                     </div>

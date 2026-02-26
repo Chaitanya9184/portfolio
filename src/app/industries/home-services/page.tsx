@@ -67,7 +67,7 @@ export default function HomeServicesIndustryPage() {
                 </Link>
 
                 {/* Hero */}
-                <div className="mb-20">
+                <div className="mb-12">
                     <div className="inline-flex px-3 py-1 mb-6 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-widest">
                         Home Services
                     </div>

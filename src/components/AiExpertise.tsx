@@ -58,12 +58,12 @@ export default function AiExpertise() {
     ];
 
     return (
-        <section className="relative w-full py-32 px-6 md:px-12 lg:px-24 bg-[#121212] overflow-hidden">
+        <section className="relative w-full py-16 px-6 md:px-12 lg:px-24 bg-[#121212] overflow-hidden">
             {/* Background radial gradient to draw attention */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="text-center mb-20">
+                <div className="text-center mb-12">
                     <p className="text-emerald-400 text-sm tracking-widest uppercase mb-4 font-semibold">The Future of Search</p>
                     <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6 relative inline-block">
                         Mastering AI-Driven Discovery

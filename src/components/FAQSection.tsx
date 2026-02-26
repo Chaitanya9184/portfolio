@@ -17,25 +17,26 @@ export default function FAQSection({ faqs, title = "Frequently Asked Questions" 
     const [activeIndex, setActiveIndex] = useState<number>(0);
 
     return (
-        <section className="w-full py-24 mb-12 bg-[#0a0a0a] border-t border-zinc-900 border-dashed relative overflow-hidden">
+        <section className="w-full py-12 mb-12 bg-[#0a0a0a] border-t border-zinc-900 border-dashed relative overflow-hidden">
             {/* Background Glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-blue-500/5 blur-[120px] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-                <div className="text-center mb-20">
+                <div className="text-center mb-12">
                     <motion.h3
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-bold text-white tracking-tighter"
+                        className="text-4xl md:text-5xl font-bold text-white tracking-tighter relative inline-block"
                     >
                         {title.split(' ').map((word, i, arr) => (
                             i === arr.length - 1 ? <span key={i} className="text-blue-500"> {word}</span> : <span key={i}>{word} </span>
                         ))}
+                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
                     </motion.h3>
                 </div>
 
-                <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-8 items-start">
                     {/* Left Side: Questions List */}
                     <div className="w-full lg:w-5/12 flex flex-col gap-3 relative">
                         {/* Decorative Vertical Line (Timeline effect) */}

@@ -71,7 +71,7 @@ export default function SaaSIndustryPage() {
                 </Link>
 
                 {/* Hero */}
-                <div className="mb-20">
+                <div className="mb-12">
                     <div className="inline-flex px-3 py-1 mb-6 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest">
                         SaaS Growth
                     </div>

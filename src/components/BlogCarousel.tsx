@@ -12,8 +12,8 @@ export default function BlogCarousel() {
     });
 
     return (
-        <section className="w-full py-32 bg-[#050505] overflow-hidden border-t border-zinc-900 border-dashed">
-            <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-16">
+        <section className="w-full py-16 bg-[#050505] overflow-hidden border-t border-zinc-900 border-dashed">
+            <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-8">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
                     <div>
                         <motion.p
@@ -29,9 +29,10 @@ export default function BlogCarousel() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="text-4xl md:text-5xl font-bold text-white tracking-tighter"
+                            className="text-4xl md:text-5xl font-bold text-white tracking-tighter relative inline-block text-left"
                         >
                             AI Search <span className="text-zinc-500">& Insights.</span>
+                            <div className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
                         </motion.h2>
                     </div>
                     <motion.div

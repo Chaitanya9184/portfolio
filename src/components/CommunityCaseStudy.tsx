@@ -71,7 +71,7 @@ export default function CommunityCaseStudy() {
     ];
 
     return (
-        <section className="relative w-full py-32 px-6 md:px-12 lg:px-24 bg-[#121212] overflow-hidden border-t border-zinc-900 border-dashed">
+        <section className="relative w-full py-16 px-6 md:px-12 lg:px-24 bg-[#121212] overflow-hidden border-t border-zinc-900 border-dashed">
             {/* Background radial glow */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
                 <div className="w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.05)_0%,transparent_70%)] rounded-full blur-3xl" />
@@ -80,7 +80,7 @@ export default function CommunityCaseStudy() {
             <div className="max-w-7xl mx-auto relative z-10">
 
                 {/* Header Section */}
-                <div className="text-center mb-20 max-w-4xl mx-auto">
+                <div className="text-center mb-12 max-w-4xl mx-auto">
                     <p className="text-amber-500 text-sm tracking-widest uppercase mb-4 font-semibold">Featured Case Study</p>
                     <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6 relative inline-block">
                         Hyper-Local Growth for a <br className="hidden md:block" />

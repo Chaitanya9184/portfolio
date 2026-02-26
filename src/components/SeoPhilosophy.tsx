@@ -1,12 +1,12 @@
 export default function SeoPhilosophy() {
     return (
-        <section className="relative w-full py-32 px-6 md:px-12 lg:px-24 bg-[#121212] overflow-hidden border-t border-zinc-900 border-dashed">
+        <section className="relative w-full py-16 px-6 md:px-12 lg:px-24 bg-[#121212] overflow-hidden border-t border-zinc-900 border-dashed">
 
             {/* Decorative background elements */}
             <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-emerald-900/10 to-transparent pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-1/3 h-full bg-gradient-to-r from-blue-900/10 to-transparent pointer-events-none" />
 
-            <div className="max-w-5xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-16">
+            <div className="max-w-5xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-8">
 
                 {/* Visual Element */}
                 <div className="w-full md:w-1/2 relative">

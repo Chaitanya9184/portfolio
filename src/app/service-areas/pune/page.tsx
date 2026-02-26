@@ -76,7 +76,7 @@ export default function PuneSEOPage() {
                 </Link>
 
                 {/* Hero */}
-                <div className="mb-20">
+                <div className="mb-12">
                     <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-6 leading-tight">
                         Technical SEO <br className="hidden md:block" />
                         Expertise in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-500">Pune</span>

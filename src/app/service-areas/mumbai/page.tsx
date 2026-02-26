@@ -76,7 +76,7 @@ export default function MumbaiSEOPage() {
                 </Link>
 
                 {/* Hero */}
-                <div className="mb-20">
+                <div className="mb-12">
                     <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-6 leading-tight">
                         Premium SEO <br className="hidden md:block" />
                         Consulting in <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Mumbai</span>
