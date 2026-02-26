@@ -51,11 +51,24 @@ const homeSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Person",
+      "@id": "https://www.chaitanyakore.in/#person",
+      "name": "Chaitanya Kore",
+      "jobTitle": "Senior SEO & AI Search Professional",
+      "url": "https://www.chaitanyakore.in/",
+      "image": "https://www.chaitanyakore.in/sequence/frame_00_delay-0.066s.png",
+      "sameAs": [
+        "https://linkedin.com/in/chaitanya-kore-342069140"
+      ],
+      "description": "Chaitanya Kore is a Senior SEO & AI Search Professional specializing in Technical SEO, GEO (Generative Engine Optimization), and AEO (Answer Engine Optimization) for SaaS, eCommerce, and B2B Enterprise brands."
+    },
+    {
       "@type": "WebSite",
       "@id": "https://www.chaitanyakore.in/#website",
       "url": "https://www.chaitanyakore.in/",
-      "name": "Chaitanya Kore",
-      "description": "Senior SEO & AI Search Professional specializing in Technical SEO, GEO, and organic acquisition."
+      "name": "Chaitanya Kore | Senior SEO & AI Search Professional",
+      "description": "Expert in Technical SEO, Growth Strategy, and AI Search Optimization (GEO/AEO).",
+      "publisher": { "@id": "https://www.chaitanyakore.in/#person" }
     },
     {
       "@type": "ProfessionalService",
@@ -69,7 +82,17 @@ const homeSchema = {
         "addressLocality": "Mumbai",
         "addressRegion": "Maharashtra",
         "addressCountry": "IN"
-      }
+      },
+      "founder": { "@id": "https://www.chaitanyakore.in/#person" },
+      "knowsAbout": [
+        "Technical SEO",
+        "Generative Engine Optimization",
+        "Answer Engine Optimization",
+        "Growth Strategy",
+        "Organic Acquisition",
+        "SaaS Marketing",
+        "eCommerce SEO"
+      ]
     },
     {
       "@type": "FAQPage",
@@ -82,6 +105,18 @@ const homeSchema = {
           "text": faq.answer
         }
       }))
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.chaitanyakore.in/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.chaitanyakore.in/"
+        }
+      ]
     }
   ]
 };

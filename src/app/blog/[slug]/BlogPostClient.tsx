@@ -38,7 +38,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                         <div className="relative">
                             <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-500/60 block mb-4">Strategic Brief</span>
                             <p className="!mt-0 !mb-0 text-3xl md:text-5xl font-bold text-white tracking-tighter !bg-none [background-clip:unset] [-webkit-text-fill-color:unset] [-webkit-background-clip:unset] border-none after:hidden flex items-center gap-4">
-                                {title.toLowerCase().includes('summary') ? 'Executive Analysis' :
+                                {title.toLowerCase().includes('summary') ? 'Executive Summary' :
                                     title.toLowerCase().includes('takeaways') ? 'Key Takeaways' : title}
                                 <span className="h-[1px] bg-gradient-to-r from-blue-500/30 to-transparent flex-1" />
                             </p>
