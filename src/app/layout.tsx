@@ -39,6 +39,8 @@ export const metadata: Metadata = {
   },
 }
 
+import AuthProvider from '@/components/AuthProvider'
+
 export default function RootLayout({
   children,
 }: {
@@ -68,10 +70,12 @@ export default function RootLayout({
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <Navigation />
-        {children}
-        <Footer />
-        <Chatbot />
+        <AuthProvider>
+          <Navigation />
+          {children}
+          <Footer />
+          <Chatbot />
+        </AuthProvider>
       </body>
     </html>
   )

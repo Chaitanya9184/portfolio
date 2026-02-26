@@ -2,6 +2,9 @@ import { Metadata } from 'next';
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/lib/auth";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
     title: 'Lead Management | Admin',
@@ -20,6 +23,12 @@ interface Lead {
 }
 
 export default async function LeadsAdminPage() {
+    const session = await getServerSession(authOptions);
+
+    if (!session) {
+        redirect("/admin/login");
+    }
+
     const dataFilePath = path.join(process.cwd(), 'data', 'leads.json');
     let leads: Lead[] = [];
 
