@@ -44,11 +44,11 @@ export default function Experience() {
             company: "WSI ALM Corp",
             period: "Jun 2024 – Present",
             description: [
-                "Lead SEO strategy and execution for multiple international clients across SaaS, e-commerce, and B2B sectors.",
-                "Conduct advanced technical SEO audits, keyword research, and competitive analysis to identify scalable growth opportunities.",
-                "Drive site architecture improvements, page speed optimization, and content relevance, resulting in consistent traffic and conversion gains.",
-                "Manage and mentor SEO specialists, ensuring delivery quality, skill development, and KPI achievement.",
-                "Collaborate with cross-functional teams to align SEO initiatives with broader business goals and measurable ROI.",
+                "Lead SEO plans for global SaaS, e-commerce, and B2B clients.",
+                "Run deep technical SEO audits and keyword research to find growth.",
+                "Improve site structure, page speed, and content to grow traffic and sales.",
+                "Direct and train SEO experts to ensure high quality work and hit goals.",
+                "Work with teams to align SEO with business goals and ROI.",
             ]
         },
         {
@@ -56,10 +56,10 @@ export default function Experience() {
             company: "WSI ALM Corp",
             period: "Dec 2023 – Jun 2024",
             description: [
-                "Managed execution workflows across diverse SEO projects, ensuring timely delivery and quality control.",
-                "Translated complex SEO strategies into actionable tasks for execution teams.",
-                "Identified and resolved operational bottlenecks to improve delivery efficiency and outcomes.",
-                "Played a key role in mentoring team members and maintaining alignment with client expectations.",
+                "Managed SEO projects to ensure fast delivery and high quality.",
+                "Turned complex SEO plans into clear tasks for our teams.",
+                "Found and fixed operational issues to improve work output.",
+                "Mentored team members and kept work aligned with client goals.",
             ]
         },
         {
@@ -67,9 +67,9 @@ export default function Experience() {
             company: "WSI ALM Corp",
             period: "Nov 2022 – Dec 2023",
             description: [
-                "Owned end-to-end SEO strategy, execution, and reporting for multiple client accounts.",
-                "Led regular client communications covering performance, insights, and roadmap planning.",
-                "Developed and implemented SEO strategies focused on rankings, traffic quality, and conversions.",
+                "Owned the full SEO process and reporting for multiple clients.",
+                "Led client meetings to cover results, insights, and future plans.",
+                "Built SEO plans focused on rankings, traffic quality, and sales.",
             ]
         },
         {
@@ -77,10 +77,10 @@ export default function Experience() {
             company: "GO MO Group Marketing Services",
             period: "Jan 2022 – Nov 2022",
             description: [
-                "Managed a team of 19 SEO analysts supporting 70+ active projects across international markets.",
-                "Led capacity planning, forecasting, performance reviews, and career development for team members.",
-                "Oversaw quality of SEO deliverables and ensured KPI achievement across client portfolios.",
-                "Coordinated with stakeholders in India and Sweden to align SEO execution with client business objectives.",
+                "Managed 19 SEO analysts working on 70+ global projects.",
+                "Led team planning, reviews, and career growth.",
+                "Checked the quality of SEO work and made sure we hit client goals.",
+                "Worked with teams in India and Sweden to align SEO with client goals.",
             ]
         }
     ];
@@ -108,8 +108,8 @@ export default function Experience() {
                                 <div className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-blue-400 to-transparent rounded-full" />
                             </h2>
                             <p className="text-zinc-400 text-base leading-[1.8] font-light">
-                                8+ years of experience driving organic growth for e-commerce, SaaS, and enterprise brands globally.
-                                Currently leading AI-driven search strategies (AEO/GEO) to ensure discoverability across generative answer platforms.
+                                8+ years of driving growth for global e-commerce, SaaS, and enterprise brands.
+                                I now lead AI search plans (AEO/GEO) to get brands found on top AI platforms.
                             </p>
                         </motion.div>
 

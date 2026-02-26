@@ -41,13 +41,13 @@ export default function SeoPhilosophy() {
 
                     <div className="space-y-6 text-zinc-400 text-lg leading-[1.8] mt-8 font-light">
                         <p>
-                            The days of chasing strict word counts and keyword stuffing are over. Today, search engines use smart AI models to understand true meaning, context, and user satisfaction.
+                            The days of keyword stuffing are over. Today, search engines use AI to grasp meaning and user needs.
                         </p>
                         <p>
-                            My philosophy is simple: <strong className="text-zinc-200 font-semibold">Optimize for the human, structure for the bot.</strong>
+                            My rule is simple: <strong className="text-zinc-200 font-semibold">Optimize for the human, structure for the bot.</strong>
                         </p>
                         <p>
-                            We must stop asking &quot;How many times does this keyword appear?&quot;. Instead, we should ask <strong className="text-emerald-400 font-medium">&quot;Does this content clearly answer the user&apos;s true question?&quot;</strong>. This simple mindset shift builds strong, lasting digital brand trust.
+                            Stop asking &quot;How many times does this keyword appear?&quot;. Ask <strong className="text-emerald-400 font-medium">&quot;Does this content answer the user&apos;s question?&quot;</strong>. This mindset builds lasting brand trust.
                         </p>
                     </div>
                 </div>

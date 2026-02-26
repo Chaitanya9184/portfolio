@@ -26,24 +26,24 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const homeFaqs = [
   {
-    question: "What is the difference between traditional SEO and Generative Engine Optimization (GEO)?",
-    answer: "Old SEO chases basic keyword rankings. GEO (Generative Engine Optimization) builds content that AI tools like Google AI Overviews trust. It requires clear data structures and direct answers to make your brand the top AI citation."
+    question: "How is traditional SEO different from GEO?",
+    answer: "Old SEO chases keywords. GEO builds content that AI tools trust. It needs clear data and direct answers to make your brand a top citation."
   },
   {
-    question: "How long does it take to see ROI from technical SEO improvements?",
-    answer: "Content takes 3 to 6 months to rank. Technical SEO fixes show results much faster. When we fix dead links, boost speed, and clear index bloat, Google quickly re-crawls your site. This often drives new traffic in just 4 to 8 weeks."
+    question: "How long does it take to see SEO results?",
+    answer: "Content takes 3 to 6 months to rank. Technical fixes show results faster. Fixing dead links and boosting speed makes Google crawl faster. This can drive new traffic in weeks."
   },
   {
-    question: "What platforms do you specialize in for Enterprise SEO?",
-    answer: "I work deeply with big platforms like Shopify Plus, WordPress, and custom Next.js apps. The core SEO strategy stays the same. However, fixing technical issues requires deep knowledge of how each distinct CMS system is engineered."
+    question: "What platforms do you work with?",
+    answer: "I work with platforms like Shopify Plus, WordPress, and Next.js. The core SEO strategy remains the same. But fixing technical issues needs deep knowledge of each system."
   },
   {
-    question: "How do Entity SEO and AEO benefit B2B SaaS companies?",
-    answer: "Answer Engine Optimization (AEO) trains Google to see your software features as indisputable facts. When enterprise buyers ask complex questions, AI engines recommend your tool instantly."
+    question: "How do Entity SEO and AEO help B2B SaaS?",
+    answer: "Answer Engine Optimization (AEO) trains Google to see your software features as facts. When buyers ask questions, AI engines recommend your tool instantly."
   },
   {
-    question: "Do you guarantee top rankings on Google?",
-    answer: "No honest expert guarantees exact rankings, because algorithms constantly change. I do guarantee flawless technical architecture and cutting-edge AI strategies. This methodology has a proven history of driving massive organic growth."
+    question: "Do you guarantee top Google rankings?",
+    answer: "No honest expert can guarantee exact rankings because algorithms change. I do guarantee strong technical setup and AI strategies. This approach has a proven history of driving growth."
   }
 ];
 
@@ -113,7 +113,7 @@ export default function Home() {
           Proven Impact.
           <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
         </h2>
-        <p className="text-zinc-500 max-w-2xl mx-auto text-lg">Real-world growth plans put to work across top B2B agencies, major direct-to-buyer eCommerce stores, and local groups.</p>
+        <p className="text-zinc-500 max-w-2xl mx-auto text-lg">Real-world growth plans working for top B2B agencies, major eCommerce stores, and local groups.</p>
       </div>
 
       {/* Agency Marketing Growth Case Study */}

@@ -47,17 +47,17 @@ const SectionStrategyIcon = () => (
 
 export default function CommunityCaseStudy() {
     const challenges = [
-        { title: "Limited Resource Allocation", text: "Working within a highly constrained monthly SEO package (only 2 hours/month, 5 keywords).", icon: <TimeIcon /> },
-        { title: "Narrow Keyword Scope", text: "A small keyword set restricts visibility and growth potential in a highly competitive market.", icon: <ScopeIcon /> },
-        { title: "Approval Bottlenecks", text: "Internal website change approvals created friction, slowing down CRO implementation.", icon: <BarrierIcon /> },
-        { title: "Resistance to Scaling", text: "The organization was reluctant to upgrade their package despite the scale of their goals.", icon: <ScaleIcon /> }
+        { title: "Limited Resource Allocation", text: "Working with a very constrained SEO package (2 hours/month).", icon: <TimeIcon /> },
+        { title: "Narrow Keyword Scope", text: "A small keyword list limited growth in a tough market.", icon: <ScopeIcon /> },
+        { title: "Approval Bottlenecks", text: "Slow approvals delayed setting up CRO changes.", icon: <BarrierIcon /> },
+        { title: "Resistance to Scaling", text: "They were slow to upgrade their package despite big goals.", icon: <ScaleIcon /> }
     ];
 
     const strategies = [
-        { title: "On-Page Optimizations", text: "Surgical improvements to meta titles, descriptions, headers, and keyword placement on core static pages." },
-        { title: "Blog Optimization", text: "Optimized existing long-form content to target broader informational queries and expand the search footprint." },
-        { title: "L1 Technical Audit", text: "Executed foundational checks for page speed, mobile compatibility, and core web vitals to ensure baseline health." },
-        { title: "Quick-Win Issue Resolution", text: "Addressed broken links, formatting errors, and minor design inconsistencies hindering both UX and crawling." }
+        { title: "On-Page Optimizations", text: "Exact fixes to titles, headers, and keywords on core pages." },
+        { title: "Blog Optimization", text: "Optimized content to answer questions and grow search traffic." },
+        { title: "L1 Technical Audit", text: "Ran checks for page speed and mobile health." },
+        { title: "Quick-Win Issue Resolution", text: "Fixed broken links and minor design errors." }
     ];
 
     const metrics = [
@@ -88,8 +88,7 @@ export default function CommunityCaseStudy() {
                         <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-amber-400 to-transparent rounded-full" />
                     </h2>
                     <p className="text-zinc-400 text-lg leading-relaxed font-light">
-                        A testament to efficiency. Tasked with growing a vibrant local community portal on an extremely limited
-                        support retainer, we focused entirely on high-impact optimizations, yielding unprecedented triple-digit growth in both traffic and conversions within 6 months.
+                        A test of efficiency. Tasked with growing a local portal on a small budget, we focused on high-impact updates. This drove triple-digit growth in traffic and sales in 6 months.
                     </p>
                 </div>
 

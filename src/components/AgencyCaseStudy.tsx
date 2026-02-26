@@ -60,10 +60,10 @@ const CircularProgress = ({ value, label, color, size = 120 }: { value: string, 
 
 export default function AgencyCaseStudy() {
     const challenges = [
-        { title: "Low SERP Visibility", text: "Limited rankings for relevant organic keywords and minimal non-branded search presence." },
-        { title: "Local SEO Gaps", text: "Location-based optimizations were not properly implemented, impacting regional reach." },
-        { title: "Technical & On-Page Issues", text: "Missing/inconsistent meta tags, 404 errors, missing schema, and indexing inconsistencies." },
-        { title: "Irregular Content", text: "Inconsistent blog publishing limited content freshness and topical authority growth." }
+        { title: "Low SERP Visibility", text: "Low rankings for organic keywords and weak search presence." },
+        { title: "Local SEO Gaps", text: "Poor local SEO lowered regional reach." },
+        { title: "Technical & On-Page Issues", text: "Missing tags, broken pages, and indexing issues." },
+        { title: "Irregular Content", text: "Unsteady blog posts limited content growth." }
     ];
 
     const strategies = [
@@ -103,8 +103,8 @@ export default function AgencyCaseStudy() {
                             <div className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-emerald-400 to-transparent rounded-full" />
                         </h2>
                         <p className="text-zinc-400 text-lg leading-relaxed max-w-2xl font-light">
-                            A comprehensive 6-month engagement focusing on technical SEO, targeted content strategy,
-                            local search visibility, and UX improvements to drive massive increases in qualified leads and key conversion events.
+                            A 6-month project focused on technical SEO, content strategy, local search, and UX.
+                            This led to massive growth in qualified leads and key sales events.
                         </p>
                     </div>
                 </div>
@@ -179,7 +179,7 @@ export default function AgencyCaseStudy() {
                             <div>
                                 <p className="text-emerald-400 font-bold text-xs uppercase tracking-[0.2em] mb-4">Core Objective</p>
                                 <h3 className="text-3xl font-bold text-white mb-2 tracking-tight">Key Events Increase</h3>
-                                <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium">Direct attribution to conversion-focused local SEO optimizations.</p>
+                                <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium">Direct result of focus on conversion and local SEO.</p>
                             </div>
                             <div className="mt-12 flex items-baseline gap-2">
                                 <motion.span
@@ -200,7 +200,7 @@ export default function AgencyCaseStudy() {
                             <div className="text-5xl font-bold text-blue-400 tracking-tighter drop-shadow-lg">+296%</div>
                             <div>
                                 <p className="text-zinc-200 font-bold text-sm tracking-tight mb-1">Impressions</p>
-                                <p className="text-zinc-500 text-xs font-light">Expanded reach via high-intent keyword ranking improvements.</p>
+                                <p className="text-zinc-500 text-xs font-light">Expanded reach via high-intent keyword ranking growth.</p>
                             </div>
                         </motion.div>
 
@@ -212,7 +212,7 @@ export default function AgencyCaseStudy() {
                             <div className="text-5xl font-bold text-indigo-400 tracking-tighter drop-shadow-lg">+40%</div>
                             <div>
                                 <p className="text-zinc-200 font-bold text-sm tracking-tight mb-1">Engagement</p>
-                                <p className="text-zinc-500 text-xs font-light">Improved user flow and page-level UX enhancements.</p>
+                                <p className="text-zinc-500 text-xs font-light">Improved user flow and page-level UX changes.</p>
                             </div>
                         </motion.div>
 
