@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import Chatbot from '@/components/Chatbot'
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
@@ -69,6 +70,7 @@ export default function RootLayout({
         {/* End Google Tag Manager (noscript) */}
         <Navigation />
         {children}
+        <Footer />
         <Chatbot />
       </body>
     </html>

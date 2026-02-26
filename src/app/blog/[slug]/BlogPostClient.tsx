@@ -230,16 +230,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                 </div>
             </div>
 
-            {/* Page-level Footer */}
-            <footer className="w-full mt-0 py-10 border-t border-zinc-900 border-dashed">
-                <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-500 text-sm">
-                    <p className="text-xs">© 2026 AI Search Insights. Professional Analysis by Chaitanya Kore.</p>
-                    <div className="flex gap-8">
-                        <Link href="/blog" className="hover:text-white transition-colors font-bold uppercase tracking-widest text-[10px]">All Insights</Link>
-                        <Link href="/" className="hover:text-white transition-colors font-bold uppercase tracking-widest text-[10px]">Portfolio Home</Link>
-                    </div>
-                </div>
-            </footer>
+
         </main>
     );
 }
