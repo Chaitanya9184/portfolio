@@ -126,17 +126,21 @@ export default function IndustriesSection() {
                 </div>
 
                 {/* Industries Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {industries.map((industry, index) => (
                         <motion.div
                             key={industry.slug}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
+                            className="h-full"
                         >
                             <Link href={(industry as { href?: string }).href ?? `/industries/${industry.slug}`} className="group block h-full text-left">
-                                <div className={`h-full bg-zinc-900/40 border border-zinc-800 rounded-3xl p-8 hover:bg-zinc-800/60 transition-all duration-300 relative overflow-hidden flex flex-col`}>
+                                <div className={`h-full bg-zinc-950 border border-zinc-800/60 rounded-3xl p-8 hover:bg-zinc-900 shadow-2xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)] hover:-translate-y-2 transition-all duration-500 relative overflow-hidden flex flex-col`}>
+
+                                    {/* Subtle Top Glow for Card definition */}
+                                    <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${industry.color}`} />
 
                                     {/* Icon */}
                                     <div className={`w-14 h-14 rounded-2xl ${industry.bgColor} ${industry.color} flex items-center justify-center mb-6 border ${industry.borderColor}`}>
