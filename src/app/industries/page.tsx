@@ -36,12 +36,6 @@ const industries = [
         slug: 'b2b-tech',
         description: 'Building deep trust and showing clear thought leadership in long, complex B2B sales pipelines.',
         stats: 'B2B buyers do 12 searches on average before they ever talk to a sales team on a brand website.',
-    },
-    {
-        title: 'Local Businesses',
-        slug: 'local-seo',
-        description: 'Command local search rankings and Google Maps intent with hyper-targeted geographical SEO and business profile optimization.',
-        stats: '46% of all Google searches link to local information. Make sure your business owns your neighborhood.',
     }
 ];
 
@@ -63,7 +57,7 @@ export default function IndustriesPage() {
                 </div>
 
                 {/* Industry Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
                     {industries.map((ind) => (
                         <Link
                             href={`/industries/${ind.slug}`}
