@@ -79,7 +79,7 @@ const homeSchema = {
       "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Mumbai",
+        "addressLocality": "Pune",
         "addressRegion": "Maharashtra",
         "addressCountry": "IN"
       },
