@@ -206,7 +206,7 @@ export default function Experience() {
                     <p className="text-zinc-500 text-sm tracking-widest uppercase mb-12 relative inline-block">
                         Work Experience
                         <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-zinc-700 to-transparent rounded-full" />
-                    </h2>
+                    </p>
 
                     <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-zinc-800 before:to-transparent">
                         {experiences.map((exp, idx) => (
