@@ -27,23 +27,23 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 const homeFaqs = [
   {
     question: "What is the difference between traditional SEO and Generative Engine Optimization (GEO)?",
-    answer: "Old SEO tries to rank for 10 blue links using keywords and backlinks. GEO (Generative Engine Optimization) builds content that AI tools like Google AI Overviews and ChatGPT trust and cite. It needs clear data structure and deep, direct answers so your brand becomes the top source."
+    answer: "Old SEO chases basic keyword rankings. GEO (Generative Engine Optimization) builds content that AI tools like Google AI Overviews trust. It requires clear data structures and direct answers to make your brand the top AI citation."
   },
   {
     question: "How long does it take to see ROI from technical SEO improvements?",
-    answer: "Content takes 3 to 6 months to rank. But technical SEO fixes—like fixing dead links, making the site faster, and clearing index bloat—often show results much faster. Search engines re-crawl the fixed site, bringing new traffic in just 4 to 8 weeks."
+    answer: "Content takes 3 to 6 months to rank. Technical SEO fixes show results much faster. When we fix dead links, boost speed, and clear index bloat, Google quickly re-crawls your site. This often drives new traffic in just 4 to 8 weeks."
   },
   {
     question: "What platforms do you specialize in for Enterprise SEO?",
-    answer: "I work deeply with big CMS and eCommerce platforms like Shopify Plus, WordPress, Adobe Commerce, and custom Next.js sites. The core SEO strategy stays the same, but fixing technical issues requires deep knowledge of how each system is built."
+    answer: "I work deeply with big platforms like Shopify Plus, WordPress, and custom Next.js apps. The core SEO strategy stays the same. However, fixing technical issues requires deep knowledge of how each distinct CMS system is engineered."
   },
   {
     question: "How do Entity SEO and AEO benefit B2B SaaS companies?",
-    answer: "Answer Engine Optimization (AEO) and Entity SEO train the Google Knowledge Graph to see your brand and features as clear facts. For SaaS, this means when big buyers ask complex questions, AI engines recommend your tool faster than competitors."
+    answer: "Answer Engine Optimization (AEO) trains Google to see your software features as indisputable facts. When enterprise buyers ask complex questions, AI engines recommend your tool instantly."
   },
   {
     question: "Do you guarantee top rankings on Google?",
-    answer: "No honest SEO expert guarantees exact rankings, because Google's system changes every day. What I do guarantee is strong technical setups, modern AI strategies, and smart content plans that have a proven history of driving huge organic growth and sales."
+    answer: "No honest expert guarantees exact rankings, because algorithms constantly change. I do guarantee flawless technical architecture and cutting-edge AI strategies. This methodology has a proven history of driving massive organic growth."
   }
 ];
 

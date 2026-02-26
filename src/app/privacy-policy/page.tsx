@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
                 <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-8">Privacy Policy</h1>
                 <p className="text-sm text-zinc-500 mb-12">Last Updated: February 25, 2026</p>
 
-                <h2>1. Introduction</h2>
+                <h2>1. Privacy Policy Introduction</h2>
                 <p>Welcome to www.chaitanyakore.in. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.</p>
 
                 <h2>2. The Data We Collect</h2>

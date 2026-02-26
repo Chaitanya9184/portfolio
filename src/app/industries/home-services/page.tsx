@@ -49,7 +49,7 @@ const homeServicesSchema = {
 };
 
 export const metadata: Metadata = {
-    title: 'Home Services SEO & Local Maps Optimization | Chaitanya Kore',
+    title: 'Home Services SEO & Local Maps | Chaitanya Kore',
     description: 'Hyper-local SEO strategies for Home Services companies (HVAC, Plumbing, Roofing) to dominate the Google Map Pack and slash reliance on paid leads.',
     alternates: {
         canonical: '/industries/home-services',
@@ -84,7 +84,7 @@ export default function HomeServicesIndustryPage() {
                     {/* The Problem */}
                     <div className="p-8 rounded-3xl bg-red-950/20 border border-red-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-red-500">⚠️</span> The Local Challenge
+                            <span className="text-red-500">⚠️</span> The Home Services Challenge
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
                             <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Bleeding margin to shared-lead platforms (Angi, HomeAdvisor) that sell the same lead to 5 competitors.</li>
@@ -96,7 +96,7 @@ export default function HomeServicesIndustryPage() {
                     {/* The Solution */}
                     <div className="p-8 rounded-3xl bg-orange-950/20 border border-orange-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-orange-400">⚡</span> The Organic Solution
+                            <span className="text-orange-400">⚡</span> The Local Map Pack Solution
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
                             <li className="flex gap-3"><span className="text-orange-500/50 mt-1">&rarr;</span> <strong>Google Business Dominance:</strong> Relentless optimization of your GBP, review velocity, and localized citations.</li>

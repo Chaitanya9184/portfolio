@@ -6,19 +6,19 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 const healthcareFaqs = [
     {
         question: "Why is E-E-A-T so critical for Healthcare SEO?",
-        answer: "Google categorizes healthcare as 'Your Money or Your Life' (YMYL). If your content lacks proven Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T), algorithms will actively suppress it to protect users. We structure medical reviewer schemas, author bios, and citation networks to prove medical authority to Google."
+        answer: "Google treats healthcare as 'Your Money or Your Life' (YMYL). If your content lacks proven E-E-A-T, Google hides it to protect users. We build trust using medical reviewer schemas, author bios, and strong citations."
     },
     {
         question: "How do AI Search engines treat medical queries?",
-        answer: "AI engines like Perplexity and ChatGPT prioritize authoritative, peer-reviewed, and clinically backed sources over generic marketing content. Generative Engine Optimization (GEO) in healthcare requires structuring data (schema) and directly answering medical queries with high precision to become the trusted LLM citation."
+        answer: "AI engines like Perplexity want clinical, peer-reviewed facts. They ignore generic marketing content. Generative Engine Optimization (GEO) in healthcare means directly answering medical queries with high precision to become the trusted LLM citation."
     },
     {
         question: "What is local SEO for multi-location clinics?",
-        answer: "For healthcare providers with multiple locations, we build automated, scalable local landing pages and optimize Google Business Profiles. This ensures that when a patient searches 'cardiologist near me', your specific local clinic appears in the top 3 Map Pack results, driving immediate booked appointments."
+        answer: "For healthcare providers with many locations, we build local landing pages at scale. We heavily optimize your Google Business Profiles. When a patient searches 'cardiologist near me', your local clinic appears in the top 3 Map Pack to drive immediate bookings."
     },
     {
         question: "Can SEO help with patient acquisition costs?",
-        answer: "Yes. Healthcare CPCs (Cost Per Click) on Google Ads are notoriously expensive. A strong organic presence captures patients at the exact moment they are researching symptoms or doctors, drastically lowering the blended cost to acquire a new patient over time."
+        answer: "Yes. Healthcare Google Ads are extremely expensive. Strong organic search captures patients exactly when they research symptoms. This drastically lowers your long-term patient acquisition cost."
     }
 ];
 
@@ -76,7 +76,7 @@ export default function HealthcareIndustryPage() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">With YMYL Authority</span>
                     </h1>
                     <p className="text-zinc-400 text-xl font-light max-w-2xl leading-relaxed">
-                        In the healthcare sector, Google's algorithms demand absolute authority. We build E-E-A-T driven search strategies that dominate local map packs, rank highly competitive medical terms, and drive secure patient conversions.
+                        In healthcare, Google demands absolute authority. We build E-E-A-T search strategies to dominate local maps. We rank complex medical terms and drive secure patient conversions with proven trust signals.
                     </p>
                 </div>
 
@@ -96,7 +96,7 @@ export default function HealthcareIndustryPage() {
                     {/* The Solution */}
                     <div className="p-8 rounded-3xl bg-emerald-950/20 border border-emerald-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-emerald-400">⚡</span> The Organic Solution
+                            <span className="text-emerald-400">⚡</span> The Organic Healthcare Solution
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
                             <li className="flex gap-3"><span className="text-emerald-500/50 mt-1">&rarr;</span> <strong>E-E-A-T Optimization:</strong> Implementing strict medical reviewer schemas, author entities, and verifiable trust signals.</li>

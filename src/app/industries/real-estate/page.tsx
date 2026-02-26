@@ -6,19 +6,19 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 const realEstateFaqs = [
     {
         question: "How can independent brokerages compete with Zillow and Realtor.com?",
-        answer: "Aggregators dominate broad terms (e.g., 'homes for sale in Texas'). Independent brokerages win by targeting hyper-local neighborhood keywords, building deep community-level content, and optimizing their proprietary fast-loading property listing tech."
+        answer: "Aggregators dominate broad terms like 'homes for sale in Texas'. Independent brokerages win by targeting narrow neighborhood keywords. We do this by building deep local content and optimizing fast-loading property tech."
     },
     {
         question: "What is Real Estate Property Schema?",
-        answer: "Property schema is structured data code injected into your HTML that speaks directly to Google. It explicitly details the price, number of bedrooms, square footage, and location, allowing Google to display rich snippets of your listings directly in the search results."
+        answer: "Property schema is hidden code injected into your site. It explicitly tells Google the exact price, bedrooms, and location. This allows Google to show rich visual snippets of your listings directly in search results."
     },
     {
         question: "Why is site architecture critical for real estate websites?",
-        answer: "Real estate websites often generate thousands of dynamic MLS listing pages that expire. Without a perfectly structured architecture and crawl budget management, search engines waste time crawling dead listings instead of your core neighborhood and agent pages."
+        answer: "Real estate sites spawn thousands of expiring listing pages. If your architecture is poor, Google wastes time crawling dead listings. We fix your crawl budget so Google prioritizes your valuable neighborhood pages instead."
     },
     {
         question: "How does local SEO apply to Real Estate Agents?",
-        answer: "Real estate is inherently local. Optimizing Google Business Profiles, acquiring local citations, and building hyper-specific 'Agent in [Neighborhood]' landing pages ensures you capture clients at the bottom-of-the-funnel when they are ready to buy or list."
+        answer: "Real estate is a strictly local game. We optimize your Google Business Profiles and acquire strong local citations. We build unique landing pages to capture buyers exactly when they are ready to transact."
     }
 ];
 
@@ -76,7 +76,7 @@ export default function RealEstateIndustryPage() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">With Hyper-Local SEO</span>
                     </h1>
                     <p className="text-zinc-400 text-xl font-light max-w-2xl leading-relaxed">
-                        In a market dominated by massive MLS aggregators, winning requires technical precision, flawless property schema, and an obsession with hyper-local neighborhood search intent.
+                        To beat massive MLS aggregators, you need flawless technical precision. We use advanced property schema and target local neighborhood search intent to steal market share.
                     </p>
                 </div>
 
@@ -96,7 +96,7 @@ export default function RealEstateIndustryPage() {
                     {/* The Solution */}
                     <div className="p-8 rounded-3xl bg-cyan-950/20 border border-cyan-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-cyan-400">⚡</span> The Organic Solution
+                            <span className="text-cyan-400">⚡</span> The Organic Real Estate Solution
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
                             <li className="flex gap-3"><span className="text-cyan-500/50 mt-1">&rarr;</span> <strong>Architecture & Crawl Budget:</strong> Structuring MLS data so Google only indexes high-value, active properties and evergreen neighborhood hubs.</li>

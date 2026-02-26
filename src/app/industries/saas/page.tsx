@@ -100,7 +100,7 @@ export default function SaaSIndustryPage() {
                     {/* The Solution */}
                     <div className="p-8 rounded-3xl bg-blue-950/20 border border-blue-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-blue-400">⚡</span> The Organic Solution
+                            <span className="text-blue-400">⚡</span> The Organic SaaS Solution
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
                             <li className="flex gap-3"><span className="text-blue-500/50 mt-1">&rarr;</span> <strong>Programmatic SEO &amp; Alternates:</strong> Building scalable vs. competitor pages and use-case hubs that capture high-intent buyers.</li>

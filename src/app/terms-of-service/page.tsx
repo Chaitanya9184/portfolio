@@ -16,7 +16,7 @@ export default function TermsOfServicePage() {
                 <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-8">Terms of Service</h1>
                 <p className="text-sm text-zinc-500 mb-12">Last Updated: February 25, 2026</p>
 
-                <h2>1. Introduction</h2>
+                <h2>1. Terms of Service Introduction</h2>
                 <p>Welcome to www.chaitanyakore.in. By accessing this website, you agree to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site.</p>
 
                 <h2>2. Use License</h2>
