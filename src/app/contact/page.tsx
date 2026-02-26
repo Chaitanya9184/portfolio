@@ -1,15 +1,43 @@
-import { Metadata } from 'next';
-import React from 'react';
+"use client";
 
-export const metadata: Metadata = {
-    title: 'Contact Me | Chaitanya Kore',
-    description: 'Get in touch for expert SEO and AI Search consulting.',
-    alternates: {
-        canonical: '/contact',
-    },
-};
+import React, { useState } from 'react';
 
 export default function ContactPage() {
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        company: '',
+        message: ''
+    });
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus('loading');
+
+        try {
+            const response = await fetch('/api/leads', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                setFormData({ firstName: '', lastName: '', email: '', company: '', message: '' });
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            setStatus('error');
+        }
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
     return (
         <main className="min-h-screen bg-[#0a0a0a] pt-32 pb-24">
             <div className="max-w-3xl mx-auto px-6 md:px-12">
@@ -25,7 +53,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="bg-zinc-900/40 backdrop-blur-md border border-zinc-800/80 rounded-3xl p-8 shadow-xl">
-                    <form className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <label htmlFor="firstName" className="block text-sm font-medium text-zinc-300">First Name</label>
@@ -34,6 +62,8 @@ export default function ContactPage() {
                                     id="firstName"
                                     name="firstName"
                                     required
+                                    value={formData.firstName}
+                                    onChange={handleChange}
                                     className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all"
                                     placeholder="Jane"
                                 />
@@ -45,6 +75,8 @@ export default function ContactPage() {
                                     id="lastName"
                                     name="lastName"
                                     required
+                                    value={formData.lastName}
+                                    onChange={handleChange}
                                     className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all"
                                     placeholder="Doe"
                                 />
@@ -58,6 +90,8 @@ export default function ContactPage() {
                                 id="email"
                                 name="email"
                                 required
+                                value={formData.email}
+                                onChange={handleChange}
                                 className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all"
                                 placeholder="jane@company.com"
                             />
@@ -69,6 +103,8 @@ export default function ContactPage() {
                                 type="text"
                                 id="company"
                                 name="company"
+                                value={formData.company}
+                                onChange={handleChange}
                                 className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all"
                                 placeholder="Your Company Name"
                             />
@@ -81,17 +117,27 @@ export default function ContactPage() {
                                 name="message"
                                 required
                                 rows={5}
+                                value={formData.message}
+                                onChange={handleChange}
                                 className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all resize-none"
                                 placeholder="How can I help you grow your business?"
                             />
                         </div>
 
                         <button
-                            type="button"
-                            className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm tracking-wide uppercase py-4 rounded-xl transition-colors duration-300 shadow-lg shadow-emerald-900/20"
+                            type="submit"
+                            disabled={status === 'loading'}
+                            className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm tracking-wide uppercase py-4 rounded-xl transition-colors duration-300 shadow-lg shadow-emerald-900/20 disabled:opacity-50"
                         >
-                            Send Message
+                            {status === 'loading' ? 'Sending...' : 'Send Message'}
                         </button>
+
+                        {status === 'success' && (
+                            <p className="text-emerald-500 text-sm text-center">Message sent successfully!</p>
+                        )}
+                        {status === 'error' && (
+                            <p className="text-red-500 text-sm text-center">Failed to send message. Please try again.</p>
+                        )}
                     </form>
                 </div>
             </div>

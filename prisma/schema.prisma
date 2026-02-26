@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Lead {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  company   String?
+  message   String
+  sourceUrl String?  // The URL the form was submitted from
+  formName  String?  // "Navbar Appt", "Contact Page", etc. 
+  
+  createdAt DateTime @default(now())
+}

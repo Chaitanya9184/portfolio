@@ -9,12 +9,11 @@ const dataFilePath = path.join(process.cwd(), 'data', 'leads.json');
 interface Lead {
     id: string;
     createdAt: string;
-    name: string;
+    firstName: string;
+    lastName: string;
     email: string;
-    phone: string;
-    website?: string;
-    competitors?: string;
-    keywords?: string;
+    company?: string;
+    message: string;
 }
 
 export async function POST(request: Request) {
@@ -39,10 +38,14 @@ export async function POST(request: Request) {
         }
 
         // Add new lead
-        const newLead = {
+        const newLead: Lead = {
             id: Date.now().toString(),
             createdAt: new Date().toISOString(),
-            ...data
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            company: data.company,
+            message: data.message
         };
 
         leads.push(newLead);

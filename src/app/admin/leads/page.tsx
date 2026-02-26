@@ -12,12 +12,11 @@ export const dynamic = 'force-dynamic';
 interface Lead {
     id: string;
     createdAt: string;
-    name: string;
+    firstName: string;
+    lastName: string;
     email: string;
-    phone: string;
-    website?: string;
-    competitors?: string;
-    keywords?: string;
+    company?: string;
+    message: string;
 }
 
 export default async function LeadsAdminPage() {
@@ -40,7 +39,7 @@ export default async function LeadsAdminPage() {
                 <div className="flex justify-between items-center mb-12">
                     <div>
                         <h1 className="text-4xl font-bold tracking-tighter text-white mb-2">Lead Matrix</h1>
-                        <p className="text-zinc-400">Manage incoming chatbot requests and strategies.</p>
+                        <p className="text-zinc-400">Manage incoming contact form submissions.</p>
                     </div>
                     <Link href="/" className="px-6 py-2.5 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-sm font-semibold rounded-xl transition-colors">
                         Back to Site
@@ -58,7 +57,7 @@ export default async function LeadsAdminPage() {
                             </svg>
                         </div>
                         <h3 className="text-xl font-bold mb-2 text-white">No Leads Captured Yet</h3>
-                        <p className="text-zinc-500 text-sm max-w-sm mx-auto">When users interact with the CK-AI chatbot and submit their info, they will appear right here.</p>
+                        <p className="text-zinc-500 text-sm max-w-sm mx-auto">When users submit the contact form, they will appear right here.</p>
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -66,7 +65,7 @@ export default async function LeadsAdminPage() {
                             <div key={lead.id} className="p-6 bg-zinc-900/40 backdrop-blur-sm rounded-3xl border border-zinc-800/80 flex flex-col gap-5 hover:border-blue-500/40 hover:bg-zinc-800/40 transition-all group">
                                 <div className="flex justify-between items-start">
                                     <div>
-                                        <h3 className="text-lg font-bold text-white mb-1">{lead.name || 'Anonymous'}</h3>
+                                        <h3 className="text-lg font-bold text-white mb-1">{lead.firstName} {lead.lastName}</h3>
                                         <p className="text-xs text-zinc-500 flex items-center gap-1.5 font-medium">
                                             <span className="w-1.5 h-1.5 rounded-full bg-blue-500/80" />
                                             {new Date(lead.createdAt).toLocaleString(undefined, {
@@ -86,39 +85,21 @@ export default async function LeadsAdminPage() {
                                         </div>
                                         <a href={`mailto:${lead.email}`} className="text-sm text-blue-400 hover:text-blue-300 font-medium truncate">{lead.email}</a>
                                     </div>
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center shrink-0 border border-zinc-800 text-zinc-400">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                                    {lead.company && (
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center shrink-0 border border-zinc-800 text-zinc-400">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5"><path d="M3 21h18" /><path d="M3 7v1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7H3" /><path d="M19 21v-4a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v4" /></svg>
+                                            </div>
+                                            <p className="text-sm text-zinc-300 font-medium truncate">{lead.company}</p>
                                         </div>
-                                        <a href={`tel:${lead.phone}`} className="text-sm text-zinc-300 font-medium hover:text-white transition-colors">{lead.phone}</a>
-                                    </div>
+                                    )}
                                 </div>
 
                                 <div className="space-y-4 pt-2">
-                                    {lead.website && (
-                                        <div>
-                                            <span className="block text-[10px] text-zinc-500 uppercase font-bold mb-1 tracking-wider">Website</span>
-                                            <p className="text-sm text-zinc-300 font-medium break-all">{lead.website}</p>
-                                        </div>
-                                    )}
-                                    {lead.competitors && (
-                                        <div>
-                                            <span className="block text-[10px] text-zinc-500 uppercase font-bold mb-1 tracking-wider">Competitors</span>
-                                            <p className="text-sm text-zinc-400 line-clamp-2 leading-relaxed">{lead.competitors}</p>
-                                        </div>
-                                    )}
-                                    {lead.keywords && (
-                                        <div>
-                                            <span className="block text-[10px] text-zinc-500 uppercase font-bold mb-1 tracking-wider">Keywords</span>
-                                            <div className="flex flex-wrap gap-1.5 mt-2">
-                                                {lead.keywords.split(',').map((kw: string, i: number) => (
-                                                    <span key={i} className="px-2 py-1 rounded-md bg-emerald-900/20 text-emerald-400 text-xs border border-emerald-900/40">
-                                                        {kw.trim()}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    )}
+                                    <div>
+                                        <span className="block text-[10px] text-zinc-500 uppercase font-bold mb-1 tracking-wider">Message</span>
+                                        <p className="text-sm text-zinc-300 font-medium leading-relaxed">{lead.message}</p>
+                                    </div>
                                 </div>
                             </div>
                         ))}
