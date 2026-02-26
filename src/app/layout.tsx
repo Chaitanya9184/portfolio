@@ -4,8 +4,6 @@ import Script from 'next/script'
 import Chatbot from '@/components/Chatbot'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
-import CustomCursor from '@/components/CustomCursor'
-import SmoothScroll from '@/components/SmoothScroll'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
@@ -70,12 +68,9 @@ export default function RootLayout({
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <SmoothScroll>
-          <CustomCursor />
-          <Navigation />
-          {children}
-          <Footer />
-        </SmoothScroll>
+        <Navigation />
+        {children}
+        <Footer />
         <Chatbot />
       </body>
     </html>
