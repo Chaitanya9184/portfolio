@@ -69,15 +69,6 @@ export default function IndustriesSection() {
                         Industries & <span className="text-emerald-500">Expertise.</span>
                         <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-emerald-500 to-transparent rounded-full" />
                     </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-zinc-500 max-w-2xl mx-auto text-lg"
-                    >
-                        Specialized organic growth strategies tailored to the unique technical challenges and search behaviors of high-growth sectors.
-                    </motion.p>
                 </div>
 
                 {/* Industries Grid */}
