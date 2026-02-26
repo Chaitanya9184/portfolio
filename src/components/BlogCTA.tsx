@@ -5,9 +5,9 @@ export default function BlogCTA() {
             <div className="absolute inset-0 bg-blue-500/5 blur-3xl rounded-3xl group-hover:bg-blue-500/10 transition-colors duration-500 pointer-events-none" />
 
             <div className="relative z-10 flex-1 text-center md:text-left">
-                <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-3">
+                <p className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-3">
                     Ready to dominate AI Search?
-                </h3>
+                </p>
                 <p className="text-zinc-400 text-sm md:text-base max-w-xl">
                     Implement these insights into your own strategy. Let&apos;s build a foundation that turns generative AI engines into your highest-converting acquisition channel.
                 </p>

@@ -59,7 +59,7 @@ export default function Recommendations() {
                                         {rec.name.charAt(0)}
                                     </div>
                                     <div>
-                                        <h4 className="text-lg text-white font-semibold">{rec.name}</h4>
+                                        <p className="text-lg text-white font-semibold">{rec.name}</p>
                                         <p className="text-xs text-zinc-500 mt-0.5 line-clamp-1 group-hover:line-clamp-none transition-all duration-300">{rec.title}</p>
                                         <span className="text-[10px] uppercase tracking-wider text-blue-400/80 font-mono mt-1 block">{rec.date}</span>
                                     </div>

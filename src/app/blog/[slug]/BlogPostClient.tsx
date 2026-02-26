@@ -187,10 +187,10 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                             className="mt-16 p-8 md:p-12 rounded-3xl bg-blue-600/5 border border-blue-500/20 relative overflow-hidden group"
                         >
                             <div className="relative z-10">
-                                <h4 className="text-blue-400 font-bold uppercase tracking-widest text-xs mb-6 flex items-center gap-2">
+                                <h3 className="text-blue-400 font-bold uppercase tracking-widest text-xs mb-6 flex items-center gap-2">
                                     <span className="w-8 h-[1px] bg-blue-500/50" />
                                     Expert Verdict
-                                </h4>
+                                </h3>
                                 <p className="text-white text-xl md:text-2xl font-medium leading-normal italic">
                                     &quot;{post.verdict}&quot;
                                 </p>

@@ -125,7 +125,7 @@ export default function AgencyCaseStudy() {
                                 <div key={idx} className="flex gap-4">
                                     <div className="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-2.5 shrink-0" />
                                     <div>
-                                        <h4 className="text-zinc-200 font-semibold mb-1 text-base tracking-tight">{challenge.title}</h4>
+                                        <p className="text-zinc-200 font-semibold mb-1 text-base tracking-tight">{challenge.title}</p>
                                         <p className="text-sm text-zinc-400 leading-relaxed font-normal">{challenge.text}</p>
                                     </div>
                                 </div>
@@ -144,7 +144,7 @@ export default function AgencyCaseStudy() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {strategies.map((strategy, idx) => (
                                 <div key={idx} className="space-y-3">
-                                    <h4 className="text-emerald-400 font-bold text-xs uppercase tracking-[0.2em]">{strategy.category}</h4>
+                                    <p className="text-emerald-400 font-bold text-xs uppercase tracking-[0.2em]">{strategy.category}</p>
                                     <ul className="space-y-3">
                                         {strategy.items.map((item, i) => (
                                             <li key={i} className="text-sm text-zinc-400 flex gap-2 items-start leading-relaxed font-normal">
@@ -199,7 +199,7 @@ export default function AgencyCaseStudy() {
                         >
                             <div className="text-5xl font-bold text-blue-400 tracking-tighter drop-shadow-lg">+296%</div>
                             <div>
-                                <h4 className="text-zinc-200 font-bold text-sm tracking-tight mb-1">Impressions</h4>
+                                <p className="text-zinc-200 font-bold text-sm tracking-tight mb-1">Impressions</p>
                                 <p className="text-zinc-500 text-xs font-light">Expanded reach via high-intent keyword ranking improvements.</p>
                             </div>
                         </motion.div>
@@ -211,7 +211,7 @@ export default function AgencyCaseStudy() {
                         >
                             <div className="text-5xl font-bold text-indigo-400 tracking-tighter drop-shadow-lg">+40%</div>
                             <div>
-                                <h4 className="text-zinc-200 font-bold text-sm tracking-tight mb-1">Engagement</h4>
+                                <p className="text-zinc-200 font-bold text-sm tracking-tight mb-1">Engagement</p>
                                 <p className="text-zinc-500 text-xs font-light">Improved user flow and page-level UX enhancements.</p>
                             </div>
                         </motion.div>

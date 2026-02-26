@@ -191,7 +191,7 @@ export default function TechStack() {
                                 </div>
                             </div>
 
-                            <h4 className="text-xl text-white font-black tracking-tight mb-8 relative z-10 group-hover:translate-x-1 transition-transform duration-500">{tool.name}</h4>
+                            <p className="text-xl text-white font-black tracking-tight mb-8 relative z-10 group-hover:translate-x-1 transition-transform duration-500">{tool.name}</p>
 
                             {/* Level Indicator Shell */}
                             <div className="relative h-2 w-full bg-black/40 rounded-full overflow-hidden border border-white/5 p-[1px]">

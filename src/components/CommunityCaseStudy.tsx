@@ -154,7 +154,7 @@ export default function CommunityCaseStudy() {
                                         {c.icon}
                                     </span>
                                     <div className="flex-1">
-                                        <h4 className="text-white font-semibold text-base mb-1 tracking-tight">{c.title}</h4>
+                                        <p className="text-white font-semibold text-base mb-1 tracking-tight">{c.title}</p>
                                         <p className="text-zinc-400 text-sm leading-relaxed font-normal">{c.text}</p>
                                     </div>
                                 </div>
@@ -173,7 +173,7 @@ export default function CommunityCaseStudy() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {strategies.map((s, i) => (
                                 <div key={i} className="flex flex-col gap-2 p-5 rounded-2xl bg-zinc-900/60 border border-amber-500/10 hover:border-amber-500/30 transition-colors">
-                                    <h4 className="text-amber-400 font-bold text-xs uppercase tracking-[0.2em]">{s.title}</h4>
+                                    <p className="text-amber-400 font-bold text-xs uppercase tracking-[0.2em]">{s.title}</p>
                                     <p className="text-zinc-400 text-sm leading-relaxed font-normal">{s.text}</p>
                                 </div>
                             ))}

@@ -172,7 +172,7 @@ const Chatbot = () => {
                                     <BotIcon />
                                 </div>
                                 <div>
-                                    <h4 className="text-white font-bold text-sm">CK-AI Assistant</h4>
+                                    <p className="text-white font-bold text-sm">CK-AI Assistant</p>
                                     <div className="flex items-center gap-1.5">
                                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                                         <span className="text-[10px] text-zinc-400 uppercase tracking-widest font-bold">Online</span>
@@ -231,10 +231,10 @@ const Chatbot = () => {
                                     animate={{ opacity: 1, x: 0 }}
                                     className="h-full flex flex-col justify-center"
                                 >
-                                    <h5 className="text-white font-bold mb-4 flex items-center gap-2">
+                                    <p className="text-white font-bold mb-4 flex items-center gap-2">
                                         <div className="w-1 h-4 bg-blue-500 rounded-full" />
                                         Strategy Details
-                                    </h5>
+                                    </p>
                                     <form onSubmit={handleFormSubmit} className="space-y-4">
                                         <div>
                                             <label className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-1.5 block">Name</label>

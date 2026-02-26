@@ -73,7 +73,7 @@ export default function CaseStudy() {
                                 <div key={idx} className="flex gap-4">
                                     <div className="w-1.5 h-1.5 rounded-full bg-red-500/30 mt-2 shrink-0" />
                                     <div>
-                                        <h4 className="text-zinc-200 font-semibold mb-1 text-base tracking-tight">{challenge.title}</h4>
+                                        <p className="text-zinc-200 font-semibold mb-1 text-base tracking-tight">{challenge.title}</p>
                                         <p className="text-sm text-zinc-400 leading-relaxed font-normal">{challenge.text}</p>
                                     </div>
                                 </div>
@@ -91,7 +91,7 @@ export default function CaseStudy() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
                             {strategies.map((strategy, idx) => (
                                 <div key={idx} className="bg-zinc-950/40 p-6 rounded-2xl border border-white/5 hover:bg-zinc-900/60 transition-colors">
-                                    <h4 className="text-blue-300 font-bold mb-3 text-sm tracking-wide uppercase">{strategy.title}</h4>
+                                    <p className="text-blue-300 font-bold mb-3 text-sm tracking-wide uppercase">{strategy.title}</p>
                                     <p className="text-sm text-zinc-400 leading-relaxed font-normal">{strategy.text}</p>
                                 </div>
                             ))}

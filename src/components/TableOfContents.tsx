@@ -71,8 +71,8 @@ export default function TableOfContents({ content, inline = false }: { content: 
                                         document.getElementById(heading.id)?.scrollIntoView({ behavior: 'smooth' });
                                     }}
                                     className={`block text-xs leading-snug py-1 transition-all duration-200 hover:text-white hover:translate-x-0.5 ${isH2
-                                            ? 'text-zinc-300 font-semibold'
-                                            : 'text-zinc-500 font-normal'
+                                        ? 'text-zinc-300 font-semibold'
+                                        : 'text-zinc-500 font-normal'
                                         }`}
                                 >
                                     {heading.text}
@@ -95,9 +95,9 @@ export default function TableOfContents({ content, inline = false }: { content: 
             >
                 <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-zinc-800" />
 
-                <h4 className="text-[10px] uppercase font-bold tracking-[0.2em] text-zinc-500 mb-6 pl-6">
+                <p className="text-[10px] uppercase font-bold tracking-[0.2em] text-zinc-500 mb-6 pl-6">
                     On this page
-                </h4>
+                </p>
 
                 <ul className="space-y-4">
                     {headings.map((heading) => (
