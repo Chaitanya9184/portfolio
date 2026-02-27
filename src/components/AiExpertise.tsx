@@ -35,25 +35,30 @@ const GeoIcon = () => (
     </svg>
 );
 
+import Link from 'next/link';
+
 export default function AiExpertise() {
     const expertises = [
         {
             title: "AIO",
             subtitle: "Artificial Intelligence Optimization",
             description: "I build content that AI models like ChatGPT and Gemini easily read and understand. Clear structure and smart data setup ensure bots find, crawl, and trust your brand.",
-            icon: <AioIcon />
+            icon: <AioIcon />,
+            href: "/aio"
         },
         {
             title: "AEO",
             subtitle: "Answer Engine Optimization",
             description: "I help you win 'Position Zero' by writing direct, clear answers to common questions. I focus on how people talk and search using tools like Perplexity and Google AI Overviews.",
-            icon: <AeoIcon />
+            icon: <AeoIcon />,
+            href: "/aeo"
         },
         {
             title: "GEO",
             subtitle: "Generative Engine Optimization",
             description: "I make sure your brand is named and linked inside AI chatbots. I help your content grow from just another web link into a top, trusted source for AI-generated answers.",
-            icon: <GeoIcon />
+            icon: <GeoIcon />,
+            href: "/geo"
         }
     ];
 
@@ -76,9 +81,10 @@ export default function AiExpertise() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {expertises.map((item, idx) => (
-                        <div
+                        <Link
+                            href={item.href}
                             key={idx}
-                            className="group relative flex flex-col p-8 rounded-3xl border border-emerald-900/40 bg-zinc-900/50 backdrop-blur-md overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500/50 hover:bg-zinc-800/80 hover:shadow-[0_0_40px_-10px_rgba(16,185,129,0.3)]"
+                            className="group relative flex flex-col p-8 rounded-3xl border border-emerald-900/40 bg-zinc-900/50 backdrop-blur-md overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500/50 hover:bg-zinc-800/80 hover:shadow-[0_0_40px_-10px_rgba(16,185,129,0.3)] block"
                         >
                             {/* Subtle sweep gradient on hover */}
                             <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -89,13 +95,16 @@ export default function AiExpertise() {
                                     {item.icon}
                                 </div>
 
-                                <h3 className="text-3xl text-white font-bold tracking-tight mb-1">{item.title}</h3>
+                                <h3 className="text-3xl text-white font-bold tracking-tight mb-1 flex items-center gap-2">
+                                    {item.title}
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 text-emerald-400"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                </h3>
                                 <p className="text-emerald-400 text-xs font-semibold tracking-widest uppercase mb-4">{item.subtitle}</p>
                                 <p className="text-zinc-400 text-sm leading-relaxed font-normal group-hover:text-zinc-300 transition-colors">
                                     {item.description}
                                 </p>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
 
