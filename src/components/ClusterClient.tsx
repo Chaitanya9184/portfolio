@@ -25,7 +25,7 @@ export default function ClusterClient({ cluster }: ClusterClientProps) {
             const parts = text.split(/(\*\*.*?\*\*)/g);
             return parts.map((part, i) => {
                 if (part.startsWith('**') && part.endsWith('**')) {
-                    return <strong key={i} className="text-white font-bold">{part.slice(2, -2)}</strong>;
+                    return <strong key={i} className="text-white bg-white/10 px-1 rounded font-bold">{part.slice(2, -2)}</strong>;
                 }
                 return part;
             });
@@ -34,7 +34,7 @@ export default function ClusterClient({ cluster }: ClusterClientProps) {
         const flushList = () => {
             if (currentList.length > 0) {
                 elements.push(
-                    <ul key={`list-${listKeyCounter++}`} className="list-disc pl-6 mb-8 text-zinc-300 space-y-3">
+                    <ul key={`list-${listKeyCounter++}`} className="list-none mb-8 space-y-4">
                         {currentList}
                     </ul>
                 );
@@ -42,36 +42,62 @@ export default function ClusterClient({ cluster }: ClusterClientProps) {
             }
         };
 
-        blocks.forEach((para, i) => {
-            const trimmed = para.trim();
-            if (!trimmed) return;
+        blocks.forEach((block, blockIndex) => {
+            // Check for headings first (usually isolated blocks)
+            const trimmedBlock = block.trim();
+            if (!trimmedBlock) return;
 
-            // Check if it's a heading
-            if (trimmed.startsWith('## ')) {
+            if (trimmedBlock.startsWith('## ')) {
                 flushList();
-                const text = trimmed.replace('## ', '');
+                const text = trimmedBlock.replace('## ', '');
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                elements.push(<h2 key={`h2-${i}`} id={id} className="text-3xl md:text-5xl font-bold text-white mt-16 mb-8 tracking-tighter scroll-mt-32">{parseTextFormat(text)}</h2>);
+                elements.push(<h2 key={`h2-${blockIndex}`} id={id} className="text-3xl md:text-5xl font-bold text-white mt-16 mb-8 tracking-tighter scroll-mt-32">{parseTextFormat(text)}</h2>);
                 return;
             }
-            if (trimmed.startsWith('### ')) {
+            if (trimmedBlock.startsWith('### ')) {
                 flushList();
-                const text = trimmed.replace('### ', '');
+                const text = trimmedBlock.replace('### ', '');
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                elements.push(<h3 key={`h3-${i}`} id={id} className="text-2xl font-bold text-white mt-12 mb-6 tracking-tight scroll-mt-32">{parseTextFormat(text)}</h3>);
+                elements.push(<h3 key={`h3-${blockIndex}`} id={id} className="text-2xl font-bold text-white mt-12 mb-6 tracking-tight scroll-mt-32">{parseTextFormat(text)}</h3>);
                 return;
             }
 
-            // Check if it's a bullet point (either • or - )
-            if (trimmed.startsWith('• ') || trimmed.startsWith('- ')) {
-                const text = trimmed.substring(2);
-                currentList.push(<li key={`li-${i}`} className="text-lg leading-relaxed">{parseTextFormat(text)}</li>);
-                return;
-            }
+            // Split block by single newline to catch grouped bullets
+            const lines = block.split('\n');
+            let isParagraph = false;
+            let currentParagraph = [];
 
-            // If it's a paragraph
-            flushList();
-            elements.push(<p key={`p-${i}`} className="text-zinc-300 text-lg leading-relaxed mb-8">{parseTextFormat(trimmed)}</p>);
+            lines.forEach((line, lineIndex) => {
+                const trimmed = line.trim();
+                if (!trimmed) return;
+
+                // Check if it's a bullet point (either • or - )
+                if (trimmed.startsWith('• ') || trimmed.startsWith('- ')) {
+                    if (isParagraph) {
+                        flushList();
+                        elements.push(<p key={`p-${blockIndex}-${lineIndex}-pre`} className="text-zinc-300 text-lg leading-relaxed mb-8">{parseTextFormat(currentParagraph.join(' '))}</p>);
+                        currentParagraph = [];
+                        isParagraph = false;
+                    }
+                    const text = trimmed.substring(2);
+                    currentList.push(
+                        <li key={`li-${blockIndex}-${lineIndex}`} className="flex items-start gap-4">
+                            <span className="text-blue-500 mt-1.5 shrink-0">•</span>
+                            <span className="text-zinc-300 text-lg leading-relaxed">{parseTextFormat(text)}</span>
+                        </li>
+                    );
+                    return;
+                }
+
+                // Collect as paragraph
+                flushList();
+                isParagraph = true;
+                currentParagraph.push(trimmed);
+            });
+
+            if (isParagraph && currentParagraph.length > 0) {
+                elements.push(<p key={`p-${blockIndex}`} className="text-zinc-300 text-lg leading-relaxed mb-8">{parseTextFormat(currentParagraph.join(' '))}</p>);
+            }
         });
 
         // Flush any remaining list items
