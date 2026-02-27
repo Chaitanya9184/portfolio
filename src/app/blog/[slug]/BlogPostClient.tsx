@@ -27,16 +27,17 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
             const isKeyTakeaways = trimmed.toUpperCase().startsWith('## KEY TAKEAWAYS');
 
             if (isExecutiveSummary || isKeyTakeaways) {
-                const lines = trimmed.split('\n');
-                const titleLine = lines[0];
-                const contentLines = lines.slice(1).map(l => l.trim()).filter(Boolean);
+                // Split by any newline sequence and filter empty lines
+                const lines = trimmed.split(/\r?\n/).filter(line => line.trim());
+                const headerLine = lines[0];
+                const initialContent = lines.slice(1);
 
-                const title = titleLine.replace('## ', '');
+                const title = headerLine.replace(/^##\s+/, '').trim();
                 const id = title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+                // Case-insensitive check for "summary" to catch "EXECUTIVE SUMMARY" or "Executive Summary"
                 const isSummary = title.toLowerCase().includes('summary');
 
-                // Collect subsequent paragraphs until next heading
-                const sectionContent: string[] = [...contentLines];
+                const sectionContent: string[] = [...initialContent];
                 let j = i + 1;
                 while (j < paragraphs.length && !paragraphs[j].trim().startsWith('#')) {
                     sectionContent.push(paragraphs[j].trim());
@@ -45,8 +46,8 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
 
                 rendered.push(
                     <div key={i} id={id} className={`mt-16 mb-12 p-8 md:p-12 rounded-[2.5rem] border backdrop-blur-xl relative overflow-hidden group scroll-mt-32 ${isSummary
-                        ? 'bg-blue-600/5 border-blue-500/20'
-                        : 'bg-emerald-600/5 border-emerald-500/20'
+                            ? 'bg-blue-600/5 border-blue-500/20 shadow-[0_0_50px_-12px_rgba(59,130,246,0.1)]'
+                            : 'bg-emerald-600/5 border-emerald-500/20 shadow-[0_0_50px_-12px_rgba(16,185,129,0.1)]'
                         }`}>
                         <div className={`absolute top-0 left-0 w-1.5 h-full opacity-60 bg-gradient-to-b ${isSummary ? 'from-blue-500 to-indigo-600' : 'from-emerald-500 to-teal-600'
                             }`} />
@@ -63,9 +64,9 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                             </h2>
 
                             <div className="space-y-6">
-                                {sectionContent.map((para, idx) => {
-                                    if (para.includes('\n• ') || para.startsWith('• ')) {
-                                        const items = para.split('\n').map(l => l.replace('• ', '').trim()).filter(Boolean);
+                                {sectionContent.length > 0 ? sectionContent.map((para, idx) => {
+                                    if (para.includes('\n• ') || para.startsWith('• ') || para.startsWith('- ')) {
+                                        const items = para.split(/\r?\n/).map(l => l.replace(/^[•-]\s*/, '').trim()).filter(Boolean);
                                         return (
                                             <ul key={idx} className="space-y-4 !mb-0">
                                                 {items.map((item, sidx) => (
@@ -81,15 +82,17 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                                             </ul>
                                         );
                                     }
-                                    return <p key={idx} className="text-white/90 text-xl font-medium leading-relaxed !mb-0">{para}</p>;
-                                })}
+                                    return <p key={idx} className="text-zinc-200 text-xl font-medium leading-relaxed !mb-0">{para}</p>;
+                                }) : (
+                                    <p className="text-zinc-400 italic">No content found for this section.</p>
+                                )}
                             </div>
                         </div>
                         <div className={`absolute -bottom-24 -right-24 w-64 h-64 blur-[100px] transition-colors pointer-events-none ${isSummary ? 'bg-blue-500/10' : 'bg-emerald-500/10'
                             }`} />
                     </div>
                 );
-                i = j; // Advance main loop to the next heading or end
+                i = j;
                 continue;
             }
 
