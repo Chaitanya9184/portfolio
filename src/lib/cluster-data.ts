@@ -36,7 +36,7 @@ export const clusterPages: ClusterPage[] = [
         intent: 'Commercial',
         extractionBlock: {
             title: "Quick Answer: What is Entity SEO?",
-            content: "Entity SEO is the art of defining your brand as a unique, verifiable 'Thing' in the Knowledge Graph. It's not about keywords anymore; it's about relationships. Link your brand to trusted nodes—people, places, and facts—to ensure AI search engines cite you as a source of truth."
+            content: "Entity SEO is the art of defining your brand as a unique, verifiable 'Thing' in the Knowledge Graph. It's not about keywords anymore; it's about relationships. Build real, verifiable connections between your brand and other established experts, physical locations, and concrete data points to ensure AI search engines cite you as a primary reference."
         },
         originalInsight: {
             title: "The Semantic Moat Concept",

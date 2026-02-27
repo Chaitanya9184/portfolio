@@ -15,7 +15,20 @@ interface BlogPostClientProps {
 
 export default function BlogPostClient({ post }: BlogPostClientProps) {
     // Custom renderer for Markdown-style headings and paragraphs
-    const renderContent = (content: string) => {
+    const renderContent = (rawContent: string) => {
+        const parseTextFormat = (text: string) => {
+            const parts = text.split(/(\*\*.*?\*\*)/g);
+            return parts.map((part, i) => {
+                if (part.startsWith('**') && part.endsWith('**')) {
+                    // Use colors to highlight instead of bold
+                    return <span key={i} className="text-zinc-900 bg-blue-400 px-1.5 py-0.5 rounded-md font-medium">{part.slice(2, -2)}</span>;
+                }
+                return part;
+            });
+        };
+
+        // Pre-process inline bullets: replace " • " with "\n• " so they are parsed together
+        const content = rawContent.replace(/(\S)\s*•\s+/g, '$1\n• ');
         const paragraphs = content.split('\n\n').filter(p => p.trim());
         const rendered: React.ReactNode[] = [];
 
@@ -76,13 +89,13 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                                                                 <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                                                             </svg>
                                                         </span>
-                                                        <span>{item}</span>
+                                                        <span>{parseTextFormat(item)}</span>
                                                     </li>
                                                 ))}
                                             </ul>
                                         );
                                     }
-                                    return <p key={idx} className="text-zinc-200 text-xl font-medium leading-relaxed !mb-0">{para}</p>;
+                                    return <p key={idx} className="text-zinc-200 text-xl font-medium leading-relaxed !mb-0">{parseTextFormat(para)}</p>;
                                 }) : (
                                     <p className="text-zinc-400 italic">No content found for this section.</p>
                                 )}
@@ -99,17 +112,17 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
             if (trimmed.startsWith('## ')) {
                 const text = trimmed.replace('## ', '');
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                rendered.push(<p key={i} id={id} className="scroll-mt-32 text-3xl font-bold text-white mt-12 mb-6 tracking-tight">{text}</p>);
+                rendered.push(<p key={i} id={id} className="scroll-mt-32 text-3xl font-bold text-white mt-12 mb-6 tracking-tight">{parseTextFormat(text)}</p>);
             }
             else if (trimmed.startsWith('### ')) {
                 const text = trimmed.replace('### ', '');
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                rendered.push(<p key={i} id={id} className="scroll-mt-32 text-2xl font-bold text-white mt-10 mb-4 tracking-tight">{text}</p>);
+                rendered.push(<p key={i} id={id} className="scroll-mt-32 text-2xl font-bold text-white mt-10 mb-4 tracking-tight">{parseTextFormat(text)}</p>);
             }
             else if (trimmed.startsWith('#### ')) {
                 const text = trimmed.replace('#### ', '');
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                rendered.push(<p key={i} id={id} className="scroll-mt-32 text-xl font-bold text-zinc-400 mt-8 mb-4">{text}</p>);
+                rendered.push(<p key={i} id={id} className="scroll-mt-32 text-xl font-bold text-zinc-400 mt-8 mb-4">{parseTextFormat(text)}</p>);
             }
             else if (trimmed.includes('\n• ')) {
                 const lines = trimmed.split('\n');
@@ -125,7 +138,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                             {items.map((item, idx) => (
                                 <li key={idx} className="flex gap-4 text-zinc-300 leading-relaxed group text-base md:text-lg">
                                     <span className="text-blue-500 mt-1 transition-transform group-hover:scale-125">•</span>
-                                    <span className="group-hover:text-zinc-100 transition-colors">{item}</span>
+                                    <span className="group-hover:text-zinc-100 transition-colors">{parseTextFormat(item)}</span>
                                 </li>
                             ))}
                         </ul>
@@ -133,7 +146,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                 );
             }
             else {
-                rendered.push(<p key={i} className="whitespace-pre-wrap text-zinc-300 text-base md:text-lg leading-relaxed mb-8">{trimmed}</p>);
+                rendered.push(<p key={i} className="whitespace-pre-wrap text-zinc-300 text-base md:text-lg leading-relaxed mb-8">{parseTextFormat(trimmed)}</p>);
             }
             i++;
         }
