@@ -66,14 +66,17 @@ My framework focuses on the **Technical Foundation**:
 
 ## Layer 3: Implementation – Engineered Growth
 
-### Step 1: Framework Level Optimization
-We audit your Next.js configuration (App router vs Pages router) to ensure that metadata, canonicals, and structured data are properly hydrated.
+### Step 1: Framework Level Architecture
+We audit your Next.js configuration (App router vs Pages router) to ensure metadata, canonicals, and structured data are properly hydrated. This ensures 100% crawlability of your core marketing pages.
 
 ### Step 2: Programmatic Hub Development
-We design the architecture for programmatic hubs. Instead of manually writing 100 pages, we create 1 template that pulls dynamic data through the CMS to target high-intent 'Alternative' and 'Integration' keywords.
+We design scalable architectures for programmatic hubs. Instead of manual page creation, we build dynamic templates that pull from your CMS to target thousands of high-intent keywords automatically.
 
-### Step 3: CI/CD SEO Testing
-We integrate SEO monitoring into your deployment pipeline. If a code change breaks a canonical or drops a schema, the build fails before the error reaches Google.
+### Step 3: Automated Schema Layering
+Implementing enterprise-grade JSON-LD (SoftwareApplication, Organization, FAQ) at scale. We automate the injection of machine-readable data across every programmatic route to boost entity authority.
+
+### Step 4: CI/CD SEO Monitoring
+We integrate SEO audits into your deployment pipeline. By running automated checks during the build process, we ensure that breaking changes never reach production and harm your rankings.
 
 ## Expert Verdict & Authority
 As a specialist in the technical nuances of modern search, I speak the language of developers. I don't just provide Excel sheets of fixes; I provide code-ready solutions and architectural blueprints.
@@ -149,7 +152,7 @@ export default function TechnicalSaasPillar() {
                         <div className="mb-16 p-8 md:p-12 rounded-[2.5rem] bg-indigo-600/5 border border-indigo-500/20 relative overflow-hidden group">
                             <h2 className="!mt-0 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-4">Architectural Summary</h2>
                             <p className="text-white text-xl md:text-2xl font-medium leading-[1.4]">
-                                Technical SEO is the **Infrastructure** of growth. We build high-performance, search-first architectures that allow your SaaS to scale without vertical limits.
+                                Technical SEO is the <span className="text-blue-400 font-bold">Infrastructure</span> of growth. We build high-performance, search-first architectures that allow your SaaS to scale without vertical limits.
                             </p>
                             <div className="mt-8 flex flex-wrap gap-4">
                                 <span className="px-4 py-2 rounded-full bg-zinc-900 border border-white/5 text-xs text-zinc-400 font-medium">#NextjsSEO</span>
@@ -190,24 +193,43 @@ export default function TechnicalSaasPillar() {
                                 <h2 id="layer-3-implementation" className="text-3xl md:text-5xl font-bold text-white tracking-tighter mb-6 scroll-mt-32">Execution at Scale</h2>
                                 <p>From framework level optimization to full programmatic hub development, we engineer results.</p>
 
-                                <div className="space-y-4 my-12">
-                                    <p className="text-white font-bold uppercase tracking-widest text-[10px] opacity-70 mb-4">Technical Checklist</p>
-                                    <ul className="space-y-4">
-                                        <li className="flex gap-4 p-4 rounded-2xl bg-zinc-900/40 border border-white/5">
-                                            <span className="text-emerald-500">✔</span>
-                                            <div>
-                                                <p className="text-white font-bold text-sm">SSR/SSG Validation</p>
-                                                <p className="text-xs text-zinc-500">Ensure 100% code-to-HTML hydration for search crawlers.</p>
-                                            </div>
-                                        </li>
-                                        <li className="flex gap-4 p-4 rounded-2xl bg-zinc-900/40 border border-white/5">
-                                            <span className="text-emerald-500">✔</span>
-                                            <div>
-                                                <p className="text-white font-bold text-sm">Programmating Routing</p>
-                                                <p className="text-xs text-zinc-500">Architecting clean URL structures for dynamic content hubs.</p>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+                                    <div className="p-8 rounded-3xl bg-blue-950/20 border border-blue-900/30 flex items-start gap-6">
+                                        <div className="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0">
+                                            <span className="text-blue-400 font-bold">01</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-2">Framework Architecture</h4>
+                                            <p className="text-sm text-zinc-400 leading-relaxed">Optimizing Next.js hydration and rendering patterns to ensure search bots see 100% of your content in the initial HTML payload.</p>
+                                        </div>
+                                    </div>
+                                    <div className="p-8 rounded-3xl bg-blue-950/20 border border-blue-900/30 flex items-start gap-6">
+                                        <div className="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0">
+                                            <span className="text-blue-400 font-bold">02</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-2">Programmatic Hubs</h4>
+                                            <p className="text-sm text-zinc-400 leading-relaxed">Scaling content through dynamic templates that target "Use Case" and "Integration" keywords with minimal editorial overhead.</p>
+                                        </div>
+                                    </div>
+                                    <div className="p-8 rounded-3xl bg-blue-950/20 border border-blue-900/30 flex items-start gap-6">
+                                        <div className="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0">
+                                            <span className="text-blue-400 font-bold">03</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-2">Automated Schema</h4>
+                                            <p className="text-sm text-zinc-400 leading-relaxed">Injecting rich JSON-LD (SoftwareApp, FAQ, Breadcrumbs) automatically across thousands of pages to build machine-readable authority.</p>
+                                        </div>
+                                    </div>
+                                    <div className="p-8 rounded-3xl bg-blue-950/20 border border-blue-900/30 flex items-start gap-6">
+                                        <div className="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0">
+                                            <span className="text-blue-400 font-bold">04</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-2">CI/CD SEO Audits</h4>
+                                            <p className="text-sm text-zinc-400 leading-relaxed">Integrating SEO verification into your dev workflow to catch regressions in metadata or schema before they go live.</p>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div className="p-12 text-center rounded-[3rem] bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-white/5 my-12">
