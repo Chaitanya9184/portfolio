@@ -29,10 +29,10 @@ In the SaaS world, technical SEO is more than just fixing broken links. It is ab
 ### The SaaS Technical Challenge
 Most SaaS marketing sites are built using Headless CMS architectures and Next.js. Without expert configuration, these sites often suffer from rendering delays, poor core web vitals, and indexation gaps. My goal is to bridge the gap between engineering and SEO.
 
-### Scalability Principles
-1. **Dynamic Rendering Control**: Ensuring every marketing page is 100% crawlable.
-2. **Programmatic Structure**: Mapping thousands of intents to a single, high-performance template.
-3. **Information Density**: Optimizing for the 'Knowledge Graph' through automated schema injection.
+### How We Scale
+1. **Full Site Crawlability**: Making sure every page is easy for Google to find.
+2. **Automated Templates**: Using smart designs to create thousands of useful pages at once.
+3. **Smart Data Labels**: Adding hidden code (schema) to help AI understand your brand.
 
 ## Layer 1: Technical SaaS SEO (TL;DR)
 
@@ -150,24 +150,24 @@ export default function TechnicalSaasPillar() {
 
                     <div className="prose prose-invert max-w-none">
                         <div className="mb-16 p-8 md:p-12 rounded-[2.5rem] bg-indigo-600/5 border border-indigo-500/20 relative overflow-hidden group">
-                            <h2 className="!mt-0 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-4">Architectural Summary</h2>
+                            <h2 className="!mt-0 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-4">The Strategy in Brief</h2>
                             <p className="text-white text-xl md:text-2xl font-medium leading-[1.4]">
-                                Technical SEO is the <span className="text-blue-400 font-bold">Infrastructure</span> of growth. We build high-performance, search-first architectures that allow your SaaS to scale without vertical limits.
+                                Technical SEO is the <span className="text-blue-400 font-bold">engine</span> behind your growth. We build fast, search-ready sites that help your SaaS grow without limits.
                             </p>
                             <div className="mt-8 flex flex-wrap gap-4">
-                                <span className="px-4 py-2 rounded-full bg-zinc-900 border border-white/5 text-xs text-zinc-400 font-medium">#NextjsSEO</span>
-                                <span className="px-4 py-2 rounded-full bg-zinc-900 border border-white/5 text-xs text-zinc-400 font-medium">#ProgrammaticSEO</span>
-                                <span className="px-4 py-2 rounded-full bg-zinc-900 border border-white/5 text-xs text-zinc-400 font-medium">#CrawlBudget</span>
+                                <span className="px-4 py-2 rounded-full bg-zinc-900 border border-white/5 text-xs text-zinc-400 font-medium">#NextJS</span>
+                                <span className="px-4 py-2 rounded-full bg-zinc-900 border border-white/5 text-xs text-zinc-400 font-medium">#SaaSGrowth</span>
+                                <span className="px-4 py-2 rounded-full bg-zinc-900 border border-white/5 text-xs text-zinc-400 font-medium">#PageSpeed</span>
                             </div>
                         </div>
 
                         <div className="space-y-12 text-zinc-300 text-lg leading-relaxed">
                             <section>
-                                <h2 id="technical-seo-for-scaling-saas" className="text-3xl md:text-5xl font-bold text-white tracking-tighter mb-6 scroll-mt-32">Scaling Modern SaaS</h2>
-                                <p>In the SaaS world, technical SEO is more than just fixing broken links. It is about building a scalable infrastructure that supports rapid growth and handles the complexity of modern JavaScript frameworks.</p>
+                                <h2 id="technical-seo-for-scaling-saas" className="text-3xl md:text-5xl font-bold text-white tracking-tighter mb-6 scroll-mt-32">Scaling for Success</h2>
+                                <p>SaaS growth needs a strong base. We build sites that handle huge traffic while staying fast and easy for search engines to index. We focus on bridging the gap between clean code and high rankings.</p>
 
-                                <h3 id="how-do-you-optimize-next-js-for-enterprise-seo" className="text-2xl font-bold text-white mt-8 mb-4">How do you optimize Next.js for enterprise SEO?</h3>
-                                <p>Next.js optimization requires balancing Client-Side Rendering (CSR) for interactivity and Server-Side Rendering (SSR) or Static Site Generation (SSG) for SEO.</p>
+                                <h3 id="how-do-you-optimize-next-js-for-enterprise-seo" className="text-2xl font-bold text-white mt-8 mb-4">How do you optimize Next.js?</h3>
+                                <p>We balance speed and search visibility. We ensure all your important text is visible to Google right away, which helps you rank better and faster.</p>
                             </section>
 
                             <section>

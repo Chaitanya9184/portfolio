@@ -72,11 +72,11 @@ export default function FinanceIndustryPage() {
                         Finance & Fintech
                     </div>
                     <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-6">
-                        Engineering Trust <br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-500">In a YMYL Ecosystem</span>
+                        Building Trust <br className="hidden md:block" />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-500">In Financial Markets</span>
                     </h1>
                     <p className="text-zinc-400 text-xl font-light max-w-2xl leading-relaxed">
-                        In the financial sector, ranking requires proving absolute trust to Google. We build unshakeable E-E-A-T foundations for banks, wealth managers, and ambitious Fintech startups.
+                        In finance, ranking high means proving you are safe and reliable. We help banks and fintech startups build the trust Google needs to see.
                     </p>
                 </div>
 
@@ -84,24 +84,24 @@ export default function FinanceIndustryPage() {
                     {/* The Problem */}
                     <div className="p-8 rounded-3xl bg-red-950/20 border border-red-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-red-500">⚠️</span> The Financial Challenge
+                            <span className="text-red-500">⚠️</span> The Growth Problem
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Google's ruthless YMYL filters algorithmically suppress sites lacking institutional trust signals.</li>
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Severe competition from legacy mega-brands (NerdWallet, Bankrate) monopolizing commercial intent queries.</li>
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Complex compliance (SEC/FINRA) restrictions paralyzing agile content creation.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Google is very strict with money-related sites. If trust is low, you won't rank.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Giant brands often own the top spots, making it hard for new names to be seen.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Tough rules and compliance often slow down how fast you can grow your content.</li>
                         </ul>
                     </div>
 
                     {/* The Solution */}
                     <div className="p-8 rounded-3xl bg-violet-950/20 border border-violet-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-violet-400">⚡</span> The Organic Finance Solution
+                            <span className="text-violet-400">⚡</span> The Strategy for Growth
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
-                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>Authoritative E-E-A-T Engine:</strong> Integrating FinancialProduct schema, expert review frameworks, and digital PR.</li>
-                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>Calculators & Interactive Tools:</strong> Building indexable, high-performance financial tools that attract natural backlinks.</li>
-                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>Long-Tail AI Citations:</strong> Optimizing targeted data points so generative AI models cite your platform as the source of truth.</li>
+                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>Proven Authority:</strong> We use clear data and expert reviews to show you are a leader in your field.</li>
+                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>Smart Tools:</strong> We build fast, useful tools like payment calculators that earn links naturally.</li>
+                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>AI Visibility:</strong> We optimize your data so AI search engines recommend your brand first.</li>
                         </ul>
                     </div>
                 </div>

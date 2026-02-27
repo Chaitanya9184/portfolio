@@ -46,8 +46,8 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
 
                 rendered.push(
                     <div key={i} id={id} className={`mt-16 mb-12 p-8 md:p-12 rounded-[2.5rem] border backdrop-blur-xl relative overflow-hidden group scroll-mt-32 ${isSummary
-                            ? 'bg-blue-600/5 border-blue-500/20 shadow-[0_0_50px_-12px_rgba(59,130,246,0.1)]'
-                            : 'bg-emerald-600/5 border-emerald-500/20 shadow-[0_0_50px_-12px_rgba(16,185,129,0.1)]'
+                        ? 'bg-blue-600/5 border-blue-500/20 shadow-[0_0_50px_-12px_rgba(59,130,246,0.1)]'
+                        : 'bg-emerald-600/5 border-emerald-500/20 shadow-[0_0_50px_-12px_rgba(16,185,129,0.1)]'
                         }`}>
                         <div className={`absolute top-0 left-0 w-1.5 h-full opacity-60 bg-gradient-to-b ${isSummary ? 'from-blue-500 to-indigo-600' : 'from-emerald-500 to-teal-600'
                             }`} />
@@ -57,11 +57,11 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                                 }`}>
                                 {isSummary ? 'Strategic Overview' : 'Actionable Insights'}
                             </span>
-                            <h2 className="!mt-0 !mb-8 text-3xl md:text-5xl font-bold text-white tracking-tighter flex items-center gap-4">
+                            <p className="!mt-0 !mb-8 text-3xl md:text-5xl font-bold text-white tracking-tighter flex items-center gap-4">
                                 {isSummary ? 'Executive Summary' : 'Key Takeaways'}
                                 <span className={`h-[1px] flex-1 ${isSummary ? 'bg-gradient-to-r from-blue-500/30 to-transparent' : 'bg-gradient-to-r from-emerald-500/30 to-transparent'
                                     }`} />
-                            </h2>
+                            </p>
 
                             <div className="space-y-6">
                                 {sectionContent.length > 0 ? sectionContent.map((para, idx) => {
