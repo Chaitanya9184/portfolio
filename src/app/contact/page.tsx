@@ -52,7 +52,7 @@ export default function ContactPage() {
                     </p>
                 </div>
 
-                <div className="bg-zinc-900/40 backdrop-blur-md border border-zinc-800/80 rounded-3xl p-8 shadow-xl">
+                <div className="bg-zinc-900/40 backdrop-blur-md border border-zinc-800/80 rounded-3xl p-8 shadow-xl mb-16">
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
@@ -147,6 +147,71 @@ export default function ContactPage() {
                             <p className="text-red-500 text-sm text-center bg-red-500/5 border border-red-500/20 py-3 rounded-xl">Failed to send message. Please try again or email me directly.</p>
                         )}
                     </form>
+                </div>
+
+                {/* Direct Channels */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
+                    <div className="p-8 rounded-3xl bg-zinc-900/30 border border-zinc-800/50 hover:border-emerald-500/30 transition-all group">
+                        <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg className="w-6 h-6 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h4 className="text-white font-bold text-lg mb-2">Direct Email</h4>
+                        <p className="text-zinc-500 text-sm mb-4">For fast support or collaboration inquiries.</p>
+                        <a href="mailto:admin@chaitanyakore.in" className="text-emerald-500 font-medium hover:text-emerald-400 transition-colors">admin@chaitanyakore.in</a>
+                    </div>
+                    <div className="p-8 rounded-3xl bg-zinc-900/30 border border-zinc-800/50 hover:border-blue-500/30 transition-all group">
+                        <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg className="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </div>
+                        <h4 className="text-white font-bold text-lg mb-2">Professional Network</h4>
+                        <p className="text-zinc-500 text-sm mb-4">Connect with me for industry updates.</p>
+                        <a href="https://linkedin.com/in/chaitanya-kore-342069140" target="_blank" rel="noopener noreferrer" className="text-blue-500 font-medium hover:text-blue-400 transition-colors">LinkedIn Profile ↗</a>
+                    </div>
+                </div>
+
+                {/* The Strategic Process */}
+                <div className="mb-24">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl text-white font-bold tracking-tight mb-4">The Strategic Process</h2>
+                        <p className="text-zinc-500 max-w-xl mx-auto">How we transform your search presence from visibility to revenue.</p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {[
+                            { step: '01', title: 'Discovery & Audit', desc: 'A deep dive into your technical infrastructure and current entity footprint in the knowledge graph.' },
+                            { step: '02', title: 'Architecture & Design', desc: 'Crafting the programmatic SEO framework and mapping conversion funnels for AI search extraction.' },
+                            { step: '03', title: 'Scale & Monitoring', desc: 'Deploying content hubs and continuous AI performance tracking for sustained organic MoM growth.' }
+                        ].map((item, i) => (
+                            <div key={i} className="relative p-8 rounded-3xl bg-zinc-900/20 border border-zinc-800/40">
+                                <span className="absolute -top-4 -left-4 w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center text-white font-bold shadow-lg shadow-emerald-900/20">{item.step}</span>
+                                <h4 className="text-white font-bold text-xl mb-4 mt-2">{item.title}</h4>
+                                <p className="text-zinc-500 text-sm leading-relaxed">{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Strategic FAQs */}
+                <div className="max-w-2xl mx-auto text-center">
+                    <h2 className="text-3xl md:text-4xl text-white font-bold tracking-tight mb-12">Frequent Questions</h2>
+                    <div className="space-y-6 text-left">
+                        {[
+                            { q: 'How long until we see ROI?', a: 'Typical Technical SEO and AEO pivots show leading indicators (mentions and citations) in 4-6 weeks, with revenue impact at 3-6 months.' },
+                            { q: 'What is the GEO transition?', a: 'It is the shift from keyword-based ranking to "Generative Engine Optimization," focusing on being the primary source that AI models cite.' },
+                            { q: 'Do you work with agencies?', a: 'Yes, I consult for premium SaaS agencies looking to add technical depth and AI-readiness to their existing service suites.' }
+                        ].map((faq, i) => (
+                            <div key={i} className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60">
+                                <h4 className="text-white font-bold mb-3 flex items-center gap-3">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                                    {faq.q}
+                                </h4>
+                                <p className="text-zinc-400 text-sm leading-relaxed ml-4.5">{faq.a}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </main>
