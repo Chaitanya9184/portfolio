@@ -27,12 +27,16 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
             const isKeyTakeaways = trimmed.toUpperCase().startsWith('## KEY TAKEAWAYS');
 
             if (isExecutiveSummary || isKeyTakeaways) {
-                const title = trimmed.replace('## ', '');
+                const lines = trimmed.split('\n');
+                const titleLine = lines[0];
+                const contentLines = lines.slice(1).map(l => l.trim()).filter(Boolean);
+
+                const title = titleLine.replace('## ', '');
                 const id = title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
                 const isSummary = title.toLowerCase().includes('summary');
 
                 // Collect subsequent paragraphs until next heading
-                const sectionContent: string[] = [];
+                const sectionContent: string[] = [...contentLines];
                 let j = i + 1;
                 while (j < paragraphs.length && !paragraphs[j].trim().startsWith('#')) {
                     sectionContent.push(paragraphs[j].trim());
@@ -41,8 +45,8 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
 
                 rendered.push(
                     <div key={i} id={id} className={`mt-16 mb-12 p-8 md:p-12 rounded-[2.5rem] border backdrop-blur-xl relative overflow-hidden group scroll-mt-32 ${isSummary
-                            ? 'bg-blue-600/5 border-blue-500/20'
-                            : 'bg-emerald-600/5 border-emerald-500/20'
+                        ? 'bg-blue-600/5 border-blue-500/20'
+                        : 'bg-emerald-600/5 border-emerald-500/20'
                         }`}>
                         <div className={`absolute top-0 left-0 w-1.5 h-full opacity-60 bg-gradient-to-b ${isSummary ? 'from-blue-500 to-indigo-600' : 'from-emerald-500 to-teal-600'
                             }`} />
