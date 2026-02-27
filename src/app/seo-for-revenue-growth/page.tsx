@@ -24,65 +24,65 @@ const faqs = [
 const pillarContent = `
 ## SEO for Revenue: Beyond the Rank
 
-In 2026, Ranking #1 means nothing if it doesn't solve a business problem. We have moved past the era of vanity metrics. Modern SEO is a revenue function, not just a marketing channel.
+In 2026, ranking #1 means nothing if it doesn't solve a true business problem. The era of vanity metrics is over. Modern SEO is a revenue driver, not just a marketing channel.
 
 ### The Problem: The Traffic Trap
-Many agencies focus on "Explosive Traffic Growth." But if that traffic is reading a "What is SEO?" blog post, it will never convert into a demo request. This is the Traffic Trap. You pay for impressions that have no commercial path.
+Many marketing teams chase "explosive traffic growth." But what if that traffic just reads a basic "What is SEO?" guide? That person will never ask for a software demo. This is the Traffic Trap. You pay time and money for clicks that never buy.
 
 ### The Revenue SEO Advantage
-1. **Commercial Filter**: We ignore high-volume terms that don't map to a service.
-2. **Intent Mapping**: We architect content for users who are already 80% through the buying cycle.
-3. **Conversion Moates**: Building assets that are so useful, users have to engage with your brand to get the full value.
+1. **Commercial Filter**: We ignore popular keywords that don't relate to your product.
+2. **Intent Mapping**: We write content for users who are almost ready to buy.
+3. **Conversion Moats**: We build highly useful guides that make users trust your brand.
 
-## Layer 1: Revenue SEO Defined (TL;DR)
+## Layer 1: Revenue SEO Defined
 
 > [!IMPORTANT]
-> **Revenue-Driven SEO** is a strategic methodology that prioritizes the acquisition of high-intent search traffic that directly maps to qualified pipeline and measurable business outcomes.
+> **Revenue-Driven SEO** focuses on getting visitors who actually want to buy. It connects search traffic straight to real sales and clear business results.
 
 **The ROI Filter**
 | Metric | Traditional SEO | Revenue-Driven SEO |
 | :--- | :--- | :--- |
-| **Primary KPI** | Page 1 Rankings | Qualified Sales Pipeline |
-| **Content Focus** | Wide Informational | Deep Commercial/Transactional |
-| **Strategy** | Link Building | Problem-Solution Mapping |
-| **Outcome** | More Traffic | Lower CAC / Higher LTV |
+| **Primary Goal** | Page 1 Rankings | Qualified Sales Calls |
+| **Content Focus** | Broad Topics | Deep Buying Guides |
+| **Strategy Focus** | Link Building | Solving Problems |
+| **End Result** | More Traffic | More Revenue |
 
-## Layer 2: The "Pipeline Velocity" Framework
+## Layer 2: The "Pipeline" Framework
 
-My framework focuses on the **Conversion Path**:
-1. **Identify the Gap**: Where are your competitors making money but you are invisible?
-2. **The "Solution First" Page**: We don't write "What is" guides; we build "How to fix" blueprints.
-3. **Dynamic Attribution**: Linking organic discovery directly to CRM signals to prove MRR impact.
+My system focuses purely on the **Conversion Path**:
+1. **Find the Gap**: Where are your competitors making money while you stay hidden?
+2. **The "Solution First" Page**: We don't write basic guides. We build clear blueprints that fix user problems.
+3. **Clear Tracking**: We link organic clicks directly to CRM sales data to prove real ROI.
 
 ### Who this is for:
-- B2B companies with a high Average Contract Value (ACV).
-- eCommerce brands looking to reduce reliance on Meta/Google Ads.
-- Scaling startups that need to prove marketing ROI to investors.
+- B2B companies with large contract sizes.
+- eCommerce brands that want to rely less on paid ads.
+- Growing startups that must prove ROI to investors.
 
 ### Who this is NOT for:
-- Businesses with low-margin, high-volume click-based models (Adsense).
-- Brands unwilling to invest in high-quality technical infrastructure.
-- Marketing teams that only judge success by "Impressions."
+- Ad-heavy sites making money on cheap clicks.
+- Brands that refuse to fix their slow, broken websites.
+- Teams that only care about getting more page views.
 
-## Layer 3: Implementation – From Clicks to Customers
+## Layer 3: From Clicks to Customers
 
 ### Step 1: The Commercial Intent Audit
-We crawl your existing content to find "Leakage." Where are users landing on your site and then bouncing? We re-map those pages to high-intent CTAs and capture the latent commercial value.
+We check your site to find "leakage." Where do users land and leave? We change those pages to include clear buttons and capture lost sales.
 
 ### Step 2: Problem-Solution Architecture
-We don't just state facts. We describe a burning business problem, present your service as the logical solution, and show the outcome. This framework identifies the user's pain points and positions your brand as the expert savior.
+We don't just list facts. We point out a painful business problem. Then, we show your software as the clear fix. Finally, we prove the great outcome. This places your brand as the exact expert they need.
 
-### Step 3: Social Proof & Multi-Channel Attribution
-Linking organic discovery directly to CRM signals to prove MRR impact. We integrate case study data and trust signals within the editorial flow to decrease sales friction and increase conversion velocity.
+### Step 3: Fast Sales Cycles
+We link your search success directly to your sales pipeline. We add case studies and trust badges into the reading experience. This builds trust quickly and leads to faster sales.
 
-### Step 4: Contextual CTA Integration
-We don't use generic sidebar banners. We lead with "View Case Study" or "Get a Revenue Audit" inside the relevant content chunks, matching the CTA to the user's specific stage in the buying journey.
+### Step 4: Smart Buttons
+We don't use boring sidebar ads. We use specific offers like "View Case Study" or "Get a Revenue Audit" right inside the text. We match the offer to the reader's exact mindset.
 
 ## Expert Verdict & Authority
-Having managed SEO budgets for multi-million dollar brands, I know that the boardroom only cares about one thing: the bottom line. My strategy is built on 8 years of data-driven results.
+Having managed large budgets for major brands, I know the boardroom only cares about the bottom line. My tested approach is built on eight years of hard data.
 
 ### Strategic Leadership
-I work as an extension of your growth team, aligning search strategy with your yearly revenue targets. This isn't just SEO; it's business consulting through the lens of search.
+I work just like an in-house member of your growth team. I align search goals with your real revenue targets. This isn't just SEO. It is deep business advice through the lens of modern search.
 `;
 
 const schema = {

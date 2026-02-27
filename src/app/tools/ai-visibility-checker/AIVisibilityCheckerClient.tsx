@@ -92,9 +92,19 @@ const AIVisibilityCheckerClient = () => {
                         <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-6">
                             AI Search <span className="text-emerald-500">Visibility.</span>
                         </h1>
-                        <p className="text-zinc-500 max-w-xl text-lg leading-relaxed">
-                            Audit your page for the Generative Search era. Measure your GSV score and identify gaps in your AI citation architecture.
+                        <p className="text-zinc-500 max-w-xl text-lg leading-relaxed mb-8">
+                            Audit your page for the Generative Search era. Measure your GSV (Generative Search Visibility) score and identify structural gaps in your AI citation architecture.
                         </p>
+
+                        {/* Expanded Content Section to provide context and fix "thin content" */}
+                        <div className="prose prose-invert max-w-2xl text-zinc-400 text-sm leading-relaxed border-l-2 border-emerald-500/30 pl-6 mb-8">
+                            <p className="mb-4">
+                                <strong>Why does this metric matter?</strong> By 2026, the majority of informational search queries are answered directly within the search engine interface via LLM-powered summaries (like Gemini AI Overviews or SearchGPT). If your website is not properly formatted, these bots cannot confidently extract your data, resulting in zero citations and invisible brand presence.
+                            </p>
+                            <p>
+                                The GSV score analyzes the core technical signals that AI parsers look for: Advanced JSON-LD markup, the "Sentence-1" direct answer framework, semantic HTML hierarchy, and empirical data points. Improve these elements to maximize your likelihood of being the primary cited source.
+                            </p>
+                        </div>
                     </motion.div>
                 </div>
 

@@ -21,7 +21,7 @@ export default function StrategySprint() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                     <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
-                        <h3 className="text-white font-bold text-xl mb-4">The Process:</h3>
+                        <h2 className="text-white font-bold text-xl mb-4">The Process:</h2>
                         <ul className="space-y-4">
                             {[
                                 "Revenue-Intent Keyword Mapping",
@@ -37,9 +37,12 @@ export default function StrategySprint() {
                         </ul>
                     </div>
                     <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
-                        <h3 className="text-white font-bold text-xl mb-4">Why This?</h3>
-                        <p className="text-zinc-400 text-sm leading-relaxed">
-                            Perfect for B2B Tech & SaaS teams who need strategic clarity and a prioritized backlog that hits business metrics this quarter.
+                        <h2 className="text-white font-bold text-xl mb-4">Why This?</h2>
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">
+                            Perfect for B2B Tech & SaaS teams who need strategic clarity and a prioritized backlog that hits business metrics this quarter. Long-term retains are great, but sometimes you just need the playbook to execute in-house.
+                        </p>
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-0">
+                            Over 14 intensive days, we audit your current architecture, map the intent of your hottest leads, and give your writers and developers the exact sprint plan they need to drive measurable MRR from organic search.
                         </p>
                     </div>
                 </div>

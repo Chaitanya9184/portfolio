@@ -1,6 +1,7 @@
 export interface ClusterPage {
     slug: string;
     title: string;
+    metaTitle?: string;
     description: string;
     pillar: 'AI Search' | 'Revenue SEO' | 'Technical SEO';
     pillarLink: string;
@@ -26,10 +27,11 @@ export interface ClusterPage {
     faqs: { question: string; answer: string }[];
 }
 
-export const clusterPages: ClusterPage[] = [
+export const clusters: ClusterPage[] = [
     {
         slug: 'entity-seo-strategy',
         title: "Entity SEO: My Framework for Dominating the Knowledge Graph",
+        metaTitle: "Entity SEO: The Knowledge Graph | Chaitanya Kore",
         description: "How I help brands move from 'Strings' to 'Things' and stay cited in the AI era.",
         pillar: 'AI Search',
         pillarLink: '/ai-search-seo-strategy',
@@ -116,6 +118,7 @@ I want my clients to be the "Anchor Nodes" in their industry. By mastering Entit
     {
         slug: 'ai-seo-for-saas',
         title: "AI Search for SaaS: My Playbook for Owning the Recommendation Layer",
+        metaTitle: "AI Search for SaaS Recommendations | Chaitanya Kore",
         description: "How to ensure your software is the 'Top Recommended' choice in Gemini, Perplexity, and SearchGPT.",
         pillar: 'AI Search',
         pillarLink: '/ai-search-seo-strategy',
@@ -200,6 +203,7 @@ I want my clients to be the "Default Recommendation" in their category. By maste
     {
         slug: 'seo-revenue-forecasting',
         title: "SEO Revenue Forecasting: How I Predict MRR Growth Before I Start",
+        metaTitle: "SEO Revenue Forecasting & MRR | Chaitanya Kore",
         description: "Stop guessing. I use pipeline-based modeling to show you exactly how SEO will impact your bottom line.",
         pillar: 'Revenue SEO',
         pillarLink: '/seo-for-revenue-growth',
@@ -283,7 +287,8 @@ I want my clients to see SEO as an investment, not a cost. By mastering Revenue 
     },
     {
         slug: 'buyer-intent-keywords',
-        title: "The Buyer Intent Framework: My Strategy for Finding the 'Money' Keywords",
+        title: "The Buyer Intent Framework: Finding 'Money' Keywords",
+        metaTitle: "Buyer Intent Framework For SEO | Chaitanya Kore",
         description: "How I identify the 20% of keywords that will drive 80% of your organic revenue.",
         pillar: 'Revenue SEO',
         pillarLink: '/seo-for-revenue-growth',
@@ -370,6 +375,7 @@ I want my clients to own the "Decision Points" in their industry. By mastering t
     {
         slug: 'seo-for-saas-leads',
         title: "SaaS Lead Gen: My Playbook for Scaling Pipeline with Programmatic SEO",
+        metaTitle: "SaaS Programmatic SEO Lead Gen | Chaitanya Kore",
         description: "How I use technical and programmatic SEO to drive high-quality MQLs for software products.",
         pillar: 'Revenue SEO',
         pillarLink: '/seo-for-revenue-growth',
@@ -454,6 +460,7 @@ I want my clients to own the "Utility Layer" of their industry. By mastering Pro
     {
         slug: 'log-file-analysis-seo',
         title: "Log File Analysis: My 'Secret Weapon' for Technical Growth",
+        metaTitle: "Log File Analysis Strategy | Chaitanya Kore",
         description: "How to stop guessing and see exactly where Googlebot is spending (and wasting) your money.",
         pillar: 'Technical SEO',
         pillarLink: '/technical-seo-for-saas',
@@ -539,7 +546,8 @@ I want my clients to have the most "Bot-Friendly" sites in their industry. By ma
     },
     {
         slug: 'indexation-seo-strategy',
-        title: "Indexation at Scale: My Strategy for Forcing Google to See Your Best Work",
+        title: "Indexation at Scale: Forcing Google to See Your Work",
+        metaTitle: "Indexation at Scale Strategies | Chaitanya Kore",
         description: "How I help large sites (1M+ URLs) maintain high-speed discovery and indexation.",
         pillar: 'Technical SEO',
         pillarLink: '/technical-seo-for-saas',
@@ -624,6 +632,7 @@ I want my clients to have the most "Transparent" sites on the web. By mastering 
     {
         slug: 'seo-migration-checklist',
         title: "Zero-Loss SEO Migration: My Framework for Protecting Your Revenue",
+        metaTitle: "Zero-Loss SEO Migration Framework | Chaitanya Kore",
         description: "How I help brands re-platform or re-brand without losing a single dollar of organic pipeline.",
         pillar: 'Technical SEO',
         pillarLink: '/technical-seo-for-saas',

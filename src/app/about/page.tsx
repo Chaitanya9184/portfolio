@@ -54,6 +54,7 @@ export default function AboutPage() {
                             alt="Chaitanya Kore"
                             priority={true}
                             fill
+                            sizes="100vw"
                             className="object-cover transform scale-105 opacity-40 mix-blend-luminosity grayscale"
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
@@ -67,7 +68,7 @@ export default function AboutPage() {
                         >
                             <span className="text-zinc-500 text-xs font-bold uppercase tracking-[0.5em] mb-4 block">The Human behind the Strategy</span>
                             <h1 className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-8 italic">
-                                Chaitanya Kore.
+                                About Chaitanya Kore.
                             </h1>
                             <p className="text-xl md:text-2xl text-zinc-400 leading-relaxed max-w-2xl font-medium">
                                 I don't just "do SEO". I build growth engines for the next generation of search.

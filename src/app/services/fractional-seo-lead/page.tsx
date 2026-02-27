@@ -21,7 +21,7 @@ export default function FractionalSeoLead() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                     <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
-                        <h3 className="text-white font-bold text-xl mb-4">The Coverage:</h3>
+                        <h2 className="text-white font-bold text-xl mb-4">The Coverage:</h2>
                         <ul className="space-y-4">
                             {[
                                 "Product & Engineering SEO Liaison",
@@ -37,9 +37,12 @@ export default function FractionalSeoLead() {
                         </ul>
                     </div>
                     <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
-                        <h3 className="text-white font-bold text-xl mb-4">Availability:</h3>
-                        <p className="text-zinc-400 text-sm leading-relaxed">
-                            Limited to 2 active partners at any time to ensure deep strategic integration and real business impact.
+                        <h2 className="text-white font-bold text-xl mb-4">Availability:</h2>
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">
+                            Limited to 2 active partners at any time to ensure deep strategic integration and real business impact. This isn't hands-off consulting; I embed with your company.
+                        </p>
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-0">
+                            By acting as an extension of your executive layer, I help translate complex search data into board-ready metrics, train your in-house teams, and make sure that every product launch is fully optimized for AI visibility from day one.
                         </p>
                     </div>
                 </div>

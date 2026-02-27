@@ -21,7 +21,7 @@ export default function AiSearchAudit() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                     <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
-                        <h3 className="text-white font-bold text-xl mb-4">What's Included:</h3>
+                        <h2 className="text-white font-bold text-xl mb-4">What's Included:</h2>
                         <ul className="space-y-4">
                             {[
                                 "GSOV (Generative Share of Voice) Baseline",
@@ -37,9 +37,12 @@ export default function AiSearchAudit() {
                         </ul>
                     </div>
                     <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
-                        <h3 className="text-white font-bold text-xl mb-4">The Outcome:</h3>
+                        <h2 className="text-white font-bold text-xl mb-4">The Outcome:</h2>
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">
+                            A technical roadmap designed to flip your site from "indexed" to "cited" in Gemini, SearchGPT, and Perplexity responses. We don't just deliver a spreadsheet of errors; we deliver a prioritized action plan.
+                        </p>
                         <p className="text-zinc-400 text-sm leading-relaxed mb-0">
-                            A technical roadmap designed to flip your site from "indexed" to "cited" in Gemini, SearchGPT, and Perplexity responses.
+                            By the end of the audit, your engineering and content teams will know exactly what schema to implement, how to rewrite introductions for the "Sentence 1" framework, and where to inject empirical data to become the undisputed primary source directly in AI Overviews.
                         </p>
                     </div>
                 </div>
