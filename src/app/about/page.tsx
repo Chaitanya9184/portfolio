@@ -50,7 +50,7 @@ export default function AboutPage() {
                     <motion.div className="absolute inset-0 z-0 bg-[#0a0a0a]" style={{ scale }}>
                         {/* Always eagerly render the first frame to fix LCP. Once React mounts and preloads other frames, currentFrame will dictate the source. */}
                         <NextImage
-                            src={images.length > 0 ? images[currentFrame]?.src : `/sequence/frame_00_delay-0.066s.png`}
+                            src={`/sequence/frame_${currentFrame.toString().padStart(2, '0')}_delay-0.066s.png`}
                             alt="Chaitanya Kore"
                             priority={true}
                             fill
