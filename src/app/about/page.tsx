@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 
 import CaseStudy from "@/components/CaseStudy";
 import Link from "next/link";
@@ -48,11 +49,12 @@ export default function AboutPage() {
                     {/* Background Sequence */}
                     <motion.div className="absolute inset-0 z-0 bg-[#0a0a0a]" style={{ scale }}>
                         {/* Always eagerly render the first frame to fix LCP. Once React mounts and preloads other frames, currentFrame will dictate the source. */}
-                        <img
+                        <Image
                             src={images.length > 0 ? images[currentFrame]?.src : `/sequence/frame_00_delay-0.066s.png`}
                             alt="Chaitanya Kore"
-                            fetchPriority="high"
-                            className="w-full h-full object-cover transform scale-105 opacity-40 mix-blend-luminosity grayscale"
+                            priority={true}
+                            fill
+                            className="object-cover transform scale-105 opacity-40 mix-blend-luminosity grayscale"
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
                     </motion.div>
