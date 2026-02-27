@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import CaseStudy from "@/components/CaseStudy";
 import Link from "next/link";
 
 export default function AboutPage() {
@@ -107,8 +108,8 @@ export default function AboutPage() {
                                     </p>
                                     <div className="grid grid-cols-2 gap-4">
                                         {[
-                                            { label: "Founded", val: "2019" },
-                                            { label: "SaaS Partners", val: "50+" },
+                                            { label: "Started", val: "2017" },
+                                            { label: "Growth Engineered", val: "Consistent" },
                                             { label: "ROI Driven", val: "100%" },
                                             { label: "AI Focused", val: "Always" }
                                         ].map((stat, i) => (
@@ -132,6 +133,15 @@ export default function AboutPage() {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            {/* Case Studies Section */}
+            <div className="relative z-30 bg-black py-16">
+                <div className="container mx-auto px-6 mb-12 text-center">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tighter">Proven Results.</h2>
+                    <p className="text-zinc-500 mt-4 max-w-2xl mx-auto">Real-world examples of how aligning architecture with search intent drives massive organic growth.</p>
+                </div>
+                <CaseStudy />
             </div>
 
             <div className="relative z-30 bg-black">
