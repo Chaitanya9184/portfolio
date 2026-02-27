@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 import CaseStudy from "@/components/CaseStudy";
 import Link from "next/link";
@@ -13,10 +13,31 @@ export default function AboutPage() {
         offset: ["start start", "end end"]
     });
 
-    // Sequence images logic converted to a 3-stage scroll crossfade
-    const opacity1 = useTransform(scrollYProgress, [0, 0.3, 0.4], [0.3, 0.3, 0]);
-    const opacity2 = useTransform(scrollYProgress, [0.3, 0.4, 0.6, 0.7], [0, 0.3, 0.3, 0]);
-    const opacity3 = useTransform(scrollYProgress, [0.6, 0.7, 1], [0, 0.3, 0.3]);
+    // Sequence images logic
+    const totalFrames = 75;
+    const [images, setImages] = useState<HTMLImageElement[]>([]);
+    const [currentFrame, setCurrentFrame] = useState(0);
+
+    useEffect(() => {
+        const loadedImages: HTMLImageElement[] = [];
+        for (let i = 0; i < totalFrames; i++) {
+            const img = new Image();
+            const frameNum = i.toString().padStart(2, '0');
+            img.src = `/sequence/frame_${frameNum}_delay-0.066s.png`;
+            loadedImages.push(img);
+        }
+        setImages(loadedImages);
+    }, []);
+
+    // Map scroll progress to frame index, finishing early (30% down the page)
+    const frameIndex = useTransform(scrollYProgress, [0, 0.3], [0, totalFrames - 1]);
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+
+    useEffect(() => {
+        return frameIndex.onChange((v) => {
+            setCurrentFrame(Math.min(totalFrames - 1, Math.round(v)));
+        });
+    }, [frameIndex]);
 
     return (
         <main className="bg-black min-h-screen font-sans selection:bg-white selection:text-black">
@@ -25,27 +46,16 @@ export default function AboutPage() {
             <div ref={containerRef} className="relative h-[400vh]">
                 <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
                     {/* Background Sequence */}
-                    <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
-                        <motion.img
-                            style={{ opacity: opacity1 }}
-                            src="/bg1.png"
-                            alt="AI Concept"
-                            className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity grayscale"
-                        />
-                        <motion.img
-                            style={{ opacity: opacity2 }}
-                            src="/bg2.png"
-                            alt="Growth Concept"
-                            className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity grayscale"
-                        />
-                        <motion.img
-                            style={{ opacity: opacity3 }}
-                            src="/bg3.png"
-                            alt="Tech Architecture Concept"
-                            className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity grayscale"
-                        />
+                    <motion.div className="absolute inset-0 z-0 bg-[#0a0a0a]" style={{ scale }}>
+                        {images.length > 0 && (
+                            <img
+                                src={images[currentFrame]?.src}
+                                alt="Chaitanya Kore"
+                                className="w-full h-full object-cover transform scale-105 opacity-40 mix-blend-luminosity grayscale"
+                            />
+                        )}
                         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
-                    </div>
+                    </motion.div>
 
                     {/* Content Overlay */}
                     <div className="relative z-10 container mx-auto px-6">
