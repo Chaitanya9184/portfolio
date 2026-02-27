@@ -47,13 +47,13 @@ export default function AboutPage() {
                 <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
                     {/* Background Sequence */}
                     <motion.div className="absolute inset-0 z-0 bg-[#0a0a0a]" style={{ scale }}>
-                        {images.length > 0 && (
-                            <img
-                                src={images[currentFrame]?.src}
-                                alt="Chaitanya Kore"
-                                className="w-full h-full object-cover transform scale-105 opacity-40 mix-blend-luminosity grayscale"
-                            />
-                        )}
+                        {/* Always eagerly render the first frame to fix LCP. Once React mounts and preloads other frames, currentFrame will dictate the source. */}
+                        <img
+                            src={images.length > 0 ? images[currentFrame]?.src : `/sequence/frame_00_delay-0.066s.png`}
+                            alt="Chaitanya Kore"
+                            fetchPriority="high"
+                            className="w-full h-full object-cover transform scale-105 opacity-40 mix-blend-luminosity grayscale"
+                        />
                         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
                     </motion.div>
 
