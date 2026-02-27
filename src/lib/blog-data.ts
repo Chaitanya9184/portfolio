@@ -38,7 +38,7 @@ export const blogPosts: BlogPost[] = [
     {
         slug: 'the-geo-era-google-2026-core-update',
         title: "The GEO Era: How I'm Prepping for Google's 2026 AI Search Shift",
-        metaTitle: "GEO Era: My 2026 Google AI Search Survival Guide",
+        metaTitle: "GEO Era: 2026 AI Search Guide | Chaitanya Kore",
         date: 'January 15, 2026',
         category: 'GEO',
         excerpt: "Google just changed the rules again. I've spent the last month auditing how 'Cite-Worthiness' is actually calculated in Gemini. Here's what I found.",
@@ -121,7 +121,7 @@ Building a "Citation Asset" costs more at the start. I know. But the long-term w
     {
         slug: 'aeo-dominance-google-gemini-search-upgrades',
         title: "AEO Dominance: Why I'm Measuring Impressions, Not Clicks",
-        metaTitle: "AEO Dominance: My Guide to Gemini Search & CTR Shifts",
+        metaTitle: "AEO Dominance: Impressions Over Clicks | Chaitanya Kore",
         date: 'January 28, 2026',
         category: 'AEO',
         excerpt: "Traditional CTR is dead for informational queries. I'm seeing 60% drops across my portfolio. Here's how I'm winning the 'Answer' instead of the click.",
@@ -202,10 +202,10 @@ The shift is here. It's not coming; it's already happening. I'm pivoting every b
     {
         slug: 'perplexity-ai-publisher-revenue-share',
         title: "Perplexity's Revenue Share: How I'm Monetizing Citations",
-        metaTitle: "Perplexity Revenue Share: My Strategy for the New SEO Era",
+        metaTitle: "Perplexity Revenue Share & Citations | Chaitanya Kore",
         date: 'February 5, 2026',
         category: 'GEO',
-        excerpt: "Perplexity is finally paying publishers for their data. I've been digging into the 'Content Citation Fund' to see how my clients can get a piece of the pie.",
+        excerpt: "Perplexity is paying publishers for data. I explore the 'Content Citation Fund' to see how my clients can monetize their AI visibility.",
         content: `
 ## The End of the "Free Data" Era?
 
@@ -289,7 +289,7 @@ I'm betting big on deep expertise. I'm advising brands to hire subject matter ex
     {
         slug: 'searchgpt-higher-education-seo',
         title: "SearchGPT's Impact on Higher Education & Research SEO",
-        metaTitle: "SearchGPT Impact on Higher Education SEO",
+        metaTitle: "SearchGPT Impact on Higher Ed SEO | Chaitanya Kore",
         date: 'February 10, 2026',
         category: 'AEO',
         excerpt: "OpenAI's SearchGPT integration into the education sector has seen a 40% shift in how students research sources.",
@@ -327,7 +327,7 @@ I'm betting big on deep expertise. I'm advising brands to hire subject matter ex
     {
         slug: 'zero-click-intent-new-seo-king',
         title: "Zero-Click Intent: Why I’m Optimizing for 'Mindshare' Over Traffic",
-        metaTitle: "Zero-Click Intent: Why Clicks Aren't Everything Anymore",
+        metaTitle: "Zero-Click Intent & SEO Mindshare | Chaitanya Kore",
         date: 'February 14, 2026',
         category: 'SEO',
         excerpt: "70% of searches in 2026 don't result in a click. I've spent the last six months figuring out how to build a brand when no one is visiting your site.",
@@ -410,7 +410,7 @@ I’m moving all my focus to "Expertise-Led Content." We’re pulling in real en
     {
         slug: 'ai-overview-ecommerce-product-discovery',
         title: "AI Overviews in E-commerce: Why I'm Obsessing Over 'Feed Health'",
-        metaTitle: "AI Shopper: My Guide to E-commerce SEO in 2026",
+        metaTitle: "AI Shopper: E-commerce SEO Strategies | Chaitanya Kore",
         date: 'February 18, 2026',
         category: 'GEO',
         excerpt: "Google's AI doesn't just list products; it compares them in real-time. If your specs aren't parsed, you aren't in the running. Here's how I fix that.",
@@ -493,7 +493,7 @@ The "funnel" has collapsed into a single conversational interaction. I'm positio
     {
         slug: 'semantic-content-clustering-geo-age',
         title: "Semantic Content Clustering: How I Build Topical Moats",
-        metaTitle: "Semantic Clustering: My Strategy for GEO Topical Authority",
+        metaTitle: "Semantic Clustering for Topical Moats | Chaitanya Kore",
         date: 'February 20, 2026',
         category: 'GEO',
         excerpt: "AI engines don't rank pages; they rank 'Topic Authority'. I've shifted my entire content architecture to focus on building semantic webs. Here's why.",
@@ -572,7 +572,7 @@ I want my clients to be the "encyclopedia of record" for their niche. Whether th
     {
         slug: 'google-discover-experience-update',
         title: "Google Discover Update: Why Your Desk is Your New Office",
-        metaTitle: "Google Discover: My Strategy for the 'Experience' Era",
+        metaTitle: "Google Discover SEO: Experience Signals | Chaitanya Kore",
         date: 'February 22, 2026',
         category: 'SEO',
         excerpt: "February 2026 Discover update prioritizes 'Experience' signals. I'm finding that a 30-second video of your work beats a 2000-word blog post every time.",
@@ -649,7 +649,7 @@ I’m pivoting my agency to be a hybrid of "SEO" and "Content Studio." We aren't
     {
         slug: 'aeo-question-graph-mapping',
         title: "AEO Best Practices: Why I'm Mapping the 'Question Graph'",
-        metaTitle: "AEO Strategy: My Guide to Question Graph Mapping",
+        metaTitle: "AEO Strategy: Question Graph Mapping | Chaitanya Kore",
         date: 'February 23, 2026',
         category: 'AEO',
         excerpt: "Humans are asking more questions than ever. I've stopped targeting keywords and started mapping the conversational path users take.",
@@ -724,7 +724,7 @@ I want my clients to be the most helpful "voice" in their industry. We're buildi
     {
         slug: 'citation-engine-building-brand-llm-era',
         title: "The 'Citation Engine': Why I'm Building Citation Magnets",
-        metaTitle: "The Citation Engine Strategy: My 2026 GEO Framework",
+        metaTitle: "Citation Engine: 2026 GEO Framework | Chaitanya Kore",
         date: 'February 24, 2026',
         category: 'GEO',
         excerpt: "AI doesn't just need content; it needs proof. I'm shifting my strategy to build 'Citation Magnets'—proprietary data that AI engines can't ignore.",

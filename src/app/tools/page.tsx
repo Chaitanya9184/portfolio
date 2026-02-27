@@ -72,9 +72,9 @@ export default function ToolsHubPage() {
                                     <div className={`w-12 h-12 rounded-2xl ${tool.bgColor} ${tool.color} flex items-center justify-center mb-6 border border-white/5`}>
                                         {tool.icon}
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-white transition-colors">
+                                    <h2 className="text-2xl font-bold text-white mb-3 group-hover:text-white transition-colors">
                                         {tool.title}
-                                    </h3>
+                                    </h2>
                                     <p className="text-zinc-400 leading-relaxed">
                                         {tool.description}
                                     </p>

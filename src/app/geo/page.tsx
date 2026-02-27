@@ -22,7 +22,7 @@ const geoFaqs = [
 ];
 
 export const metadata: Metadata = {
-    title: 'Generative Engine Optimization (GEO) Strategy | Chaitanya Kore',
+    title: 'Generative Engine Optimization Strategy',
     description: 'Make sure your brand is named and linked inside AI chatbots. Grow from a web link into a top, trusted source for AI-generated answers.',
     alternates: {
         canonical: '/geo',

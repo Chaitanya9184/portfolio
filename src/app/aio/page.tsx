@@ -22,7 +22,7 @@ const aioFaqs = [
 ];
 
 export const metadata: Metadata = {
-    title: 'Artificial Intelligence Optimization (AIO) Strategy | Chaitanya Kore',
+    title: 'Artificial Intelligence Optimization Strategy',
     description: 'Structure your brand\'s knowledge so AI models like ChatGPT and Gemini easily read, understand, and cite you as an authoritative source.',
     alternates: {
         canonical: '/aio',

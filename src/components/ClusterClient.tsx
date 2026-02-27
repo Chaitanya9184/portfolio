@@ -124,8 +124,8 @@ export default function ClusterClient({ cluster }: ClusterClientProps) {
 
                     {/* Extraction Block (Quick Answer) */}
                     <section className="mb-16 p-8 md:p-12 rounded-[2.5rem] bg-indigo-600/5 border border-indigo-500/20 relative overflow-hidden group">
-                        <h2 className="!mt-0 text-indigo-400 text-[10px] font-bold uppercase tracking-widest mb-6">Quick Answer (AI Chunk)</h2>
-                        <h3 className="text-white text-2xl md:text-3xl font-bold mb-4 tracking-tight">{cluster.extractionBlock.title}</h3>
+                        <p className="!mt-0 text-indigo-400 text-[10px] font-bold uppercase tracking-widest mb-6">Quick Answer (AI Chunk)</p>
+                        <h2 className="text-white text-2xl md:text-3xl font-bold mb-4 tracking-tight">{cluster.extractionBlock.title}</h2>
                         <p className="text-zinc-300 text-lg leading-relaxed mb-0">
                             {cluster.extractionBlock.content}
                         </p>
@@ -153,7 +153,7 @@ export default function ClusterClient({ cluster }: ClusterClientProps) {
                     {/* Checklist / Steps (if any) */}
                     {cluster.checklist && (
                         <section className="mb-24">
-                            <h2 className="text-3xl font-bold text-white mb-8 tracking-tighter">Implementation Checklist</h2>
+                            <p className="block text-3xl font-bold text-white mb-8 tracking-tighter">Implementation Checklist</p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {cluster.checklist.map((item, i) => (
                                     <div key={i} className="flex gap-4 p-6 rounded-2xl bg-zinc-900/40 border border-white/5 items-center">

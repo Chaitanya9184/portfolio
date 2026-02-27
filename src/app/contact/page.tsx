@@ -157,7 +157,7 @@ export default function ContactPage() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                         </div>
-                        <h4 className="text-white font-bold text-lg mb-2">Direct Email</h4>
+                        <h2 className="text-white font-bold text-lg mb-2">Direct Email</h2>
                         <p className="text-zinc-500 text-sm mb-4">For fast support or collaboration inquiries.</p>
                         <a href="mailto:korechaitanya10@gmail.com" className="text-emerald-500 font-medium hover:text-emerald-400 transition-colors">korechaitanya10@gmail.com</a>
                     </div>
@@ -167,7 +167,7 @@ export default function ContactPage() {
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                             </svg>
                         </div>
-                        <h4 className="text-white font-bold text-lg mb-2">Professional Network</h4>
+                        <h2 className="text-white font-bold text-lg mb-2">Professional Network</h2>
                         <p className="text-zinc-500 text-sm mb-4">Connect with me for industry updates.</p>
                         <a href="https://linkedin.com/in/chaitanya-kore-342069140" target="_blank" rel="noopener noreferrer" className="text-blue-500 font-medium hover:text-blue-400 transition-colors">LinkedIn Profile ↗</a>
                     </div>
@@ -193,7 +193,7 @@ export default function ContactPage() {
                                     <div className={`text-5xl font-black mb-6 opacity-20 ${item.iconColor} group-hover:opacity-100 transition-opacity duration-500 tracking-tighter`}>
                                         {item.step}
                                     </div>
-                                    <h4 className="text-white font-bold text-xl mb-4 tracking-tight group-hover:text-white transition-colors">{item.title}</h4>
+                                    <h3 className="text-white font-bold text-xl mb-4 tracking-tight group-hover:text-white transition-colors">{item.title}</h3>
                                     <p className="text-zinc-500 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors">{item.desc}</p>
                                 </div>
                             </div>
@@ -214,10 +214,10 @@ export default function ContactPage() {
                             { q: 'Do you work with agencies?', a: 'Yes, I consult for premium SaaS agencies looking to add technical depth and AI-readiness to their existing service suites.' }
                         ].map((faq, i) => (
                             <div key={i} className="group p-8 rounded-2xl bg-zinc-900/30 border border-zinc-800/50 hover:border-emerald-500/30 transition-all duration-300 hover:bg-zinc-900/50">
-                                <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-4">
+                                <h3 className="text-white font-bold text-lg mb-3 flex items-center gap-4">
                                     <span className="w-2 h-2 rounded-full bg-emerald-500 group-hover:scale-125 transition-transform" />
                                     {faq.q}
-                                </h4>
+                                </h3>
                                 <p className="text-zinc-400 text-base leading-relaxed pl-6">{faq.a}</p>
                             </div>
                         ))}
