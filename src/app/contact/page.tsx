@@ -159,7 +159,7 @@ export default function ContactPage() {
                         </div>
                         <h4 className="text-white font-bold text-lg mb-2">Direct Email</h4>
                         <p className="text-zinc-500 text-sm mb-4">For fast support or collaboration inquiries.</p>
-                        <a href="mailto:admin@chaitanyakore.in" className="text-emerald-500 font-medium hover:text-emerald-400 transition-colors">admin@chaitanyakore.in</a>
+                        <a href="mailto:korechaitanya10@gmail.com" className="text-emerald-500 font-medium hover:text-emerald-400 transition-colors">korechaitanya10@gmail.com</a>
                     </div>
                     <div className="p-8 rounded-3xl bg-zinc-900/30 border border-zinc-800/50 hover:border-blue-500/30 transition-all group">
                         <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
@@ -179,16 +179,23 @@ export default function ContactPage() {
                         <h2 className="text-3xl md:text-4xl text-white font-bold tracking-tight mb-4">The Strategic Process</h2>
                         <p className="text-zinc-500 max-w-xl mx-auto">How we transform your search presence from visibility to revenue.</p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                         {[
-                            { step: '01', title: 'Discovery & Audit', desc: 'A deep dive into your technical infrastructure and current entity footprint in the knowledge graph.' },
-                            { step: '02', title: 'Architecture & Design', desc: 'Crafting the programmatic SEO framework and mapping conversion funnels for AI search extraction.' },
-                            { step: '03', title: 'Scale & Monitoring', desc: 'Deploying content hubs and continuous AI performance tracking for sustained organic MoM growth.' }
+                            { step: '01', title: 'Discovery & Audit', desc: 'A deep dive into your technical infrastructure and current entity footprint in the knowledge graph.', color: 'from-blue-500 to-indigo-600' },
+                            { step: '02', title: 'Architecture & Design', desc: 'Crafting the programmatic SEO framework and mapping conversion funnels for AI search extraction.', color: 'from-emerald-500 to-teal-600' },
+                            { step: '03', title: 'Scale & Monitoring', desc: 'Deploying content hubs and continuous AI performance tracking for sustained organic MoM growth.', color: 'from-purple-500 to-pink-600' }
                         ].map((item, i) => (
-                            <div key={i} className="relative p-8 rounded-3xl bg-zinc-900/20 border border-zinc-800/40">
-                                <span className="absolute -top-4 -left-4 w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center text-white font-bold shadow-lg shadow-emerald-900/20">{item.step}</span>
-                                <h4 className="text-white font-bold text-xl mb-4 mt-2">{item.title}</h4>
-                                <p className="text-zinc-500 text-sm leading-relaxed">{item.desc}</p>
+                            <div key={i} className="group relative p-10 rounded-[2.5rem] bg-zinc-900/30 border border-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/10 overflow-hidden">
+                                {/* Step Indicator */}
+                                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center text-white font-black text-lg mb-8 shadow-lg shadow-black/20 group-hover:scale-110 transition-transform`}>
+                                    {item.step}
+                                </div>
+
+                                <h4 className="text-white font-bold text-2xl mb-4 tracking-tight">{item.title}</h4>
+                                <p className="text-zinc-500 text-base leading-relaxed group-hover:text-zinc-400 transition-colors">{item.desc}</p>
+
+                                {/* Hover Glow */}
+                                <div className={`absolute -bottom-24 -right-24 w-48 h-48 bg-gradient-to-br ${item.color} blur-[80px] opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
                             </div>
                         ))}
                     </div>
