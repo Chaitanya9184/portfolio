@@ -60,9 +60,7 @@ export default function AboutPage() {
                     {/* Content Overlay */}
                     <div className="relative z-10 container mx-auto px-6">
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            style={{ opacity: useTransform(scrollYProgress, [0, 0.2], [1, 0]) }}
                             className="max-w-4xl"
                         >
                             <span className="text-zinc-500 text-xs font-bold uppercase tracking-[0.5em] mb-4 block">The Human behind the Strategy</span>
@@ -136,7 +134,9 @@ export default function AboutPage() {
                 </div>
             </div>
 
-            <Footer />
+            <div className="relative z-30 bg-black">
+                <Footer />
+            </div>
         </main>
     );
 }
