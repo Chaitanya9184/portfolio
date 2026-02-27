@@ -50,6 +50,9 @@ export default function Navigation() {
 
                 {/* Desktop Navigation Links */}
                 <nav className="hidden md:flex items-center gap-8">
+                    <Link href="/about" className="text-zinc-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">
+                        About
+                    </Link>
                     <Link href="/blog" className="text-zinc-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">
                         AI Insights
                     </Link>

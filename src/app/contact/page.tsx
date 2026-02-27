@@ -174,48 +174,51 @@ export default function ContactPage() {
                 </div>
 
                 {/* The Strategic Process */}
-                <div className="mb-24">
+                <div className="mb-32">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl text-white font-bold tracking-tight mb-4">The Strategic Process</h2>
-                        <p className="text-zinc-500 max-w-xl mx-auto">How we transform your search presence from visibility to revenue.</p>
+                        <p className="text-emerald-500 text-[10px] font-bold uppercase tracking-[0.3em] mb-4">The Strategic Process</p>
+                        <h2 className="text-4xl md:text-5xl text-white font-bold tracking-tight mb-4">How we transform your search presence from visibility to revenue.</h2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
-                            { step: '01', title: 'Discovery & Audit', desc: 'A deep dive into your technical infrastructure and current entity footprint in the knowledge graph.', color: 'from-blue-500 to-indigo-600' },
-                            { step: '02', title: 'Architecture & Design', desc: 'Crafting the programmatic SEO framework and mapping conversion funnels for AI search extraction.', color: 'from-emerald-500 to-teal-600' },
-                            { step: '03', title: 'Scale & Monitoring', desc: 'Deploying content hubs and continuous AI performance tracking for sustained organic MoM growth.', color: 'from-purple-500 to-pink-600' }
+                            { step: '01', title: 'Discovery & Audit', desc: 'A deep dive into your technical infrastructure and current entity footprint in the knowledge graph.', color: 'from-blue-500/20 to-indigo-600/20', borderColor: 'group-hover:border-blue-500/50', iconColor: 'text-blue-500' },
+                            { step: '02', title: 'Architecture & Design', desc: 'Crafting the programmatic SEO framework and mapping conversion funnels for AI search extraction.', color: 'from-emerald-500/20 to-teal-600/20', borderColor: 'group-hover:border-emerald-500/50', iconColor: 'text-emerald-500' },
+                            { step: '03', title: 'Scale & Monitoring', desc: 'Deploying content hubs and continuous AI performance tracking for sustained organic MoM growth.', color: 'from-purple-500/20 to-pink-600/20', borderColor: 'group-hover:border-purple-500/50', iconColor: 'text-purple-500' }
                         ].map((item, i) => (
-                            <div key={i} className="group relative p-10 rounded-[2.5rem] bg-zinc-900/30 border border-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/10 overflow-hidden">
-                                {/* Step Indicator */}
-                                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center text-white font-black text-lg mb-8 shadow-lg shadow-black/20 group-hover:scale-110 transition-transform`}>
-                                    {item.step}
+                            <div key={i} className={`group relative p-8 rounded-3xl bg-zinc-900/40 border border-zinc-800/80 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 ${item.borderColor} overflow-hidden`}>
+                                {/* Gradient Background */}
+                                <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+
+                                <div className="relative z-10">
+                                    <div className={`text-5xl font-black mb-6 opacity-20 ${item.iconColor} group-hover:opacity-100 transition-opacity duration-500 tracking-tighter`}>
+                                        {item.step}
+                                    </div>
+                                    <h4 className="text-white font-bold text-xl mb-4 tracking-tight group-hover:text-white transition-colors">{item.title}</h4>
+                                    <p className="text-zinc-500 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors">{item.desc}</p>
                                 </div>
-
-                                <h4 className="text-white font-bold text-2xl mb-4 tracking-tight">{item.title}</h4>
-                                <p className="text-zinc-500 text-base leading-relaxed group-hover:text-zinc-400 transition-colors">{item.desc}</p>
-
-                                {/* Hover Glow */}
-                                <div className={`absolute -bottom-24 -right-24 w-48 h-48 bg-gradient-to-br ${item.color} blur-[80px] opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
                             </div>
                         ))}
                     </div>
                 </div>
 
                 {/* Strategic FAQs */}
-                <div className="max-w-2xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-4xl text-white font-bold tracking-tight mb-12">Frequent Questions</h2>
-                    <div className="space-y-6 text-left">
+                <div className="max-w-3xl mx-auto">
+                    <div className="text-center mb-16">
+                        <p className="text-emerald-500 text-[10px] font-bold uppercase tracking-[0.3em] mb-4">Common Inquiries</p>
+                        <h2 className="text-4xl text-white font-bold tracking-tight">Frequent Questions</h2>
+                    </div>
+                    <div className="space-y-4">
                         {[
                             { q: 'How long until we see ROI?', a: 'Typical Technical SEO and AEO pivots show leading indicators (mentions and citations) in 4-6 weeks, with revenue impact at 3-6 months.' },
                             { q: 'What is the GEO transition?', a: 'It is the shift from keyword-based ranking to "Generative Engine Optimization," focusing on being the primary source that AI models cite.' },
                             { q: 'Do you work with agencies?', a: 'Yes, I consult for premium SaaS agencies looking to add technical depth and AI-readiness to their existing service suites.' }
                         ].map((faq, i) => (
-                            <div key={i} className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60">
-                                <h4 className="text-white font-bold mb-3 flex items-center gap-3">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                            <div key={i} className="group p-8 rounded-2xl bg-zinc-900/30 border border-zinc-800/50 hover:border-emerald-500/30 transition-all duration-300 hover:bg-zinc-900/50">
+                                <h4 className="text-white font-bold text-lg mb-3 flex items-center gap-4">
+                                    <span className="w-2 h-2 rounded-full bg-emerald-500 group-hover:scale-125 transition-transform" />
                                     {faq.q}
                                 </h4>
-                                <p className="text-zinc-400 text-sm leading-relaxed ml-4.5">{faq.a}</p>
+                                <p className="text-zinc-400 text-base leading-relaxed pl-6">{faq.a}</p>
                             </div>
                         ))}
                     </div>

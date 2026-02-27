@@ -72,11 +72,11 @@ export default function HomeServicesIndustryPage() {
                         Home Services
                     </div>
                     <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-6">
-                        Dominating The <br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">Google Map Pack</span>
+                        Owning the Local <br className="hidden md:block" />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">Map Pack Search</span>
                     </h1>
                     <p className="text-zinc-400 text-xl font-light max-w-2xl leading-relaxed">
-                        For HVAC, Roofing, Plumbing, and local contractors, visibility is survival. We build hyper-local search engines that intercept high-intent customers the moment their houses need fixing.
+                        In home services, if you aren't in the top 3 of the Google Map Pack, you don't exist. I help contractors and local businesses stop renting leads and start owning their local search results.
                     </p>
                 </div>
 
@@ -84,24 +84,24 @@ export default function HomeServicesIndustryPage() {
                     {/* The Problem */}
                     <div className="p-8 rounded-3xl bg-red-950/20 border border-red-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-red-500">⚠️</span> The Home Services Challenge
+                            <span className="text-red-500">⚠️</span> The Shared Lead "Burn"
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Bleeding margin to shared-lead platforms (Angi, HomeAdvisor) that sell the same lead to 5 competitors.</li>
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Google Ads / LSA costs rising uncontrollably, driving up Cost Per Lead (CPL) year over year.</li>
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Invisible in the local 'Map Pack', handing the most lucrative emergency jobs directly to competitors.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Platforms like Angi and Thumbtack sell the same lead to 5 of your competitors, forcing you into a 'Race to the Bottom' on price.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Your Google Ads costs are likely skyrocketing as national brands outbid you for your own local keywords.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> If your Google Business Profile isn't optimized, you're handing the most lucrative emergency jobs directly to your competitors.</li>
                         </ul>
                     </div>
 
                     {/* The Solution */}
                     <div className="p-8 rounded-3xl bg-orange-950/20 border border-orange-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-orange-400">⚡</span> The Local Map Pack Solution
+                            <span className="text-orange-400">⚡</span> My Local Dominance Framework
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
-                            <li className="flex gap-3"><span className="text-orange-500/50 mt-1">&rarr;</span> <strong>Google Business Dominance:</strong> Relentless optimization of your GBP, review velocity, and localized citations.</li>
-                            <li className="flex gap-3"><span className="text-orange-500/50 mt-1">&rarr;</span> <strong>City-Service Architectures:</strong> Building robust, fast-loading, neighborhood-specific landing pages that convert direct local searches.</li>
-                            <li className="flex gap-3"><span className="text-orange-500/50 mt-1">&rarr;</span> <strong>LocalBusiness Schema:</strong> Injecting exact GPS coordinates, business hours, and operational areas directly into the code for Google to read.</li>
+                            <li className="flex gap-3"><span className="text-orange-500/50 mt-1">&rarr;</span> <strong>Google Business Optimization:</strong> I don't just 'fill out' your profile; I optimize for review velocity and localized citation signals to force you into the top 3.</li>
+                            <li className="flex gap-3"><span className="text-orange-500/50 mt-1">&rarr;</span> <strong>Hyper-Local Infrastructure:</strong> I build city-specific and service-specific landing pages that capture customers the second their house needs a fix.</li>
+                            <li className="flex gap-3"><span className="text-orange-500/50 mt-1">&rarr;</span> <strong>Technical Local Schema:</strong> I inject exact GPS coordinates and service area data directly into your code so Google knows exactly which neighborhoods you own.</li>
                         </ul>
                     </div>
                 </div>

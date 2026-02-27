@@ -72,11 +72,11 @@ export default function FinanceIndustryPage() {
                         Finance & Fintech
                     </div>
                     <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-6">
-                        Building Trust <br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-500">In Financial Markets</span>
+                        Leading with Trust <br className="hidden md:block" />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-500">In a High-Stakes Market</span>
                     </h1>
                     <p className="text-zinc-400 text-xl font-light max-w-2xl leading-relaxed">
-                        In finance, ranking high means proving you are safe and reliable. We help banks and fintech startups build the trust Google needs to see.
+                        In fintech, a single algorithm update can wipe out half your traffic if you haven't built 'Absolute Trust'. I help financial brands navigate YMYL requirements to build unbeatable search authority.
                     </p>
                 </div>
 
@@ -84,24 +84,24 @@ export default function FinanceIndustryPage() {
                     {/* The Problem */}
                     <div className="p-8 rounded-3xl bg-red-950/20 border border-red-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-red-500">⚠️</span> The Growth Problem
+                            <span className="text-red-500">⚠️</span> The Finance "Transparency" Gap
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Google is very strict with money-related sites. If trust is low, you won't rank.</li>
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Giant brands often own the top spots, making it hard for new names to be seen.</li>
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Tough rules and compliance often slow down how fast you can grow your content.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Google is hyper-aware of your 'Financial Advice' credentials. If you don't prove expertise, you'll never reach the first page.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Competitors with massive bank-link profiles often own the 'Safe' terms, making it hard for disruptive fintechs to break through.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Compliance rules often make your content sound dry and robotic, which kills your user engagement and rankings.</li>
                         </ul>
                     </div>
 
                     {/* The Solution */}
                     <div className="p-8 rounded-3xl bg-violet-950/20 border border-violet-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-violet-400">⚡</span> The Strategy for Growth
+                            <span className="text-violet-400">⚡</span> My Strategy for Fintech Growth
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
-                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>Proven Authority:</strong> We use clear data and expert reviews to show you are a leader in your field.</li>
-                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>Smart Tools:</strong> We build fast, useful tools like payment calculators that earn links naturally.</li>
-                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>AI Visibility:</strong> We optimize your data so AI search engines recommend your brand first.</li>
+                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>YMYL Fortification:</strong> I build the author entities and citation networks needed to prove to Google that your brand is a safe pair of hands.</li>
+                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>Utility-First Link Building:</strong> I create high-value tools like my ROI calculators that earn media mentions and backlinks naturally.</li>
+                            <li className="flex gap-3"><span className="text-violet-500/50 mt-1">&rarr;</span> <strong>AI Discovery (GEO):</strong> I structure your financial services data so that when users ask AI for "the best investment tool," your brand is the top response.</li>
                         </ul>
                     </div>
                 </div>

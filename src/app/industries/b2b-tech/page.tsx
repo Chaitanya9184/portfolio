@@ -76,35 +76,35 @@ export default function B2BTechIndustryPage() {
                         B2B Enterprise Authority
                     </div>
                     <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-6">
-                        Navigating Complex <br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Sales Cycles with SEO</span>
+                        Navigating the Enterprise <br className="hidden md:block" />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Decision-Making Maze</span>
                     </h1>
                     <p className="text-zinc-400 text-xl font-light max-w-2xl leading-relaxed">
-                        In B2B tech, buyers aren&apos;t just looking for software; they&apos;re looking for enterprise solutions, integrations, and thought leadership. Average buying teams consist of 6-10 decision-makers testing your brand against competitors over 12+ months.
+                        In B2B tech, you aren't selling to a person; you're selling to a committee. I help you build the technical authority and thought leadership needed to win over every stakeholder in the room.
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
                     {/* The Problem */}
                     <div className="p-8 rounded-3xl bg-zinc-900/40 border border-zinc-800">
-                        <h2 className="text-2xl font-bold text-white mb-4">The Trust Deficit</h2>
+                        <h2 className="text-2xl font-bold text-white mb-4">The "Silent" Buying Cycle</h2>
                         <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                            Enterprise buyers don&apos;t trust generic landing pages. They require whitepapers, API documentation, deep technical articles, and comparisons. If your brand isn&apos;t answering their highly specific, long-tail queries, your competitor is.
+                            Enterprise buyers spend 70% of their journey researching before they ever talk to your sales team. If your site doesn't answer their highly complex technical questions, you've lost the deal before you even knew it existed.
                         </p>
                         <div className="p-4 bg-purple-950/20 rounded-2xl border border-purple-900/30">
                             <p className="text-purple-300 font-medium italic text-sm">
-                                &quot;According to Gartner, 77% of B2B buyers state that their latest purchase was very complex or difficult. Content is the only way to simplify it.&quot;
+                                "The biggest risk in B2B is being 'Good Enough' but invisible. I make sure your expertise is unavoidable."
                             </p>
                         </div>
                     </div>
 
                     {/* The Solution */}
                     <div className="p-8 rounded-3xl bg-gradient-to-br from-purple-900/20 to-zinc-900/40 border border-purple-900/30">
-                        <h2 className="text-2xl font-bold text-white mb-4">Establishing AI Authority</h2>
+                        <h2 className="text-2xl font-bold text-white mb-4">My B2B Authority System</h2>
                         <ul className="space-y-4 text-zinc-300 text-sm leading-relaxed mb-6">
-                            <li><strong>Entity SEO (AEO):</strong> Ensuring your brand, key executives, and proprietary methodologies are recognized as distinct entities by Google&apos;s Knowledge Graph and AI models.</li>
-                            <li><strong>Hub &amp; Spoke Architecture:</strong> Structuring content pillars around core competencies (e.g., &quot;Cloud Native Security&quot; -&gt; &quot;Kubernetes Best Practices&quot;, &quot;Container Scanning&quot;) to build undeniable topical authority.</li>
-                            <li><strong>Thought Leadership Distribution:</strong> Optimizing expert articles to rank for the exact long-tail phrases decision-makers and engineers are searching for.</li>
+                            <li><strong>Entity-Based Trust:</strong> I ensure search engines recognize your brand and executives as the definitive 'Entities' for your specific technical category.</li>
+                            <li><strong>Hub & Spoke Mastery:</strong> I architect your site to channel authority from massive Pillar pages down to the hyper-specific sub-topics that engineers actually care about.</li>
+                            <li><strong>Sales-Aligned SEO:</strong> I don't just target keywords; I target the questions your sales team hears daily, turning your website into their best closing tool.</li>
                         </ul>
                     </div>
                 </div>

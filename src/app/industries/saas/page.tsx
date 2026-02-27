@@ -76,11 +76,11 @@ export default function SaaSIndustryPage() {
                         SaaS Growth
                     </div>
                     <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-6">
-                        Scaling SaaS <br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Beyond Paid Ads</span>
+                        Stop Renting Your SaaS <br className="hidden md:block" />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Pipeline from Google Ads</span>
                     </h1>
                     <p className="text-zinc-400 text-xl font-light max-w-2xl leading-relaxed">
-                        Customer Acquisition Costs (CAC) in SaaS are at an all-time high. To achieve sustainable MRR growth, you need an organic acquisition engine that captures users at every stage of the funnel.
+                        I’ve seen too many SaaS founders burn millions on PPC just to keep their MRR flat. I help you build an organic engine that actually compounds over time.
                     </p>
                 </div>
 
@@ -88,24 +88,24 @@ export default function SaaSIndustryPage() {
                     {/* The Problem */}
                     <div className="p-8 rounded-3xl bg-red-950/20 border border-red-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-red-500">⚠️</span> The SaaS Challenge
+                            <span className="text-red-500">⚠️</span> The SaaS "Trap" I See Daily
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Relying heavily on Paid Search leads to unsustainable CAC and zero compounding equity.</li>
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Competitors with deep pockets outbid you on bottom-of-funnel (BOFU) terms.</li>
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Target audiences are using AI (Perplexity, ChatGPT) to find tool recommendations instead of traditional Google search.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Relying on Paid Search is like renting a house. The moment you stop paying, your traffic vanishes and you have zero equity.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> You’re fighting giants with 10x your budget on generic keywords, causing your CAC to skyrocket.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Your potential buyers are already moving to AI search (Perplexity, ChatGPT) for recommendations, and you’re invisible there.</li>
                         </ul>
                     </div>
 
                     {/* The Solution */}
                     <div className="p-8 rounded-3xl bg-blue-950/20 border border-blue-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-blue-400">⚡</span> The Organic SaaS Solution
+                            <span className="text-blue-400">⚡</span> How I Build Your Moat
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
-                            <li className="flex gap-3"><span className="text-blue-500/50 mt-1">&rarr;</span> <strong>Programmatic SEO &amp; Alternates:</strong> Building scalable vs. competitor pages and use-case hubs that capture high-intent buyers.</li>
-                            <li className="flex gap-3"><span className="text-blue-500/50 mt-1">&rarr;</span> <strong>AI Engine Optimization (GEO/AEO):</strong> Structuring product capabilities so your tool is cited when users ask ChatGPT &quot;What is the best software for [X]?&quot;</li>
-                            <li className="flex gap-3"><span className="text-blue-500/50 mt-1">&rarr;</span> <strong>Technical Foundation:</strong> Ensuring your dynamic React/Next.js SaaS marketing site is flawlessly rendered and indexed by search bots.</li>
+                            <li className="flex gap-3"><span className="text-blue-500/50 mt-1">&rarr;</span> <strong>Programmatic Scale:</strong> I don't just target one keyword; I build thousands of high-intent "Vs." and "Alternative" pages that capture buyers in the decision phase.</li>
+                            <li className="flex gap-3"><span className="text-blue-500/50 mt-1">&rarr;</span> <strong>AI Citation Engineering (GEO):</strong> I structure your product data so that when someone asks AI for the "best software," your tool is the primary citation.</li>
+                            <li className="flex gap-3"><span className="text-blue-500/50 mt-1">&rarr;</span> <strong>Technical Excellence:</strong> I fix the Next.js and React rendering issues that keep most SaaS sites from ever being indexed properly.</li>
                         </ul>
                     </div>
                 </div>

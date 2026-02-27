@@ -76,23 +76,23 @@ export default function EcommerceIndustryPage() {
                         eCommerce Optimization
                     </div>
                     <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-6">
-                        Converting Clicks to <br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">Organic Revenue</span>
+                        Turning Transactions <br className="hidden md:block" />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">Into Organic Growth</span>
                     </h1>
                     <p className="text-zinc-400 text-xl font-light max-w-2xl leading-relaxed">
-                        eCommerce SEO is more than just adding keywords. It is about guiding crawl bots, structuring millions of products, and making sure buyers find you on Google, Shopping cards, and AI Answer Engines.
+                        eCommerce SEO isn't just about ranking products; it's about managing massive scale and outsmarting the Amazon-sized giants. I help stores build a technical foundation that compounds revenue every single month.
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
                     {/* The Problem */}
                     <div className="p-8 rounded-3xl bg-zinc-900/40 border border-zinc-800">
-                        <h2 className="text-2xl font-bold text-white mb-4">The eCommerce Dilemma</h2>
+                        <h2 className="text-2xl font-bold text-white mb-4">The "Scale" Bottleneck</h2>
                         <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                            Huge, dynamic stores often have deep technical flaws. Duplicate pages from search filters, wasted crawl time on basic sorting tabs, and slow loading speeds will sink your rankings. Online stores also face a new threat: users asking AI tools for direct product suggestions instead of standard web searches.
+                            When you have thousands of products, your biggest enemy is 'Crawl Waste'. Google gets stuck in your filters and search facets, never reaching your most profitable items. Plus, AI shopping tools are changing how people buy—if you aren't formatted correctly, you're invisible to the new generation of shoppers.
                         </p>
                         <ul className="space-y-3">
-                            {["Faceted search making duplicate content", "Index issues for millions of product pages", "Missing or broken Schema Markup"].map((issue, i) => (
+                            {["Faceted navigation leaking crawl budget", "Index bloat from thin product variations", "Missing micro-data that AI shoppers rely on"].map((issue, i) => (
                                 <li key={i} className="flex gap-2 text-sm text-zinc-500">
                                     <span className="text-zinc-700">✗</span> {issue}
                                 </li>
@@ -102,11 +102,11 @@ export default function EcommerceIndustryPage() {
 
                     {/* The Solution */}
                     <div className="p-8 rounded-3xl bg-gradient-to-br from-emerald-900/20 to-zinc-900/40 border border-emerald-900/30">
-                        <h2 className="text-2xl font-bold text-white mb-4">The Technical Edge</h2>
+                        <h2 className="text-2xl font-bold text-white mb-4">My eCommerce Growth Engine</h2>
                         <ul className="space-y-4 text-zinc-300 text-sm leading-relaxed mb-6">
-                            <li><strong>Smart Crawl Management:</strong> We use strict canonical tags, tight robots.txt rules, and smart internal links so Google only crawls your best pages.</li>
-                            <li><strong>AI Product Data (GEO):</strong> We build out rich product schema (Product, Review, Offer, AggregateRating). This helps AI shopping bots and Google Merchant Center read your sales inventory perfectly.</li>
-                            <li><strong>Category Dominance:</strong> We turn simple collection pages into highly tuned landing pages that rank for big, profitable search terms.</li>
+                            <li><strong>Dynamic Crawl Control:</strong> I implement advanced robots.txt and canonical strategies to ensure Google only spends time on your revenue-generating pages.</li>
+                            <li><strong>AI-Ready Product Schema:</strong> I build deep technical markups (Product, Offer, Review) so AI models and Google Shopping cards showcase your inventory perfectly.</li>
+                            <li><strong>Category Page Domination:</strong> I turn your collection pages into high-converting landing pages that own the 'Broad' terms your competitors are struggling to rank for.</li>
                         </ul>
                     </div>
                 </div>

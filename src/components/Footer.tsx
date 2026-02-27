@@ -11,8 +11,9 @@ export default function Footer() {
 
                     {/* Column 1: Brand & Mission */}
                     <div className="flex flex-col gap-6">
-                        <Link href="/" className="text-xl font-bold text-white tracking-tighter">
+                        <Link href="/" className="group text-xl font-bold text-white tracking-tighter relative">
                             Chaitanya <span className="text-zinc-500 font-light">Kore</span>
+                            <div className="absolute -bottom-1 left-0 w-0 h-[2px] bg-emerald-500 transition-all duration-300 group-hover:w-full" />
                         </Link>
                         <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
                             Engineering organic growth for high-stakes SaaS and B2B brands. Specializing in Technical SEO and the transition to AI Search (GEO/AEO).

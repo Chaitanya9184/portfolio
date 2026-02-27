@@ -72,11 +72,11 @@ export default function RealEstateIndustryPage() {
                         Real Estate & PropTech
                     </div>
                     <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-6">
-                        Outranking Aggregators <br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">With Hyper-Local SEO</span>
+                        Beating the Real Estate <br className="hidden md:block" />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Aggregator Giants</span>
                     </h1>
                     <p className="text-zinc-400 text-xl font-light max-w-2xl leading-relaxed">
-                        To beat massive MLS aggregators, you need flawless technical precision. We use advanced property schema and target local neighborhood search intent to steal market share.
+                        Zillow and Realtor.com own the generic search terms, but they can't own your neighborhood expertise. I help brokerages and agents win back their local markets using hyper-local SEO and technical precision.
                     </p>
                 </div>
 
@@ -84,24 +84,24 @@ export default function RealEstateIndustryPage() {
                     {/* The Problem */}
                     <div className="p-8 rounded-3xl bg-red-950/20 border border-red-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-red-500">⚠️</span> The Real Estate Challenge
+                            <span className="text-red-500">⚠️</span> The Real Estate "Invisiblity" Problem
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Massive aggregators (Zillow, Realtor.com) dominate high-volume, generic geographic keywords.</li>
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Dynamic MLS feeds create thousands of thin, expiring pages that destroy your crawl budget and SEO health.</li>
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Poor local map pack visibility means competing agents intercept your local buyers and sellers.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Massive MLS aggregators dominate the high-volume keywords, pushing independent brokerages to page 5.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Your property listing pages are likely "Thin" and expiring constantly, which confuses Google and drains your crawl budget.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> If you don't show up in the Local Map Pack, you're losing every single local lead to the agent across the street.</li>
                         </ul>
                     </div>
 
                     {/* The Solution */}
                     <div className="p-8 rounded-3xl bg-cyan-950/20 border border-cyan-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-cyan-400">⚡</span> The Organic Real Estate Solution
+                            <span className="text-cyan-400">⚡</span> How I Reclaim Your Territory
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
-                            <li className="flex gap-3"><span className="text-cyan-500/50 mt-1">&rarr;</span> <strong>Architecture & Crawl Budget:</strong> Structuring MLS data so Google only indexes high-value, active properties and evergreen neighborhood hubs.</li>
-                            <li className="flex gap-3"><span className="text-cyan-500/50 mt-1">&rarr;</span> <strong>Hyper-Local Dominance:</strong> Deploying neighborhood-specific programmatic systems tailored for long-tail, high-intent buyers.</li>
-                            <li className="flex gap-3"><span className="text-cyan-500/50 mt-1">&rarr;</span> <strong>Technical Schema:</strong> Implementing Advanced RealEstateListing schema APIs to secure rich results in the SERPs.</li>
+                            <li className="flex gap-3"><span className="text-cyan-500/50 mt-1">&rarr;</span> <strong>Crawl Budget Governance:</strong> I restructure how Google sees your MLS data so it focuses on your most valuable neighborhood hubs and active listings.</li>
+                            <li className="flex gap-3"><span className="text-cyan-500/50 mt-1">&rarr;</span> <strong>Hyper-Local Neighborhood Moats:</strong> I build programmatic systems that target hyper-specific long-tail terms like "homes for sale in [Specific School District]."</li>
+                            <li className="flex gap-3"><span className="text-cyan-500/50 mt-1">&rarr;</span> <strong>Property Schema Mastery:</strong> I implement advanced LD+JSON schema so your listings get rich, eye-catching results in the SERPs.</li>
                         </ul>
                     </div>
                 </div>

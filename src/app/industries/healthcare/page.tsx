@@ -72,11 +72,11 @@ export default function HealthcareIndustryPage() {
                         Healthcare & MedTech
                     </div>
                     <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-6">
-                        Scaling Patient Acquisition <br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">With YMYL Authority</span>
+                        Winning Patient Trust <br className="hidden md:block" />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">In the Era of YMYL</span>
                     </h1>
                     <p className="text-zinc-400 text-xl font-light max-w-2xl leading-relaxed">
-                        In healthcare, Google demands absolute authority. We build E-E-A-T search strategies to dominate local maps. We rank complex medical terms and drive secure patient conversions with proven trust signals.
+                        In healthcare, Google doesn't just look for content; it looks for *Authority*. I help medical brands and clinics build the trust signals needed to dominate search results and protect their patients.
                     </p>
                 </div>
 
@@ -84,24 +84,24 @@ export default function HealthcareIndustryPage() {
                     {/* The Problem */}
                     <div className="p-8 rounded-3xl bg-red-950/20 border border-red-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-red-500">⚠️</span> The Healthcare Challenge
+                            <span className="text-red-500">⚠️</span> The High Stakes of Medical Search
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Severe YMYL algorithmic penalties for content lacking verified medical expertise.</li>
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Fragmented local strategy causing multi-location clinics to lose to generic aggregator directories.</li>
-                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Low conversion rates on generic medical symptom keywords that don't capture actual patient intent.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Google’s "Your Money or Your Life" (YMYL) filters are brutal. One wrong step and your site disappears from search overnight.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Most clinics rely on generic "Patient Directories" that take a huge commission and give you zero brand equity.</li>
+                            <li className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> Patients are increasingly asking AI models for symptom advice, and if your expertise isn't structured correctly, you aren't being cited.</li>
                         </ul>
                     </div>
 
                     {/* The Solution */}
                     <div className="p-8 rounded-3xl bg-emerald-950/20 border border-emerald-900/30">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <span className="text-emerald-400">⚡</span> The Organic Healthcare Solution
+                            <span className="text-emerald-400">⚡</span> How I Secure Your Authority
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
-                            <li className="flex gap-3"><span className="text-emerald-500/50 mt-1">&rarr;</span> <strong>E-E-A-T Optimization:</strong> Implementing strict medical reviewer schemas, author entities, and verifiable trust signals.</li>
-                            <li className="flex gap-3"><span className="text-emerald-500/50 mt-1">&rarr;</span> <strong>Hyper-Local Infrastructure:</strong> Building scalable, GEO-targeted landing pages to dominate the local 'near me' search intent.</li>
-                            <li className="flex gap-3"><span className="text-emerald-500/50 mt-1">&rarr;</span> <strong>Intent-Driven Content:</strong> Mapping the patient journey from symptom awareness to booking the appointment.</li>
+                            <li className="flex gap-3"><span className="text-emerald-500/50 mt-1">&rarr;</span> <strong>E-E-A-T Fortification:</strong> I implement deep schema for medical reviewers and authors to prove to Google that your content is trustworthy.</li>
+                            <li className="flex gap-3"><span className="text-emerald-500/50 mt-1">&rarr;</span> <strong>Local Map Dominance:</strong> I build hyper-local infrastructure so that when a patient searches "near me," your clinic is the first and only logical choice.</li>
+                            <li className="flex gap-3"><span className="text-emerald-500/50 mt-1">&rarr;</span> <strong>Patient Intent Mapping:</strong> I align your content with the actual journey a patient takes—from initial worry to booking a consultation.</li>
                         </ul>
                     </div>
                 </div>
