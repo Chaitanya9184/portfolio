@@ -69,13 +69,19 @@ My framework for GEO focuses on the **3 Pillars of Authority**:
 
 Implementing GEO isn't about changing meta tags. It's about re-engineering your content pipeline.
 
-### Step 1: The "Sentence 1" Rule
-Every heading must be a natural language question. The very first sentence following it must provide a direct, factual answer that an AI can quote instantly.
+### Step 1: The "Sentence 1" Framework
+Every heading must match a natural question. The very first sentence must answer that question directly for AI extraction. This eliminates "proximity bias" and ensures LLMs can associate your brand with the factual answer without hallucinating.
 
-### Step 2: Semantic Infrastructure Deployment
-We deploy advanced JSON-LD (FAQ, Service, Person, Article) to provide a machine-readable layer of truth. This reduces the LLM's computation cost, making you an "easy" source to cite.
+### Step 2: Semantic Knowledge Graphing
+Implementing advanced JSON-LD to declare entities, relationships, and verifiable claims. We build a machine-readable map of your topical authority, linking your brand to reputable nodes in the global knowledge graph.
 
-### Step 3: Performance Tracking (GSOV)
+### Step 3: Information Gain Layering
+Adding proprietary data, unique POVs, or first-person results that aren't present in the training data. AI engines only cite sources that provide *new* context. We layer every page with experimental data to ensure uniqueness.
+
+### Step 4: Extractability Engineering
+Technical architecture designed for high-speed LLM bot ingestion. We optimize your Next.js structure to ensure the HTML is clean, semantically correct, and favored for real-time citations.
+
+### Step 5: Performance Tracking (GSOV)
 We measure success by tracking how often your brand appears in AI-generated responses versus your competitors. This is the new "Share of Voice."
 
 ## Expert Verdict & Authority
@@ -213,7 +219,7 @@ export default function AiSearchPillar() {
                                         </div>
                                         <div>
                                             <h4 className="text-white font-bold mb-2">The "Sentence 1" Framework</h4>
-                                            <p className="text-sm text-zinc-400">Every heading must match a natural question. The very first sentence must answer that question directly for AI extraction.</p>
+                                            <p className="text-sm text-zinc-400">Every heading must match a natural question. The very first sentence must answer that question directly for AI extraction. This eliminates "proximity bias" and ensures LLMs associate your brand with the answer without hallucinating.</p>
                                         </div>
                                     </div>
                                     <div className="flex gap-6 group">
@@ -222,7 +228,25 @@ export default function AiSearchPillar() {
                                         </div>
                                         <div>
                                             <h4 className="text-white font-bold mb-2">Semantic Knowledge Graphing</h4>
-                                            <p className="text-sm text-zinc-400">Implementing advanced JSON-LD to declare entities, relationships, and verifiable claims.</p>
+                                            <p className="text-sm text-zinc-400">Implementing advanced JSON-LD to declare entities, relationships, and verifiable claims. We build a machine-readable map of your topical authority, linking you to nodes AI already trusts.</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-6 group">
+                                        <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-black transition-all">
+                                            <span className="font-bold">03</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-2">Information Gain Layering</h4>
+                                            <p className="text-sm text-zinc-400">Adding proprietary data, unique POVs, or first-person results. AI models only cite sources providing *new* context that isn't already in their training data.</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-6 group">
+                                        <div className="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center shrink-0 group-hover:bg-purple-500 group-hover:text-black transition-all">
+                                            <span className="font-bold">04</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-2">Extractability Engineering</h4>
+                                            <p className="text-sm text-zinc-400">Technical architecture optimized for high-speed LLM bot ingestion. We ensure Next.js HTML is clean and semantically favored for real-time AI citations.</p>
                                         </div>
                                     </div>
                                 </div>
