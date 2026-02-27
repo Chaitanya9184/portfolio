@@ -273,9 +273,9 @@ export default function AiSearchPillar() {
 
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                         {[
-                                            { slug: 'ai-seo-audit-checklist', title: 'AI Readiness Checklist', tag: 'Implementation' },
                                             { slug: 'entity-seo-strategy', title: 'Entity SEO Strategy', tag: 'Strategic' },
-                                            { slug: 'ai-seo-for-saas', title: 'AI Search for SaaS', tag: 'Commercial' }
+                                            { slug: 'ai-seo-for-saas', title: 'AI Search for SaaS', tag: 'Commercial' },
+                                            { slug: 'buyer-intent-keywords', title: 'Buyer Intent Mapping', tag: 'Implementation' }
                                         ].map((cluster, i) => (
                                             <Link key={i} href={`/insights/${cluster.slug}`} className="group p-8 rounded-[2rem] bg-zinc-900/30 border border-white/5 hover:border-blue-500/30 transition-all duration-500 flex flex-col justify-between aspect-square md:aspect-auto md:h-72 relative overflow-hidden">
                                                 <div className="relative z-10">

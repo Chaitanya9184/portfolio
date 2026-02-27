@@ -14,20 +14,70 @@ interface ClusterClientProps {
 
 export default function ClusterClient({ cluster }: ClusterClientProps) {
     const renderContent = (content: string) => {
-        return content.split('\n\n').map((para, i) => {
+        // Split by double newline to get blocks
+        const blocks = content.split('\n\n');
+        const elements: React.ReactNode[] = [];
+        let currentList: React.ReactNode[] = [];
+        let listKeyCounter = 0;
+
+        const parseTextFormat = (text: string) => {
+            // Very simple markdown bold parser (handles **text**)
+            const parts = text.split(/(\*\*.*?\*\*)/g);
+            return parts.map((part, i) => {
+                if (part.startsWith('**') && part.endsWith('**')) {
+                    return <strong key={i} className="text-white font-bold">{part.slice(2, -2)}</strong>;
+                }
+                return part;
+            });
+        };
+
+        const flushList = () => {
+            if (currentList.length > 0) {
+                elements.push(
+                    <ul key={`list-${listKeyCounter++}`} className="list-disc pl-6 mb-8 text-zinc-300 space-y-3">
+                        {currentList}
+                    </ul>
+                );
+                currentList = [];
+            }
+        };
+
+        blocks.forEach((para, i) => {
             const trimmed = para.trim();
+            if (!trimmed) return;
+
+            // Check if it's a heading
             if (trimmed.startsWith('## ')) {
+                flushList();
                 const text = trimmed.replace('## ', '');
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                return <h2 key={i} id={id} className="text-3xl md:text-5xl font-bold text-white mt-16 mb-8 tracking-tighter scroll-mt-32">{text}</h2>;
+                elements.push(<h2 key={`h2-${i}`} id={id} className="text-3xl md:text-5xl font-bold text-white mt-16 mb-8 tracking-tighter scroll-mt-32">{parseTextFormat(text)}</h2>);
+                return;
             }
             if (trimmed.startsWith('### ')) {
+                flushList();
                 const text = trimmed.replace('### ', '');
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                return <h3 key={i} id={id} className="text-2xl font-bold text-white mt-12 mb-6 tracking-tight scroll-mt-32">{text}</h3>;
+                elements.push(<h3 key={`h3-${i}`} id={id} className="text-2xl font-bold text-white mt-12 mb-6 tracking-tight scroll-mt-32">{parseTextFormat(text)}</h3>);
+                return;
             }
-            return <p key={i} className="text-zinc-300 text-lg leading-relaxed mb-8">{trimmed}</p>;
+
+            // Check if it's a bullet point (either • or - )
+            if (trimmed.startsWith('• ') || trimmed.startsWith('- ')) {
+                const text = trimmed.substring(2);
+                currentList.push(<li key={`li-${i}`} className="text-lg leading-relaxed">{parseTextFormat(text)}</li>);
+                return;
+            }
+
+            // If it's a paragraph
+            flushList();
+            elements.push(<p key={`p-${i}`} className="text-zinc-300 text-lg leading-relaxed mb-8">{parseTextFormat(trimmed)}</p>);
         });
+
+        // Flush any remaining list items
+        flushList();
+
+        return elements;
     };
 
     return (
