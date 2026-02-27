@@ -67,13 +67,16 @@ My framework focuses on the **Conversion Path**:
 ## Layer 3: Implementation – From Clicks to Customers
 
 ### Step 1: The Commercial Intent Audit
-We crawl your existing content to find "Leakage." Where are users landing on your site and then bouncing? We re-map those pages to high-intent CTAs.
+We crawl your existing content to find "Leakage." Where are users landing on your site and then bouncing? We re-map those pages to high-intent CTAs and capture the latent commercial value.
 
 ### Step 2: Problem-Solution Architecture
-Each section of a pillar page must follow the "Problem -> Solution -> Outcome" flow. We explicitly show how your service solves a specific pain point.
+We don't just state facts. We describe a burning business problem, present your service as the logical solution, and show the outcome. This framework identifies the user's pain points and positions your brand as the expert savior.
 
-### Step 3: Contextual CTA Integration
-We don't use generic sidebar banners. We lead with "View Case Study" or "Get a Revenue Audit" inside the relevant content chunks.
+### Step 3: Social Proof & Multi-Channel Attribution
+Linking organic discovery directly to CRM signals to prove MRR impact. We integrate case study data and trust signals within the editorial flow to decrease sales friction and increase conversion velocity.
+
+### Step 4: Contextual CTA Integration
+We don't use generic sidebar banners. We lead with "View Case Study" or "Get a Revenue Audit" inside the relevant content chunks, matching the CTA to the user's specific stage in the buying journey.
 
 ## Expert Verdict & Authority
 Having managed SEO budgets for multi-million dollar brands, I know that the boardroom only cares about one thing: the bottom line. My strategy is built on 8 years of data-driven results.
@@ -149,7 +152,7 @@ export default function RevenueSeoPillar() {
                         <div className="mb-16 p-8 md:p-12 rounded-[2.5rem] bg-emerald-600/5 border border-emerald-500/20 relative overflow-hidden group">
                             <h2 className="!mt-0 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-4">Commercial Summary</h2>
                             <p className="text-white text-xl md:text-2xl font-medium leading-[1.4]">
-                                Stop renting your audience from ad networks. Build a **Revenue Engine** that converts organic intent into high-value sales pipeline and MRR equity.
+                                Stop renting your audience from ad networks. Build a <span className="text-emerald-400 font-bold">Revenue Engine</span> that converts organic intent into high-value sales pipeline and MRR equity.
                             </p>
                             <div className="mt-8 flex flex-wrap gap-4">
                                 <span className="px-4 py-2 rounded-full bg-zinc-900 border border-white/5 text-xs text-zinc-400 font-medium">#RevenueSEO</span>
@@ -201,12 +204,41 @@ export default function RevenueSeoPillar() {
                                 <h2 id="layer-3-implementation" className="text-3xl md:text-5xl font-bold text-white tracking-tighter mb-6 scroll-mt-32">Implementation Flow</h2>
                                 <p>From commercial intent audits to problem-solution architecture, every page is designed to convert.</p>
 
-                                <div className="grid grid-cols-1 gap-6 my-12">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
                                     <div className="p-8 rounded-3xl bg-emerald-950/20 border border-emerald-900/30 flex items-start gap-6">
-                                        <div className="text-4xl">💰</div>
+                                        <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                                            <span className="text-emerald-400 font-bold">01</span>
+                                        </div>
                                         <div>
-                                            <h4 className="text-white font-bold mb-2">The "Problem → Solution" Architecture</h4>
-                                            <p className="text-sm text-zinc-400 leading-relaxed">We don't just state facts. We describe a burning business problem, present your service as the logical solution, and show the outcome.</p>
+                                            <h4 className="text-white font-bold mb-2">The Commercial Intent Audit</h4>
+                                            <p className="text-sm text-zinc-400 leading-relaxed">Identifying high-value search terms that indicate a user is ready to buy, rather than just researching. We map keywords to your specific product features.</p>
+                                        </div>
+                                    </div>
+                                    <div className="p-8 rounded-3xl bg-emerald-950/20 border border-emerald-900/30 flex items-start gap-6">
+                                        <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                                            <span className="text-emerald-400 font-bold">02</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-2">Problem → Solution Architecture</h4>
+                                            <p className="text-sm text-zinc-400 leading-relaxed">We describe a burning business problem, present your service as the logical solution, and show a measurable outcome to drive immediate trust and conversion.</p>
+                                        </div>
+                                    </div>
+                                    <div className="p-8 rounded-3xl bg-emerald-950/20 border border-emerald-900/30 flex items-start gap-6">
+                                        <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                                            <span className="text-emerald-400 font-bold">03</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-2">Social Proof Integration</h4>
+                                            <p className="text-sm text-zinc-400 leading-relaxed">Embedding case studies, LinkedIn recommendations, and industry logos within the content flow to build "Lateral Authority" and lower sales resistance.</p>
+                                        </div>
+                                    </div>
+                                    <div className="p-8 rounded-3xl bg-emerald-950/20 border border-emerald-900/30 flex items-start gap-6">
+                                        <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                                            <span className="text-emerald-400 font-bold">04</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-2">Contextual CTA Audits</h4>
+                                            <p className="text-sm text-zinc-400 leading-relaxed">Strategically placing high-value offers (Audits, Checklists, ROI Predictors) at the exact moment a user understands the value of your solution.</p>
                                         </div>
                                     </div>
                                 </div>
