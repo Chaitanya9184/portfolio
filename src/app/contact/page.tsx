@@ -133,10 +133,18 @@ export default function ContactPage() {
                         </button>
 
                         {status === 'success' && (
-                            <p className="text-emerald-500 text-sm text-center">Message sent successfully!</p>
+                            <div className="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
+                                <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-white font-bold text-xl mb-2">Message Sent!</h3>
+                                <p className="text-emerald-400/80 text-sm">Thank you for reaching out. I'll get back to you within 24 hours.</p>
+                            </div>
                         )}
                         {status === 'error' && (
-                            <p className="text-red-500 text-sm text-center">Failed to send message. Please try again.</p>
+                            <p className="text-red-500 text-sm text-center bg-red-500/5 border border-red-500/20 py-3 rounded-xl">Failed to send message. Please try again or email me directly.</p>
                         )}
                     </form>
                 </div>
