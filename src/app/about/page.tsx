@@ -2,8 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+
 import CaseStudy from "@/components/CaseStudy";
 import Link from "next/link";
 
@@ -41,7 +40,6 @@ export default function AboutPage() {
 
     return (
         <main className="bg-black min-h-screen font-sans selection:bg-white selection:text-black">
-            <Navigation />
 
             {/* Hero Section with Sticky Sequence */}
             <div ref={containerRef} className="relative h-[400vh]">
@@ -142,10 +140,6 @@ export default function AboutPage() {
                     <p className="text-zinc-500 mt-4 max-w-2xl mx-auto">Real-world examples of how aligning architecture with search intent drives massive organic growth.</p>
                 </div>
                 <CaseStudy />
-            </div>
-
-            <div className="relative z-30 bg-black">
-                <Footer />
             </div>
         </main>
     );
