@@ -243,12 +243,78 @@ export default function RevenueSeoPillar() {
                                     </div>
                                 </div>
 
-                                <div className="p-12 text-center rounded-3xl bg-zinc-900 border border-white/5 my-12">
-                                    <h3 className="text-2xl font-bold text-white mb-4">Predict your organic revenue.</h3>
-                                    <p className="text-zinc-500 text-sm mb-8">Use my ROI Predictor to see the impact of revenue-driven SEO.</p>
-                                    <Link href="/roi-calculator" className="bg-emerald-500 text-black px-10 py-4 font-bold rounded-xl hover:bg-emerald-400 transition-colors">
-                                        Open ROI Predictor
+                                <div className="p-12 text-center rounded-[3rem] bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-white/5 my-12">
+                                    <h3 className="text-3xl font-bold text-white mb-4 tracking-tighter italic">&quot;Engineers build the product. I build the growth engine.&quot;</h3>
+                                    <p className="text-zinc-400 mb-8 max-w-lg mx-auto">Get a technical blueprint for your SaaS marketing site.</p>
+                                    <Link href="/services/fractional-seo-lead" className="bg-white text-black px-10 py-4 font-bold rounded-xl hover:bg-zinc-200 transition-colors">
+                                        Fractional Lead
                                     </Link>
+                                </div>
+
+                                {/* Cluster Topic Map */}
+                                <div className="mt-24">
+                                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                                        <div>
+                                            <p className="text-indigo-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-4">Technical Knowledge Base</p>
+                                            <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tighter !mt-0">Topic Deep Dives</h2>
+                                        </div>
+                                        <p className="text-zinc-500 text-sm max-w-xs md:text-right">Architectural blueprints for scaling complex SaaS search visibility.</p>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                        {[
+                                            { slug: 'log-file-analysis-seo', title: 'Log File Analysis', tag: 'Technical' },
+                                            { slug: 'indexation-seo-strategy', title: 'Indexation Strategy', tag: 'Implementation' },
+                                            { slug: 'seo-migration-checklist', title: 'Migration Framework', tag: 'Strategic' }
+                                        ].map((cluster, i) => (
+                                            <Link key={i} href={`/insights/${cluster.slug}`} className="group p-8 rounded-[2rem] bg-zinc-900/30 border border-white/5 hover:border-indigo-500/30 transition-all duration-500 flex flex-col justify-between aspect-square md:aspect-auto md:h-72 relative overflow-hidden">
+                                                <div className="relative z-10">
+                                                    <span className="inline-block px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-[8px] font-bold uppercase tracking-widest mb-6">{cluster.tag}</span>
+                                                    <h4 className="text-white font-bold text-xl leading-tight group-hover:text-indigo-400 transition-colors">{cluster.title}</h4>
+                                                </div>
+                                                <div className="relative z-10 flex items-center gap-2 text-zinc-500 text-xs font-bold uppercase tracking-widest group-hover:text-white transition-colors">
+                                                    Explore Framework
+                                                    <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                    </svg>
+                                                </div>
+                                                <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-indigo-500/5 blur-[40px] rounded-full group-hover:bg-indigo-500/10 transition-colors" />
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Cluster Topic Map */}
+                                <div className="mt-24">
+                                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                                        <div>
+                                            <p className="text-emerald-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-4">Revenue Knowledge Base</p>
+                                            <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tighter !mt-0">Strategic Deep Dives</h2>
+                                        </div>
+                                        <p className="text-zinc-500 text-sm max-w-xs md:text-right">Advanced frameworks for turning organic visibility into predictable pipeline.</p>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                        {[
+                                            { slug: 'seo-revenue-forecasting', title: 'Revenue Forecasting', tag: 'Strategic' },
+                                            { slug: 'buyer-intent-keywords', title: 'Buyer Intent Mapping', tag: 'Commercial' },
+                                            { slug: 'seo-for-saas-leads', title: 'SaaS Lead Generation', tag: 'Commercial' }
+                                        ].map((cluster, i) => (
+                                            <Link key={i} href={`/insights/${cluster.slug}`} className="group p-8 rounded-[2rem] bg-zinc-900/30 border border-white/5 hover:border-emerald-500/30 transition-all duration-500 flex flex-col justify-between aspect-square md:aspect-auto md:h-72 relative overflow-hidden">
+                                                <div className="relative z-10">
+                                                    <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[8px] font-bold uppercase tracking-widest mb-6">{cluster.tag}</span>
+                                                    <h4 className="text-white font-bold text-xl leading-tight group-hover:text-emerald-400 transition-colors">{cluster.title}</h4>
+                                                </div>
+                                                <div className="relative z-10 flex items-center gap-2 text-zinc-500 text-xs font-bold uppercase tracking-widest group-hover:text-white transition-colors">
+                                                    Explore Framework
+                                                    <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                    </svg>
+                                                </div>
+                                                <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-emerald-500/5 blur-[40px] rounded-full group-hover:bg-emerald-500/10 transition-colors" />
+                                            </Link>
+                                        ))}
+                                    </div>
                                 </div>
                             </section>
                         </div>

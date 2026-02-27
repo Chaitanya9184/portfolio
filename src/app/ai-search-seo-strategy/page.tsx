@@ -256,9 +256,42 @@ export default function AiSearchPillar() {
                                         <p className="text-white font-bold text-xl mb-2">Ready to own the AI answer?</p>
                                         <p className="text-zinc-500 text-sm">Get a strategic audit of your current cite-worthiness.</p>
                                     </div>
-                                    <Link href="/roi-calculator" className="px-8 py-4 bg-blue-500 text-black font-bold rounded-xl hover:scale-105 transition-transform active:scale-95">
+                                    <Link href="/services/ai-search-audit" className="px-8 py-4 bg-blue-500 text-black font-bold rounded-xl hover:scale-105 transition-transform active:scale-95">
                                         Get Your Audit
                                     </Link>
+                                </div>
+
+                                {/* Cluster Topic Map */}
+                                <div className="mt-24">
+                                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                                        <div>
+                                            <p className="text-blue-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-4">Strategic Knowledge Base</p>
+                                            <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tighter !mt-0">Topic Deep Dives</h2>
+                                        </div>
+                                        <p className="text-zinc-500 text-sm max-w-xs md:text-right">Granular frameworks for mastering generative engine optimization.</p>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                        {[
+                                            { slug: 'ai-seo-audit-checklist', title: 'AI Readiness Checklist', tag: 'Implementation' },
+                                            { slug: 'entity-seo-strategy', title: 'Entity SEO Strategy', tag: 'Strategic' },
+                                            { slug: 'ai-seo-for-saas', title: 'AI Search for SaaS', tag: 'Commercial' }
+                                        ].map((cluster, i) => (
+                                            <Link key={i} href={`/insights/${cluster.slug}`} className="group p-8 rounded-[2rem] bg-zinc-900/30 border border-white/5 hover:border-blue-500/30 transition-all duration-500 flex flex-col justify-between aspect-square md:aspect-auto md:h-72 relative overflow-hidden">
+                                                <div className="relative z-10">
+                                                    <span className="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-[8px] font-bold uppercase tracking-widest mb-6">{cluster.tag}</span>
+                                                    <h4 className="text-white font-bold text-xl leading-tight group-hover:text-blue-400 transition-colors">{cluster.title}</h4>
+                                                </div>
+                                                <div className="relative z-10 flex items-center gap-2 text-zinc-500 text-xs font-bold uppercase tracking-widest group-hover:text-white transition-colors">
+                                                    Explore Framework
+                                                    <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                    </svg>
+                                                </div>
+                                                <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-blue-500/5 blur-[40px] rounded-full group-hover:bg-blue-500/10 transition-colors" />
+                                            </Link>
+                                        ))}
+                                    </div>
                                 </div>
                             </section>
                         </div>
