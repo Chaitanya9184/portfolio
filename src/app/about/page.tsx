@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import Image from "next/image";
+import NextImage from "next/image";
 
 import CaseStudy from "@/components/CaseStudy";
 import Link from "next/link";
@@ -49,7 +49,7 @@ export default function AboutPage() {
                     {/* Background Sequence */}
                     <motion.div className="absolute inset-0 z-0 bg-[#0a0a0a]" style={{ scale }}>
                         {/* Always eagerly render the first frame to fix LCP. Once React mounts and preloads other frames, currentFrame will dictate the source. */}
-                        <Image
+                        <NextImage
                             src={images.length > 0 ? images[currentFrame]?.src : `/sequence/frame_00_delay-0.066s.png`}
                             alt="Chaitanya Kore"
                             priority={true}
