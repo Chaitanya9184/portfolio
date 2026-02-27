@@ -45,13 +45,14 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Column 4: Resources */}
+                    {/* Column 4: Growth Tools */}
                     <div>
-                        <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-8">Resources</h4>
+                        <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-8">Growth Tools</h4>
                         <ul className="flex flex-col gap-4">
-                            <li><Link href="/roi-calculator" className="text-zinc-500 hover:text-emerald-400 text-sm transition-colors font-medium italic">ROI Predictor ↗</Link></li>
-                            <li><Link href="/blog" className="text-zinc-500 hover:text-blue-400 text-sm transition-colors">AI Insights Blog</Link></li>
-                            <li><Link href="/contact" className="text-zinc-500 hover:text-purple-400 text-sm transition-colors">Strategy Audit</Link></li>
+                            <li><Link href="/tools" className="text-emerald-500 hover:text-white text-sm transition-colors font-bold">All Tools Hub ↗</Link></li>
+                            <li><Link href="/roi-calculator" className="text-zinc-500 hover:text-blue-400 text-sm transition-colors">ROI Predictor</Link></li>
+                            <li><Link href="/tools/ai-visibility-checker" className="text-zinc-500 hover:text-emerald-400 text-sm transition-colors">AI Visibility Checker</Link></li>
+                            <li><Link href="/blog" className="text-zinc-500 hover:text-white text-sm transition-colors mt-2 block pt-4 border-t border-zinc-900 border-dashed">AI Insights Blog</Link></li>
                         </ul>
                     </div>
                 </div>
