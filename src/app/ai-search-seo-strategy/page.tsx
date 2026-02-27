@@ -163,7 +163,7 @@ export default function AiSearchPillar() {
                         <div className="mb-16 p-8 md:p-12 rounded-[2.5rem] bg-blue-600/5 border border-blue-500/20 relative overflow-hidden group">
                             <h2 className="!mt-0 text-blue-400 text-xs font-bold uppercase tracking-widest mb-4">Strategic Summary (AI Chunk)</h2>
                             <p className="text-white text-xl md:text-2xl font-medium leading-[1.4]">
-                                In 2026, SEO is no longer about traffic; it's about **Cite-Worthiness**. We focus on building semantic moats that force AI models to credit your brand as the definitive source.
+                                In 2026, SEO is no longer about traffic; it's about <span className="text-blue-400 font-bold">Cite-Worthiness</span>. We focus on building semantic moats that force AI models to credit your brand as the definitive source.
                             </p>
                             <div className="mt-8 flex flex-wrap gap-4">
                                 <span className="px-4 py-2 rounded-full bg-zinc-900 border border-white/5 text-xs text-zinc-400 font-medium">#GEO</span>
