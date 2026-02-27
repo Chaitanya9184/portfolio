@@ -115,18 +115,10 @@ export default function ClusterClient({ cluster }: ClusterClientProps) {
                     <section className="p-10 md:p-16 rounded-[3rem] bg-gradient-to-br from-zinc-900 to-black border border-white/5 relative overflow-hidden group">
                         <div className="relative z-10">
                             <p className="text-zinc-500 text-[10px] font-bold uppercase tracking-[0.3em] mb-4">Strategic Next Step</p>
-                            <h2 className="text-3xl md:text-5xl text-white font-bold tracking-tighter mb-6 leading-tight max-w-xl">{cluster.serviceCTA.title}</h2>
-                            <div className="flex flex-col md:flex-row items-center gap-8 pt-8 border-t border-zinc-800">
-                                <Link href={cluster.serviceCTA.link} className="w-full md:w-auto px-10 py-5 bg-white text-black font-black uppercase text-xs tracking-widest rounded-2xl hover:scale-105 transition-transform active:scale-95">
-                                    Book Now
-                                </Link>
-                                {cluster.serviceCTA.price && (
-                                    <div className="text-center md:text-left">
-                                        <p className="text-white font-bold text-2xl leading-none mb-1">{cluster.serviceCTA.price}</p>
-                                        <p className="text-zinc-500 text-[10px] uppercase tracking-widest">Fixed Investment</p>
-                                    </div>
-                                )}
-                            </div>
+                            <h2 className="text-3xl md:text-5xl text-white font-bold tracking-tighter mb-10 leading-tight max-w-xl">{cluster.serviceCTA.title}</h2>
+                            <Link href="/contact" className="inline-block px-10 py-5 bg-white text-black font-black uppercase text-xs tracking-widest rounded-2xl hover:scale-105 transition-transform active:scale-95">
+                                Book a Strategic Call
+                            </Link>
                         </div>
                         {/* Background Decorative Element */}
                         <div className="absolute top-1/2 -right-24 -translate-y-1/2 w-64 h-64 bg-indigo-500/10 blur-[120px] rounded-full group-hover:bg-indigo-500/20 transition-colors" />

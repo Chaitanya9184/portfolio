@@ -38,13 +38,9 @@ export default function FractionalSeoLead() {
                     </div>
                     <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
                         <h3 className="text-white font-bold text-xl mb-4">Availability:</h3>
-                        <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                        <p className="text-zinc-400 text-sm leading-relaxed">
                             Limited to 2 active partners at any time to ensure deep strategic integration and real business impact.
                         </p>
-                        <div className="pt-6 border-t border-zinc-800">
-                            <p className="text-white font-bold text-2xl mb-1">Retainer</p>
-                            <p className="text-zinc-500 text-[10px] uppercase tracking-widest">Starting at 5k/mo</p>
-                        </div>
                     </div>
                 </div>
 

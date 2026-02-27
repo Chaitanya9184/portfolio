@@ -38,13 +38,9 @@ export default function StrategySprint() {
                     </div>
                     <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
                         <h3 className="text-white font-bold text-xl mb-4">Why This?</h3>
-                        <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                        <p className="text-zinc-400 text-sm leading-relaxed">
                             Perfect for B2B Tech & SaaS teams who need strategic clarity and a prioritized backlog that hits business metrics this quarter.
                         </p>
-                        <div className="pt-6 border-t border-zinc-800">
-                            <p className="text-white font-bold text-2xl mb-1">$4,800</p>
-                            <p className="text-zinc-500 text-[10px] uppercase tracking-widest">Fixed 2-Week Sprint</p>
-                        </div>
                     </div>
                 </div>
 

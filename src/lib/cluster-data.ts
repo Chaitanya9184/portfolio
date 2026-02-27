@@ -22,7 +22,6 @@ export interface ClusterPage {
     serviceCTA: {
         title: string;
         link: string;
-        price?: string;
     };
     faqs: { question: string; answer: string }[];
 }
@@ -66,9 +65,8 @@ Instead of targeting 'software for small business', target the entity 'SaaS' in 
             "External Profile Alignment"
         ],
         serviceCTA: {
-            title: "Map Your Brand Entity",
-            link: "/services/ai-search-audit",
-            price: "$2,450"
+            title: "Book an AI Strategy Session",
+            link: "/contact"
         },
         faqs: [
             { question: "Can a new brand establish an entity quickly?", answer: "Yes, by leveraging 'SameAs' links to established industry bodies and verified founders." }
@@ -112,9 +110,8 @@ Link your software to specific Pain Point entities. If you solve 'churn', ensure
             "Pain Point Entity Alignment"
         ],
         serviceCTA: {
-            title: "Get an AI SaaS Strategy",
-            link: "/services/seo-strategy-sprint",
-            price: "$4,800"
+            title: "Request SaaS AI Roadmap",
+            link: "/contact"
         },
         faqs: [
             { question: "Should I block AI crawlers from my pricing?", answer: "Absolutely not. If your pricing isn't crawlable, you lose the commercial citation." }
@@ -158,9 +155,8 @@ By looking at your existing customer data, we can predict exactly how many organ
             "Financial Impact Presentation"
         ],
         serviceCTA: {
-            title: "Predict Your SEO Revenue",
-            link: "/services/seo-strategy-sprint",
-            price: "$4,800"
+            title: "Request Revenue Forecast",
+            link: "/contact"
         },
         faqs: [
             { question: "Is SEO revenue forecasting accurate?", answer: "It's an estimate, but it's 10x more useful for budgeting than traffic estimates." }
@@ -207,9 +203,8 @@ Targeting 'SEO for [Specific Industry]' allows you to speak directly to a niche 
             "Niche Use-Case Mapping"
         ],
         serviceCTA: {
-            title: "Find Your Best Keywords",
-            link: "/services/seo-strategy-sprint",
-            price: "$4,800"
+            title: "Identify Your Money-Keywords",
+            link: "/contact"
         },
         faqs: [
             { question: "Should I target high volume keywords?", answer: "Only if they have verified commercial intent. Volume without intent is a vanity metric." }
@@ -254,8 +249,7 @@ Create dedicated versions of your home page for every industry you serve. This i
         ],
         serviceCTA: {
             title: "Scale Your SaaS Pipeline",
-            link: "/services/fractional-seo-lead",
-            price: "Starting at 5k/mo"
+            link: "/contact"
         },
         faqs: [
             { question: "Does programmatic SEO hurt quality?", answer: "Not if every page provides unique, data-driven utility to the user." }
@@ -300,8 +294,7 @@ We cross-reference your logs with your sitemap to find high-priority pages that 
         ],
         serviceCTA: {
             title: "Audit Your Crawl Budget",
-            link: "/services/ai-search-audit",
-            price: "$2,450"
+            link: "/contact"
         },
         faqs: [
             { question: "Do I need special tools for log analysis?", answer: "Yes, tools like Screaming Frog Log File Analyser or Splunk are essential for processing large datasets." }
@@ -345,9 +338,8 @@ For mission-critical revenue pages, we leverage the Google Indexing API to force
             "Index Monitoring Plan"
         ],
         serviceCTA: {
-            title: "Fix Your Indexation Gaps",
-            link: "/services/fractional-seo-lead",
-            price: "Starting at 5k/mo"
+            title: "Fix Your Indexation Strategy",
+            link: "/contact"
         },
         faqs: [
             { question: "Can I index 1 million pages instantly?", answer: "No, indexation is a gradual process of building trust. But you can prioritize the top 10% that drive 90% of revenue." }
@@ -394,9 +386,8 @@ Post-launch, we monitor your search logs 24/7 to ensure Google is seeing the red
             "Post-Launch Crawl Watch"
         ],
         serviceCTA: {
-            title: "Manage Your Migration",
-            link: "/services/seo-strategy-sprint",
-            price: "$4,800"
+            title: "Plan Your Migration",
+            link: "/contact"
         },
         faqs: [
             { question: "How long does traffic take to recover?", answer: "Usually 2-4 weeks for a perfectly executed migration. If poorly done, it may never recover." }
