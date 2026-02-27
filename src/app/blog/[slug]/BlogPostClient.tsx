@@ -23,35 +23,72 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
         while (i < paragraphs.length) {
             const trimmed = paragraphs[i].trim();
 
-            // Check for Card Sections (Executive Summary or Key Takeaways)
             const isExecutiveSummary = trimmed.toUpperCase().startsWith('## EXECUTIVE SUMMARY');
             const isKeyTakeaways = trimmed.toUpperCase().startsWith('## KEY TAKEAWAYS');
 
             if (isExecutiveSummary || isKeyTakeaways) {
                 const title = trimmed.replace('## ', '');
                 const id = title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+                const isSummary = title.toLowerCase().includes('summary');
+
+                // Collect subsequent paragraphs until next heading
+                const sectionContent: string[] = [];
+                let j = i + 1;
+                while (j < paragraphs.length && !paragraphs[j].trim().startsWith('#')) {
+                    sectionContent.push(paragraphs[j].trim());
+                    j++;
+                }
 
                 rendered.push(
-                    <div key={i} id={id} className="mt-16 mb-8 p-8 md:p-12 rounded-[2.5rem] bg-zinc-900/40 border border-white/5 backdrop-blur-xl relative overflow-hidden group scroll-mt-32">
-                        <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-500 to-emerald-500 opacity-60" />
+                    <div key={i} id={id} className={`mt-16 mb-12 p-8 md:p-12 rounded-[2.5rem] border backdrop-blur-xl relative overflow-hidden group scroll-mt-32 ${isSummary
+                            ? 'bg-blue-600/5 border-blue-500/20'
+                            : 'bg-emerald-600/5 border-emerald-500/20'
+                        }`}>
+                        <div className={`absolute top-0 left-0 w-1.5 h-full opacity-60 bg-gradient-to-b ${isSummary ? 'from-blue-500 to-indigo-600' : 'from-emerald-500 to-teal-600'
+                            }`} />
 
-                        <div className="relative">
-                            <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-500/60 block mb-4">Strategic Brief</span>
-                            <p className="!mt-0 !mb-0 text-3xl md:text-5xl font-bold text-white tracking-tighter !bg-none [background-clip:unset] [-webkit-text-fill-color:unset] [-webkit-background-clip:unset] border-none after:hidden flex items-center gap-4">
-                                {title.toLowerCase().includes('summary') ? 'Executive Summary' :
-                                    title.toLowerCase().includes('takeaways') ? 'Key Takeaways' : title}
-                                <span className="h-[1px] bg-gradient-to-r from-blue-500/30 to-transparent flex-1" />
-                            </p>
+                        <div className="relative z-10">
+                            <span className={`text-[10px] font-bold uppercase tracking-[0.4em] block mb-4 ${isSummary ? 'text-blue-400' : 'text-emerald-400'
+                                }`}>
+                                {isSummary ? 'Strategic Overview' : 'Actionable Insights'}
+                            </span>
+                            <h2 className="!mt-0 !mb-8 text-3xl md:text-5xl font-bold text-white tracking-tighter flex items-center gap-4">
+                                {isSummary ? 'Executive Summary' : 'Key Takeaways'}
+                                <span className={`h-[1px] flex-1 ${isSummary ? 'bg-gradient-to-r from-blue-500/30 to-transparent' : 'bg-gradient-to-r from-emerald-500/30 to-transparent'
+                                    }`} />
+                            </h2>
+
+                            <div className="space-y-6">
+                                {sectionContent.map((para, idx) => {
+                                    if (para.includes('\n• ') || para.startsWith('• ')) {
+                                        const items = para.split('\n').map(l => l.replace('• ', '').trim()).filter(Boolean);
+                                        return (
+                                            <ul key={idx} className="space-y-4 !mb-0">
+                                                {items.map((item, sidx) => (
+                                                    <li key={sidx} className="flex gap-4 text-white font-medium leading-relaxed group text-lg md:text-xl">
+                                                        <span className={`${isSummary ? 'text-blue-500' : 'text-emerald-500'} mt-1.5 shrink-0`}>
+                                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                                                            </svg>
+                                                        </span>
+                                                        <span>{item}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        );
+                                    }
+                                    return <p key={idx} className="text-white/90 text-xl font-medium leading-relaxed !mb-0">{para}</p>;
+                                })}
+                            </div>
                         </div>
-                        {/* Decorative background pulse */}
-                        <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-blue-500/5 blur-[100px] group-hover:bg-blue-500/10 transition-colors pointer-events-none" />
+                        <div className={`absolute -bottom-24 -right-24 w-64 h-64 blur-[100px] transition-colors pointer-events-none ${isSummary ? 'bg-blue-500/10' : 'bg-emerald-500/10'
+                            }`} />
                     </div>
                 );
-                i++; // Only consume the heading paragraph
+                i = j; // Advance main loop to the next heading or end
                 continue;
             }
 
-            // Regular headings with ID for TOC
             if (trimmed.startsWith('## ')) {
                 const text = trimmed.replace('## ', '');
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
@@ -67,7 +104,6 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
                 rendered.push(<p key={i} id={id} className="scroll-mt-32 text-xl font-bold text-zinc-400 mt-8 mb-4">{text}</p>);
             }
-            // Bullet points (fallback for other sections)
             else if (trimmed.includes('\n• ')) {
                 const lines = trimmed.split('\n');
                 const title = lines[0];
@@ -89,7 +125,6 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                     </div>
                 );
             }
-            // Regular paragraph
             else {
                 rendered.push(<p key={i} className="whitespace-pre-wrap text-zinc-300 text-base md:text-lg leading-relaxed mb-8">{trimmed}</p>);
             }
