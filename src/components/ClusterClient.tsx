@@ -26,8 +26,8 @@ export default function ClusterClient({ cluster }: ClusterClientProps) {
             const parts = text.split(/(\*\*.*?\*\*)/g);
             return parts.map((part, i) => {
                 if (part.startsWith('**') && part.endsWith('**')) {
-                    // Use colors to highlight instead of bold
-                    return <span key={i} className="text-zinc-900 bg-emerald-400 px-1.5 py-0.5 rounded-md font-medium">{part.slice(2, -2)}</span>;
+                    // Use colors to highlight instead of background block
+                    return <span key={i} className="text-emerald-400 font-bold">{part.slice(2, -2)}</span>;
                 }
                 return part;
             });

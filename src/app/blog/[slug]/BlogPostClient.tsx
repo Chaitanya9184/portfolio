@@ -20,15 +20,17 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
             const parts = text.split(/(\*\*.*?\*\*)/g);
             return parts.map((part, i) => {
                 if (part.startsWith('**') && part.endsWith('**')) {
-                    // Use colors to highlight instead of bold
-                    return <span key={i} className="text-zinc-900 bg-blue-400 px-1.5 py-0.5 rounded-md font-medium">{part.slice(2, -2)}</span>;
+                    // Use colors to highlight instead of background block
+                    return <span key={i} className="text-blue-400 font-bold">{part.slice(2, -2)}</span>;
                 }
                 return part;
             });
         };
 
         // Pre-process inline bullets: replace " • " with "\n• " so they are parsed together
-        const content = rawContent.replace(/(\S)\s*•\s+/g, '$1\n• ');
+        const formattedBullets = rawContent.replace(/(\S)\s*•\s+/g, '$1\n• ');
+        // Inject an extra newline after a heading if it is immediately followed by something (like a list)
+        const content = formattedBullets.replace(/^(#{2,4}[^\n]+)\n([^\n])/gm, '$1\n\n$2');
         const paragraphs = content.split('\n\n').filter(p => p.trim());
         const rendered: React.ReactNode[] = [];
 
@@ -124,16 +126,20 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
                 rendered.push(<p key={i} id={id} className="scroll-mt-32 text-xl font-bold text-zinc-400 mt-8 mb-4">{parseTextFormat(text)}</p>);
             }
-            else if (trimmed.includes('\n• ')) {
+            else if (trimmed.startsWith('• ') || trimmed.startsWith('- ') || trimmed.includes('\n• ') || trimmed.includes('\n- ')) {
                 const lines = trimmed.split('\n');
-                const title = lines[0];
-                const items = lines.slice(1).map(l => l.replace('• ', ''));
+                const hasTitle = !lines[0].startsWith('• ') && !lines[0].startsWith('- ');
+                const title = hasTitle ? lines[0] : null;
+                const items = (hasTitle ? lines.slice(1) : lines).map(l => l.replace(/^[•-]\s*/, ''));
+
                 rendered.push(
                     <div key={i} className="my-12">
-                        <p className="font-bold text-white mb-6 uppercase tracking-[0.2em] text-[10px] opacity-70 flex items-center gap-3">
-                            <span className="w-8 h-[1px] bg-blue-500/50" />
-                            {title}
-                        </p>
+                        {title && (
+                            <p className="font-bold text-white mb-6 uppercase tracking-[0.2em] text-[10px] opacity-70 flex items-center gap-3">
+                                <span className="w-8 h-[1px] bg-blue-500/50" />
+                                {parseTextFormat(title)}
+                            </p>
+                        )}
                         <ul className="space-y-4">
                             {items.map((item, idx) => (
                                 <li key={idx} className="flex gap-4 text-zinc-300 leading-relaxed group text-base md:text-lg">
