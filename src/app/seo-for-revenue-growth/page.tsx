@@ -246,8 +246,8 @@ export default function RevenueSeoPillar() {
                                 <div className="p-12 text-center rounded-[3rem] bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-white/5 my-12">
                                     <h3 className="text-3xl font-bold text-white mb-4 tracking-tighter italic">&quot;Engineers build the product. I build the growth engine.&quot;</h3>
                                     <p className="text-zinc-400 mb-8 max-w-lg mx-auto">Get a technical blueprint for your SaaS marketing site.</p>
-                                    <Link href="/services/fractional-seo-lead" className="bg-white text-black px-10 py-4 font-bold rounded-xl hover:bg-zinc-200 transition-colors">
-                                        Fractional Lead
+                                    <Link href="/services/seo-revenue-growth-strategy" className="bg-white text-black px-10 py-4 font-bold rounded-xl hover:bg-zinc-200 transition-colors">
+                                        Build Revenue Strategy
                                     </Link>
                                 </div>
 
