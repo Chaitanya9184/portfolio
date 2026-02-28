@@ -46,14 +46,14 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Column 4: Growth Tools */}
+                    {/* Column 4: Checklists & Tools */}
                     <div>
-                        <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-8">Growth Tools</h4>
+                        <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-8">Resources</h4>
                         <ul className="flex flex-col gap-4">
-                            <li><Link href="/tools" className="text-emerald-500 hover:text-white text-sm transition-colors font-bold">All Tools Hub ↗</Link></li>
-                            <li><Link href="/roi-calculator" className="text-zinc-500 hover:text-blue-400 text-sm transition-colors">ROI Predictor</Link></li>
-                            <li><Link href="/tools/ai-visibility-checker" className="text-zinc-500 hover:text-emerald-400 text-sm transition-colors">AI Visibility Checker</Link></li>
-                            <li><Link href="/blog" className="text-zinc-500 hover:text-white text-sm transition-colors mt-2 block pt-4 border-t border-zinc-900 border-dashed">AI Insights Blog</Link></li>
+                            <li><Link href="/checklists/aeo" className="text-zinc-500 hover:text-white text-sm transition-colors">AEO Checklist</Link></li>
+                            <li><Link href="/checklists/geo" className="text-zinc-500 hover:text-white text-sm transition-colors">GEO Checklist</Link></li>
+                            <li><Link href="/checklists/aio" className="text-zinc-500 hover:text-white text-sm transition-colors">Google AIO Checklist</Link></li>
+                            <li><Link href="/tools" className="text-emerald-500 hover:text-white text-sm transition-colors font-bold mt-2 block pt-4 border-t border-zinc-900 border-dashed">All Growth Tools ↗</Link></li>
                         </ul>
                     </div>
                 </div>
