@@ -25,36 +25,51 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Column 2: Strategy Pillars */}
-                    <div>
-                        <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-8">Strategy Pillars</h4>
-                        <ul className="flex flex-col gap-4">
-                            <li><Link href="/ai-search-seo-strategy" className="text-zinc-500 hover:text-blue-400 text-sm transition-colors">AI Search (GEO/AEO)</Link></li>
-                            <li><Link href="/seo-for-revenue-growth" className="text-zinc-500 hover:text-emerald-400 text-sm transition-colors">Revenue SEO Hub</Link></li>
-                            <li><Link href="/technical-seo-for-saas" className="text-zinc-500 hover:text-blue-500 text-sm transition-colors">SaaS Scale Tech</Link></li>
-                        </ul>
+                    {/* Column 2: Strategy & Industries */}
+                    <div className="grid grid-cols-2 gap-8 lg:col-span-2">
+                        <div>
+                            <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-8">Strategy</h4>
+                            <ul className="flex flex-col gap-4">
+                                <li><Link href="/ai-search-seo-strategy" className="text-zinc-500 hover:text-blue-400 text-sm transition-colors">AEO & GEO</Link></li>
+                                <li><Link href="/seo-for-revenue-growth" className="text-zinc-500 hover:text-emerald-400 text-sm transition-colors">Revenue SEO</Link></li>
+                                <li><Link href="/technical-seo-for-saas" className="text-zinc-500 hover:text-blue-500 text-sm transition-colors">SaaS Scale</Link></li>
+                                <li><Link href="/services/ai-search-audit" className="text-zinc-500 hover:text-white text-sm transition-colors">AI Search Audit</Link></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-8">Industries</h4>
+                            <ul className="flex flex-col gap-4">
+                                <li><Link href="/industries/saas" className="text-zinc-500 hover:text-white text-sm transition-colors">SaaS</Link></li>
+                                <li><Link href="/industries/ecommerce" className="text-zinc-500 hover:text-white text-sm transition-colors">E-commerce</Link></li>
+                                <li><Link href="/industries/b2b-tech" className="text-zinc-500 hover:text-white text-sm transition-colors">B2B Tech</Link></li>
+                                <li><Link href="/industries/healthcare" className="text-zinc-500 hover:text-white text-sm transition-colors">Healthcare</Link></li>
+                                <li><Link href="/industries/finance" className="text-zinc-500 hover:text-white text-sm transition-colors">Finance</Link></li>
+                                <li><Link href="/industries/real-estate" className="text-zinc-500 hover:text-white text-sm transition-colors">Real Estate</Link></li>
+                            </ul>
+                        </div>
                     </div>
 
-                    {/* Column 3: Solutions */}
-                    <div>
-                        <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-8">Solutions</h4>
-                        <ul className="flex flex-col gap-4">
-                            <li><Link href="/industries" className="text-zinc-500 hover:text-white text-sm transition-colors">Industry Expertise</Link></li>
-                            <li><Link href="/industries/saas" className="text-zinc-500 hover:text-white text-sm transition-colors">SaaS Growth</Link></li>
-                            <li><Link href="/industries/healthcare" className="text-zinc-500 hover:text-white text-sm transition-colors">Healthcare SEO</Link></li>
-                            <li><Link href="/industries/real-estate" className="text-zinc-500 hover:text-white text-sm transition-colors">Real Estate SEO</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Column 4: Checklists & Tools */}
-                    <div>
-                        <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-8">Resources</h4>
-                        <ul className="flex flex-col gap-4">
-                            <li><Link href="/checklists/aeo" className="text-zinc-500 hover:text-white text-sm transition-colors">AEO Checklist</Link></li>
-                            <li><Link href="/checklists/geo" className="text-zinc-500 hover:text-white text-sm transition-colors">GEO Checklist</Link></li>
-                            <li><Link href="/checklists/aio" className="text-zinc-500 hover:text-white text-sm transition-colors">Google AIO Checklist</Link></li>
-                            <li><Link href="/tools" className="text-emerald-500 hover:text-white text-sm transition-colors font-bold mt-2 block pt-4 border-t border-zinc-900 border-dashed">All Growth Tools ↗</Link></li>
-                        </ul>
+                    {/* Column 3: Resources & Company */}
+                    <div className="grid grid-cols-2 gap-8 lg:col-span-1">
+                        <div>
+                            <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-8">Resources</h4>
+                            <ul className="flex flex-col gap-4">
+                                <li><Link href="/checklists/aeo" className="text-zinc-500 hover:text-white text-sm transition-colors">AEO Checklist</Link></li>
+                                <li><Link href="/checklists/geo" className="text-zinc-500 hover:text-white text-sm transition-colors">GEO Checklist</Link></li>
+                                <li><Link href="/checklists/aio" className="text-zinc-500 hover:text-white text-sm transition-colors">AIO Checklist</Link></li>
+                                <li><Link href="/roi-calculator" className="text-zinc-500 hover:text-white text-sm transition-colors">ROI Calculator</Link></li>
+                                <li><Link href="/tools/ai-visibility-checker" className="text-zinc-500 hover:text-white text-sm transition-colors">AI Checker</Link></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-8">Company</h4>
+                            <ul className="flex flex-col gap-4">
+                                <li><Link href="/about" className="text-zinc-500 hover:text-white text-sm transition-colors">About</Link></li>
+                                <li><Link href="/blog" className="text-zinc-500 hover:text-white text-sm transition-colors">Blog</Link></li>
+                                <li><Link href="/hire-me" className="text-zinc-500 hover:text-white text-sm transition-colors">Hire Me</Link></li>
+                                <li><Link href="/contact" className="text-zinc-500 hover:text-white text-sm transition-colors">Contact</Link></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
