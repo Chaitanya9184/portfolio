@@ -54,8 +54,8 @@ export default function AiExpertise() {
             href: "/aeo"
         },
         {
-            title: "GEO",
-            subtitle: "Generative Engine Optimization",
+            title: "GEM",
+            subtitle: "Generative Engine Marketing",
             description: "I make sure your brand is named and linked inside AI chatbots. I help your content grow from just another web link into a top, trusted source for AI-generated answers.",
             icon: <GeoIcon />,
             href: "/geo"

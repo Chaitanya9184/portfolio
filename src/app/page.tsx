@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Chaitanya Kore | SEO & AI Search Expert',
-  description: 'Specializing in Technical SEO, AI Search Optimization (GEO/AEO), and organic acquisition for SaaS, eCommerce, and B2B Enterprise brands.',
+  title: 'Chaitanya Kore | AEO, GEM & SEO Strategist',
+  description: 'Specializing in Technical SEO, AEO, and GEM (Generative Engine Marketing) for SaaS, eCommerce, and B2B Enterprise brands.',
   alternates: {
     canonical: '/',
   },
@@ -54,20 +54,20 @@ const homeSchema = {
       "@type": "Person",
       "@id": "https://www.chaitanyakore.in/#person",
       "name": "Chaitanya Kore",
-      "jobTitle": "Senior SEO & AI Search Professional",
+      "jobTitle": "AEO, GEM and SEO Strategist",
       "url": "https://www.chaitanyakore.in/",
       "image": "https://www.chaitanyakore.in/sequence/frame_00_delay-0.066s.png",
       "sameAs": [
         "https://linkedin.com/in/chaitanya-kore-342069140"
       ],
-      "description": "Chaitanya Kore is a Senior SEO & AI Search Professional specializing in Technical SEO, GEO (Generative Engine Optimization), and AEO (Answer Engine Optimization) for SaaS, eCommerce, and B2B Enterprise brands."
+      "description": "Chaitanya Kore is an AEO, GEM and SEO Strategist specializing in Technical SEO, AEO (Answer Engine Optimization), and GEM (Generative Engine Marketing) for SaaS, eCommerce, and B2B Enterprise brands."
     },
     {
       "@type": "WebSite",
       "@id": "https://www.chaitanyakore.in/#website",
       "url": "https://www.chaitanyakore.in/",
-      "name": "Chaitanya Kore | Senior SEO & AI Search Professional",
-      "description": "Expert in Technical SEO, Growth Strategy, and AI Search Optimization (GEO/AEO).",
+      "name": "Chaitanya Kore | AEO, GEM and SEO Strategist",
+      "description": "Expert in Technical SEO, AEO, and GEM (Generative Engine Marketing).",
       "publisher": { "@id": "https://www.chaitanyakore.in/#person" }
     },
     {
@@ -86,7 +86,7 @@ const homeSchema = {
       "founder": { "@id": "https://www.chaitanyakore.in/#person" },
       "knowsAbout": [
         "Technical SEO",
-        "Generative Engine Optimization",
+        "Generative Engine Marketing",
         "Answer Engine Optimization",
         "Growth Strategy",
         "Organic Acquisition",
