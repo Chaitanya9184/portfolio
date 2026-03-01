@@ -10,11 +10,11 @@ const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.chaitanyakore.in'),
-  title: 'Chaitanya Kore | AEO, GEM and SEO Strategist',
-  description: '8+ years of experience driving organic growth for global brands through Technical SEO, AEO, and GEM (Generative Engine Marketing) strategies.',
+  title: 'Chaitanya Kore | AEO, GEO and SEO Strategist',
+  description: '8+ years of experience driving organic growth for global brands through Technical SEO, AEO, and GEO (Generative Engine Optimization) strategies.',
   openGraph: {
-    title: 'Chaitanya Kore | AEO, GEM and SEO Strategist',
-    description: 'Expert in Technical SEO, AEO, and GEM (Generative Engine Marketing). Driving discoverability for global eCommerce and SaaS brands.',
+    title: 'Chaitanya Kore | AEO, GEO and SEO Strategist',
+    description: 'Expert in Technical SEO, AEO, and GEO (Generative Engine Optimization). Driving discoverability for global eCommerce and SaaS brands.',
     url: 'https://www.chaitanyakore.in',
     siteName: 'Chaitanya Kore Portfolio',
     images: [
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Chaitanya Kore | AEO, GEM and SEO Strategist',
-    description: 'AEO, GEM (Generative Engine Marketing) and Technical SEO Specialist driving organic growth.',
+    title: 'Chaitanya Kore | AEO, GEO and SEO Strategist',
+    description: 'AEO, GEO (Generative Engine Optimization) and Technical SEO Specialist driving organic growth.',
     images: ['/sequence/frame_00_delay-0.066s.png'],
   },
   verification: {

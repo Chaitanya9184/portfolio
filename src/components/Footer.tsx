@@ -16,7 +16,7 @@ export default function Footer() {
                             <div className="absolute -bottom-1 left-0 w-0 h-[2px] bg-emerald-500 transition-all duration-300 group-hover:w-full" />
                         </Link>
                         <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
-                            Engineering organic growth for high-stakes SaaS and B2B brands. Specializing in Technical SEO, AEO, and GEM (Generative Engine Marketing).
+                            Engineering organic growth for high-stakes SaaS and B2B brands. Specializing in Technical SEO, AEO, and GEO (Generative Engine Optimization).
                         </p>
                         <div className="flex gap-4">
                             <a href="https://linkedin.com/in/chaitanya-kore-342069140" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-zinc-900 border border-white/5 flex items-center justify-center text-zinc-400 hover:text-white hover:border-blue-500/50 transition-all">
