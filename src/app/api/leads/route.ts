@@ -4,10 +4,8 @@ import prisma from '@/lib/prisma';
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    let data: any;
     try {
-        data = await request.json();
+        const data = await request.json();
 
         const newLead = await prisma.lead.create({
             data: {
@@ -23,20 +21,8 @@ export async function POST(request: Request) {
 
         return NextResponse.json({ success: true, lead: newLead }, { status: 201 });
     } catch (error: unknown) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const err = error as any;
-        console.error('Error saving lead. Data:', data);
-        console.error('Prisma Error Details:', {
-            message: err.message,
-            code: err.code,
-            meta: err.meta,
-            stack: err.stack
-        });
-        return NextResponse.json({
-            success: false,
-            error: 'Internal Server Error',
-            details: err.message || 'Unknown error occurred'
-        }, { status: 500 });
+        console.error('Error saving lead:', error);
+        return NextResponse.json({ success: false, error: 'Internal Server Error' }, { status: 500 });
     }
 }
 
