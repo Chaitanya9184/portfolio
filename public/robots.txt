@@ -2,6 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.chaitanyakore.in/sitemap.xml
-Sitemap: https://www.chaitanyakore.in/sitemap-page.xml
-Sitemap: https://www.chaitanyakore.in/sitemap-blogs.xml
-Sitemap: https://www.chaitanyakore.in/sitemap-insights.xml
