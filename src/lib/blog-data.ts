@@ -31,18 +31,23 @@ const generateExtensiveContent = (intro: string, takeaways: string[], bodyParas:
     // We add some extra fluff using standard expanded marketing copy to reach ~1000 words.
     const extraFluff = `\n\n## Understanding the Broader Impact\n\nIt is important to see how these changes fit into the bigger picture. Bringing AI into search represents a massive shift. It is as big a change as the invention of the hyperlink itself.\n\n### From Documents to Data\n\nWe are moving from a web of simple documents to a web of connected data. The relationships between ideas now decide who ranks first. We must rethink our budgets. Money spent on basic blog posts must now fund real research and interactive tools.\n\n#### Recalibrating the ROI Equation\n\nCreating a high-quality 'Citation Asset' costs more upfront. But the long-term payoff is huge. Sustained AI visibility builds massive brand trust over time.`;
 
-    return introText + "\n\n" + takeawaysText + "\n\n" + specificBody + categoryExpansion + extraFluff + "\n\n## The Path Forward\n\n" + conclusion;
+    const disclaimer = "> [!NOTE]\n> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.\n\n";
+
+    return disclaimer + introText + "\n\n" + takeawaysText + "\n\n" + specificBody + categoryExpansion + extraFluff + "\n\n## The Path Forward\n\n" + conclusion;
 };
 
 export const blogPosts: BlogPost[] = [
     {
         slug: 'the-geo-era-google-2026-core-update',
-        title: "The GEO Era: How I'm Prepping for Google's 2026 AI Search Shift",
-        metaTitle: "GEO Era: 2026 AI Search Guide | Chaitanya Kore",
+        title: "[Prediction] The GEO Era: How I'm Prepping for Google's 2026 AI Search Shift",
+        metaTitle: "[2026 Prediction] GEO Era: 2026 AI Search Guide | Chaitanya Kore",
         date: 'January 15, 2026',
         category: 'GEO',
         excerpt: "Google just changed the rules again. I've spent the last month auditing how 'Cite-Worthiness' is actually calculated in Gemini. Here's what I found.",
         content: `
+> [!NOTE]
+> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.
+
 ## Why I'm Scrapping My Old SEO Playbook
 
 1/2026 didn't just bring a new year; it brought a total reset of search. Google's major core update finally rolled out "Citation Weight" as the primary ranking signal.
@@ -120,12 +125,15 @@ Building a "Citation Asset" costs more at the start. I know. But the long-term w
     },
     {
         slug: 'aeo-dominance-google-gemini-search-upgrades',
-        title: "AEO Dominance: Why I'm Measuring Impressions, Not Clicks",
-        metaTitle: "AEO Dominance: Impressions Over Clicks | Chaitanya Kore",
+        title: "[Prediction] AEO Dominance: Why I'm Measuring Impressions, Not Clicks",
+        metaTitle: "[2026 Prediction] AEO Dominance: Impressions Over Clicks | Chaitanya Kore",
         date: 'January 28, 2026',
         category: 'AEO',
         excerpt: "Traditional CTR is dead for informational queries. I'm seeing 60% drops across my portfolio. Here's how I'm winning the 'Answer' instead of the click.",
         content: `
+> [!NOTE]
+> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.
+
 I remember the first time I saw the Gemini 2.0 Flash rollout hit one of my client's health blogs. Overnight, traffic for "symptoms of X" dropped by nearly 65%. My first instinct was to panic. I thought we'd been hit by a penalty. But when I looked at the actual Search Console data, our impressions were higher than ever.
 
 The users weren't leaving; they were just getting what they needed without ever visiting our site. Welcome to the era of Answer Engine Optimization (AEO).
@@ -199,12 +207,15 @@ The shift is here. It's not coming; it's already happening. I'm pivoting every b
     },
     {
         slug: 'perplexity-ai-publisher-revenue-share',
-        title: "Perplexity's Revenue Share: How I'm Monetizing Citations",
-        metaTitle: "Perplexity Revenue Share & Citations | Chaitanya Kore",
+        title: "[Prediction] Perplexity's Revenue Share: How I'm Monetizing Citations",
+        metaTitle: "[2026 Prediction] Perplexity Revenue Share & Citations | Chaitanya Kore",
         date: 'February 5, 2026',
         category: 'GEO',
         excerpt: "Perplexity is paying publishers for data. I explore the 'Content Citation Fund' to see how my clients can monetize their AI visibility.",
         content: `
+> [!NOTE]
+> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.
+
 For years, we've watched AI companies scrape our content, summarize it, and provide little in return. But 2026 has brought a shift that I honestly didn't think we'd see so soon. The evolution of the Perplexity "Publishers Program" into the "Content Citation Fund" is a game-changer. 
 
 Instead of just utilizing our data, they're scaling the payouts for primary research. I've spent the last week analyzing which pieces of content are actually triggering these payouts, and the results are fascinating.
@@ -284,8 +295,8 @@ I'm betting big on deep expertise. I'm advising brands to hire subject matter ex
     },
     {
         slug: 'searchgpt-higher-education-seo',
-        title: "SearchGPT's Impact on Higher Education & Research SEO",
-        metaTitle: "SearchGPT Impact on Higher Ed SEO | Chaitanya Kore",
+        title: "[Prediction] SearchGPT's Impact on Higher Education & Research SEO",
+        metaTitle: "[2026 Prediction] SearchGPT Impact on Higher Ed SEO | Chaitanya Kore",
         date: 'February 10, 2026',
         category: 'AEO',
         excerpt: "OpenAI's SearchGPT integration into the education sector has seen a 40% shift in how students research sources.",
@@ -322,12 +333,15 @@ I'm betting big on deep expertise. I'm advising brands to hire subject matter ex
     },
     {
         slug: 'zero-click-intent-new-seo-king',
-        title: "Zero-Click Intent: Why I’m Optimizing for 'Mindshare' Over Traffic",
-        metaTitle: "Zero-Click Intent & SEO Mindshare | Chaitanya Kore",
+        title: "[Prediction] Zero-Click Intent: Why I’m Optimizing for 'Mindshare' Over Traffic",
+        metaTitle: "[2026 Prediction] Zero-Click Intent & SEO Mindshare | Chaitanya Kore",
         date: 'February 14, 2026',
         category: 'SEO',
         excerpt: "70% of searches in 2026 don't result in a click. I've spent the last six months figuring out how to build a brand when no one is visiting your site.",
         content: `
+> [!NOTE]
+> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.
+
 ## The Day the Analytics Went Flat
 
 I remember the first time a client asked me why their "clicks" had plateaued while their "impressions" were through the roof. It was late 2025, and the Google AI Overviews were finally taking over the top of the SERP for every informational query imaginable. 
@@ -405,12 +419,15 @@ I’m moving all my focus to "Expertise-Led Content." We’re pulling in real en
     },
     {
         slug: 'ai-overview-ecommerce-product-discovery',
-        title: "AI Overviews in E-commerce: Why I'm Obsessing Over 'Feed Health'",
-        metaTitle: "AI Shopper: E-commerce SEO Strategies | Chaitanya Kore",
+        title: "[Prediction] AI Overviews in E-commerce: Why I'm Obsessing Over 'Feed Health'",
+        metaTitle: "[2026 Prediction] AI Shopper: E-commerce SEO Strategies | Chaitanya Kore",
         date: 'February 18, 2026',
         category: 'GEO',
         excerpt: "Google's AI doesn't just list products; it compares them in real-time. If your specs aren't parsed, you aren't in the running. Here's how I fix that.",
         content: `
+> [!NOTE]
+> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.
+
 ## The End of the Product Landing Page?
 
 I recently spent a whole afternoon searching for a new coffee grinder. In 2024, I would have visited five different sites, read ten blogs, and then clicked an affiliate link. In February 2026? I never left the Google result page. 
@@ -488,12 +505,15 @@ The "funnel" has collapsed into a single conversational interaction. I'm positio
     },
     {
         slug: 'semantic-content-clustering-geo-age',
-        title: "Semantic Content Clustering: How I Build Topical Moats",
-        metaTitle: "Semantic Clustering for Topical Moats | Chaitanya Kore",
+        title: "[Prediction] Semantic Content Clustering: How I Build Topical Moats",
+        metaTitle: "[2026 Prediction] Semantic Clustering for Topical Moats | Chaitanya Kore",
         date: 'February 20, 2026',
         category: 'GEO',
         excerpt: "AI engines don't rank pages; they rank 'Topic Authority'. I've shifted my entire content architecture to focus on building semantic webs. Here's why.",
         content: `
+> [!NOTE]
+> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.
+
 ## Why I Stopped Thinking About Keywords
 
 Ten years ago, I used to obsess over a single keyword. I’d build a page, optimize the H1, and hope for the best. In February 2026? That strategy is a death sentence. AI engines don't just look at a page; they look at your entire "Topic Authority." 
@@ -567,12 +587,15 @@ I want my clients to be the "encyclopedia of record" for their niche. Whether th
     },
     {
         slug: 'google-discover-experience-update',
-        title: "Google Discover Update: Why Your Desk is Your New Office",
-        metaTitle: "Google Discover SEO: Experience Signals | Chaitanya Kore",
+        title: "[Prediction] Google Discover Update: Why Your Desk is Your New Office",
+        metaTitle: "[2026 Prediction] Google Discover SEO: Experience Signals | Chaitanya Kore",
         date: 'February 22, 2026',
         category: 'SEO',
         excerpt: "February 2026 Discover update prioritizes 'Experience' signals. I'm finding that a 30-second video of your work beats a 2000-word blog post every time.",
         content: `
+> [!NOTE]
+> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.
+
 ## The Feed is the New First Page
 
 Last week, I woke up to a spike in traffic for a client that didn't come from a search query. It came from Google Discover. For the first time, "Discover Impressions" are rivaling "Search Clicks" in my monthly reports. But there's a catch: the algorithm has changed.
@@ -644,12 +667,15 @@ I’m pivoting my agency to be a hybrid of "SEO" and "Content Studio." We aren't
     },
     {
         slug: 'aeo-question-graph-mapping',
-        title: "AEO Best Practices: Why I'm Mapping the 'Question Graph'",
-        metaTitle: "AEO Strategy: Question Graph Mapping | Chaitanya Kore",
+        title: "[Prediction] AEO Best Practices: Why I'm Mapping the 'Question Graph'",
+        metaTitle: "[2026 Prediction] AEO Strategy: Question Graph Mapping | Chaitanya Kore",
         date: 'February 23, 2026',
         category: 'AEO',
         excerpt: "Humans are asking more questions than ever. I've stopped targeting keywords and started mapping the conversational path users take.",
         content: `
+> [!NOTE]
+> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.
+
 ## Why Search is Now a Conversation
 
 I was watching my little nephew use his iPad the other day. He didn't type "best pizza" into Google. He asked Siri, "Where can I get a pepperoni pizza near me that delivers in less than 30 minutes?" That’s when the reality of AEO (Answer Engine Optimization) really hit me. 
@@ -719,12 +745,15 @@ I want my clients to be the most helpful "voice" in their industry. We're buildi
     },
     {
         slug: 'citation-engine-building-brand-llm-era',
-        title: "The 'Citation Engine': Why I'm Building Citation Magnets",
-        metaTitle: "Citation Engine: 2026 GEO Framework | Chaitanya Kore",
+        title: "[Prediction] The 'Citation Engine': Why I'm Building Citation Magnets",
+        metaTitle: "[2026 Prediction] Citation Engine: 2026 GEO Framework | Chaitanya Kore",
         date: 'February 24, 2026',
         category: 'GEO',
         excerpt: "AI doesn't just need content; it needs proof. I'm shifting my strategy to build 'Citation Magnets'—proprietary data that AI engines can't ignore.",
         content: `
+> [!NOTE]
+> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.
+
 ## The Shift from Clicks to Citations
 
 I spent most of last Monday staring at a SearchGPT result. My client’s site was ranking #1 for the keyword, but the AI summary didn't mention them once. Instead, it cited a random PDF from an industry association and a survey from a competitor. That’s when it clicked: being #1 in "Search" isn't enough in 2026. You have to be the "Citation Engine."
