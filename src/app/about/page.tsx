@@ -122,11 +122,12 @@ export default function AboutPage() {
                             <div className="max-w-3xl">
                                 <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-12">I believe SEO is broken.</h2>
 
-                                {/* New Section: Professional Credentials Moved from Homepage */}
-                                <div className="relative z-20 py-24 bg-transparent">
-                                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-                                        {/* Left Side: Profile Intro */}
-                                        <div className="lg:col-span-5">
+                                {/* Combined Section: Credentials & Experience Timeline (Two-Column Layout) */}
+                                <div className="mt-32 mb-40">
+                                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+
+                                        {/* Left Side: Professional Profile (Credentials) */}
+                                        <div className="lg:col-span-5 space-y-12">
                                             <motion.div
                                                 initial={{ opacity: 0, x: -20 }}
                                                 whileInView={{ opacity: 1, x: 0 }}
@@ -137,7 +138,7 @@ export default function AboutPage() {
                                                     Senior SEO &<br />
                                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 not-italic">AI Search Expert.</span>
                                                 </h2>
-                                                <p className="text-zinc-400 text-lg leading-relaxed mb-10 font-light max-w-xl">
+                                                <p className="text-zinc-400 text-lg leading-relaxed mb-10 font-light">
                                                     8+ years of experience driving organic growth for e-commerce, SaaS, and enterprise brands globally.
                                                     Currently leading AI-driven search strategies (AEO/GEO) to ensure discoverability across generative answer platforms.
                                                 </p>
@@ -164,75 +165,68 @@ export default function AboutPage() {
                                                     ))}
                                                 </div>
                                             </motion.div>
-                                        </div>
 
-                                        {/* Right Side: Credentials & Skills */}
-                                        <div className="lg:col-span-7 space-y-8">
-                                            <motion.div
-                                                initial={{ opacity: 0, y: 20 }}
-                                                whileInView={{ opacity: 1, y: 0 }}
-                                                viewport={{ once: true }}
-                                                className="p-8 rounded-[2rem] bg-zinc-900/40 border border-white/5"
-                                            >
-                                                <p className="text-white text-sm font-bold tracking-widest uppercase flex items-center gap-2 mb-6">
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                                                    Core Methodology
-                                                </p>
-                                                <div className="flex flex-wrap gap-3">
-                                                    {["Growth Strategy", "AI Search (AEO/GEO)", "Technical SEO Audit", "Leadership & Mentoring", "Programmatic SEO"].map(skill => (
-                                                        <span key={skill} className="px-5 py-3 bg-white/5 border border-white/10 rounded-2xl text-xs text-zinc-400 font-semibold tracking-wide hover:border-emerald-500/30 hover:text-emerald-400 transition-all">
-                                                            {skill}
-                                                        </span>
-                                                    ))}
-                                                </div>
-                                            </motion.div>
-
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                            <div className="space-y-8">
                                                 <motion.div
                                                     initial={{ opacity: 0, y: 20 }}
                                                     whileInView={{ opacity: 1, y: 0 }}
                                                     viewport={{ once: true }}
                                                     className="p-8 rounded-[2rem] bg-zinc-900/40 border border-white/5"
                                                 >
-                                                    <div className="flex items-center gap-3 text-zinc-400 mb-6">
-                                                        <AcademicIcon />
-                                                        <p className="text-white text-xs font-bold uppercase tracking-widest">Education</p>
-                                                    </div>
-                                                    <p className="text-lg text-white font-bold mb-1">BBA (Marketing)</p>
-                                                    <p className="text-sm text-zinc-500">Savitribai Phule Pune University | 2017</p>
-                                                </motion.div>
-
-                                                <motion.div
-                                                    initial={{ opacity: 0, y: 20 }}
-                                                    whileInView={{ opacity: 1, y: 0 }}
-                                                    viewport={{ once: true }}
-                                                    className="p-8 rounded-[2rem] bg-zinc-900/40 border border-white/5"
-                                                >
-                                                    <div className="flex items-center gap-3 text-zinc-400 mb-6">
-                                                        <AwardIcon />
-                                                        <p className="text-white text-xs font-bold uppercase tracking-widest">Certifications</p>
-                                                    </div>
-                                                    <div className="space-y-3">
-                                                        {["Google Analytics & GTM", "HubSpot Inbound", "Search Strategy Master"].map(cert => (
-                                                            <div key={cert} className="flex items-center gap-3 text-sm text-zinc-400">
-                                                                <div className="w-1 h-1 rounded-full bg-blue-500" />
-                                                                {cert}
-                                                            </div>
+                                                    <p className="text-white text-sm font-bold tracking-widest uppercase flex items-center gap-2 mb-6">
+                                                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                                                        Core Methodology
+                                                    </p>
+                                                    <div className="flex flex-wrap gap-3">
+                                                        {["Growth Strategy", "AI Search", "Audit", "Leadership", "Programmatic"].map(skill => (
+                                                            <span key={skill} className="px-5 py-3 bg-white/5 border border-white/10 rounded-2xl text-[10px] text-zinc-400 font-semibold uppercase tracking-widest">
+                                                                {skill}
+                                                            </span>
                                                         ))}
                                                     </div>
                                                 </motion.div>
+
+                                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
+                                                    <motion.div
+                                                        initial={{ opacity: 0, y: 20 }}
+                                                        whileInView={{ opacity: 1, y: 0 }}
+                                                        viewport={{ once: true }}
+                                                        className="p-6 rounded-2xl bg-zinc-900/40 border border-white/5"
+                                                    >
+                                                        <p className="text-white text-[10px] font-bold uppercase tracking-widest mb-4 opacity-50">Education</p>
+                                                        <p className="text-white font-bold mb-1 tracking-tight">BBA (Marketing)</p>
+                                                        <p className="text-xs text-zinc-500">Pune University | 2017</p>
+                                                    </motion.div>
+
+                                                    <motion.div
+                                                        initial={{ opacity: 0, y: 20 }}
+                                                        whileInView={{ opacity: 1, y: 0 }}
+                                                        viewport={{ once: true }}
+                                                        className="p-6 rounded-2xl bg-zinc-900/40 border border-white/5"
+                                                    >
+                                                        <p className="text-white text-[10px] font-bold uppercase tracking-widest mb-4 opacity-50">Certifications</p>
+                                                        <div className="space-y-2">
+                                                            {["Google Analytics", "HubSpot Master"].map(cert => (
+                                                                <div key={cert} className="flex items-center gap-2 text-[10px] text-zinc-400 font-bold uppercase">
+                                                                    <div className="w-1 h-1 rounded-full bg-blue-500" />
+                                                                    {cert}
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </motion.div>
+                                                </div>
                                             </div>
+                                        </div>
+
+                                        {/* Right Side: Interactive Journey (Experience) */}
+                                        <div className="lg:col-span-7">
+                                            <Experience />
                                         </div>
                                     </div>
                                 </div>
 
-                                {/* Experience & Impact Migration */}
-                                <div className="relative z-20">
-                                    <Experience />
-                                </div>
-
-                                {/* Tech Stack Migration */}
-                                <div className="relative z-20 py-24 border-y border-zinc-900 border-dashed mt-24">
+                                {/* Tech Stack - Keeps its full width below */}
+                                <div className="relative z-20 py-24 border-y border-zinc-900 border-dashed mb-32">
                                     <TechStack />
                                 </div>
                                 <div className="space-y-8 text-zinc-400 text-lg md:text-xl leading-relaxed">
