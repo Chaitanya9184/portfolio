@@ -68,40 +68,6 @@ export default function HireMe() {
                     </div>
                 </div>
 
-                {/* Selected Case Studies Mini */}
-                <div className="mb-16 p-8 rounded-3xl bg-emerald-900/10 border border-emerald-500/20">
-                    <h2 className="text-emerald-400 font-bold text-xl mb-6">Selected Impact:</h2>
-                    <div className="space-y-6">
-                        <div className="p-6 rounded-2xl bg-black border border-white/5">
-                            <h3 className="text-white font-bold mb-2">Enterprise SaaS Platform</h3>
-                            <p className="text-zinc-400 text-sm mb-4">Architected a Next.js headless migration strategy that recovered a 40% traffic drop and established a new programmatic baseline for integrations.</p>
-                            <div className="flex gap-6">
-                                <div>
-                                    <p className="text-emerald-400 font-bold text-2xl">+120%</p>
-                                    <p className="text-zinc-500 text-[10px] uppercase tracking-widest">SQL Pipeline</p>
-                                </div>
-                                <div>
-                                    <p className="text-emerald-400 font-bold text-2xl">4 Months</p>
-                                    <p className="text-zinc-500 text-[10px] uppercase tracking-widest">Time to Impact</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="p-6 rounded-2xl bg-black border border-white/5">
-                            <h3 className="text-white font-bold mb-2">B2B FinTech Unicorn</h3>
-                            <p className="text-zinc-400 text-sm mb-4">Built an AI-centric semantic topic model (GEO) that secured direct citations in Google SGE (AI Overviews) for competitive "best software" queries.</p>
-                            <div className="flex gap-6">
-                                <div>
-                                    <p className="text-emerald-400 font-bold text-2xl">#1</p>
-                                    <p className="text-zinc-500 text-[10px] uppercase tracking-widest">Citation Share</p>
-                                </div>
-                                <div>
-                                    <p className="text-emerald-400 font-bold text-2xl">250k+</p>
-                                    <p className="text-zinc-500 text-[10px] uppercase tracking-widest">Traffic Protected</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
                     <Link href="/contact" className="inline-block flex-1 text-center px-12 py-5 bg-emerald-600 text-black font-black uppercase text-sm tracking-widest rounded-2xl hover:bg-emerald-500 transition-all hover:scale-[1.02] active:scale-[0.98]">
