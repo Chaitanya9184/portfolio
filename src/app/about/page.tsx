@@ -100,7 +100,7 @@ export default function AboutPage() {
                     {/* Content Overlay */}
                     <div className="relative z-10 container mx-auto px-6">
                         <motion.div
-                            style={{ opacity: useTransform(scrollYProgress, [0, 0.2], [1, 0]) }}
+                            style={{ opacity: useTransform(scrollYProgress, [0, 0.4], [1, 0]) }}
                             className="max-w-4xl"
                         >
                             <span className="text-zinc-500 text-xs font-bold uppercase tracking-[0.5em] mb-4 block">The Human behind the Strategy</span>
@@ -119,8 +119,19 @@ export default function AboutPage() {
                     {/* Section 1: The Philosophy */}
                     <div className="py-24 md:py-32">
                         <div className="container mx-auto px-6">
-                            <div className="max-w-3xl mb-24">
-                                <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter italic">I believe SEO is broken.</h2>
+                            <div className="max-w-3xl mb-16">
+                                <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter italic mb-12">I believe SEO is broken.</h2>
+                                <div className="space-y-8 text-zinc-400 text-lg md:text-xl leading-relaxed font-light">
+                                    <p>
+                                        Most agencies are still selling 2018 tactics in a 2026 world. They focus on keyword rankings, but rankings don't pay the bills. Revenue does.
+                                    </p>
+                                    <p>
+                                        My journey started with a simple observation: Search is moving from a list of links to a list of answers. If you're not optimized for AI citation (GEO/AEO), you're becoming invisible.
+                                    </p>
+                                    <p>
+                                        I spent years in the trenches of SaaS and B2B Tech, realizing that technical excellence is just the entry fee. Real growth happens when you align your site's architecture with how LLMs actually think.
+                                    </p>
+                                </div>
                             </div>
 
                             {/* Combined Section: Credentials & Experience Timeline (Two-Column Layout) */}
@@ -134,10 +145,10 @@ export default function AboutPage() {
                                             whileInView={{ opacity: 1, x: 0 }}
                                             viewport={{ once: true }}
                                         >
-                                            <p className="text-blue-500 text-xs tracking-[0.3em] uppercase mb-4 font-bold">The Expertise</p>
+                                            <p className="text-emerald-500 text-[10px] tracking-[0.4em] uppercase mb-6 font-black opacity-100">The Expertise</p>
                                             <h2 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-8 leading-tight italic">
                                                 Senior SEO &<br />
-                                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 not-italic">AI Search Expert.</span>
+                                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400 not-italic">AI Search Expert.</span>
                                             </h2>
                                             <p className="text-zinc-400 text-lg leading-relaxed mb-10 font-light">
                                                 8+ years of experience driving organic growth for e-commerce, SaaS, and enterprise brands globally.
@@ -227,20 +238,8 @@ export default function AboutPage() {
                             </div>
 
                             {/* Tech Stack - Keeps its full width below */}
-                            <div className="relative z-20 py-24 border-y border-zinc-900 border-dashed mb-32">
+                            <div className="relative z-30 py-32 border-y border-white/5 bg-black/80 backdrop-blur-xl mb-32 -mx-6 md:-mx-12 lg:-mx-24 px-6 md:px-12 lg:px-24">
                                 <TechStack />
-                            </div>
-
-                            <div className="max-w-3xl space-y-8 text-zinc-400 text-lg md:text-xl leading-relaxed">
-                                <p>
-                                    Most agencies are still selling 2018 tactics in a 2026 world. They focus on keyword rankings, but rankings don't pay the bills. Revenue does.
-                                </p>
-                                <p>
-                                    My journey started with a simple observation: Search is moving from a list of links to a list of answers. If you're not optimized for AI citation (GEO/AEO), you're becoming invisible.
-                                </p>
-                                <p>
-                                    I spent years in the trenches of SaaS and B2B Tech, realizing that technical excellence is just the entry fee. Real growth happens when you align your site's architecture with how LLMs actually think.
-                                </p>
                             </div>
                         </div>
                     </div>
