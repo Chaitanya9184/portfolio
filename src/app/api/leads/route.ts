@@ -12,10 +12,10 @@ export async function POST(request: Request) {
                 firstName: data.firstName,
                 lastName: data.lastName,
                 email: data.email,
-                company: data.company,
+                company: data.company || null,
                 message: data.message,
                 formName: 'Contact Page',
-                sourceUrl: request.url
+                sourceUrl: 'https://www.chaitanyakore.in/contact'
             }
         });
 
