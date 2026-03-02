@@ -100,7 +100,7 @@ export default function AboutPage() {
                     {/* Content Overlay */}
                     <div className="relative z-10 container mx-auto px-6">
                         <motion.div
-                            style={{ opacity: useTransform(scrollYProgress, [0, 0.4], [1, 0]) }}
+                            style={{ opacity: useTransform(scrollYProgress, [0, 0.3], [1, 0]) }}
                             className="max-w-4xl"
                         >
                             <span className="text-zinc-500 text-xs font-bold uppercase tracking-[0.5em] mb-4 block">The Human behind the Strategy</span>
@@ -115,7 +115,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* Content Sections - Pushed down to avoid overlap with sticky hero */}
-                <div className="relative z-20 mt-[100vh]">
+                <div className="relative z-20 pt-[150vh]">
                     {/* Section 1: The Philosophy */}
                     <div className="py-24 md:py-32">
                         <div className="container mx-auto px-6">
