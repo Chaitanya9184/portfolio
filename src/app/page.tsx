@@ -160,11 +160,6 @@ export default function Home() {
       {/* Community Organization Case Study */}
       <CommunityCaseStudy />
 
-      {/* 
-        The Experience component sits below the Expertise section
-      */}
-      <Experience />
-
       {/* Featured Blog Insights Carousel */}
       <BlogCarousel />
 

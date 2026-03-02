@@ -7,6 +7,7 @@ import NextImage from "next/image";
 import CaseStudy from "@/components/CaseStudy";
 import Link from "next/link";
 import TechStack from "@/components/TechStack";
+import Experience from "@/components/Experience";
 
 const PhoneIcon = () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
@@ -120,6 +121,120 @@ export default function AboutPage() {
                         <div className="container mx-auto px-6">
                             <div className="max-w-3xl">
                                 <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-12">I believe SEO is broken.</h2>
+
+                                {/* New Section: Professional Credentials Moved from Homepage */}
+                                <div className="relative z-20 py-24 bg-transparent">
+                                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                                        {/* Left Side: Profile Intro */}
+                                        <div className="lg:col-span-5">
+                                            <motion.div
+                                                initial={{ opacity: 0, x: -20 }}
+                                                whileInView={{ opacity: 1, x: 0 }}
+                                                viewport={{ once: true }}
+                                            >
+                                                <p className="text-blue-500 text-xs tracking-[0.3em] uppercase mb-4 font-bold">The Expertise</p>
+                                                <h2 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-8 leading-tight italic">
+                                                    Senior SEO &<br />
+                                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 not-italic">AI Search Expert.</span>
+                                                </h2>
+                                                <p className="text-zinc-400 text-lg leading-relaxed mb-10 font-light max-w-xl">
+                                                    8+ years of experience driving organic growth for e-commerce, SaaS, and enterprise brands globally.
+                                                    Currently leading AI-driven search strategies (AEO/GEO) to ensure discoverability across generative answer platforms.
+                                                </p>
+
+                                                {/* Contact Quick Links */}
+                                                <div className="grid grid-cols-1 gap-3 mb-10">
+                                                    {[
+                                                        { icon: <PhoneIcon />, label: "+91-7875269281", href: "tel:+917875269281" },
+                                                        { icon: <EmailIcon />, label: "korechaitanya10@gmail.com", href: "mailto:korechaitanya10@gmail.com" },
+                                                        { icon: <LinkedInIcon />, label: "LinkedIn Profile", href: "https://linkedin.com/in/chaitanya-kore-342069140" }
+                                                    ].map((contact, i) => (
+                                                        <a
+                                                            key={i}
+                                                            href={contact.href}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/40 border border-white/5 hover:border-blue-500/30 hover:bg-zinc-800/60 transition-all group"
+                                                        >
+                                                            <span className="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-blue-400 border border-zinc-700 transition-colors">
+                                                                {contact.icon}
+                                                            </span>
+                                                            <span className="text-sm text-zinc-400 group-hover:text-zinc-200 transition-colors font-medium">{contact.label}</span>
+                                                        </a>
+                                                    ))}
+                                                </div>
+                                            </motion.div>
+                                        </div>
+
+                                        {/* Right Side: Credentials & Skills */}
+                                        <div className="lg:col-span-7 space-y-8">
+                                            <motion.div
+                                                initial={{ opacity: 0, y: 20 }}
+                                                whileInView={{ opacity: 1, y: 0 }}
+                                                viewport={{ once: true }}
+                                                className="p-8 rounded-[2rem] bg-zinc-900/40 border border-white/5"
+                                            >
+                                                <p className="text-white text-sm font-bold tracking-widest uppercase flex items-center gap-2 mb-6">
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                                                    Core Methodology
+                                                </p>
+                                                <div className="flex flex-wrap gap-3">
+                                                    {["Growth Strategy", "AI Search (AEO/GEO)", "Technical SEO Audit", "Leadership & Mentoring", "Programmatic SEO"].map(skill => (
+                                                        <span key={skill} className="px-5 py-3 bg-white/5 border border-white/10 rounded-2xl text-xs text-zinc-400 font-semibold tracking-wide hover:border-emerald-500/30 hover:text-emerald-400 transition-all">
+                                                            {skill}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </motion.div>
+
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                                <motion.div
+                                                    initial={{ opacity: 0, y: 20 }}
+                                                    whileInView={{ opacity: 1, y: 0 }}
+                                                    viewport={{ once: true }}
+                                                    className="p-8 rounded-[2rem] bg-zinc-900/40 border border-white/5"
+                                                >
+                                                    <div className="flex items-center gap-3 text-zinc-400 mb-6">
+                                                        <AcademicIcon />
+                                                        <p className="text-white text-xs font-bold uppercase tracking-widest">Education</p>
+                                                    </div>
+                                                    <p className="text-lg text-white font-bold mb-1">BBA (Marketing)</p>
+                                                    <p className="text-sm text-zinc-500">Savitribai Phule Pune University | 2017</p>
+                                                </motion.div>
+
+                                                <motion.div
+                                                    initial={{ opacity: 0, y: 20 }}
+                                                    whileInView={{ opacity: 1, y: 0 }}
+                                                    viewport={{ once: true }}
+                                                    className="p-8 rounded-[2rem] bg-zinc-900/40 border border-white/5"
+                                                >
+                                                    <div className="flex items-center gap-3 text-zinc-400 mb-6">
+                                                        <AwardIcon />
+                                                        <p className="text-white text-xs font-bold uppercase tracking-widest">Certifications</p>
+                                                    </div>
+                                                    <div className="space-y-3">
+                                                        {["Google Analytics & GTM", "HubSpot Inbound", "Search Strategy Master"].map(cert => (
+                                                            <div key={cert} className="flex items-center gap-3 text-sm text-zinc-400">
+                                                                <div className="w-1 h-1 rounded-full bg-blue-500" />
+                                                                {cert}
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </motion.div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Experience & Impact Migration */}
+                                <div className="relative z-20">
+                                    <Experience />
+                                </div>
+
+                                {/* Tech Stack Migration */}
+                                <div className="relative z-20 py-24 border-y border-zinc-900 border-dashed mt-24">
+                                    <TechStack />
+                                </div>
                                 <div className="space-y-8 text-zinc-400 text-lg md:text-xl leading-relaxed">
                                     <p>
                                         Most agencies are still selling 2018 tactics in a 2026 world. They focus on keyword rankings, but rankings don't pay the bills. Revenue does.
