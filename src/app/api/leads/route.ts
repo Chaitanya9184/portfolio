@@ -4,8 +4,10 @@ import prisma from '@/lib/prisma';
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let data: any;
     try {
-        const data = await request.json();
+        data = await request.json();
 
         const newLead = await prisma.lead.create({
             data: {
