@@ -45,9 +45,9 @@ export const blogPosts: BlogPost[] = [
         content: `
 ## Why I'm Scrapping My Old SEO Playbook
 
-January 2026 didn't just bring a new year; it brought a total reset of the search landscape. Google's first major core update of the year finally pulled the trigger on something I've been predicting for a while: "Citation Weight."
+1/2026 didn't just bring a new year; it brought a total reset of search. Google's major core update finally rolled out "Citation Weight" as the primary ranking signal.
 
-If you're still obsessing over keyword placement, you're looking at a map of a city that's been demolished. I've been digging into the logs of dozen sites I manage, and the pattern is clear. Google isn't just indexing your pages anymore. It's auditioning them. It's looking for "primary source signals" that prove you actually know what you're talking about, rather than just summarizing what everyone else is saying.
+I've been digging into the logs of dozens of sites I manage, and the pattern is clear. With Gemini 2.0 and 3.0 models now fully integrated into the search stack, Google isn't just indexing your pages anymore. It's auditioning them. It's looking for "primary source signals" that prove you actually know what you're talking about, rather than just summarizing what everyone else is saying.
 
 ## What "Cite-Worthiness" Actually Means for You
 
@@ -126,9 +126,7 @@ Building a "Citation Asset" costs more at the start. I know. But the long-term w
         category: 'AEO',
         excerpt: "Traditional CTR is dead for informational queries. I'm seeing 60% drops across my portfolio. Here's how I'm winning the 'Answer' instead of the click.",
         content: `
-## The Day the Click Died
-
-I remember the first time I saw the Gemini 1.5 Ultra rollout hit one of my client's health blogs. Overnight, traffic for "symptoms of X" dropped by nearly 65%. My first instinct was to panic. I thought we'd been hit by a penalty. But when I looked at the actual Search Console data, our impressions were higher than ever.
+I remember the first time I saw the Gemini 2.0 Flash rollout hit one of my client's health blogs. Overnight, traffic for "symptoms of X" dropped by nearly 65%. My first instinct was to panic. I thought we'd been hit by a penalty. But when I looked at the actual Search Console data, our impressions were higher than ever.
 
 The users weren't leaving; they were just getting what they needed without ever visiting our site. Welcome to the era of Answer Engine Optimization (AEO).
 
@@ -187,7 +185,7 @@ The shift is here. It's not coming; it's already happening. I'm pivoting every b
         faqs: [
             {
                 question: "Why is traditional CTR dropping so fast?",
-                answer: "Because Gemini 1.5 Ultra parses complex queries and answers them entirely within the search interface. The user gets exactly what they need without having to open a new tab or click a blue link."
+                answer: "Because Gemini 1.5 and 2.0 series parse complex queries and answer them entirely within the search interface. The user gets exactly what they need without having to open a new tab or click a blue link."
             },
             {
                 question: "How do we measure success if we aren't getting clicks?",
@@ -207,11 +205,9 @@ The shift is here. It's not coming; it's already happening. I'm pivoting every b
         category: 'GEO',
         excerpt: "Perplexity is paying publishers for data. I explore the 'Content Citation Fund' to see how my clients can monetize their AI visibility.",
         content: `
-## The End of the "Free Data" Era?
+For years, we've watched AI companies scrape our content, summarize it, and provide little in return. But 2026 has brought a shift that I honestly didn't think we'd see so soon. The evolution of the Perplexity "Publishers Program" into the "Content Citation Fund" is a game-changer. 
 
-For years, we've watched AI companies scrape our content, summarize it, and give us nothing in return. But February 2026 has brought a shift that I honestly didn't think we'd see so soon. Perplexity AI's "Content Citation Fund" is a game-changer. 
-
-Instead of just stealing our data, they're starting to pay for it. I've spent the last week analyzing which pieces of content are actually triggering these payouts, and the results are fascinating.
+Instead of just utilizing our data, they're scaling the payouts for primary research. I've spent the last week analyzing which pieces of content are actually triggering these payouts, and the results are fascinating.
 
 ## What I'm Learning About "Load-Bearing" Data
 
