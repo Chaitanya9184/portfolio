@@ -86,64 +86,64 @@ export default function Experience() {
     ];
 
     return (
-        <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-                <p className="text-blue-500 text-xs tracking-[0.3em] uppercase mb-4 font-bold">The Journey</p>
-                <h2 className="text-4xl md:text-6xl text-white font-bold tracking-tighter mb-6 leading-tight relative inline-block">
+        <div className="w-full">
+            <div className="mb-16">
+                <p className="text-emerald-500 text-xs tracking-[0.3em] uppercase mb-4 font-bold">The Journey</p>
+                <h2 className="text-4xl md:text-5xl text-white font-bold tracking-tighter mb-6 leading-tight relative inline-block italic">
                     Experience & Impact
-                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-gradient-to-r from-blue-400 to-transparent rounded-full" />
+                    <div className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-emerald-400 to-transparent rounded-full" />
                 </h2>
-                <p className="text-zinc-500 text-lg max-w-2xl mx-auto">
-                    8+ years of hands-on experience driving organic growth for global SaaS and eCommerce leaders.
-                </p>
             </div>
 
-            <div className="relative">
+            <div className="relative border-l border-zinc-900 ml-5 pl-10 space-y-16">
                 {experiences.map((exp, idx) => (
-                    <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div key={idx} className="relative group">
                         {/* Timeline dot */}
-                        <div className="flex items-center justify-center w-10 h-10 rounded-full border border-zinc-800 bg-zinc-900 text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 relative z-10 transition-colors group-hover:bg-zinc-800 group-hover:text-blue-400">
-                            <div className="w-2 h-2 rounded-full bg-zinc-700 group-hover:bg-blue-400 transition-colors" />
+                        <div className="absolute -left-[54px] top-2 flex items-center justify-center w-8 h-8 rounded-full border border-zinc-800 bg-black text-slate-500 shadow z-10 transition-colors group-hover:bg-zinc-900 group-hover:text-emerald-400">
+                            <div className="w-2 h-2 rounded-full bg-zinc-700 group-hover:bg-emerald-400 transition-colors" />
                         </div>
 
                         {/* Content Card */}
-                        <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl border border-zinc-800/60 bg-zinc-900/40 backdrop-blur-sm transition-all duration-300 group-hover:border-zinc-700 group-hover:bg-zinc-800/60">
-                            <div className="flex flex-col mb-4">
-                                <span className="text-blue-400 text-[10px] font-mono tracking-widest mb-1 uppercase opacity-80">{exp.period}</span>
-                                <p className="text-xl text-white font-bold tracking-tight">{exp.role}</p>
-                                <span className="text-zinc-400 text-sm font-medium">{exp.company}</span>
+                        <div className="w-full p-8 rounded-3xl border border-white/5 bg-zinc-900/20 backdrop-blur-sm transition-all duration-300 group-hover:border-emerald-500/20 group-hover:bg-zinc-800/40">
+                            <div className="flex flex-col mb-6">
+                                <span className="text-emerald-400 text-[10px] font-mono tracking-widest mb-2 uppercase opacity-80">{exp.period}</span>
+                                <h3 className="text-2xl text-white font-bold tracking-tight mb-1">{exp.role}</h3>
+                                <span className="text-zinc-500 text-sm font-medium">{exp.company}</span>
                             </div>
-                            <ul className="list-disc pl-4 space-y-3 text-zinc-400 text-[13px] leading-relaxed font-normal group-hover:text-zinc-300 transition-colors">
+                            <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed font-normal group-hover:text-zinc-300 transition-colors">
                                 {exp.description.map((desc, i) => (
-                                    <li key={i}>{desc}</li>
+                                    <li key={i} className="flex gap-3">
+                                        <span className="shrink-0 w-1 h-1 rounded-full bg-zinc-800 mt-2" />
+                                        {desc}
+                                    </li>
                                 ))}
                             </ul>
                         </div>
                     </div>
                 ))}
 
-                {/* Added older experiences summarized to keep layout clean, but could add all of them */}
-                <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full border border-zinc-800 bg-zinc-900 text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 relative z-10 transition-colors group-hover:bg-zinc-800 group-hover:text-blue-400">
-                        <div className="w-2 h-2 rounded-full bg-zinc-700 group-hover:bg-blue-400 transition-colors" />
+                {/* Summarized Experience */}
+                <div className="relative group">
+                    <div className="absolute -left-[54px] top-2 flex items-center justify-center w-8 h-8 rounded-full border border-zinc-800 bg-black text-slate-500 shadow z-10 transition-colors group-hover:bg-zinc-900 group-hover:text-emerald-400">
+                        <div className="w-2 h-2 rounded-full bg-zinc-700 group-hover:bg-emerald-400 transition-colors" />
                     </div>
-                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl border border-zinc-800/60 bg-zinc-900/40 backdrop-blur-sm transition-all duration-300 group-hover:border-zinc-700 group-hover:bg-zinc-800/60">
+                    <div className="w-full p-8 rounded-3xl border border-white/5 bg-zinc-900/20 backdrop-blur-sm transition-all duration-300 group-hover:border-emerald-500/20 group-hover:bg-zinc-800/40">
                         <div className="flex flex-col mb-4">
-                            <span className="text-blue-400 text-[10px] font-mono tracking-widest mb-1 uppercase opacity-80">May 2021 – Dec 2021</span>
-                            <p className="text-xl text-white font-bold tracking-tight">Team Lead – SEO</p>
-                            <span className="text-zinc-400 text-sm font-medium">Tradebuilder Technology Pvt. Ltd.</span>
+                            <span className="text-emerald-400 text-[10px] font-mono tracking-widest mb-2 uppercase opacity-80">May 2021 – Dec 2021</span>
+                            <h3 className="text-2xl text-white font-bold tracking-tight mb-1">Team Lead – SEO</h3>
+                            <span className="text-zinc-500 text-sm font-medium">Tradebuilder Technology Pvt. Ltd.</span>
                         </div>
-                        <ul className="list-disc pl-4 space-y-3 text-zinc-400 text-[13px] leading-relaxed font-normal group-hover:text-zinc-300 transition-colors">
-                            <li>Planned and executed SEO strategies for startups and eCommerce businesses.</li>
-                            <li>Managed SEO and content planning for 20+ projects on a monthly basis.</li>
-                        </ul>
+                        <p className="text-zinc-400 text-sm leading-relaxed">
+                            Planned and executed SEO strategies for 20+ startups and eCommerce businesses monthly.
+                        </p>
                     </div>
                 </div>
 
-                <div className="relative flex flex-col items-center mt-12 mb-8">
-                    <span className="text-zinc-600 text-sm italic">Previous Roles: Marketing Associate (SEO), Junior SEO Strategist, Junior SEO Analyst, Junior Off-Page Analyst (2017—2021)</span>
+                <div className="pt-8">
+                    <p className="text-zinc-600 text-xs tracking-widest uppercase font-bold opacity-50 italic">
+                        PREVIOUS ROLES: Marketing Associate, Junior SEO Strategist, Junior SEO Analyst (2017—2021)
+                    </p>
                 </div>
-
             </div>
         </div>
     );
