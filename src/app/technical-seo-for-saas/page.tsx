@@ -140,8 +140,8 @@ export default function TechnicalSaasPillar() {
                             Strategy Pillar 03
                         </div>
                         <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-8 leading-[0.9]">
-                            Technical SEO <br className="hidden md:block" />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">For SaaS Scale</span>
+                            Technical SEO: <br className="hidden md:block" />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">Foundations at Scale</span>
                         </h1>
                         <p className="text-zinc-500 text-sm uppercase font-bold tracking-[0.2em] mb-8">Next.js & Programmatic Ready • 14 Min Read</p>
 

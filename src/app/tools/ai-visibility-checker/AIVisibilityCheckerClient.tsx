@@ -111,6 +111,7 @@ const AIVisibilityCheckerClient = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                     {/* Diagnostic Controls */}
                     <div className="lg:col-span-12 space-y-12 bg-zinc-900/40 border border-zinc-800/50 p-8 md:p-12 rounded-[2.5rem] backdrop-blur-xl">
+                        <h2 className="sr-only">Diagnostic Audit Controls</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
                             {/* Sliders / Toggles */}

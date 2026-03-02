@@ -1,7 +1,14 @@
-"use client";
-
 import React from 'react';
+import { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+    title: 'SEO Revenue Growth Strategy | B2B Tech & SaaS SEO Services',
+    description: 'Strategic SEO built for revenue. We map TAM to keywords and hijack competitor entities to drive qualified pipeline for B2B Tech and SaaS brands.',
+    alternates: {
+        canonical: 'https://www.chaitanyakore.in/services/seo-revenue-growth-strategy',
+    }
+};
 
 export default function SeoRevenueGrowthStrategy() {
     return (
@@ -16,7 +23,7 @@ export default function SeoRevenueGrowthStrategy() {
                 </h1>
 
                 <p className="text-zinc-400 text-xl md:text-2xl leading-relaxed mb-12 max-w-2xl">
-                    Move beyond vanity metrics and traffic graphs that flatline. I build comprehensive systems that tie organic search directly to closed-won revenue for B2B Tech & SaaS.
+                    Move beyond vanity metrics and traffic graphs that flatline. I build comprehensive systems that tie organic search directly to closed-won revenue for B2B Tech & SaaS. This isn't just about rankings; it's about <strong>pipeline predictable growth</strong>.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
@@ -28,7 +35,8 @@ export default function SeoRevenueGrowthStrategy() {
                                 "TAM-to-Keyword Mapping",
                                 "Bottom-of-Funnel Conversion Tactics",
                                 "Competitor Entity Hijacking",
-                                "Full-Funnel Content Architecture"
+                                "Full-Funnel Content Architecture",
+                                "Conversion Rate Optimization (CRO) for Search"
                             ].map((item, i) => (
                                 <li key={i} className="flex gap-3 text-zinc-400 text-sm">
                                     <span className="text-blue-500">✓</span> {item}
@@ -37,13 +45,28 @@ export default function SeoRevenueGrowthStrategy() {
                         </ul>
                     </div>
                     <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
-                        <h2 className="text-white font-bold text-xl mb-4">The Outcome:</h2>
+                        <h2 className="text-white font-bold text-xl mb-4">The Strategic Impact:</h2>
                         <p className="text-zinc-400 text-sm leading-relaxed mb-4">
                             A fully mapped pipeline that treats SEO as a measurable sales engine, not just a marketing channel. You will know exactly what an organic visitor is worth, and where they convert.
                         </p>
                         <p className="text-zinc-400 text-sm leading-relaxed mb-0">
                             We shift the focus from "ranking for keywords" to "owning the buyer journey," ensuring your landing pages, hubs, and technical structures are aligned with how your ideal customers actually buy.
                         </p>
+                    </div>
+                </div>
+
+                {/* Expanded Content Section */}
+                <div className="mb-16 p-10 rounded-[2.5rem] bg-zinc-900/20 border border-white/5">
+                    <h2 className="text-white font-bold text-2xl mb-6">Strategic Revenue Framework</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-zinc-400 text-sm leading-relaxed">
+                        <div className="space-y-4">
+                            <h3 className="text-white font-bold">1. TAM-to-Search Mapping</h3>
+                            <p>We don't target keywords; we target your <strong>Total Addressable Market</strong>. By mapping your product features to specific problem-state searches, we ensure that every visitor is a potential buyer, not just a researcher.</p>
+                        </div>
+                        <div className="space-y-4">
+                            <h3 className="text-white font-bold">2. Entity Hijacking</h3>
+                            <p>In the AI search era, "Ranking" is replaced by "Entity Relationship." We build high-density content clusters that tell Google's Knowledge Graph that your brand is the primary alternative to legacy incumbents.</p>
+                        </div>
                     </div>
                 </div>
 

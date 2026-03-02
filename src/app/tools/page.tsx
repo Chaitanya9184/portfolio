@@ -97,10 +97,25 @@ export default function ToolsHubPage() {
 
                 {/* Coming Soon / Utility Mission */}
                 <div className="mt-32 p-12 rounded-[3.5rem] bg-zinc-900/20 border border-white/5 text-center">
-                    <h2 className="text-2xl font-bold text-white mb-4">Why build tools for the open web?</h2>
-                    <p className="text-zinc-500 max-w-2xl mx-auto leading-relaxed">
-                        In an era defined by AI summarization, transparency and data ownership are the only moats. I build these utilities to help brands move from guessing to knowing exactly how they are seen by generative engines.
+                    <h2 className="text-2xl font-bold text-white mb-6">Why build tools for the open web?</h2>
+                    <p className="text-zinc-500 max-w-3xl mx-auto leading-relaxed mb-12">
+                        In an era defined by AI summarization, transparency and data ownership are the only moats. I build these utilities to help brands move from guessing to knowing exactly how they are seen by generative engines. These aren't just toys—they are professional-grade frameworks for high-growth SaaS and Enterprise teams.
                     </p>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left max-w-4xl mx-auto">
+                        <div className="space-y-3">
+                            <h3 className="text-white font-bold text-sm uppercase tracking-widest">Accuracy First</h3>
+                            <p className="text-zinc-500 text-xs leading-relaxed">Our calculators use weighted outcome distributions rather than simple linear projections, accounting for real-world SERP volatility.</p>
+                        </div>
+                        <div className="space-y-3">
+                            <h3 className="text-white font-bold text-sm uppercase tracking-widest">GEO Readiness</h3>
+                            <p className="text-zinc-500 text-xs leading-relaxed">The AI visibility checker is trained on current RAG patterns to identify where LLMs fail to extract your brand's core value.</p>
+                        </div>
+                        <div className="space-y-3">
+                            <h3 className="text-white font-bold text-sm uppercase tracking-widest">Privacy Centric</h3>
+                            <p className="text-zinc-500 text-xs leading-relaxed">We don't store your proprietary search data. All calculations are performed on-the-fly to ensure enterprise-grade security.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

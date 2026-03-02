@@ -1,15 +1,3 @@
-// Custom Premium SVG Icons
-const AioIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-emerald-400">
-        <path d="M12 2v8" />
-        <path d="m16 4-4 4-4-4" />
-        <rect width="16" height="12" x="4" y="6" rx="2" />
-        <path d="M7 12h.01" />
-        <path d="M17 12h.01" />
-        <circle cx="12" cy="12" r="1.5" className="animate-pulse" />
-    </svg>
-);
-
 const AeoIcon = () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-emerald-400">
         <circle cx="12" cy="12" r="10" />
@@ -40,13 +28,6 @@ import Link from 'next/link';
 export default function AiExpertise() {
     const expertises = [
         {
-            title: "AIO",
-            subtitle: "Artificial Intelligence Optimization",
-            description: "I build content that AI models like ChatGPT and Gemini easily read and understand. Clear structure and smart data setup ensure bots find, crawl, and trust your brand.",
-            icon: <AioIcon />,
-            href: "/aio"
-        },
-        {
             title: "AEO",
             subtitle: "Answer Engine Optimization",
             description: "I help you win 'Position Zero' by writing direct, clear answers to common questions. I focus on how people talk and search using tools like Perplexity and Google AI Overviews.",
@@ -67,7 +48,7 @@ export default function AiExpertise() {
             {/* Background radial gradient to draw attention */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
 
-            <div className="max-w-7xl mx-auto relative z-10">
+            <div className="max-w-5xl mx-auto relative z-10">
                 <div className="text-center mb-12">
                     <p className="text-emerald-400 text-sm tracking-widest uppercase mb-4 font-semibold">The Future of Search</p>
                     <h2 className="text-5xl md:text-6xl text-white font-bold tracking-tighter mb-6 relative inline-block">
@@ -79,7 +60,7 @@ export default function AiExpertise() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {expertises.map((item, idx) => (
                         <Link
                             href={item.href}

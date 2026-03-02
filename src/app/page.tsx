@@ -165,8 +165,8 @@ export default function Home() {
       */}
       <Experience />
 
-      {/* Tech Stack Component */}
-      <TechStack />
+      {/* Featured Blog Insights Carousel */}
+      <BlogCarousel />
 
       {/* Featured Blog Insights Carousel */}
       <BlogCarousel />
