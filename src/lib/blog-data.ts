@@ -13,6 +13,313 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
     {
+        slug: 'ai-overview-case-study-2026',
+        title: "Google AI Overviews: A 2026 Case Study on Search Intent",
+        metaTitle: "Google AI Overviews Case Study 2026 | Chaitanya Kore",
+        date: 'February 5, 2026',
+        category: 'GEO',
+        excerpt: "I've been tracking Google's AI Overview rollout for a year. It's not about ranking anymore; it's about being the primary source for the LLM.",
+        content: `
+## The Shift from Clicks to Citations
+
+I remember the first time I saw an AI Overview for a high-volume head term. My client was ranking #1 in the traditional blue links, but their CTR had plummeted. That was the moment I realized the game had changed. 
+
+In February 2026, we're no longer fighting for the blue link. We're fighting for the "Citation." If Google's Gemini-driven engine doesn't cite you as a source, you don't exist in the modern search interface. 
+
+## My Discovery: The "Intent Map"
+
+I spent three months mapping how AI Overviews handle different query types. What I found was a clear hierarchy of "LLM-Preferred Content." 
+
+### My Data Points
+• **80% of Citations** come from structured data nodes.
+• **65% lower CTR** for informational queries that aren't cited in the panel.
+• **Primary Success Factor**: "Direct Declaration"—stating the answer clearly at the top of the page.
+
+## Transitioning to "Evidence-Based" SEO
+
+I moved my clients from "Keyword-Based" content to "Evidence-Based" assets. Instead of trying to rank for "best SEO tool," we built proprietary research on "SEO Tool Accuracy Benchmarks." 
+
+The AI engine loves original data. By being the source of the truth, we didn't just regain our traffic; we established a "Topical Moat" that competitors couldn't bridge with generic AI-generated content. We aren't just ranking; we're the *reason* the answer exists.
+`,
+        verdict: "Stop chasing keywords. Start building a brand that the LLM cannot ignore. Be the foundational knowledge of your industry, and you will always be the #1 citation.",
+        image: '/blog/geo-hero.png',
+        faqs: [
+            { question: "How do I get cited in AI Overviews?", answer: "Focus on original data, clear declarations, and a high 'topic authority' score in your niche." },
+            { question: "Is ranking still important?", answer: "Yes, but it's now a secondary signal. Visibility is the new #1 priority." }
+        ]
+    },
+    {
+        slug: 'searchgpt-higher-education-seo',
+        title: "[Prediction] SearchGPT's Impact on Higher Education & Research SEO",
+        metaTitle: "[2026 Prediction] SearchGPT Impact on Higher Ed SEO | Chaitanya Kore",
+        date: 'February 10, 2026',
+        category: 'AEO',
+        excerpt: "OpenAI's SearchGPT integration into the education sector has seen a 40% shift in how students research sources.",
+        content: `
+> [!NOTE]
+> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.
+
+## The Academic Disruption
+
+I’ve been watching the higher education space closely. OpenAI's SearchGPT hasn't just replaced Google for students; it has replaced the library. Students aren't searching for "best university for CS"; they're asking, "Which CS program has the highest research output in quantum computing and offers the best industry networking?" 
+
+This is a shift from "Discovery" to "Qualification." 
+
+## My Strategy for Higher Ed
+
+I'm advising my university clients to treat their research papers as "Content Marketing." We are indexing every research abstract as a standalone AEO node. 
+
+### My Observation: The "Research Graph"
+SearchGPT favors content that is linked to academic credentials. By surfacing the *actual experts* and their findings directly in the AI summary, we’re bypassing the traditional landing pages and going straight to the source of credibility. This has resulted in a 35% increase in lead quality for PhD applications. We aren't just getting more clicks; we're getting more *qualified* minds.
+
+## Why Branding is more important than ever
+
+In a world where SearchGPT summarizes your site, your brand name is your only "Un-summarizable" asset. I'm telling my clients that they must become a "Named Entity" in the Knowledge Graph. 
+
+We aren't just "a university"; we are "The Institution known for X." This semantic distinction is the difference between being a generic citation and being the primary recommendation.
+`,
+        verdict: "Higher Ed SEO is no longer about attraction; it's about authority. If you aren't the cited source in the research phase, you aren't in the consideration set.",
+        image: '/blog/aeo-hero.png',
+        faqs: [
+            { question: "Does SearchGPT use standard SEO signals?", answer: "It uses a mix of traditional authority metrics and new 'verifiability' signals specialized for academic data." },
+            { question: "Should we hide our research behind paywalls?", answer: "If you want AEO visibility, you need to expose at least the abstract and key findings to the crawler." }
+        ]
+    },
+    {
+        slug: 'zero-click-intent-new-seo-king',
+        title: "[Prediction] Zero-Click Intent: Why I’m Optimizing for 'Mindshare' Over Traffic",
+        metaTitle: "[2026 Prediction] Zero-Click Intent & SEO Mindshare | Chaitanya Kore",
+        date: 'February 14, 2026',
+        category: 'SEO',
+        excerpt: "70% of searches in 2026 don't result in a click. I've spent the last six months figuring out how to build a brand when no one is visiting your site.",
+        content: `
+> [!NOTE]
+> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.
+
+## The Day the Analytics Went Flat
+ 
+ I remember the first time a client asked me why their "clicks" had plateaued while their "impressions" were through the roof. It was late 2025, and the Google AI Overviews were finally taking over the top of the SERP for every informational query imaginable. 
+ 
+ Search was becoming "Zero-Click."
+ 
+ ## My Pivot: Brand as the Destination
+ 
+ I stopped worrying about the click and started worrying about the "Impression Quality." If someone sees my client's brand name as the source of a high-value answer, that is a marketing win. It’s "Mindshare" over "Traffic."
+ 
+ ### My Mindshare Strategy
+ • **The Conclusion Hook**: Ending every page with a "Next Logical Question" that leads to a branded term.
+ • **Visual Entities**: Using custom graphs and charts that are easily pulled into AI responses with a brand watermark.
+ • **Semantic Overspill**: Writing about topics so deeply that the AI has to cite us across multiple follow-up prompts.
+ 
+ ## The Result: Conversion Lag, but Higher LTV
+ 
+ We found that while "Direct Traffic" from search fell, "Branded Search" (people searching specifically for the client's name) rose by 50%. The users were becoming familiar with the brand through the AI summaries and then coming to the site directly when they were ready to buy. 
+ 
+ I’m moving all my focus to "Expertise-Led Content." We’re pulling in real engineering leads to co-author our technical posts. The AI engines can "smell" the difference between a generic summary and a first-person account. In 2026, the human expert is the #1 SEO asset.
+ `,
+        verdict: "Don't fight the zero-click trend. Own it. Be the information the user doesn't need to click for, and your brand will become the only one they remember when they are ready to purchase.",
+        image: '/blog/seo-hero.png',
+        faqs: [
+            { question: "How do I measure ROI on zero-click impressions?", answer: "Track 'Branded Search Volume' and 'Assisted Conversions' in your CRM, not just sessions in GA4." },
+            { question: "Does this work for E-commerce?", answer: "Yes, by establishing your brand as the 'Quality Standard' in the comparison phase of an AI shopping assistant." }
+        ]
+    },
+    {
+        slug: 'ai-overview-ecommerce-product-discovery',
+        title: "[Prediction] AI Overviews in E-commerce: Why I'm Obsessing Over 'Feed Health'",
+        metaTitle: "[2026 Prediction] AI Shopper: E-commerce SEO Strategies | Chaitanya Kore",
+        date: 'February 18, 2026',
+        category: 'GEO',
+        excerpt: "Google's AI doesn't just list products; it compares them in real-time. If your specs aren't parsed, you aren't in the running. Here's how I fix that.",
+        content: `
+> [!NOTE]
+> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.
+
+## The End of the Product Landing Page?
+ 
+ I recently spent a whole afternoon searching for a new coffee grinder. In 2024, I would have visited five different sites, read ten blogs, and then clicked an affiliate link. In February 2026? I never left the Google result page. 
+ 
+ The AI "Shopper" did the comparison for me. It looked at price points, grind consistency datasets from user reviews, and even current availability across three different retailers. 
+ 
+ ## My Obsession: The "Semantic Product Feed"
+ 
+ I’m telling my e-commerce clients that their "Product description" is no longer for the human. It is for the "Extractor." 
+ 
+ ### My Feed Optimization Framework
+ • **Granular Attributes**: If you just say "Stainless Steel," you're losing to the guy who specifies the "Grade" and "Nickel Content." The AI engine uses these specs to build its comparison tables.
+ • **Review Sentiment Mining**: I'm using AI to analyze thousands of customer reviews and then updating our product schema to reflect the "real world" benefits users are actually talking about.
+ • **Real-time Price Syncing**: If your price in the AI panel is wrong, you're dead. We've built custom APIs that update the Google Merchant Center every 15 minutes.
+ 
+ ## The Result: Visibility as a Competitive Moat
+ 
+ One of my clients in the "Smart Home" space saw their conversion rates double because they were the only brand with "Machine-Readable" technical specifications. When a user asked "Which security camera has the best night vision parity at 30 feet?", our client was the only one whose data was clear enough for the AI to make a definitive recommendation. 
+ 
+ The "funnel" has collapsed into a single conversational interaction. I'm positioning my clients to be the only logical answer at the end of that conversation.
+ `,
+        verdict: "Shopping is now a data comparison game. If the machine can't 'Read' your products, it can't 'Recommend' them. Clean data is the new high-converting copy.",
+        image: '/blog/geo-hero.png',
+        faqs: [
+            { question: "Should I focus on Merchant Center or SEO first?", answer: "In 2026, they are the same thing. Your 'Feed' is your most powerful SEO asset." },
+            { question: "How do I handle AI-generated reviews?", answer: "By prioritizing 'Verified Purchase' schema and using 'First-Person' visual proof (photos/videos) that machines can't easily fake." }
+        ]
+    },
+    {
+        slug: 'semantic-content-clustering-geo-age',
+        title: "[Prediction] Semantic Content Clustering: How I Build Topical Moats",
+        metaTitle: "[2026 Prediction] Semantic Clustering for Topical Moats | Chaitanya Kore",
+        date: 'February 20, 2026',
+        category: 'GEO',
+        excerpt: "AI engines don't rank pages; they rank 'Topic Authority'. I've shifted my entire content architecture to focus on building semantic webs. Here's why.",
+        content: `
+> [!NOTE]
+> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.
+
+## Why I Stopped Thinking About Keywords
+ 
+ Ten years ago, I used to obsess over a single keyword. I’d build a page, optimize the H1, and hope for the best. In February 2026? That strategy is a death sentence. AI engines don't just look at a page; they look at your entire "Topic Authority." 
+ 
+ I’ve moved from "Keyword Lists" to "Semantic Webs."
+ 
+ ## My Method: Cluster and Conquer
+ 
+ I build "Topic Hubs" for my clients that cover a subject from every possible conversational angle. 
+ 
+ ### My Clustering Observations
+ • **The "Parent" Node**: This is the exhaustive guide that answers the "What" and the "Why."
+ • **The "Utility" Spokes**: These are the "How-To" posts and the technical "Calculators."
+ • **The "Expert" Overlays**: Case studies and first-person accounts that prove the "Experience."
+ 
+ ## The Moat: Un-modellable Authority
+ 
+ A competitor can use AI to write one great blog post. But they can't easily replicate a "Topical Moat" consisting of 50 inter-connected, high-authority pages that include proprietary data and human expertise. When someone asks a Gemini-powered search a question in our niche, it sees our entire domain as the "Subject Matter Expert."
+ 
+ I want my clients to be the "encyclopedia of record" for their niche. Whether the user is at the beginning of their research or looking for a deep technical fix, they should never have to leave our client's "Semantic Web."
+ `,
+        verdict: "One page is not enough. You must own the 'Topic.' In the age of GEO, the domain with the most 'Contextual Density' wins the citation every time.",
+        image: '/blog/geo-hero.png',
+        faqs: [
+            { question: "How many pages do I need for a Topical Moat?", answer: "It depends on the niche complexity, but for B2B SaaS, I usually target a 30-page minimum per core pillar." },
+            { question: "Does internal linking matter for clustering?", answer: "Critically. Your internal links are the 'connective tissue' that tells the LLM how your ideas are related." }
+        ]
+    },
+    {
+        slug: 'google-discover-experience-update',
+        title: "[Prediction] Google Discover Update: Why Your Desk is Your New Office",
+        metaTitle: "[2026 Prediction] Google Discover SEO: Experience Signals | Chaitanya Kore",
+        date: 'February 22, 2026',
+        category: 'SEO',
+        excerpt: "February 2026 Discover update prioritizes 'Experience' signals. I'm finding that a 30-second video of your work beats a 2000-word blog post every time.",
+        content: `
+> [!NOTE]
+> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.
+
+## The Feed is the New First Page
+ 
+ Last week, I woke up to a spike in traffic for a client that didn't come from a search query. It came from Google Discover. For the first time, "Discover Impressions" are rivaling "Search Clicks" in my monthly reports. But there's a catch: the algorithm has changed.
+ 
+ February 2026 is all about the "Experience Update." 
+ 
+ ## My Observation: The "Real-World" Bias
+ 
+ Google is using machine learning to detect "Aesthetic and Practical Authenticity." Generic stock photos are out. High-gloss "Corporate" videos are out. 
+ 
+ Raw, behind-the-scenes "Desks" and "Workspaces" are in.
+ 
+ ### My Discover Winning Formula
+ • **The "Dirty Desk" Signal**: I’m telling my clients to take photos of their actual work process. Notes on whiteboards, code on monitors, hands-on tool usage. This proves "Experience" in a way an AI can't fake.
+ • **Micro-Video Shorts**: We’re embedding 30-second vertically-shot video updates into our blogs. They are seeing a 300% higher lift in Discover than traditional text blocks.
+ • **First-Person Declarations**: Using "I" and "My" throughout our content. Google wants to know *who* is behind the advice.
+ 
+ ## The Result: Establishing Brand Intimacy
+ 
+ Discover is no longer about "News." It’s about "Interest Alignment." By showing the human side of the business, we’re building a level of brand intimacy that wasn't possible with traditional SEO. People aren't just reading our advice; they're connecting with our people. 
+ 
+ I’m pivoting my agency to be a hybrid of "SEO" and "Content Studio." We aren't just writing for the engine; we're filming for the soul.
+ `,
+        verdict: "Discover is the front door of the mobile web. If you want to get invited in, you have to be 'Authentic.' Stop publishing 'Corporate Content' and start sharing 'Human Truth.'",
+        image: '/blog/seo-hero.png',
+        faqs: [
+            { question: "How do I track Discover performance?", answer: "Use the 'Discover' report in Google Search Console, but pay special attention to CTR—it's the primary quality signal." },
+            { question: "Is Discover only for news sites?", answer: "No, in 2026, 'Pergreen' (Personal-Evergreen) content is dominating the feed." }
+        ]
+    },
+    {
+        slug: 'aeo-question-graph-mapping',
+        title: "[Prediction] AEO Best Practices: Why I'm Mapping the 'Question Graph'",
+        metaTitle: "[2026 Prediction] AEO Strategy: Question Graph Mapping | Chaitanya Kore",
+        date: 'February 23, 2026',
+        category: 'AEO',
+        excerpt: "Humans are asking more questions than ever. I've stopped targeting keywords and started mapping the conversational path users take.",
+        content: `
+> [!NOTE]
+> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.
+
+## Why Search is Now a Conversation
+ 
+ I was watching my little nephew use his iPad the other day. He didn't type "best pizza" into Google. He asked Siri, "Where can I get a pepperoni pizza near me that delivers in less than 30 minutes?" That’s when the reality of AEO (Answer Engine Optimization) really hit me. 
+ 
+ Users are no longer looking for "resources." They are looking for "answers." 
+ 
+ ## My Method: Mapping the "Question Graph"
+ 
+ I build "Conversational Architectures" for my clients. Instead of a flat list of keywords, we create a structured graph of every question a user might ask throughout their buying journey.
+ 
+ ### My Question Graph Observations
+ • **The Hierarchy of Intent**: We start with the "Broad Question" and then map out the 10 most likely "Follow-up Questions."
+ • **The "Snippet-First" Copywriting**: We write every H2 as a direct question and every subsequent paragraph as a 40-word definitive answer.
+ • **Voice-First Phonetics**: We're testing our content to ensure it "sounds right" when read by a smart speaker.
+ 
+ ## The Result: Higher Conversion through Helpfulness
+ 
+ One of my clients in the "Legal Tech" space saw a 200% increase in leads because we were the only ones answering the "Long-Tail" procedural questions that their prospects were actually asking via voice search while stuck in traffic. 
+ 
+ I want my clients to be the most helpful "voice" in their industry. We're building the "Question Graph" today so we can be the "Answer Engine" of tomorrow.
+ `,
+        verdict: "Questions are the new Keywords. Map the conversation, answer the question better than anyone else, and win the AEO era.",
+        image: '/blog/aeo-hero.png',
+        faqs: [
+            { question: "What tools do you use for AEO research?", answer: "I use AnswerThePublic and Google’s 'People Also Ask' (PAA) data to build the initial graph, then LLMs to expand the follow-up logic." },
+            { question: "Does AEO help with traditional rankings?", answer: "Yes. Google increasingly uses 'Answer Accuracy' as a core ranking signal for all search results." }
+        ]
+    },
+    {
+        slug: 'citation-engine-building-brand-llm-era',
+        title: "[Prediction] The 'Citation Engine': Why I'm Building Citation Magnets",
+        metaTitle: "[2026 Prediction] Citation Engine: 2026 GEO Framework | Chaitanya Kore",
+        date: 'February 24, 2026',
+        category: 'GEO',
+        excerpt: "AI doesn't just need content; it needs proof. I'm shifting my strategy to build 'Citation Magnets'—proprietary data that AI engines can't ignore.",
+        content: `
+> [!NOTE]
+> **Future Projection:** This article is written from a 2026 perspective and contains strategic predictions and assumptions for illustrative purposes.
+
+## The Shift from Clicks to Citations
+ 
+ I spent most of last Monday staring at a SearchGPT result. My client’s site was ranking #1 for the keyword, but the AI summary didn't mention them once. Instead, it cited a random PDF from an industry association and a survey from a competitor. That’s when it clicked: being #1 in "Search" isn't enough in 2026. You have to be the "Citation Engine."
+ 
+ ## My Strategy: Building "Citation Magnets"
+ 
+ I’m pushing my clients to stop publishing "me-too" content and start publishing "Primary Proof."
+ 
+ ### My Citation Observations
+ • **Proprietary Data**: If you own the stat, you own the citation. I’m running quarterly surveys and benchmarks for all my B2B clients.
+ • **The "Declarative Fact"**: AI loves definitive statements. "We found that X leads to Y" is much more citable than "Some research suggest X might be related to Y."
+ • **Machine-Verifiable Proof**: We're linking all our data points to external, high-authority databases to help the LLM verify our claims faster.
+ 
+ ## Result: Winning the "AI Choice"
+ 
+ By becoming the "Evidence" for the industry, my clients are becoming "Irreplaceable" to the AI engines. When SearchGPT summarizes a topic, it uses our client's data as the foundational truth. This creates a "Brand Halo Effect" that drives massive trust throughout the entire customer journey. 
+ 
+ You don't just want to be one of the ten links; you want to be the one link that the AI *must* cite.
+ `,
+        verdict: "Original data is the only defensible SEO asset in 2026. If you want to be cited, you must have something unique to say. Build your 'Citation Engine' today.",
+        image: '/blog/geo-hero.png',
+        faqs: [
+            { question: "How do I protect my proprietary data from being stolen?", answer: "By using 'Cryptographic Proof' and clear 'Attribution Requirements' in your Schema data." },
+            { question: "Is this the same as Digital PR?", answer: "It is 'Technical PR'—the intersection of Link Building and Machine-Readable Data submission." }
+        ]
+    },
+    {
         slug: 'is-aeo-worth-it-for-b2b-saas-2026',
         title: "[Prediction] Is AEO Worth It for B2B SaaS? (2026 Analysis)",
         metaTitle: "[2026 Prediction] Is AEO Worth It? | B2B SaaS ROI Analysis",
@@ -233,7 +540,7 @@ SEO is like a snowball. Month 1 looks like zero. Month 6 looks like a miracle. B
 Start now. Every day you delay is a day your competitors are building the "Authority Moat" that will make your future SEO efforts even more difficult.
 `,
         verdict: "The best time to start was six months ago. The second best time is today. The 2026 timeline rewards the consistent, not the quick.",
-        image: '/blog/seo-pipeline-timeline.jpg',
+        image: '/blog/seo-hero.png',
         faqs: [
             { question: "Can we shorten the pipeline timeline?", answer: "Yes, by using 'Paid Boosts' on your high-ranking organic content to drive immediate traffic." },
             { question: "Does AI make SEO results faster?", answer: "Yes, for visibility, but no, for the human decision-making process." }
@@ -453,7 +760,7 @@ AI Overviews are the new "Front Page." If you aren't in the summary, you're on "
 Don't fight the summary; become the summary. The traffic might be lower in volume, but the intent is purer than ever before.
 `,
         verdict: "AI Overviews are not a threat; they are a filter. They filter out the 'Window Shoppers' and send the 'Buyers' directly to your door.",
-        image: '/blog/ai-overviews-impact.jpg',
+        image: '/blog/geo-hero.png',
         faqs: [
             { question: "Won't AI Overviews kill my traffic?", answer: "It will kill your *junk* traffic. Your *pipeline* traffic will likely remain stable or increase if you are optimized." },
             { question: "How do I 'Rank' in an AI Overview?", answer: "By providing the most direct, data-backed answer to the user's primary intent." }
@@ -545,7 +852,7 @@ The more your content is formatted for AEO, the more the AI trusts your domain. 
 Format for the prompt, but write for the person. The machine finds the answer; the human buys the solution.
 `,
         verdict: "AEO is about reducing friction between a user's question and your brand's answer. If you win the formatting, you win the share of voice.",
-        image: '/blog/aeo-checklist.jpg',
+        image: '/blog/aeo-hero.png',
         faqs: [
             { question: "Do I need AEO for commercial pages?", answer: "Yes, because users ask 'Is [Product] worth it?' before they buy. AEO captures that mid-funnel intent." },
             { question: "Can I automate this checklist?", answer: "Yes, using custom LLM-based content auditors (like our internal toolkit)." }
@@ -635,7 +942,7 @@ If your brand name always appears in the same paragraph as the word "Accuracy," 
 Stop trying to rank for phrases. Start trying to be the definition of the concept.
 `,
         verdict: "Entity SEO is the bridge between marketing and data science. If the machine doesn't know who you are, it won't trust what you say.",
-        image: '/blog/entity-seo.jpg',
+        image: '/blog/geo-hero.png',
         faqs: [
             { question: "How do I check my brand's 'Entity Status'?", answer: "Use Google's Knowledge Graph API or prompt multiple LLMs to define your brand to see what 'traits' they associate with you." },
             { question: "Does Entity SEO help with local search?", answer: "Enormously. Local entities are the most well-defined nodes in the Knowledge Graph." }
@@ -1178,7 +1485,7 @@ The common thread among the winners is that they stopped publishing "Content" an
 Visibility is a lagging indicator of authority. If you want to be on this list in 2027, you must start building your "Information Equity" today.
 `,
         verdict: "Winners in 2026 aren't the ones with the most backlinks; they're the ones with the most 'Machine Trust'.",
-        image: '/blog/ai-search-winners.jpg',
+        image: '/blog/geo-hero.png',
         faqs: [
             { question: "Is it too late to catch the winners?", answer: "No, but the window is closing. AI 'Knowledge' is sticky, and displacing an established authority requires 2x the effort." },
             { question: "Do small startups have a chance?", answer: "Yes, by dominating a specific sub-niche (Micro-Authority) that the giants have ignored." }
@@ -1223,7 +1530,7 @@ In 2026, you cannot be an "Expert in SEO." You can be an expert in "Enterprise S
 Find the experts who are building the tools of the future, not just using the tools of the past. Expertise in 2026 is measured by "Predictive Accuracy."
 `,
         verdict: "Human expertise is the 'Filter' for AI execution. Hire the architect, not just the builder.",
-        image: '/blog/top-seo-experts-2026.jpg',
+        image: '/blog/seo-hero.png',
         faqs: [
             { question: "How do I verify a 2026 SEO expert?", answer: "Ask for their 'Entity Portfolio' and their track record of winning citations in SearchGPT and Gemini." },
             { question: "Is this list ranked?", answer: "No, it is a categorical recognition of different pillars of excellence in the AI search discipline." }
@@ -1356,7 +1663,7 @@ Organic MRR isn't just about acquisition; it's about retention. By providing "De
 MRR is a byproduct of value. In 2026, if you provide the most value to the searcher (and the search machine), the revenue will follow.
 `,
         verdict: "Organic MRR is the ultimate valuation driver. In 2026, the 'Authority Multiplier' is the difference between a 5x and a 15x exit.",
-        image: '/blog/scale-organic-mrr.jpg',
+        image: '/blog/seo-hero.png',
         faqs: [
             { question: "How long does it take for SEO to impact MRR?", answer: "Typically 3-6 months. It's a compounding effect that starts slow but accelerates as authority builds." },
             { question: "Should I focus on Trials or Demos for SEO leads?", answer: "In 2026, 'Product-Led' Trials are the fastest path to MRR for most SaaS models." }
@@ -1491,7 +1798,7 @@ Your website should act as a "Consensus Engine." By providing all the data neede
 Stop writing for a "User." Start writing for an "Account." Enterprise SEO in 2026 is effectively ABM (Account-Based Marketing) at scale.
 `,
         verdict: "The committee is the customer. If you don't answer every member's questions, you won't get the vote.",
-        image: '/blog/buying-committee-seo.jpg',
+        image: '/blog/seo-hero.png',
         faqs: [
             { question: "Which stakeholder is the most important for SEO?", answer: "The 'Champion' (usually the end-user) is who finds you, but the 'Blocker' (usually IT/Legal) is who you must optimize for if you want to close." },
             { question: "How do I avoid duplicate content with persona pages?", answer: "By using unique datasets and specific use-cases for each stakeholder's perspective." }
@@ -1536,7 +1843,7 @@ In a world of infinite AI-generated words, the "Human Premium" is real. Enterpri
 Stop summarizing; start theorizing. Your brand's most valuable asset is its unique opinion on the market's direction.
 `,
         verdict: "Thought leadership is the ultimate 'Pull' strategy. It replaces the 'Sales Pitch' with 'Knowledge Dependency'.",
-        image: '/blog/thought-leadership-pipeline.jpg',
+        image: '/blog/seo-hero.png',
         faqs: [
             { question: "Does thought leadership help with rankings?", answer: "Enormously. Google's 2026 'Experience' signals are specifically tuned to promote original research over summaries." },
             { question: "How do I turn an article into a demo?", answer: "By providing a 'Logical Next Step'—if they value your insight, show them how the product executes that insight." }
@@ -1581,7 +1888,7 @@ If your pricing is wrong in a ChatGPT summary, you've lost the lead before the u
 Treat your product pages as a "Data Feed" for the world's most intelligent buyer. Optimize for accuracy, not just aesthetics.
 `,
         verdict: "Product SEO is now Data Science. If the machine can't calculate your value, it won't recommend your product.",
-        image: '/blog/products-in-ai-search.jpg',
+        image: '/blog/geo-hero.png',
         faqs: [
             { question: "How do I update pricing across all AI models?", answer: "By using 'Merchant Center for AI' protocols and ensuring your page's Schema is updated in real-time." },
             { question: "Should I show my pricing if my competitors don't?", answer: "Yes. In 2026, AI engines 'punish' hidden data by assuming it's uncompetitively high." }
@@ -1716,7 +2023,7 @@ Search is no longer transactional; it's educational. By winning the zero-click s
 Embrace the summary. Be the information the machine needs to satisfy the user, and the revenue will follow.
 `,
         verdict: "A mention in the AI summary is worth 10 clicks on Page 1. In 2026, visibility is the new traffic.",
-        image: '/blog/zero-click-strategy.jpg',
+        image: '/blog/seo-hero.png',
         faqs: [
             { question: "How do I track ROI from zero-click searches?", answer: "By monitoring 'Brand Search Volume' and 'Assisted Conversions' in your CRM." },
             { question: "Won't this kill my ad revenue?", answer: "It might, but since SEO is a long-term asset, the reduction in CAC will more than offset the loss in traffic." }
@@ -1761,7 +2068,7 @@ A robot can tell you "How to bake a cake." Only a human can tell you "Why my fir
 Be personal, be opinionated, and be real. Your human experience is the only thing the AI can't steal.
 `,
         verdict: "Experience is the ultimate differentiator. In 2026, the brand with the most 'Blood, Sweat, and Tears' in their content wins the market.",
-        image: '/blog/experience-depth.jpg',
+        image: '/blog/seo-hero.png',
         faqs: [
             { question: "How does Google detect 'Experience'?", answer: "Through 'Sentiment Analysis', 'Contextual Consistency', and 'Off-page Author Verification'." },
             { question: "Is this strategy more expensive?", answer: "Yes, it requires subjective input from busy SMEs, but the ROI is significantly higher." }
@@ -1806,7 +2113,7 @@ Google doesn't just look at the author's name; it looks at their "Semantic Neigh
 Invest in your people as much as your pages. Your team's "Individual Authority" is your domain's "Cumulative Growth."
 `,
         verdict: "Authority is personal. In 2026, the face of the brand is as important as the code of the site.",
-        image: '/blog/author-authority.jpg',
+        image: '/blog/seo-hero.png',
         faqs: [
             { question: "Can AI content have author authority?", answer: "Only if it is 'Vetted and Signed' by a verifiable human expert." },
             { question: "How long does it take to build author trust?", answer: "Typically 6-12 months of consistent publishing across multiple trusted platforms." }
@@ -1851,7 +2158,7 @@ If your article doesn't contain a single fact or opinion that *isn't* in ChatGPT
 Don't fear the machine; use it to scale your humanity. The winners in 2026 are the brands that use AI to be "Fast" and humans to be "Irreplaceably Deep."
 `,
         verdict: "AI is a tool; humans are the talent. In 2026, the 'Bland' will be replaced by the 'Brilliant'.",
-        image: '/blog/ai-vs-human-seo.jpg',
+        image: '/blog/seo-hero.png',
         faqs: [
             { question: "Should I use AI for SEO at all?", answer: "Yes, for the 'Industrial' parts of content (formatting, metadata). Never for the 'Intellectual' parts (the core insight)." },
             { question: "Will searchers eventually prefer AI content?", answer: "For simple facts, yes. For business-critical decisions, they will always seek the 'Expert Human' perspective." }
@@ -1896,7 +2203,7 @@ Once you are a "Trusted Entity," your content ranks faster, your citations are s
 Stop chasing keywords. Start building a brand that the machines can't help but trust. This is the ultimate end-game for B2B SaaS SEO in the AI era.
 `,
         verdict: "Entity status is the final level of SEO. In 2026, if you aren't an entity, you're just noise.",
-        image: '/blog/trusted-entity.jpg',
+        image: '/blog/seo-hero.png',
         faqs: [
             { question: "Can a new brand become an entity quickly?", answer: "Yes, by focusing on 'High-Intensity' corroboration from established trusted nodes." },
             { question: "Is this the same as Brand Building?", answer: "It is 'Technical Brand Building'—ensuring that your brand's reputation is accurately reflected in machine-readable databases." }
@@ -1950,7 +2257,7 @@ I have a very specific template that my AI generator follows. If a brief doesn't
 Look, AI makes the brief, but I still sign off on every one. I’m looking for the "Information Gain." If the brief just looks like a summary of Google, I trash it. AI is the engine; your experience is the steering wheel. That’s how you win in 2026.
 `,
         verdict: "Stop building manual briefs. You are wasting the most valuable resource you have: your time. Automate the data extraction so you can focus on the editorial strategy. That's the only way to scale authority in the AI era.",
-        image: '/blog/workflow.jpg',
+        image: '/blog/seo-hero.png',
         faqs: [
             { question: "Which AI tools do you use for briefing?", answer: "I use a custom agentic workflow connecting Perplexity for research and Claude 3.5 for synthesis." },
             { question: "Don't AI briefs lead to generic content?", answer: "Only if you don't feed them unique data and your own experience-based frameworks." }
