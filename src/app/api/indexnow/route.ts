@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import sitemap from '@/lib/sitemap-urls';
+import sitemap from '@/app/sitemap';
 
 export async function POST() {
     try {
