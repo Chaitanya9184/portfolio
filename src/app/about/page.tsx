@@ -117,129 +117,130 @@ export default function AboutPage() {
                 {/* Content Sections */}
                 <div className="relative z-20">
                     {/* Section 1: The Philosophy */}
-                    <div className="min-h-screen flex items-center">
+                    <div className="py-24 md:py-32">
                         <div className="container mx-auto px-6">
-                            <div className="max-w-3xl">
-                                <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-12">I believe SEO is broken.</h2>
+                            <div className="max-w-3xl mb-24">
+                                <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter italic">I believe SEO is broken.</h2>
+                            </div>
 
-                                {/* Combined Section: Credentials & Experience Timeline (Two-Column Layout) */}
-                                <div className="mt-32 mb-40">
-                                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                            {/* Combined Section: Credentials & Experience Timeline (Two-Column Layout) */}
+                            <div className="mb-40">
+                                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
-                                        {/* Left Side: Professional Profile (Credentials) */}
-                                        <div className="lg:col-span-5 space-y-12">
+                                    {/* Left Side: Professional Profile (Credentials) */}
+                                    <div className="lg:col-span-5 space-y-12">
+                                        <motion.div
+                                            initial={{ opacity: 0, x: -20 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            viewport={{ once: true }}
+                                        >
+                                            <p className="text-blue-500 text-xs tracking-[0.3em] uppercase mb-4 font-bold">The Expertise</p>
+                                            <h2 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-8 leading-tight italic">
+                                                Senior SEO &<br />
+                                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 not-italic">AI Search Expert.</span>
+                                            </h2>
+                                            <p className="text-zinc-400 text-lg leading-relaxed mb-10 font-light">
+                                                8+ years of experience driving organic growth for e-commerce, SaaS, and enterprise brands globally.
+                                                Currently leading AI-driven search strategies (AEO/GEO) to ensure discoverability across generative answer platforms.
+                                            </p>
+
+                                            {/* Contact Quick Links */}
+                                            <div className="grid grid-cols-1 gap-3 mb-10">
+                                                {[
+                                                    { icon: <PhoneIcon />, label: "+91-7875269281", href: "tel:+917875269281" },
+                                                    { icon: <EmailIcon />, label: "korechaitanya10@gmail.com", href: "mailto:korechaitanya10@gmail.com" },
+                                                    { icon: <LinkedInIcon />, label: "LinkedIn Profile", href: "https://linkedin.com/in/chaitanya-kore-342069140" }
+                                                ].map((contact, i) => (
+                                                    <a
+                                                        key={i}
+                                                        href={contact.href}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/40 border border-white/5 hover:border-blue-500/30 hover:bg-zinc-800/60 transition-all group"
+                                                    >
+                                                        <span className="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-blue-400 border border-zinc-700 transition-colors">
+                                                            {contact.icon}
+                                                        </span>
+                                                        <span className="text-sm text-zinc-400 group-hover:text-zinc-200 transition-colors font-medium">{contact.label}</span>
+                                                    </a>
+                                                ))}
+                                            </div>
+                                        </motion.div>
+
+                                        <div className="space-y-8">
                                             <motion.div
-                                                initial={{ opacity: 0, x: -20 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
+                                                initial={{ opacity: 0, y: 20 }}
+                                                whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true }}
+                                                className="p-8 rounded-[2rem] bg-zinc-900/40 border border-white/5"
                                             >
-                                                <p className="text-blue-500 text-xs tracking-[0.3em] uppercase mb-4 font-bold">The Expertise</p>
-                                                <h2 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-8 leading-tight italic">
-                                                    Senior SEO &<br />
-                                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 not-italic">AI Search Expert.</span>
-                                                </h2>
-                                                <p className="text-zinc-400 text-lg leading-relaxed mb-10 font-light">
-                                                    8+ years of experience driving organic growth for e-commerce, SaaS, and enterprise brands globally.
-                                                    Currently leading AI-driven search strategies (AEO/GEO) to ensure discoverability across generative answer platforms.
+                                                <p className="text-white text-sm font-bold tracking-widest uppercase flex items-center gap-2 mb-6">
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                                                    Core Methodology
                                                 </p>
-
-                                                {/* Contact Quick Links */}
-                                                <div className="grid grid-cols-1 gap-3 mb-10">
-                                                    {[
-                                                        { icon: <PhoneIcon />, label: "+91-7875269281", href: "tel:+917875269281" },
-                                                        { icon: <EmailIcon />, label: "korechaitanya10@gmail.com", href: "mailto:korechaitanya10@gmail.com" },
-                                                        { icon: <LinkedInIcon />, label: "LinkedIn Profile", href: "https://linkedin.com/in/chaitanya-kore-342069140" }
-                                                    ].map((contact, i) => (
-                                                        <a
-                                                            key={i}
-                                                            href={contact.href}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/40 border border-white/5 hover:border-blue-500/30 hover:bg-zinc-800/60 transition-all group"
-                                                        >
-                                                            <span className="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-blue-400 border border-zinc-700 transition-colors">
-                                                                {contact.icon}
-                                                            </span>
-                                                            <span className="text-sm text-zinc-400 group-hover:text-zinc-200 transition-colors font-medium">{contact.label}</span>
-                                                        </a>
+                                                <div className="flex flex-wrap gap-3">
+                                                    {["Growth Strategy", "AI Search", "Audit", "Leadership", "Programmatic"].map(skill => (
+                                                        <span key={skill} className="px-5 py-3 bg-white/5 border border-white/10 rounded-2xl text-[10px] text-zinc-400 font-semibold uppercase tracking-widest">
+                                                            {skill}
+                                                        </span>
                                                     ))}
                                                 </div>
                                             </motion.div>
 
-                                            <div className="space-y-8">
+                                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
                                                 <motion.div
                                                     initial={{ opacity: 0, y: 20 }}
                                                     whileInView={{ opacity: 1, y: 0 }}
                                                     viewport={{ once: true }}
-                                                    className="p-8 rounded-[2rem] bg-zinc-900/40 border border-white/5"
+                                                    className="p-6 rounded-2xl bg-zinc-900/40 border border-white/5"
                                                 >
-                                                    <p className="text-white text-sm font-bold tracking-widest uppercase flex items-center gap-2 mb-6">
-                                                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                                                        Core Methodology
-                                                    </p>
-                                                    <div className="flex flex-wrap gap-3">
-                                                        {["Growth Strategy", "AI Search", "Audit", "Leadership", "Programmatic"].map(skill => (
-                                                            <span key={skill} className="px-5 py-3 bg-white/5 border border-white/10 rounded-2xl text-[10px] text-zinc-400 font-semibold uppercase tracking-widest">
-                                                                {skill}
-                                                            </span>
+                                                    <p className="text-white text-[10px] font-bold uppercase tracking-widest mb-4 opacity-50">Education</p>
+                                                    <p className="text-white font-bold mb-1 tracking-tight">BBA (Marketing)</p>
+                                                    <p className="text-xs text-zinc-500">Pune University | 2017</p>
+                                                </motion.div>
+
+                                                <motion.div
+                                                    initial={{ opacity: 0, y: 20 }}
+                                                    whileInView={{ opacity: 1, y: 0 }}
+                                                    viewport={{ once: true }}
+                                                    className="p-6 rounded-2xl bg-zinc-900/40 border border-white/5"
+                                                >
+                                                    <p className="text-white text-[10px] font-bold uppercase tracking-widest mb-4 opacity-50">Certifications</p>
+                                                    <div className="space-y-2">
+                                                        {["Google Analytics", "HubSpot Master"].map(cert => (
+                                                            <div key={cert} className="flex items-center gap-2 text-[10px] text-zinc-400 font-bold uppercase">
+                                                                <div className="w-1 h-1 rounded-full bg-blue-500" />
+                                                                {cert}
+                                                            </div>
                                                         ))}
                                                     </div>
                                                 </motion.div>
-
-                                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
-                                                    <motion.div
-                                                        initial={{ opacity: 0, y: 20 }}
-                                                        whileInView={{ opacity: 1, y: 0 }}
-                                                        viewport={{ once: true }}
-                                                        className="p-6 rounded-2xl bg-zinc-900/40 border border-white/5"
-                                                    >
-                                                        <p className="text-white text-[10px] font-bold uppercase tracking-widest mb-4 opacity-50">Education</p>
-                                                        <p className="text-white font-bold mb-1 tracking-tight">BBA (Marketing)</p>
-                                                        <p className="text-xs text-zinc-500">Pune University | 2017</p>
-                                                    </motion.div>
-
-                                                    <motion.div
-                                                        initial={{ opacity: 0, y: 20 }}
-                                                        whileInView={{ opacity: 1, y: 0 }}
-                                                        viewport={{ once: true }}
-                                                        className="p-6 rounded-2xl bg-zinc-900/40 border border-white/5"
-                                                    >
-                                                        <p className="text-white text-[10px] font-bold uppercase tracking-widest mb-4 opacity-50">Certifications</p>
-                                                        <div className="space-y-2">
-                                                            {["Google Analytics", "HubSpot Master"].map(cert => (
-                                                                <div key={cert} className="flex items-center gap-2 text-[10px] text-zinc-400 font-bold uppercase">
-                                                                    <div className="w-1 h-1 rounded-full bg-blue-500" />
-                                                                    {cert}
-                                                                </div>
-                                                            ))}
-                                                        </div>
-                                                    </motion.div>
-                                                </div>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        {/* Right Side: Interactive Journey (Experience) */}
-                                        <div className="lg:col-span-7">
-                                            <Experience />
-                                        </div>
+                                    {/* Right Side: Interactive Journey (Experience) */}
+                                    <div className="lg:col-span-7">
+                                        <Experience />
                                     </div>
                                 </div>
+                            </div>
 
-                                {/* Tech Stack - Keeps its full width below */}
-                                <div className="relative z-20 py-24 border-y border-zinc-900 border-dashed mb-32">
-                                    <TechStack />
-                                </div>
-                                <div className="space-y-8 text-zinc-400 text-lg md:text-xl leading-relaxed">
-                                    <p>
-                                        Most agencies are still selling 2018 tactics in a 2026 world. They focus on keyword rankings, but rankings don't pay the bills. Revenue does.
-                                    </p>
-                                    <p>
-                                        My journey started with a simple observation: Search is moving from a list of links to a list of answers. If you're not optimized for AI citation (GEO/AEO), you're becoming invisible.
-                                    </p>
-                                    <p>
-                                        I spent years in the trenches of SaaS and B2B Tech, realizing that technical excellence is just the entry fee. Real growth happens when you align your site's architecture with how LLMs actually think.
-                                    </p>
-                                </div>
+                            {/* Tech Stack - Keeps its full width below */}
+                            <div className="relative z-20 py-24 border-y border-zinc-900 border-dashed mb-32">
+                                <TechStack />
+                            </div>
+
+                            <div className="max-w-3xl space-y-8 text-zinc-400 text-lg md:text-xl leading-relaxed">
+                                <p>
+                                    Most agencies are still selling 2018 tactics in a 2026 world. They focus on keyword rankings, but rankings don't pay the bills. Revenue does.
+                                </p>
+                                <p>
+                                    My journey started with a simple observation: Search is moving from a list of links to a list of answers. If you're not optimized for AI citation (GEO/AEO), you're becoming invisible.
+                                </p>
+                                <p>
+                                    I spent years in the trenches of SaaS and B2B Tech, realizing that technical excellence is just the entry fee. Real growth happens when you align your site's architecture with how LLMs actually think.
+                                </p>
                             </div>
                         </div>
                     </div>
