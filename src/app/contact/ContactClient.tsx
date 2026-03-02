@@ -107,7 +107,7 @@ export default function ContactClient() {
                                 type="text"
                                 id="company"
                                 name="company"
-                                value={formData.company}
+                                value={formData.company || ''}
                                 onChange={handleChange}
                                 className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all"
                                 placeholder="Your Company Name"
