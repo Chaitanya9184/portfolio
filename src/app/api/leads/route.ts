@@ -21,6 +21,7 @@ export async function POST(request: Request) {
 
         return NextResponse.json({ success: true, lead: newLead }, { status: 201 });
     } catch (error: unknown) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const err = error as any;
         console.error('Error saving lead. Data:', data);
         console.error('Prisma Error Details:', {
