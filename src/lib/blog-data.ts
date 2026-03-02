@@ -362,7 +362,7 @@ In 2026, the AI doesn't want to summarize your generic "What is CRM" guide. It w
 AEO is no longer optional. For B2B SaaS, it is the new battleground for early-stage pipeline. The cost of entry is lower than PPC, and the compounding returns on authority are significantly higher.
 `,
         verdict: "AEO is the single most effective way to reduce CAC in 2026. If you aren't optimizing for the machine, you are invisible to the buyer.",
-        image: '/blog/aeo-saas-roi.jpg',
+        image: '/blog/aeo-hero.png',
         faqs: [
             { question: "How long does AEO take to show results?", answer: "Typically 4-8 weeks for AI models to update their index and start citing new content." },
             { question: "Can AEO replace traditional SEO?", answer: "No, they are complementary. SEO drives the 'discovery' while AEO wins the 'decision'." }
@@ -405,7 +405,7 @@ In 2026, a citation from a major LLM is viewed by buyers with the same weight as
 GEO is the ultimate efficiency play. By focusing on the *quality* of the information you provide to the machine, you can capture the highest-intent buyers at the moment of their research, effectively bypassing the expensive "Ad Tax" of 2025.
 `,
         verdict: "GEO is the new performance marketing. The investment in 'Machine Readability' pays back in exponentially lower acquisition costs.",
-        image: '/blog/geo-cac-saas.jpg',
+        image: '/blog/geo-hero.png',
         faqs: [
             { question: "Is GEO just for top-of-funnel content?", answer: "Absolutely not. GEO is most powerful in the 'Consideration' phase where AI compares features and pricing." },
             { question: "Will GEO work for new SaaS startups?", answer: "Yes, GEO is actually an equalizer, allowing high-quality niche data to beat legacy incumbents." }
@@ -452,7 +452,7 @@ You cannot buy a citation in a ChatGPT response with PPC. You can only earn it t
 Focus on SEO as your primary growth engine. Use PPC as the nitrous to accelerate specific campaigns, but build your "House" on the solid ground of organic authority.
 `,
         verdict: "SEO/GEO is the marathon that wins the race; PPC is the sprint that keeps you in the heat. In 2026, the winner is the one with the strongest marathon pace.",
-        image: '/blog/seo-vs-ppc-2026.jpg',
+        image: '/blog/seo-hero.png',
         faqs: [
             { question: "Can I stop PPC entirely if my SEO is good?", answer: "Rarely. PPC is still vital for seasonal bursts and protecting your own brand keywords." },
             { question: "Is SEO more expensive than it used to be?", answer: "Yes, because the quality bar is higher, but the ROI is also greater due to AEO integration." }
@@ -497,7 +497,7 @@ The AI "Knowledge Base" is somewhat sticky. Once an LLM associates your brand as
 Stop thinking about "Content ROI" and start thinking about "Authority Equity." Your AEO budget is an investment in your brand's future relevance in a machine-mediated world.
 `,
         verdict: "AEO is expensive because it's effective. The cost is justified by the long-term defense of your market position.",
-        image: '/blog/ai-search-costs.jpg',
+        image: '/blog/aeo-hero.png',
         faqs: [
             { question: "Can we do AEO in-house?", answer: "Yes, but you'll need at least one dedicated 'Semantic Architect' to manage the technical requirements." },
             { question: "What is the average monthly spend for Enterprise AEO?", answer: "In 2026, we see enterprise budgets ranging from $15k to $50k per month for dedicated AI search dominance." }
@@ -583,7 +583,7 @@ In 2026, we see a huge rise in the "Invisible MQL"—buyers who research your br
 Stop judging SEO by clicks. Judge it by the quality and quantity of your demo requests. In the enterprise world, SEO is the strongest "Validator" of your brand's expertise.
 `,
         verdict: "SEO is the ultimate 'Pull' strategy for enterprise. It creates a vacuum that draws in pre-qualified bueyrs without the friction of outbound.",
-        image: '/blog/enterprise-seo-mql.jpg',
+        image: '/blog/seo-hero.png',
         faqs: [
             { question: "What is a 'Good' conversion rate for enterprise SEO?", answer: "In 2026, 2-5% from high-intent category pages is considered gold-standard." },
             { question: "Should we hide our content behind forms?", answer: "No. In 2026, 'Gated Content' is invisible to AI. Use 'Ungated Data' to win the citation, and a 'Soft Gate' for the whitepaper." }
@@ -628,7 +628,7 @@ In 2026, your ROI is found in the "Latent Space" of the major AI models. If your
 Measurement must evolve with behavior. If you only measure clicks, you are underreporting your SEO success by at least 50%. Adopt the "Authority Attribution" model to show the true value of your work.
 `,
         verdict: "Attribution is the only way to protect your marketing budget. In 2026, the best marketers are the ones who can prove the impact of the 'Invisible Click'.",
-        image: '/blog/measuring-ai-roi.jpg',
+        image: '/blog/aeo-hero.png',
         faqs: [
             { question: "Is there a tool for tracking AI citations?", answer: "Yes, several enterprise platforms (like 'AEOInsight' or 'GEOTracker') have emerged in 2026." },
             { question: "How do we report this to the CEO?", answer: "Focus on 'Market Share of Voice in AI' rather than 'Clicks' or 'Impressions'." }
@@ -671,7 +671,7 @@ Think of your website not as a collection of pages, but as a "Database of Indust
 SEO isn't dead; it just graduated. It transitioned from a technical trick to a fundamental business strategy. If you want to survive, you must stop "ranking" and start "representing" your industry's best knowledge.
 `,
         verdict: "Traditional SEO is dead. Long live Strategic Information Management. The name changed; the goal (winning the customer) remains.",
-        image: '/blog/is-seo-dead-2026.jpg',
+        image: '/blog/seo-hero.png',
         faqs: [
             { question: "Should I still use keywords?", answer: "Yes, but use them as 'Context Signals' rather than 'Targets'." },
             { question: "Is link building dead?", answer: "Low-quality link building is dead. High-authority 'Entity Mentions' are the new gold standard." }
@@ -717,7 +717,7 @@ The more an AI cites you, the more it "trusts" you. This creates a compounding l
 Start publishing original data. Stop summarizing other people's work. Be the source, not the echo.
 `,
         verdict: "A citation is a machine-verified endorsement. In the 2026 economy of trust, it is the most valuable currency you have.",
-        image: '/blog/winning-ai-citations.jpg',
+        image: '/blog/aeo-hero.png',
         faqs: [
             { question: "How often do LLMs update their citations?", answer: "Usually daily for news-related queries and weekly/monthly for evergreen topics." },
             { question: "Does 'E-E-A-T' still matter?", answer: "More than ever. The 'E' for Experience is what AI engines look for when choosing which source to cite." }
@@ -805,7 +805,7 @@ In the AI era, every sentence is a potential answer. Transition paragraphs like 
 Structure is the new content. If you want to be seen, you must be structured.
 `,
         verdict: "Data architecture is the new copywriting. If you want to be the default recommendation, you must make it easy for the machine to find you.",
-        image: '/blog/ai-extraction.jpg',
+        image: '/blog/aeo-hero.png',
         faqs: [
             { question: "Does this mean my content will look ugly?", answer: "No, you can use hidden Schema or sophisticated UI components to keep it beautiful for humans while structured for bots." },
             { question: "Is table format better than lists for AI?", answer: "Yes, for comparative data, tables are the most 'extractable' format in 2026." }
@@ -897,7 +897,7 @@ Search engines now view the web in "Semantic Neighborhoods." By building a dense
 Stop building pages; start building graphs. Your content is the data; your internal links are the logic.
 `,
         verdict: "Clusters are the only way to scale GEO. One article is a post; ten articles are a position.",
-        image: '/blog/geo-clusters.jpg',
+        image: '/blog/geo-hero.png',
         faqs: [
             { question: "How many pages make a good GEO cluster?", answer: "In 2026, we see the best results with 12-18 highly specific sub-pages per pillar." },
             { question: "Should clusters link to competitors?", answer: "Only if you are comparing data. Giving the AI a 'Full Picture' actually increases your own authority." }
@@ -989,7 +989,7 @@ AI models want to avoid hallucinating. If you provide a fact that is so specific
 Citations are earned, not bought. Provide the data that the machine needs to be accurate, and it will reward you with the mention.
 `,
         verdict: "Citations are the currency of trust in the AI era. If you provide the 'Logic' for the answer, you win the visitor.",
-        image: '/blog/ai-citations-guide.jpg',
+        image: '/blog/aeo-hero.png',
         faqs: [
             { question: "Can I pay for AI citations?", answer: "No. While some platforms (like Perplexity) have publisher programs, they are based on data quality, not ad spend." },
             { question: "What is a 'Citation Anchor'?", answer: "A sentence specifically written to be the 'best possible answer' to a likely user prompt, making it easy for the AI to copy-paste it as a citation." }
@@ -1034,7 +1034,7 @@ Your website should function as a "Knowledge Node." When an AI crawls your Schem
 Code is communication. Schema is the language of the machine. If you don't speak it, you are silent in the AI era.
 `,
         verdict: "Schema is the 'Logic Layer' of your website. In 2026, if you aren't using advanced JSON-LD to define your entities, you don't exist in the AI's version of the web.",
-        image: '/blog/ai-schema.jpg',
+        image: '/blog/seo-hero.png',
         faqs: [
             { question: "Is Microdata better than JSON-LD in 2026?", answer: "No, JSON-LD remains the gold standard for its flexibility and ease of machine parsing." },
             { question: "How much schema is too much?", answer: "There is no 'too much' as long as it's accurate. The more context you provide, the better the AI understands you." }
@@ -1079,7 +1079,7 @@ The brand with the most complete set of attributes wins the programmatic war. If
 Automate the data; curate the insight. Scale is your weapon; structure is your defense.
 `,
         verdict: "pSEO is the ultimate scale lever for B2B SaaS. In 2026, if you don't own the comparison data for your niche, someone else will define your brand for you.",
-        image: '/blog/programmatic-seo.jpg',
+        image: '/blog/seo-hero.png',
         faqs: [
             { question: "Doesn't Google penalize programmatic content?", answer: "Only if it is 'Thin' or 'Low Value'. In 2026, structured, data-heavy programmatic pages are highly rewarded by both Google and Gemini." },
             { question: "How do I maintain quality at scale?", answer: "By using 'Expert Loops'—where human SMEs define the core logic and AI scales the variations." }
