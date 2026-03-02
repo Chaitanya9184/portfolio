@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
-import sitemap from '@/app/sitemap';
+import sitemap from '@/lib/sitemap-urls';
 
 export async function POST() {
     try {
         const sitemapData = sitemap();
         const urlList = sitemapData.map((item) => item.url);
-        
+
         const host = 'www.chaitanyakore.in';
         const key = '9ebd8c8a1e2f47cfa9e3d9e8b6b0d9ac';
         const keyLocation = `https://${host}/${key}.txt`;
