@@ -214,6 +214,44 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                         <VoiceReader title={post.title} content={post.content} />
                     </div>
 
+                    {/* Hero Summary & Takeaways */}
+                    {(post.summary || (post.takeaways && post.takeaways.length > 0)) && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                            className="mb-16 p-8 md:p-12 rounded-[2.5rem] bg-zinc-900/30 border border-zinc-800/50 backdrop-blur-xl relative overflow-hidden"
+                        >
+                            {post.summary && (
+                                <div className="mb-10">
+                                    <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-400 block mb-4">Strategic Overview</span>
+                                    <p className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
+                                        {post.summary}
+                                    </p>
+                                </div>
+                            )}
+
+                            {post.takeaways && post.takeaways.length > 0 && (
+                                <div>
+                                    <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-emerald-400 block mb-6">Key Takeaways</span>
+                                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        {post.takeaways.map((item, idx) => (
+                                            <li key={idx} className="flex gap-4 text-zinc-300 text-sm md:text-base leading-relaxed items-start group">
+                                                <span className="text-emerald-500 mt-1 shrink-0 bg-emerald-500/10 p-1 rounded-md">
+                                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                                                    </svg>
+                                                </span>
+                                                <span className="group-hover:text-white transition-colors">{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 blur-[100px] rounded-full" />
+                        </motion.div>
+                    )}
+
                     {/* Article Body */}
                     <div className="prose prose-invert max-w-none">
                         <motion.div
