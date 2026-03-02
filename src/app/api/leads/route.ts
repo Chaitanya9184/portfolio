@@ -20,9 +20,19 @@ export async function POST(request: Request) {
         });
 
         return NextResponse.json({ success: true, lead: newLead }, { status: 201 });
-    } catch (error) {
-        console.error('Error saving lead:', error);
-        return NextResponse.json({ success: false, error: 'Internal Server Error' }, { status: 500 });
+    } catch (error: any) {
+        console.error('Error saving lead. Data:', data);
+        console.error('Prisma Error Details:', {
+            message: error.message,
+            code: error.code,
+            meta: error.meta,
+            stack: error.stack
+        });
+        return NextResponse.json({
+            success: false,
+            error: 'Internal Server Error',
+            details: error.message
+        }, { status: 500 });
     }
 }
 
