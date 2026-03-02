@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'AI GSV Visibility Checker | Chaitanya Kore',
         description: 'Audit your content for AI search optimization. Get actionable insights to boost your citation probability in LLM responses.',
-        url: 'https://www.chaitanyakore.in/tools/ai-visibility-checker/',
+        url: 'https://www.chaitanyakore.in/tools/ai-visibility-checker',
     }
 };
 
