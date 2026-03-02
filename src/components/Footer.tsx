@@ -54,9 +54,6 @@ export default function Footer() {
                         <div>
                             <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-8">Resources</h4>
                             <ul className="flex flex-col gap-4">
-                                <li><Link href="/checklists/aeo" className="text-zinc-500 hover:text-white text-sm transition-colors">AEO Checklist</Link></li>
-                                <li><Link href="/checklists/geo" className="text-zinc-500 hover:text-white text-sm transition-colors">GEO Checklist</Link></li>
-                                <li><Link href="/checklists/aio" className="text-zinc-500 hover:text-white text-sm transition-colors">AIO Checklist</Link></li>
                                 <li><Link href="/roi-calculator" className="text-zinc-500 hover:text-white text-sm transition-colors">ROI Calculator</Link></li>
                                 <li><Link href="/tools/ai-visibility-checker" className="text-zinc-500 hover:text-white text-sm transition-colors">AI Checker</Link></li>
                             </ul>
