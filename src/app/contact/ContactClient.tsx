@@ -7,7 +7,7 @@ export default function ContactClient() {
         firstName: '',
         lastName: '',
         email: '',
-        company: '',
+        company: null as string | null,
         message: ''
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -25,7 +25,7 @@ export default function ContactClient() {
 
             if (response.ok) {
                 setStatus('success');
-                setFormData({ firstName: '', lastName: '', email: '', company: '', message: '' });
+                setFormData({ firstName: '', lastName: '', email: '', company: null, message: '' });
             } else {
                 setStatus('error');
             }
@@ -35,7 +35,11 @@ export default function ContactClient() {
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value === '' ? (name === 'company' ? null : '') : value
+        }));
     };
 
     return (

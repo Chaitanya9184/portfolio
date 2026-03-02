@@ -114,8 +114,8 @@ export default function AboutPage() {
                     </div>
                 </div>
 
-                {/* Content Sections */}
-                <div className="relative z-20">
+                {/* Content Sections - Pushed down to avoid overlap with sticky hero */}
+                <div className="relative z-20 mt-[100vh]">
                     {/* Section 1: The Philosophy */}
                     <div className="py-24 md:py-32">
                         <div className="container mx-auto px-6">
@@ -293,3 +293,4 @@ export default function AboutPage() {
         </main>
     );
 }
+```
