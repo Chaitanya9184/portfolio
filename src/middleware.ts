@@ -15,7 +15,7 @@ export function middleware(request: NextRequest) {
         return NextResponse.redirect(url, 301);
     }
 
-    const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
+    const nonce = btoa(crypto.randomUUID());
 
     // Content Security Policy (CSP)
     // Allowing GTM, Google Fonts, and self-hosted assets
