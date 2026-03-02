@@ -165,10 +165,3 @@ const HireMeClient = () => {
 };
 
 export default HireMeClient;
-                </div >
-            </div >
-        </main >
-    );
-};
-
-export default HireMeClient;
