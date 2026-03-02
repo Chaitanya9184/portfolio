@@ -1,7 +1,6 @@
 import { blogPosts } from '@/lib/blog-data';
-import { clusters } from '@/lib/cluster-data';
 
-export default function sitemap() {
+export async function GET() {
     const baseUrl = 'https://www.chaitanyakore.in';
 
     const staticRoutes = [
@@ -33,26 +32,20 @@ export default function sitemap() {
         '/terms-of-service'
     ];
 
-    const routes = staticRoutes.map((route) => ({
-        url: `${baseUrl}${route}`,
-        lastModified: new Date(),
-        changeFrequency: route === '' ? 'monthly' : 'weekly',
-        priority: route === '' ? 1.0 : 0.8,
-    }));
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  ${staticRoutes.map(route => `
+  <url>
+    <loc>${baseUrl}${route}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>${route === '' ? 'monthly' : 'weekly'}</changefreq>
+    <priority>${route === '' ? '1.0' : '0.8'}</priority>
+  </url>`).join('')}
+</urlset>`;
 
-    const blogRoutes = blogPosts.map((post) => ({
-        url: `${baseUrl}/blog/${post.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.7,
-    }));
-
-    const insightRoutes = clusters.map((cluster) => ({
-        url: `${baseUrl}/insights/${cluster.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.7,
-    }));
-
-    return [...routes, ...blogRoutes, ...insightRoutes];
+    return new Response(xml, {
+        headers: {
+            'Content-Type': 'application/xml',
+        },
+    });
 }

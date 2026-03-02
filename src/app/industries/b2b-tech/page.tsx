@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import FAQSection from "@/components/FAQSection";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import BlogCarousel from "@/components/BlogCarousel";
 
 const b2bFaqs = [
     {
@@ -117,12 +118,23 @@ export default function B2BTechIndustryPage() {
                     </a>
                 </div>
 
+            </div>
+
+            {/* Industry Specific Blogs */}
+            <div className="mt-24">
+                <BlogCarousel
+                    industry="b2b-tech"
+                    title="B2B Tech"
+                    subtitle="& Search Strategy."
+                />
+            </div>
+
+            <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
                 {/* FAQs */}
                 <FAQSection faqs={b2bFaqs} title="B2B SEO FAQs" />
 
                 {/* Schema Markup */}
                 <SchemaMarkup schema={b2bSchema} />
-
             </div>
         </main>
     );

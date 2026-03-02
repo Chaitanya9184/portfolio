@@ -5,11 +5,17 @@ import Link from 'next/link';
 import { motion, useScroll } from 'framer-motion';
 import { blogPosts } from '@/lib/blog-data';
 
-export default function BlogCarousel() {
+export default function BlogCarousel({ industry, title, subtitle }: { industry?: string, title?: string, subtitle?: string }) {
     const sectionRef = useRef<HTMLDivElement>(null);
     const { scrollXProgress } = useScroll({
         container: sectionRef,
     });
+
+    const filteredPosts = industry
+        ? blogPosts.filter(post => post.industry === industry).slice(0, 10)
+        : blogPosts.slice(0, 10);
+
+    if (filteredPosts.length === 0) return null;
 
     return (
         <section className="w-full py-16 bg-[#050505] overflow-hidden border-t border-zinc-900 border-dashed">
@@ -31,7 +37,7 @@ export default function BlogCarousel() {
                             transition={{ delay: 0.1 }}
                             className="text-4xl md:text-5xl font-bold text-white tracking-tighter relative inline-block text-left"
                         >
-                            AI Search <span className="text-zinc-500">& Insights.</span>
+                            {title || "AI Search"} <span className="text-zinc-500">{subtitle || "& Insights."}</span>
                             <div className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
                         </motion.h2>
                     </div>
@@ -60,7 +66,7 @@ export default function BlogCarousel() {
                 className="flex gap-6 overflow-x-auto pb-12 px-6 md:px-12 lg:px-24 no-scrollbar snap-x snap-mandatory"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-                {blogPosts.map((post) => (
+                {filteredPosts.map((post) => (
                     <motion.div
                         key={post.slug}
                         initial={{ opacity: 0, x: 50 }}

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import FAQSection from "@/components/FAQSection";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import BlogCarousel from "@/components/BlogCarousel";
 
 const ecommerceFaqs = [
     {
@@ -119,12 +120,23 @@ export default function EcommerceIndustryPage() {
                     </a>
                 </div>
 
+            </div>
+
+            {/* Industry Specific Blogs */}
+            <div className="mt-24">
+                <BlogCarousel
+                    industry="ecommerce"
+                    title="eCommerce Insights"
+                    subtitle="& AI Growth."
+                />
+            </div>
+
+            <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
                 {/* FAQs */}
                 <FAQSection faqs={ecommerceFaqs} title="eCommerce SEO FAQs" />
 
                 {/* Schema Markup */}
                 <SchemaMarkup schema={ecommerceSchema} />
-
             </div>
         </main>
     );
