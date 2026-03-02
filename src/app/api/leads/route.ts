@@ -20,18 +20,19 @@ export async function POST(request: Request) {
         });
 
         return NextResponse.json({ success: true, lead: newLead }, { status: 201 });
-    } catch (error: any) {
+    } catch (error: unknown) {
+        const err = error as any;
         console.error('Error saving lead. Data:', data);
         console.error('Prisma Error Details:', {
-            message: error.message,
-            code: error.code,
-            meta: error.meta,
-            stack: error.stack
+            message: err.message,
+            code: err.code,
+            meta: err.meta,
+            stack: err.stack
         });
         return NextResponse.json({
             success: false,
             error: 'Internal Server Error',
-            details: error.message
+            details: err.message || 'Unknown error occurred'
         }, { status: 500 });
     }
 }
