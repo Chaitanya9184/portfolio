@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useMemo, Suspense } from 'react';
-import { Canvas, useFrame, extend } from '@react-three/fiber';
+import { Canvas, useFrame, extend, useThree } from '@react-three/fiber';
 import { OrbitControls, Stars, Sphere, MeshDistortMaterial, shaderMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 
@@ -342,6 +342,30 @@ function FloatingParticles() {
 
 /* ─── Scene ──────────────────────────────────────────────── */
 function Scene() {
+    const { viewport, mouse } = useThree();
+    const groupRef = useRef<THREE.Group>(null);
+    const mousePos = useRef({ x: 0, y: 0 });
+
+    useFrame((state) => {
+        // Handle positioning: shift to the right on desktop, center on mobile
+        const isMobile = viewport.width < 10;
+        const targetX = isMobile ? 0 : viewport.width * 0.22;
+
+        // Smoothly lerp the group position
+        if (groupRef.current) {
+            groupRef.current.position.x = THREE.MathUtils.lerp(groupRef.current.position.x, targetX, 0.05);
+
+            // Cursor interactivity: subtle tilt/parallax
+            // We lerp the mouse values for extra smoothness
+            mousePos.current.x = THREE.MathUtils.lerp(mousePos.current.x, mouse.x, 0.1);
+            mousePos.current.y = THREE.MathUtils.lerp(mousePos.current.y, mouse.y, 0.1);
+
+            // Tilt the group slightly based on mouse
+            groupRef.current.rotation.y = THREE.MathUtils.lerp(groupRef.current.rotation.y, mousePos.current.x * 0.12, 0.05);
+            groupRef.current.rotation.x = THREE.MathUtils.lerp(groupRef.current.rotation.x, -mousePos.current.y * 0.08, 0.05);
+        }
+    });
+
     return (
         <>
             <ambientLight intensity={0.2} />
@@ -352,18 +376,20 @@ function Scene() {
 
             <Stars radius={90} depth={60} count={4500} factor={3.5} saturation={0.6} fade speed={0.4} />
 
-            <Globe />
-            <SurfacePins />
-            <RadarRing />
-            <FloatingParticles />
-            <ArcsLayer />
+            <group ref={groupRef}>
+                <Globe />
+                <SurfacePins />
+                <RadarRing />
+                <FloatingParticles />
+                <ArcsLayer />
 
-            {NODES.map((n, i) => (
-                <group key={i}>
-                    <OrbitLane radius={n.radius} inclination={n.inclination} color={n.color} />
-                    <OrbitingNode {...n} />
-                </group>
-            ))}
+                {NODES.map((n, i) => (
+                    <group key={i}>
+                        <OrbitLane radius={n.radius} inclination={n.inclination} color={n.color} />
+                        <OrbitingNode {...n} />
+                    </group>
+                ))}
+            </group>
 
             <OrbitControls
                 enableZoom={false}
