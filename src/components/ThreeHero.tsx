@@ -1,200 +1,370 @@
 'use client';
 
 import { useRef, useMemo, Suspense } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Stars, Sphere, MeshDistortMaterial } from '@react-three/drei';
+import { Canvas, useFrame, extend } from '@react-three/fiber';
+import { OrbitControls, Stars, Sphere, MeshDistortMaterial, shaderMaterial } from '@react-three/drei';
 import * as THREE from 'three';
+
+/* ─── Atmosphere Rim Shader ───────────────────────────────── */
+const AtmosphereMaterial = shaderMaterial(
+    { glowColor: new THREE.Color('#1a6bff'), intensity: 1.0 },
+    `varying vec3 vNormal;
+     void main() {
+       vNormal = normalize(normalMatrix * normal);
+       gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+     }`,
+    `varying vec3 vNormal;
+     uniform vec3 glowColor;
+     uniform float intensity;
+     void main() {
+       float glow = pow(1.0 - dot(vNormal, vec3(0.0,0.0,1.0)), 3.0);
+       gl_FragColor = vec4(glowColor * glow * intensity, glow * 0.65);
+     }`
+);
+extend({ AtmosphereMaterial });
 
 /* ─── Globe ─────────────────────────────────────────────── */
 function Globe() {
-    const meshRef = useRef<THREE.Mesh>(null);
+    const coreRef = useRef<THREE.Mesh>(null);
     const wireRef = useRef<THREE.Mesh>(null);
+    const wire2Ref = useRef<THREE.Mesh>(null);
+    const atmRef = useRef<THREE.Mesh>(null);
 
-    useFrame((_, delta) => {
-        if (meshRef.current) meshRef.current.rotation.y += delta * 0.08;
-        if (wireRef.current) wireRef.current.rotation.y += delta * 0.08;
+    useFrame((_, d) => {
+        const r = d * 0.06;
+        [coreRef, wireRef, atmRef].forEach(ref => { if (ref.current) ref.current.rotation.y += r; });
+        if (wire2Ref.current) wire2Ref.current.rotation.y -= d * 0.03;
     });
 
     return (
         <group>
-            {/* Solid inner sphere — subtle glow */}
-            <Sphere ref={meshRef} args={[2.2, 64, 64]}>
+            {/* Inner distorted core */}
+            <Sphere ref={coreRef} args={[2.0, 64, 64]}>
                 <MeshDistortMaterial
-                    color="#0a1628"
-                    emissive="#0d2545"
-                    emissiveIntensity={0.6}
-                    distort={0.08}
-                    speed={1.2}
-                    metalness={0.4}
-                    roughness={0.7}
-                    transparent
-                    opacity={0.85}
+                    color="#06112b"
+                    emissive="#092450"
+                    emissiveIntensity={1.2}
+                    distort={0.14}
+                    speed={1.5}
+                    metalness={0.8}
+                    roughness={0.2}
                 />
             </Sphere>
 
-            {/* Wireframe overlay */}
-            <Sphere ref={wireRef} args={[2.22, 28, 28]}>
-                <meshBasicMaterial
-                    color="#1a6bff"
-                    wireframe
-                    transparent
-                    opacity={0.18}
-                />
+            {/* Fine wireframe */}
+            <Sphere ref={wireRef} args={[2.02, 48, 48]}>
+                <meshBasicMaterial color="#2266ff" wireframe transparent opacity={0.28}
+                    blending={THREE.AdditiveBlending} depthWrite={false} />
             </Sphere>
 
-            {/* Outer glow halo */}
-            <Sphere args={[2.7, 32, 32]}>
-                <meshBasicMaterial
-                    color="#0066ff"
+            {/* Coarser counter-rotating wireframe */}
+            <Sphere ref={wire2Ref} args={[2.035, 18, 18]}>
+                <meshBasicMaterial color="#00ccff" wireframe transparent opacity={0.14}
+                    blending={THREE.AdditiveBlending} depthWrite={false} />
+            </Sphere>
+
+            {/* Fake bloom: multiple halos */}
+            {[2.35, 2.6, 2.9].map((r, i) => (
+                <Sphere key={i} args={[r, 32, 32]}>
+                    <meshBasicMaterial
+                        color="#0066ff"
+                        transparent
+                        opacity={0.024 - i * 0.006}
+                        side={THREE.BackSide}
+                        blending={THREE.AdditiveBlending}
+                        depthWrite={false}
+                    />
+                </Sphere>
+            ))}
+
+            {/* Atmosphere rim */}
+            <Sphere ref={atmRef} args={[2.55, 32, 32]}>
+                {/* @ts-ignore */}
+                <atmosphereMaterial
+                    glowColor={new THREE.Color('#1a6bff')}
+                    intensity={1.5}
                     transparent
-                    opacity={0.04}
+                    depthWrite={false}
                     side={THREE.BackSide}
+                    blending={THREE.AdditiveBlending}
                 />
             </Sphere>
         </group>
     );
 }
 
-/* ─── Orbiting Node ──────────────────────────────────────── */
-interface NodeProps {
-    radius: number;
-    speed: number;
-    phase: number;
-    inclination: number;
-    color: string;
-}
+/* ─── Globe Surface Location Pins ────────────────────────── */
+const PIN_LOCATIONS = [
+    { lat: 40.7, lon: -74.0, color: '#00d4ff' }, // New York
+    { lat: 51.5, lon: -0.1, color: '#10b981' }, // London
+    { lat: 35.7, lon: 139.7, color: '#f59e0b' }, // Tokyo
+    { lat: 28.6, lon: 77.2, color: '#7c3aed' }, // Delhi
+    { lat: -33.9, lon: 18.4, color: '#10b981' }, // Cape Town
+    { lat: 1.3, lon: 103.8, color: '#00d4ff' }, // Singapore
+    { lat: 37.8, lon: -122.4, color: '#f59e0b' }, // San Francisco
+    { lat: 48.9, lon: 2.3, color: '#7c3aed' }, // Paris
+];
 
-function OrbitingNode({ radius, speed, phase, inclination, color }: NodeProps) {
-    const ref = useRef<THREE.Mesh>(null);
-    const trailRef = useRef<{ x: number; y: number; z: number }[]>([]);
-
-    useFrame(({ clock }) => {
-        const t = clock.getElapsedTime() * speed + phase;
-        const x = Math.cos(t) * radius;
-        const z = Math.sin(t) * radius;
-        const y = Math.sin(t + inclination) * radius * 0.4;
-
-        if (ref.current) {
-            ref.current.position.set(x, y, z);
-        }
-
-        trailRef.current.push({ x, y, z });
-        if (trailRef.current.length > 20) trailRef.current.shift();
-    });
-
-    return (
-        <mesh ref={ref}>
-            <sphereGeometry args={[0.07, 12, 12]} />
-            <meshStandardMaterial
-                color={color}
-                emissive={color}
-                emissiveIntensity={2}
-                roughness={0}
-                metalness={0.8}
-            />
-        </mesh>
+function latLonToVec3(lat: number, lon: number, r: number) {
+    const phi = (90 - lat) * (Math.PI / 180);
+    const theta = (lon + 180) * (Math.PI / 180);
+    return new THREE.Vector3(
+        -r * Math.sin(phi) * Math.cos(theta),
+        r * Math.cos(phi),
+        r * Math.sin(phi) * Math.sin(theta)
     );
 }
 
-/* ─── Orbit Ring ─────────────────────────────────────────── */
-function OrbitRing({ radius, inclination, color }: { radius: number; inclination: number; color: string }) {
-    const points = useMemo(() => {
-        const pts: THREE.Vector3[] = [];
-        for (let i = 0; i <= 128; i++) {
-            const angle = (i / 128) * Math.PI * 2;
-            pts.push(new THREE.Vector3(Math.cos(angle) * radius, Math.sin(angle + inclination) * radius * 0.4, Math.sin(angle) * radius));
-        }
-        return pts;
-    }, [radius, inclination]);
-
-    const geometry = useMemo(() => {
-        const geo = new THREE.BufferGeometry().setFromPoints(points);
-        return geo;
-    }, [points]);
+function SurfacePins() {
+    const groupRef = useRef<THREE.Group>(null);
+    useFrame((_, d) => { if (groupRef.current) groupRef.current.rotation.y += d * 0.06; });
 
     return (
-        <line geometry={geometry}>
-            <lineBasicMaterial color={color} transparent opacity={0.12} />
+        <group ref={groupRef}>
+            {PIN_LOCATIONS.map((pin, i) => {
+                const pos = latLonToVec3(pin.lat, pin.lon, 2.08);
+                const c = new THREE.Color(pin.color);
+                return (
+                    <group key={i} position={pos.toArray()}>
+                        <mesh>
+                            <sphereGeometry args={[0.055, 8, 8]} />
+                            <meshStandardMaterial color={c} emissive={c} emissiveIntensity={4} />
+                        </mesh>
+                        {/* Halo ring */}
+                        <mesh rotation={[Math.PI / 2, 0, 0]}>
+                            <ringGeometry args={[0.09, 0.13, 16]} />
+                            <meshBasicMaterial color={c} transparent opacity={0.6}
+                                side={THREE.DoubleSide} blending={THREE.AdditiveBlending} />
+                        </mesh>
+                        {/* Bloom glow sphere */}
+                        <mesh>
+                            <sphereGeometry args={[0.18, 8, 8]} />
+                            <meshBasicMaterial color={c} transparent opacity={0.08}
+                                blending={THREE.AdditiveBlending} depthWrite={false} />
+                        </mesh>
+                    </group>
+                );
+            })}
+        </group>
+    );
+}
+
+/* ─── Connection Arc ─────────────────────────────────────── */
+function ConnectionArc({ from, to, color, progress }: {
+    from: THREE.Vector3; to: THREE.Vector3; color: string; progress: number;
+}) {
+    const arcGeo = useMemo(() => {
+        const mid = from.clone().add(to).multiplyScalar(0.5);
+        mid.normalize().multiplyScalar(mid.length() + from.distanceTo(to) * 0.4);
+        const curve = new THREE.QuadraticBezierCurve3(from, mid, to);
+        return curve.getPoints(64);
+    }, [from, to]);
+
+    const geo = useMemo(() => {
+        const total = arcGeo.length;
+        const s = Math.floor(progress * total * 0.8);
+        const e = Math.min(total, s + Math.floor(total * 0.22));
+        const pts = arcGeo.slice(s, e);
+        if (pts.length < 2) return null;
+        return new THREE.BufferGeometry().setFromPoints(pts);
+    }, [arcGeo, progress]);
+
+    if (!geo) return null;
+    return (
+        <line geometry={geo}>
+            <lineBasicMaterial color={color} transparent opacity={0.85} />
         </line>
     );
 }
 
-/* ─── Floating Particles ─────────────────────────────────── */
-function FloatingParticles() {
-    const ref = useRef<THREE.Points>(null);
+/* ─── Orbiting Node ──────────────────────────────────────── */
+interface NodeDef {
+    radius: number; speed: number; phase: number; inclination: number; color: string;
+}
 
-    const { positions, colors } = useMemo(() => {
-        const count = 200;
-        const positions = new Float32Array(count * 3);
-        const colors = new Float32Array(count * 3);
-        const palette = [
-            new THREE.Color('#1a6bff'),
-            new THREE.Color('#00d4ff'),
-            new THREE.Color('#7c3aed'),
-            new THREE.Color('#10b981'),
-        ];
+function OrbitingNode({ radius, speed, phase, inclination, color }: NodeDef) {
+    const ref = useRef<THREE.Mesh>(null);
+    const halo = useRef<THREE.Mesh>(null);
+    const pulseT = useRef(Math.random() * Math.PI * 2);
 
-        for (let i = 0; i < count; i++) {
-            const theta = Math.random() * Math.PI * 2;
-            const phi = Math.acos(Math.random() * 2 - 1);
-            const r = 3.5 + Math.random() * 5;
-            positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
-            positions[i * 3 + 1] = r * Math.cos(phi);
-            positions[i * 3 + 2] = r * Math.sin(phi) * Math.sin(theta);
-            const c = palette[Math.floor(Math.random() * palette.length)];
-            colors[i * 3] = c.r;
-            colors[i * 3 + 1] = c.g;
-            colors[i * 3 + 2] = c.b;
-        }
-        return { positions, colors };
-    }, []);
+    useFrame(({ clock }, delta) => {
+        const t = clock.getElapsedTime() * speed + phase;
+        const pos = new THREE.Vector3(
+            Math.cos(t) * radius,
+            Math.sin(t + inclination) * radius * 0.4,
+            Math.sin(t) * radius,
+        );
+        pulseT.current += delta * 2.5;
+        const s = 1 + 0.35 * Math.sin(pulseT.current);
 
-    useFrame((_, delta) => {
-        if (ref.current) ref.current.rotation.y += delta * 0.015;
+        if (ref.current) { ref.current.position.copy(pos); ref.current.scale.setScalar(s); }
+        if (halo.current) { halo.current.position.copy(pos); halo.current.scale.setScalar(s * 2.2); }
     });
 
-    const geometry = useMemo(() => {
-        const geo = new THREE.BufferGeometry();
-        geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-        return geo;
-    }, [positions, colors]);
-
+    const c = new THREE.Color(color);
     return (
-        <points ref={ref} geometry={geometry}>
-            <pointsMaterial size={0.04} vertexColors transparent opacity={0.6} sizeAttenuation />
-        </points>
+        <>
+            <mesh ref={ref}>
+                <sphereGeometry args={[0.09, 14, 14]} />
+                <meshStandardMaterial color={c} emissive={c} emissiveIntensity={4} roughness={0} metalness={1} />
+            </mesh>
+            {/* Fake bloom halo */}
+            <mesh ref={halo}>
+                <sphereGeometry args={[0.09, 8, 8]} />
+                <meshBasicMaterial color={c} transparent opacity={0.07}
+                    blending={THREE.AdditiveBlending} depthWrite={false} />
+            </mesh>
+        </>
     );
 }
 
-/* ─── Scene ──────────────────────────────────────────────── */
-const NODES = [
-    { radius: 3.5, speed: 0.4, phase: 0, inclination: 0.4, color: '#00d4ff' },
+/* ─── Orbit Lane ─────────────────────────────────────────── */
+function OrbitLane({ radius, inclination, color }: { radius: number; inclination: number; color: string }) {
+    const geo = useMemo(() => {
+        const pts = Array.from({ length: 129 }, (_, i) => {
+            const a = (i / 128) * Math.PI * 2;
+            return new THREE.Vector3(Math.cos(a) * radius, Math.sin(a + inclination) * radius * 0.4, Math.sin(a) * radius);
+        });
+        return new THREE.BufferGeometry().setFromPoints(pts);
+    }, [radius, inclination]);
+
+    return (
+        <line geometry={geo}>
+            <lineBasicMaterial color={color} transparent opacity={0.11} />
+        </line>
+    );
+}
+
+/* ─── Radar Sweep ────────────────────────────────────────── */
+function RadarRing() {
+    const ref = useRef<THREE.Mesh>(null);
+    const t = useRef(0);
+    const geo = useMemo(() => new THREE.RingGeometry(2.5, 5.5, 64, 1, 0, Math.PI * 0.35), []);
+
+    useFrame((_, d) => {
+        t.current += d * 0.45;
+        if (ref.current) {
+            ref.current.rotation.z = t.current;
+            (ref.current.material as THREE.MeshBasicMaterial).opacity = 0.07 + 0.04 * Math.sin(t.current * 3);
+        }
+    });
+
+    return (
+        <mesh ref={ref} geometry={geo} rotation={[Math.PI / 2, 0, 0]}>
+            <meshBasicMaterial color="#00ccff" transparent opacity={0.07}
+                side={THREE.DoubleSide}
+                blending={THREE.AdditiveBlending}
+                depthWrite={false} />
+        </mesh>
+    );
+}
+
+/* ─── Arc Manager ────────────────────────────────────────── */
+const NODES: NodeDef[] = [
+    { radius: 3.5, speed: 0.40, phase: 0.0, inclination: 0.4, color: '#00d4ff' },
     { radius: 3.8, speed: 0.28, phase: 2.1, inclination: -0.8, color: '#1a6bff' },
     { radius: 4.2, speed: 0.35, phase: 4.2, inclination: 1.2, color: '#10b981' },
-    { radius: 3.3, speed: 0.5, phase: 1.0, inclination: -0.3, color: '#7c3aed' },
+    { radius: 3.3, speed: 0.50, phase: 1.0, inclination: -0.3, color: '#7c3aed' },
     { radius: 4.5, speed: 0.22, phase: 3.5, inclination: 0.9, color: '#00d4ff' },
     { radius: 3.6, speed: 0.45, phase: 5.8, inclination: -1.1, color: '#f59e0b' },
     { radius: 4.0, speed: 0.31, phase: 0.7, inclination: 0.6, color: '#1a6bff' },
     { radius: 3.4, speed: 0.55, phase: 2.8, inclination: -0.5, color: '#10b981' },
 ];
 
+const ARC_PAIRS = [
+    { a: 0, b: 3, color: '#00d4ff' },
+    { a: 1, b: 5, color: '#10b981' },
+    { a: 2, b: 6, color: '#7c3aed' },
+    { a: 4, b: 7, color: '#f59e0b' },
+];
+
+function ArcsLayer() {
+    const posRefs = useRef(NODES.map(() => new THREE.Vector3()));
+    const progRef = useRef(ARC_PAIRS.map(() => Math.random()));
+    const tick = useRef(0);
+
+    useFrame(({ clock }, delta) => {
+        tick.current += delta;
+        NODES.forEach((n, i) => {
+            const t = clock.getElapsedTime() * n.speed + n.phase;
+            posRefs.current[i].set(
+                Math.cos(t) * n.radius,
+                Math.sin(t + n.inclination) * n.radius * 0.4,
+                Math.sin(t) * n.radius,
+            );
+        });
+        progRef.current = progRef.current.map(p => (p + delta * 0.28) % 1);
+    });
+
+    return (
+        <>
+            {ARC_PAIRS.map((arc, i) => (
+                <ConnectionArc
+                    key={i}
+                    from={posRefs.current[arc.a]}
+                    to={posRefs.current[arc.b]}
+                    color={arc.color}
+                    progress={progRef.current[i]}
+                />
+            ))}
+        </>
+    );
+}
+
+/* ─── Floating Particles ─────────────────────────────────── */
+function FloatingParticles() {
+    const ref = useRef<THREE.Points>(null);
+    const geo = useMemo(() => {
+        const count = 400;
+        const pos = new Float32Array(count * 3);
+        const col = new Float32Array(count * 3);
+        const palette = ['#1a6bff', '#00d4ff', '#7c3aed', '#10b981', '#f59e0b'].map(h => new THREE.Color(h));
+        for (let i = 0; i < count; i++) {
+            const phi = Math.acos(Math.random() * 2 - 1);
+            const theta = Math.random() * Math.PI * 2;
+            const r = 4.2 + Math.random() * 5.8;
+            pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+            pos[i * 3 + 1] = r * Math.cos(phi);
+            pos[i * 3 + 2] = r * Math.sin(phi) * Math.sin(theta);
+            const c = palette[i % palette.length];
+            col[i * 3] = c.r; col[i * 3 + 1] = c.g; col[i * 3 + 2] = c.b;
+        }
+        const g = new THREE.BufferGeometry();
+        g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+        g.setAttribute('color', new THREE.BufferAttribute(col, 3));
+        return g;
+    }, []);
+
+    useFrame((_, d) => { if (ref.current) ref.current.rotation.y += d * 0.01; });
+
+    return (
+        <points ref={ref} geometry={geo}>
+            <pointsMaterial size={0.05} vertexColors transparent opacity={0.7} sizeAttenuation />
+        </points>
+    );
+}
+
+/* ─── Scene ──────────────────────────────────────────────── */
 function Scene() {
     return (
         <>
-            <ambientLight intensity={0.3} />
-            <pointLight position={[10, 10, 10]} intensity={1.5} color="#4488ff" />
-            <pointLight position={[-10, -5, -5]} intensity={0.8} color="#00d4ff" />
-            <pointLight position={[0, -10, 5]} intensity={0.5} color="#7c3aed" />
+            <ambientLight intensity={0.2} />
+            <pointLight position={[8, 8, 8]} intensity={2.5} color="#4488ff" />
+            <pointLight position={[-8, -5, -5]} intensity={1.2} color="#00d4ff" />
+            <pointLight position={[0, -8, 6]} intensity={0.7} color="#7c3aed" />
+            <pointLight position={[5, 0, -8]} intensity={0.5} color="#10b981" />
 
-            <Stars radius={80} depth={50} count={3000} factor={3} saturation={0.5} fade speed={0.5} />
+            <Stars radius={90} depth={60} count={4500} factor={3.5} saturation={0.6} fade speed={0.4} />
 
             <Globe />
+            <SurfacePins />
+            <RadarRing />
             <FloatingParticles />
+            <ArcsLayer />
 
             {NODES.map((n, i) => (
                 <group key={i}>
-                    <OrbitRing radius={n.radius} inclination={n.inclination} color={n.color} />
+                    <OrbitLane radius={n.radius} inclination={n.inclination} color={n.color} />
                     <OrbitingNode {...n} />
                 </group>
             ))}
@@ -203,11 +373,11 @@ function Scene() {
                 enableZoom={false}
                 enablePan={false}
                 autoRotate
-                autoRotateSpeed={0.4}
+                autoRotateSpeed={0.35}
                 enableDamping
                 dampingFactor={0.05}
-                minPolarAngle={Math.PI / 4}
-                maxPolarAngle={Math.PI * 3 / 4}
+                minPolarAngle={Math.PI / 5}
+                maxPolarAngle={Math.PI * 4 / 5}
             />
         </>
     );
@@ -218,8 +388,13 @@ export default function ThreeHero() {
     return (
         <div className="absolute inset-0 z-0">
             <Canvas
-                camera={{ position: [0, 0, 10], fov: 50 }}
-                gl={{ antialias: true, alpha: true }}
+                camera={{ position: [0, 2, 11], fov: 48 }}
+                gl={{
+                    antialias: true,
+                    alpha: true,
+                    toneMapping: THREE.ACESFilmicToneMapping,
+                    toneMappingExposure: 1.4,
+                }}
                 style={{ background: 'transparent' }}
                 dpr={[1, 2]}
             >
