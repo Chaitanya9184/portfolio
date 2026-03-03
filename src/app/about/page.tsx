@@ -1,13 +1,16 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
-import NextImage from "next/image";
+import { useRef, Suspense } from "react";
+import dynamic from "next/dynamic";
 
 import CaseStudy from "@/components/CaseStudy";
 import Link from "next/link";
 import TechStack from "@/components/TechStack";
 import Experience from "@/components/Experience";
+
+// Dynamically import the 3D hero so it never runs on the server
+const ThreeHero = dynamic(() => import("@/components/ThreeHero"), { ssr: false });
 
 const PhoneIcon = () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
@@ -30,91 +33,54 @@ const LinkedInIcon = () => (
     </svg>
 );
 
-const AcademicIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-        <path d="M6 12v5c3 3 9 3 12 0v-5" />
-    </svg>
-);
-
-const AwardIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-        <circle cx="12" cy="8" r="7" />
-        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
-    </svg>
-);
-
 export default function AboutPage() {
-    const containerRef = useRef<HTMLDivElement>(null);
+    const heroRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"]
+        target: heroRef,
+        offset: ["start start", "end start"],
     });
 
-    // Sequence images logic
-    const totalFrames = 75;
-    const [images, setImages] = useState<HTMLImageElement[]>([]);
-    const [currentFrame, setCurrentFrame] = useState(0);
-
-    useEffect(() => {
-        const loadedImages: HTMLImageElement[] = [];
-        for (let i = 0; i < totalFrames; i++) {
-            const img = new Image();
-            const frameNum = i.toString().padStart(2, '0');
-            img.src = `/sequence/frame_${frameNum}_delay-0.066s.png`;
-            loadedImages.push(img);
-        }
-        setImages(loadedImages);
-    }, []);
-
-    // Map scroll progress to frame index, finishing early (30% down the page)
-    const frameIndex = useTransform(scrollYProgress, [0, 0.3], [0, totalFrames - 1]);
-    const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
-
-    useEffect(() => {
-        return frameIndex.onChange((v) => {
-            setCurrentFrame(Math.min(totalFrames - 1, Math.round(v)));
-        });
-    }, [frameIndex]);
+    const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+    const heroY = useTransform(scrollYProgress, [0, 0.5], [0, -60]);
 
     return (
         <main className="bg-black min-h-screen font-sans selection:bg-white selection:text-black">
 
-            {/* Hero Section with Sticky Sequence — fixed height scroll container */}
-            <div ref={containerRef} className="relative h-[400vh]">
-                <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-                    {/* Background Sequence */}
-                    <motion.div className="absolute inset-0 z-0 bg-[#0a0a0a]" style={{ scale }}>
-                        <NextImage
-                            src={`/sequence/frame_${currentFrame.toString().padStart(2, '0')}_delay-0.066s.png`}
-                            alt="Chaitanya Kore"
-                            priority={true}
-                            fill
-                            sizes="100vw"
-                            className="object-cover transform scale-105 opacity-40 mix-blend-luminosity grayscale"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
-                    </motion.div>
+            {/* ── Hero: 3D Globe ──────────────────────────────── */}
+            <div ref={heroRef} className="relative h-screen w-full overflow-hidden">
 
-                    {/* Content Overlay */}
-                    <div className="relative z-10 container mx-auto px-6">
-                        <motion.div
-                            style={{ opacity: useTransform(scrollYProgress, [0, 0.3], [1, 0]) }}
-                            className="max-w-4xl"
-                        >
-                            <span className="text-zinc-500 text-xs font-bold uppercase tracking-[0.5em] mb-4 block">The Human behind the Strategy</span>
-                            <h1 className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-8 italic">
-                                About Chaitanya Kore.
-                            </h1>
-                            <p className="text-xl md:text-2xl text-zinc-400 leading-relaxed max-w-2xl font-medium">
-                                I don't just "do SEO". I build growth engines for the next generation of search.
-                            </p>
-                        </motion.div>
-                    </div>
+                {/* 3D canvas fills the background */}
+                <ThreeHero />
+
+                {/* Dark overlay so text stays readable */}
+                <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/60 via-black/20 to-black pointer-events-none" />
+
+                {/* Hero text */}
+                <div className="relative z-20 h-full flex items-center container mx-auto px-6">
+                    <motion.div style={{ opacity: heroOpacity, y: heroY }} className="max-w-4xl">
+                        <span className="text-zinc-500 text-xs font-bold uppercase tracking-[0.5em] mb-4 block">
+                            The Human behind the Strategy
+                        </span>
+                        <h1 className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-8 italic">
+                            About Chaitanya Kore.
+                        </h1>
+                        <p className="text-xl md:text-2xl text-zinc-400 leading-relaxed max-w-2xl font-medium">
+                            I don't just "do SEO". I build growth engines for the next generation of search.
+                        </p>
+                    </motion.div>
                 </div>
+
+                {/* Scroll hint */}
+                <motion.div
+                    style={{ opacity: useTransform(scrollYProgress, [0, 0.15], [1, 0]) }}
+                    className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
+                >
+                    <span className="text-zinc-600 text-[10px] uppercase tracking-[0.4em]">Scroll</span>
+                    <div className="w-px h-10 bg-gradient-to-b from-zinc-600 to-transparent" />
+                </motion.div>
             </div>
 
-            {/* All content sections flow normally AFTER the sticky hero */}
+            {/* ── All content sections ────────────────────────── */}
             <div className="relative z-20 bg-black">
 
                 {/* Section 1: The Philosophy */}
@@ -135,18 +101,18 @@ export default function AboutPage() {
                             </div>
                         </div>
 
-                        {/* Combined Section: Credentials & Experience Timeline (Two-Column Layout) */}
+                        {/* Credentials + Experience Timeline */}
                         <div className="mb-40">
                             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
-                                {/* Left Side: Professional Profile (Credentials) */}
+                                {/* Left: Credentials */}
                                 <div className="lg:col-span-5 space-y-12">
                                     <motion.div
                                         initial={{ opacity: 0, x: -20 }}
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                     >
-                                        <p className="text-emerald-500 text-[10px] tracking-[0.4em] uppercase mb-6 font-black opacity-100">The Expertise</p>
+                                        <p className="text-emerald-500 text-[10px] tracking-[0.4em] uppercase mb-6 font-black">The Expertise</p>
                                         <h2 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-8 leading-tight italic">
                                             Senior SEO &<br />
                                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400 not-italic">AI Search Expert.</span>
@@ -156,36 +122,26 @@ export default function AboutPage() {
                                             Currently leading AI-driven search strategies (AEO/GEO) to ensure discoverability across generative answer platforms.
                                         </p>
 
-                                        {/* Contact Quick Links */}
                                         <div className="grid grid-cols-1 gap-3 mb-10">
                                             {[
                                                 { icon: <PhoneIcon />, label: "+91-7875269281", href: "tel:+917875269281" },
                                                 { icon: <EmailIcon />, label: "korechaitanya10@gmail.com", href: "mailto:korechaitanya10@gmail.com" },
                                                 { icon: <LinkedInIcon />, label: "LinkedIn Profile", href: "https://linkedin.com/in/chaitanya-kore-342069140" }
-                                            ].map((contact, i) => (
-                                                <a
-                                                    key={i}
-                                                    href={contact.href}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/40 border border-white/5 hover:border-blue-500/30 hover:bg-zinc-800/60 transition-all group"
-                                                >
+                                            ].map((c, i) => (
+                                                <a key={i} href={c.href} target="_blank" rel="noopener noreferrer"
+                                                    className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/40 border border-white/5 hover:border-blue-500/30 hover:bg-zinc-800/60 transition-all group">
                                                     <span className="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-blue-400 border border-zinc-700 transition-colors">
-                                                        {contact.icon}
+                                                        {c.icon}
                                                     </span>
-                                                    <span className="text-sm text-zinc-400 group-hover:text-zinc-200 transition-colors font-medium">{contact.label}</span>
+                                                    <span className="text-sm text-zinc-400 group-hover:text-zinc-200 transition-colors font-medium">{c.label}</span>
                                                 </a>
                                             ))}
                                         </div>
                                     </motion.div>
 
                                     <div className="space-y-8">
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 20 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true }}
-                                            className="p-8 rounded-[2rem] bg-zinc-900/40 border border-white/5"
-                                        >
+                                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                                            className="p-8 rounded-[2rem] bg-zinc-900/40 border border-white/5">
                                             <p className="text-white text-sm font-bold tracking-widest uppercase flex items-center gap-2 mb-6">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                                                 Core Methodology
@@ -200,23 +156,15 @@ export default function AboutPage() {
                                         </motion.div>
 
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
-                                            <motion.div
-                                                initial={{ opacity: 0, y: 20 }}
-                                                whileInView={{ opacity: 1, y: 0 }}
-                                                viewport={{ once: true }}
-                                                className="p-6 rounded-2xl bg-zinc-900/40 border border-white/5"
-                                            >
+                                            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                                                className="p-6 rounded-2xl bg-zinc-900/40 border border-white/5">
                                                 <p className="text-white text-[10px] font-bold uppercase tracking-widest mb-4 opacity-50">Education</p>
                                                 <p className="text-white font-bold mb-1 tracking-tight">BBA (Marketing)</p>
                                                 <p className="text-xs text-zinc-500">Pune University | 2017</p>
                                             </motion.div>
 
-                                            <motion.div
-                                                initial={{ opacity: 0, y: 20 }}
-                                                whileInView={{ opacity: 1, y: 0 }}
-                                                viewport={{ once: true }}
-                                                className="p-6 rounded-2xl bg-zinc-900/40 border border-white/5"
-                                            >
+                                            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                                                className="p-6 rounded-2xl bg-zinc-900/40 border border-white/5">
                                                 <p className="text-white text-[10px] font-bold uppercase tracking-widest mb-4 opacity-50">Certifications</p>
                                                 <div className="space-y-2">
                                                     {["Google Analytics", "HubSpot Master"].map(cert => (
@@ -231,7 +179,7 @@ export default function AboutPage() {
                                     </div>
                                 </div>
 
-                                {/* Right Side: Experience Timeline */}
+                                {/* Right: Experience Timeline */}
                                 <div className="lg:col-span-7">
                                     <Experience />
                                 </div>
@@ -281,7 +229,7 @@ export default function AboutPage() {
                     </div>
                 </div>
 
-                {/* Case Studies Section */}
+                {/* Case Studies */}
                 <div className="relative z-30 bg-black py-16">
                     <div className="container mx-auto px-6 mb-12 text-center">
                         <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tighter">Proven Results.</h2>
