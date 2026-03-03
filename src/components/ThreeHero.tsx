@@ -355,14 +355,17 @@ function Scene() {
         if (groupRef.current) {
             groupRef.current.position.x = THREE.MathUtils.lerp(groupRef.current.position.x, targetX, 0.05);
 
-            // Cursor interactivity: subtle tilt/parallax
-            // We lerp the mouse values for extra smoothness
+            // Cursor interactivity: MORE pronounced tilt/parallax
             mousePos.current.x = THREE.MathUtils.lerp(mousePos.current.x, mouse.x, 0.1);
             mousePos.current.y = THREE.MathUtils.lerp(mousePos.current.y, mouse.y, 0.1);
 
-            // Tilt the group slightly based on mouse
-            groupRef.current.rotation.y = THREE.MathUtils.lerp(groupRef.current.rotation.y, mousePos.current.x * 0.12, 0.05);
-            groupRef.current.rotation.x = THREE.MathUtils.lerp(groupRef.current.rotation.x, -mousePos.current.y * 0.08, 0.05);
+            // Intensified tilt multipliers (was 0.12 and 0.08)
+            groupRef.current.rotation.y = THREE.MathUtils.lerp(groupRef.current.rotation.y, mousePos.current.x * 0.45, 0.05);
+            groupRef.current.rotation.x = THREE.MathUtils.lerp(groupRef.current.rotation.x, -mousePos.current.y * 0.35, 0.05);
+
+            // Add camera tracking for depth (subtle movement of the camera itself)
+            state.camera.position.x = THREE.MathUtils.lerp(state.camera.position.x, mouse.x * 0.8, 0.05);
+            state.camera.position.y = THREE.MathUtils.lerp(state.camera.position.y, 2 + mouse.y * 0.8, 0.05);
         }
     });
 
