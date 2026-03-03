@@ -79,7 +79,7 @@ function Globe() {
 
             {/* Atmosphere rim */}
             <Sphere ref={atmRef} args={[2.55, 32, 32]}>
-                {/* @ts-ignore */}
+                {/* @ts-expect-error – atmosphereMaterial is registered via extend() */}
                 <atmosphereMaterial
                     glowColor={new THREE.Color('#1a6bff')}
                     intensity={1.5}
@@ -160,21 +160,19 @@ function ConnectionArc({ from, to, color, progress }: {
         return curve.getPoints(64);
     }, [from, to]);
 
-    const geo = useMemo(() => {
+    const lineObj = useMemo(() => {
         const total = arcGeo.length;
         const s = Math.floor(progress * total * 0.8);
         const e = Math.min(total, s + Math.floor(total * 0.22));
         const pts = arcGeo.slice(s, e);
         if (pts.length < 2) return null;
-        return new THREE.BufferGeometry().setFromPoints(pts);
-    }, [arcGeo, progress]);
+        const geo = new THREE.BufferGeometry().setFromPoints(pts);
+        const mat = new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.85 });
+        return new THREE.Line(geo, mat);
+    }, [arcGeo, progress, color]);
 
-    if (!geo) return null;
-    return (
-        <line geometry={geo}>
-            <lineBasicMaterial color={color} transparent opacity={0.85} />
-        </line>
-    );
+    if (!lineObj) return null;
+    return <primitive object={lineObj} />;
 }
 
 /* ─── Orbiting Node ──────────────────────────────────────── */
@@ -220,19 +218,17 @@ function OrbitingNode({ radius, speed, phase, inclination, color }: NodeDef) {
 
 /* ─── Orbit Lane ─────────────────────────────────────────── */
 function OrbitLane({ radius, inclination, color }: { radius: number; inclination: number; color: string }) {
-    const geo = useMemo(() => {
+    const lineObj = useMemo(() => {
         const pts = Array.from({ length: 129 }, (_, i) => {
             const a = (i / 128) * Math.PI * 2;
             return new THREE.Vector3(Math.cos(a) * radius, Math.sin(a + inclination) * radius * 0.4, Math.sin(a) * radius);
         });
-        return new THREE.BufferGeometry().setFromPoints(pts);
-    }, [radius, inclination]);
+        const geo = new THREE.BufferGeometry().setFromPoints(pts);
+        const mat = new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.11 });
+        return new THREE.Line(geo, mat);
+    }, [radius, inclination, color]);
 
-    return (
-        <line geometry={geo}>
-            <lineBasicMaterial color={color} transparent opacity={0.11} />
-        </line>
-    );
+    return <primitive object={lineObj} />;
 }
 
 /* ─── Radar Sweep ────────────────────────────────────────── */
