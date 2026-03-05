@@ -8,6 +8,7 @@ import TableOfContents from '@/components/TableOfContents';
 import FAQSection from '@/components/FAQSection';
 import BlogCTA from '@/components/BlogCTA';
 import type { BlogPost } from '@/lib/blog-data';
+import SchemaMarkup from '@/components/SchemaMarkup';
 
 interface BlogPostClientProps {
     post: BlogPost;
@@ -159,9 +160,34 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
         return rendered;
     };
 
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.chaitanyakore.in"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://www.chaitanyakore.in/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": post.title,
+                "item": `https://www.chaitanyakore.in/blog/${post.slug}`
+            }
+        ]
+    };
+
     return (
         <main className="min-h-screen bg-[#0a0a0a] pt-32 pb-0 px-6 md:px-12 lg:px-24">
-
+            <SchemaMarkup schema={breadcrumbSchema} />
             {/* ── ZONE 1: Two-column — sticky TOC left + article content right ── */}
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-start">
 
@@ -225,7 +251,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                             {post.summary && (
                                 <div className="mb-10">
                                     <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-400 block mb-4">Strategic Overview</span>
-                                    <p className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
+                                    <p className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight whitespace-pre-wrap">
                                         {post.summary}
                                     </p>
                                 </div>

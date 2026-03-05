@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import FAQSection from "@/components/FAQSection";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const geoFaqs = [
     {
@@ -30,8 +31,28 @@ export const metadata: Metadata = {
 };
 
 export default function GEOPage() {
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.chaitanyakore.in"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "GEO Strategy",
+                "item": "https://www.chaitanyakore.in/geo"
+            }
+        ]
+    };
+
     return (
         <main className="min-h-screen bg-[#0a0a0a] pt-32 pb-24">
+            <SchemaMarkup schema={breadcrumbSchema} />
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
 
                 <Link href="/" className="inline-flex items-center gap-2 text-zinc-500 hover:text-white text-sm font-bold uppercase tracking-widest mb-12 transition-colors">

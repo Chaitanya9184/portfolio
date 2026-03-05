@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import TableOfContents from './TableOfContents';
 import VoiceReader from './VoiceReader';
 import FAQSection from './FAQSection';
+import SchemaMarkup from './SchemaMarkup';
 import type { ClusterPage } from '@/lib/cluster-data';
 
 interface ClusterClientProps {
@@ -13,6 +14,31 @@ interface ClusterClientProps {
 }
 
 export default function ClusterClient({ cluster }: ClusterClientProps) {
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.chaitanyakore.in"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": cluster.pillar,
+                "item": `https://www.chaitanyakore.in/${cluster.pillar.toLowerCase()}`
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": cluster.title,
+                "item": `https://www.chaitanyakore.in/${cluster.pillar.toLowerCase()}/${cluster.slug}`
+            }
+        ]
+    };
+
     const renderContent = (content: string) => {
         // Pre-process inline bullets: replace " • " with "\n• " so they are split correctly
         const formattedContent = content.replace(/(\S)\s*•\s+/g, '$1\n• ');
@@ -90,6 +116,7 @@ export default function ClusterClient({ cluster }: ClusterClientProps) {
 
     return (
         <main className="min-h-screen bg-[#0a0a0a] pt-32 pb-24 px-6 md:px-12 lg:px-24">
+            <SchemaMarkup schema={breadcrumbSchema} />
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-start">
 
                 {/* TOC Sidebar */}

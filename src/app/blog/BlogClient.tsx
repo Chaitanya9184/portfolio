@@ -14,6 +14,25 @@ const blogSchema = {
     "url": "https://www.chaitanyakore.in/blog/"
 };
 
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.chaitanyakore.in"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://www.chaitanyakore.in/blog/"
+        }
+    ]
+};
+
 export default function BlogClient() {
     return (
         <main className="min-h-screen bg-[#0a0a0a] pt-32 pb-24 px-6 md:px-12 lg:px-24">
@@ -92,6 +111,7 @@ export default function BlogClient() {
             </div>
 
             <SchemaMarkup schema={blogSchema} />
+            <SchemaMarkup schema={breadcrumbSchema} />
         </main>
     );
 }
