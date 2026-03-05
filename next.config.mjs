@@ -40,6 +40,9 @@ const nextConfig = {
     },
     async redirects() {
         return [
+            // Blog Redirects (Permanent 301)
+            // Example: { source: '/blog/old-slug', destination: '/blog/new-slug', permanent: true },
+
             {
                 source: '/:path*',
                 has: [
