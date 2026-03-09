@@ -43,10 +43,6 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
             const isKeyTakeaways = trimmed.toUpperCase().startsWith('## KEY TAKEAWAYS');
 
             if (isExecutiveSummary || isKeyTakeaways) {
-                // Skip rendering if these are already handled in the hero section
-                // But only if they match exactly what's in post.summary or post.takeaways
-                // For now, let's keep them but style them better as "Internal Article Summary"
-
                 const lines = trimmed.split(/\r?\n/).filter(line => line.trim());
                 const headerLine = lines[0];
                 const initialContent = lines.slice(1);
@@ -231,63 +227,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                         <VoiceReader title={post.title} content={post.content} />
                     </div>
 
-                    {/* Hero Summary & Takeaways */}
-                    {(post.summary || (post.takeaways && post.takeaways.length > 0)) && (
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                            className="mb-20 p-10 md:p-16 rounded-[3rem] bg-gradient-to-br from-zinc-900/40 to-zinc-900/10 border border-zinc-800/40 backdrop-blur-2xl relative overflow-hidden shadow-2xl"
-                        >
-                            {post.summary && (
-                                <div className="mb-14 relative z-10">
-                                    <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-blue-500/80 block mb-6">Strategic Overview</span>
-                                    {post.summary.includes('•') ? (
-                                        <div className="space-y-4 max-w-3xl">
-                                            {post.summary.split(/\r?\n/).filter(line => line.trim()).map((line, idx) => (
-                                                <p key={idx} className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-snug flex items-start gap-4">
-                                                    <span className="text-blue-500 mt-1 shrink-0">•</span>
-                                                    <span>{line.replace(/^[•\u2022]\s*/, '').trim()}</span>
-                                                </p>
-                                            ))}
-                                        </div>
-                                    ) : (
-                                        <p className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-[1.1] whitespace-pre-wrap max-w-3xl">
-                                            {post.summary}
-                                        </p>
-                                    )}
-                                </div>
-                            )}
 
-                            {post.takeaways && post.takeaways.length > 0 && (
-                                <div className="relative z-10">
-                                    <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-emerald-500/80 block mb-8">Key Takeaways</span>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-                                        {post.takeaways.map((item, idx) => (
-                                            <motion.div
-                                                key={idx}
-                                                initial={{ opacity: 0, x: -10 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{ delay: 0.1 * idx }}
-                                                className="flex gap-5 text-zinc-400 group"
-                                            >
-                                                <div className="mt-1.5 shrink-0 w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 group-hover:bg-emerald-500/20 transition-colors">
-                                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                                                    </svg>
-                                                </div>
-                                                <p className="text-base md:text-lg leading-relaxed group-hover:text-zinc-200 transition-colors">{item}</p>
-                                            </motion.div>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
-                            <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
-                            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-600/10 blur-[120px] rounded-full pointer-events-none" />
-                        </motion.div>
-                    )}
 
                     {/* Article Body */}
                     <div className="prose prose-invert max-w-none">
