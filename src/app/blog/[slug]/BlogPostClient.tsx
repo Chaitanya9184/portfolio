@@ -43,14 +43,16 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
             const isKeyTakeaways = trimmed.toUpperCase().startsWith('## KEY TAKEAWAYS');
 
             if (isExecutiveSummary || isKeyTakeaways) {
-                // Split by any newline sequence and filter empty lines
+                // Skip rendering if these are already handled in the hero section
+                // But only if they match exactly what's in post.summary or post.takeaways
+                // For now, let's keep them but style them better as "Internal Article Summary"
+
                 const lines = trimmed.split(/\r?\n/).filter(line => line.trim());
                 const headerLine = lines[0];
                 const initialContent = lines.slice(1);
 
                 const title = headerLine.replace(/^##\s+/, '').trim();
                 const id = title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                // Case-insensitive check for "summary" to catch "EXECUTIVE SUMMARY" or "Executive Summary"
                 const isSummary = title.toLowerCase().includes('summary');
 
                 const sectionContent: string[] = [...initialContent];
@@ -61,36 +63,29 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                 }
 
                 rendered.push(
-                    <div key={i} id={id} className={`mt-16 mb-12 p-8 md:p-12 rounded-[2.5rem] border backdrop-blur-xl relative overflow-hidden group scroll-mt-32 ${isSummary
-                        ? 'bg-blue-600/5 border-blue-500/20 shadow-[0_0_50px_-12px_rgba(59,130,246,0.1)]'
-                        : 'bg-emerald-600/5 border-emerald-500/20 shadow-[0_0_50px_-12px_rgba(16,185,129,0.1)]'
+                    <div key={i} id={id} className={`mt-16 mb-12 p-8 md:p-10 rounded-3xl border backdrop-blur-xl relative overflow-hidden group scroll-mt-32 ${isSummary
+                        ? 'bg-blue-500/5 border-blue-500/10'
+                        : 'bg-emerald-500/5 border-emerald-500/10'
                         }`}>
-                        <div className={`absolute top-0 left-0 w-1.5 h-full opacity-60 bg-gradient-to-b ${isSummary ? 'from-blue-500 to-indigo-600' : 'from-emerald-500 to-teal-600'
-                            }`} />
-
                         <div className="relative z-10">
-                            <span className={`text-[10px] font-bold uppercase tracking-[0.4em] block mb-4 ${isSummary ? 'text-blue-400' : 'text-emerald-400'
+                            <span className={`text-[10px] font-bold uppercase tracking-[0.3em] block mb-3 opacity-60 ${isSummary ? 'text-blue-400' : 'text-emerald-400'
                                 }`}>
-                                {isSummary ? 'Strategic Overview' : 'Actionable Insights'}
+                                {isSummary ? 'Section Overview' : 'Quick Key Points'}
                             </span>
-                            <p className="!mt-0 !mb-8 text-3xl md:text-5xl font-bold text-white tracking-tighter flex items-center gap-4">
-                                {isSummary ? 'Executive Summary' : 'Key Takeaways'}
-                                <span className={`h-[1px] flex-1 ${isSummary ? 'bg-gradient-to-r from-blue-500/30 to-transparent' : 'bg-gradient-to-r from-emerald-500/30 to-transparent'
-                                    }`} />
-                            </p>
+                            <h3 className="!mt-0 !mb-6 text-2xl md:text-3xl font-bold text-white tracking-tight">
+                                {title}
+                            </h3>
 
-                            <div className="space-y-6">
+                            <div className="space-y-4">
                                 {sectionContent.length > 0 ? sectionContent.map((para, idx) => {
                                     if (para.includes('\n• ') || para.startsWith('• ') || para.startsWith('- ')) {
                                         const items = para.split(/\r?\n/).map(l => l.replace(/^[•-]\s*/, '').trim()).filter(Boolean);
                                         return (
-                                            <ul key={idx} className="space-y-4 !mb-0">
+                                            <ul key={idx} className="space-y-3 !mb-0">
                                                 {items.map((item, sidx) => (
-                                                    <li key={sidx} className="flex gap-4 text-white font-medium leading-relaxed group text-lg md:text-xl">
+                                                    <li key={sidx} className="flex gap-3 text-zinc-300 leading-relaxed text-base md:text-lg">
                                                         <span className={`${isSummary ? 'text-blue-500' : 'text-emerald-500'} mt-1.5 shrink-0`}>
-                                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                                                            </svg>
+                                                            <div className="w-1.5 h-1.5 rounded-full bg-current" />
                                                         </span>
                                                         <span>{parseTextFormat(item)}</span>
                                                     </li>
@@ -98,14 +93,10 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                                             </ul>
                                         );
                                     }
-                                    return <p key={idx} className="text-zinc-200 text-xl font-medium leading-relaxed !mb-0">{parseTextFormat(para)}</p>;
-                                }) : (
-                                    <p className="text-zinc-400 italic">No content found for this section.</p>
-                                )}
+                                    return <p key={idx} className="text-zinc-300 text-lg leading-relaxed !mb-0">{parseTextFormat(para)}</p>;
+                                }) : null}
                             </div>
                         </div>
-                        <div className={`absolute -bottom-24 -right-24 w-64 h-64 blur-[100px] transition-colors pointer-events-none ${isSummary ? 'bg-blue-500/10' : 'bg-emerald-500/10'
-                            }`} />
                     </div>
                 );
                 i = j;
@@ -244,37 +235,46 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                     {(post.summary || (post.takeaways && post.takeaways.length > 0)) && (
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.3 }}
-                            className="mb-16 p-8 md:p-12 rounded-[2.5rem] bg-zinc-900/30 border border-zinc-800/50 backdrop-blur-xl relative overflow-hidden"
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                            className="mb-20 p-10 md:p-16 rounded-[3rem] bg-gradient-to-br from-zinc-900/40 to-zinc-900/10 border border-zinc-800/40 backdrop-blur-2xl relative overflow-hidden shadow-2xl"
                         >
                             {post.summary && (
-                                <div className="mb-10">
-                                    <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-400 block mb-4">Strategic Overview</span>
-                                    <p className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight whitespace-pre-wrap">
+                                <div className="mb-14 relative z-10">
+                                    <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-blue-500/80 block mb-6">Strategic Overview</span>
+                                    <p className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-[1.1] whitespace-pre-wrap max-w-3xl">
                                         {post.summary}
                                     </p>
                                 </div>
                             )}
 
                             {post.takeaways && post.takeaways.length > 0 && (
-                                <div>
-                                    <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-emerald-400 block mb-6">Key Takeaways</span>
-                                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="relative z-10">
+                                    <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-emerald-500/80 block mb-8">Key Takeaways</span>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                                         {post.takeaways.map((item, idx) => (
-                                            <li key={idx} className="flex gap-4 text-zinc-300 text-sm md:text-base leading-relaxed items-start group">
-                                                <span className="text-emerald-500 mt-1 shrink-0 bg-emerald-500/10 p-1 rounded-md">
-                                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <motion.div
+                                                key={idx}
+                                                initial={{ opacity: 0, x: -10 }}
+                                                whileInView={{ opacity: 1, x: 0 }}
+                                                viewport={{ once: true }}
+                                                transition={{ delay: 0.1 * idx }}
+                                                className="flex gap-5 text-zinc-400 group"
+                                            >
+                                                <div className="mt-1.5 shrink-0 w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 group-hover:bg-emerald-500/20 transition-colors">
+                                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                                                     </svg>
-                                                </span>
-                                                <span className="group-hover:text-white transition-colors">{item}</span>
-                                            </li>
+                                                </div>
+                                                <p className="text-base md:text-lg leading-relaxed group-hover:text-zinc-200 transition-colors">{item}</p>
+                                            </motion.div>
                                         ))}
-                                    </ul>
+                                    </div>
                                 </div>
                             )}
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 blur-[100px] rounded-full" />
+                            <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
+                            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-600/10 blur-[120px] rounded-full pointer-events-none" />
                         </motion.div>
                     )}
 
