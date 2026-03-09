@@ -31,8 +31,8 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
         // Pre-process inline bullets: replace " • " with "\n• " so they are parsed together
         const formattedBullets = rawContent.replace(/(\S)\s*•\s+/g, '$1\n• ');
         // Inject an extra newline after a heading if it is immediately followed by something (like a list)
-        const content = formattedBullets.replace(/^(#{2,4}[^\n]+)\n([^\n])/gm, '$1\n\n$2');
-        const paragraphs = content.split('\n\n').filter(p => p.trim());
+        const contentWithNewlines = formattedBullets.replace(/^(#{2,6}[^\n]+)\n([^\n])/gm, '$1\n\n$2');
+        const paragraphs = contentWithNewlines.split('\n\n').filter(p => p.trim());
         const rendered: React.ReactNode[] = [];
 
         let i = 0;
@@ -100,19 +100,29 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
             }
 
             if (trimmed.startsWith('## ')) {
-                const text = trimmed.replace('## ', '');
+                const text = trimmed.replace(/^##\s+/, '');
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                rendered.push(<p key={i} id={id} className="scroll-mt-32 text-3xl font-bold text-white mt-12 mb-6 tracking-tight">{parseTextFormat(text)}</p>);
+                rendered.push(<h2 key={i} id={id} className="scroll-mt-32 text-3xl font-bold text-white mt-12 mb-6 tracking-tight">{parseTextFormat(text)}</h2>);
             }
             else if (trimmed.startsWith('### ')) {
-                const text = trimmed.replace('### ', '');
+                const text = trimmed.replace(/^###\s+/, '');
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                rendered.push(<p key={i} id={id} className="scroll-mt-32 text-2xl font-bold text-white mt-10 mb-4 tracking-tight">{parseTextFormat(text)}</p>);
+                rendered.push(<h3 key={i} id={id} className="scroll-mt-32 text-2xl font-bold text-white mt-10 mb-4 tracking-tight">{parseTextFormat(text)}</h3>);
             }
             else if (trimmed.startsWith('#### ')) {
-                const text = trimmed.replace('#### ', '');
+                const text = trimmed.replace(/^####\s+/, '');
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                rendered.push(<p key={i} id={id} className="scroll-mt-32 text-xl font-bold text-zinc-400 mt-8 mb-4">{parseTextFormat(text)}</p>);
+                rendered.push(<h4 key={i} id={id} className="scroll-mt-32 text-xl font-bold text-blue-400 mt-8 mb-4 tracking-tight border-l-2 border-blue-500/30 pl-4">{parseTextFormat(text)}</h4>);
+            }
+            else if (trimmed.startsWith('##### ')) {
+                const text = trimmed.replace(/^#####\s+/, '');
+                const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+                rendered.push(<h5 key={i} id={id} className="scroll-mt-32 text-lg font-bold text-emerald-400/90 mt-6 mb-3 uppercase tracking-wider">{parseTextFormat(text)}</h5>);
+            }
+            else if (trimmed.startsWith('###### ')) {
+                const text = trimmed.replace(/^######\s+/, '');
+                const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+                rendered.push(<h6 key={i} id={id} className="scroll-mt-32 text-base font-bold text-zinc-500 mt-6 mb-2 uppercase tracking-widest">{parseTextFormat(text)}</h6>);
             }
             else if (trimmed.startsWith('• ') || trimmed.startsWith('- ') || trimmed.startsWith('* ') ||
                 trimmed.includes('\n• ') || trimmed.includes('\n- ') || trimmed.includes('\n* ')) {
