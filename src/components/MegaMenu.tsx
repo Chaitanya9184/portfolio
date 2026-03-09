@@ -45,10 +45,10 @@ export default function MegaMenu({ title, items }: MegaMenuProps) {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
-                        className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[480px]"
+                        className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[720px]"
                     >
                         <div className="bg-[#121212]/95 backdrop-blur-2xl border border-zinc-800 rounded-2xl p-6 shadow-2xl overflow-hidden ring-1 ring-white/5">
-                            <div className="grid grid-cols-1 gap-4">
+                            <div className="grid grid-cols-2 gap-4">
                                 {items.map((item, index) => (
                                     <Link
                                         key={index}

@@ -16,7 +16,15 @@ import {
     HeartPulse,
     Wallet,
     Menu,
-    X
+    X,
+    TrendingUp,
+    Bot,
+    PenTool,
+    Link as LinkIcon,
+    Briefcase,
+    GraduationCap,
+    Repeat,
+    UserCog
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -27,49 +35,103 @@ export default function Navigation() {
 
     const expertiseItems = [
         {
-            title: "Fractional SEO Lead",
-            description: "Strategic leadership for scaling teams and complex organic growth engines.",
-            href: "/services/fractional-seo-lead",
-            icon: <ShieldCheck size={20} />
-        },
-        {
-            title: "SEO Strategy Sprint",
-            description: "A 4-week roadmap to identify and capture high-intent revenue opportunities.",
-            href: "/services/seo-strategy-sprint",
-            icon: <Zap size={20} />
-        },
-        {
             title: "AEO Optimization",
-            description: "Specialized assessment of how AI engines (Gemini, Perplexity) cite your brand.",
+            description: "Audit and optimize for AI Answer Engines like Perplexity and ChatGPT.",
             href: "/services/aeo-optimization",
             icon: <Search size={20} />
         },
         {
+            title: "Fractional SEO Lead",
+            description: "Executive SEO leadership to scale growth engines and internal teams.",
+            href: "/services/fractional-seo-lead",
+            icon: <UserCog size={20} />
+        },
+        {
+            title: "SEO Revenue Strategy",
+            description: "Direct alignment of SEO growth with bottom-line revenue goals.",
+            href: "/services/seo-revenue-growth-strategy",
+            icon: <TrendingUp size={20} />
+        },
+        {
+            title: "SEO Strategy Sprint",
+            description: "High-intensity mapping of high-intent organic validation wins.",
+            href: "/services/seo-strategy-sprint",
+            icon: <Zap size={20} />
+        },
+        {
             title: "Technical SEO Audit",
-            description: "Advanced log analysis, indexation at scale, and semantic schema architecture.",
+            description: "Fixing JS rendering and indexation gridlocks at enterprise scale.",
             href: "/services/technical-seo-audit",
             icon: <BarChart3 size={20} />
+        },
+        {
+            title: "Programmatic SEO",
+            description: "Building automated landing page engines for long-tail dominance.",
+            href: "/services/programmatic-seo-engine",
+            icon: <Repeat size={20} />
+        },
+        {
+            title: "Content Velocity",
+            description: "Accelerating topical authority through expert content clusters.",
+            href: "/services/content-velocity-machine",
+            icon: <PenTool size={20} />
+        },
+        {
+            title: "Link Authority",
+            description: "Data-driven digital PR and high-authority entity linking.",
+            href: "/services/link-authority-builder",
+            icon: <LinkIcon size={20} />
         }
     ];
 
     const industryItems = [
         {
             title: "B2B SaaS",
-            description: "Dominate the recommendation layer for software-as-a-service platforms.",
+            description: "Data-driven growth strategies for modern SaaS platforms.",
             href: "/industries/b2b-saas",
             icon: <Cpu size={20} />
         },
         {
+            title: "Healthcare IT",
+            description: "E-E-A-T and HIPAA-compliant SEO for medical technology.",
+            href: "/industries/healthcare-it",
+            icon: <HeartPulse size={20} />
+        },
+        {
             title: "FinTech SEO",
-            description: "Trust-critical SEO for high-compliance and regulated industries.",
+            description: "Trust-signal engineering for high-stakes YMYL sectors.",
             href: "/industries/fintech",
             icon: <Wallet size={20} />
         },
         {
-            title: "E-commerce SEO",
-            description: "Scaling high-volume, data-driven platforms for maximum visibility.",
+            title: "eCommerce SEO",
+            description: "Scale online retail with technical faceted search optimization.",
             href: "/industries/ecommerce-marketplaces",
             icon: <ShoppingCart size={20} />
+        },
+        {
+            title: "Enterprise Software",
+            description: "Authority building for complex, long-cycle B2B markets.",
+            href: "/industries/enterprise-software",
+            icon: <Building2 size={20} />
+        },
+        {
+            title: "Cybersecurity",
+            description: "Technical moat building for high-intent security brands.",
+            href: "/industries/cybersecurity",
+            icon: <ShieldCheck size={20} />
+        },
+        {
+            title: "EdTech & Learning",
+            description: "Scale student or institutional growth with learning content.",
+            href: "/industries/edtech",
+            icon: <GraduationCap size={20} />
+        },
+        {
+            title: "Professional Services",
+            description: "Convert expert knowledge into organic lead generation.",
+            href: "/industries/professional-services",
+            icon: <Briefcase size={20} />
         }
     ];
 

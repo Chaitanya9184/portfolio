@@ -44,7 +44,9 @@ export default function Footer() {
                                 <li><Link href="/industries/enterprise-software" className="text-zinc-500 hover:text-white text-sm transition-colors">Enterprise</Link></li>
                                 <li><Link href="/industries/healthcare-it" className="text-zinc-500 hover:text-white text-sm transition-colors">Healthcare IT</Link></li>
                                 <li><Link href="/industries/fintech" className="text-zinc-500 hover:text-white text-sm transition-colors">FinTech</Link></li>
+                                <li><Link href="/industries/cybersecurity" className="text-zinc-500 hover:text-white text-sm transition-colors">Cybersecurity</Link></li>
                                 <li><Link href="/industries/edtech" className="text-zinc-500 hover:text-white text-sm transition-colors">EdTech</Link></li>
+                                <li><Link href="/industries/professional-services" className="text-zinc-500 hover:text-white text-sm transition-colors">Expert Help</Link></li>
                             </ul>
                         </div>
                     </div>
