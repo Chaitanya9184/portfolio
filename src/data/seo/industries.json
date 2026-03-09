@@ -1,0 +1,130 @@
+{
+    "industries": [
+        {
+            "slug": "saas",
+            "name": "B2B SaaS",
+            "heading": "SEO for Software as a Service (SaaS)",
+            "description": "Scale your MRR with data-driven Technical and Content SEO tailored for modern SaaS platforms.",
+            "painPoints": [
+                "High Customer Acquisition Cost (CAC)",
+                "Low organic visibility for high-intent keywords",
+                "Difficulty scaling content for complex features"
+            ],
+            "solutions": [
+                "Programmatic landing pages for features",
+                "Advanced technical audits for SPAs",
+                "ROI-focused content strategy"
+            ],
+            "metaTitle": "SEO for SaaS | Scale Organic Revenue & Traffic",
+            "metaDescription": "Specialized SEO strategies for B2B SaaS companies. Focused on reducing CAC and increasing MRR through technical excellence and precision content."
+        },
+        {
+            "slug": "healthcare",
+            "name": "Healthcare & MedTech",
+            "heading": "SEO for Healthcare and Medical Technology",
+            "description": "Build trust and visibility in the healthcare space with HIPAA-compliant, authority-focused SEO.",
+            "painPoints": [
+                "Strict E-E-A-T requirements",
+                "Compliance and regulatory hurdles",
+                "Hyper-local competition for providers"
+            ],
+            "solutions": [
+                "Medical-grade content authority building",
+                "Local SEO optimization for clinics",
+                "Technical performance for patient portals"
+            ],
+            "metaTitle": "Healthcare SEO | Build Medical Authority & Trust",
+            "metaDescription": "Expert SEO for healthcare providers and MedTech companies. We focus on E-E-A-T and HIPAA compliance to build sustainable organic growth."
+        },
+        {
+            "slug": "finance",
+            "name": "Finance & FinTech",
+            "heading": "SEO for Financial Services and FinTech",
+            "description": "Navigate the complex world of YMYL with robust SEO strategies that drive qualified leads.",
+            "painPoints": [
+                "YMYL (Your Money Your Life) search signals",
+                "High competition for 'bank' and 'loan' terms",
+                "Complex user journeys from click to conversion"
+            ],
+            "solutions": [
+                "Trust-signal engineering for YMYL",
+                "Comparison-engine pSEO for financial products",
+                "Data-backed authority building"
+            ],
+            "metaTitle": "FinTech SEO | SEO for Financial Services",
+            "metaDescription": "Specialized SEO for FinTech and financial services. Build trust, navigate YMYL signals, and dominate high-value financial keywords."
+        },
+        {
+            "slug": "ecommerce",
+            "name": "eCommerce & Retail",
+            "heading": "SEO for eCommerce and Online Retail",
+            "description": "Scale your online sales with technical SEO optimized for large-scale product catalogs and faceted search.",
+            "painPoints": [
+                "Crawl budget issues with large catalogs",
+                "Duplicate content from faceted navigation",
+                "Competing against global retail giants"
+            ],
+            "solutions": [
+                "Advanced Product Schema implementation",
+                "Faceted search optimization",
+                "Conversion-led category page scaling"
+            ],
+            "metaTitle": "eCommerce SEO | Scale Online Sales & Revenue",
+            "metaDescription": "Specialized SEO for eCommerce and retail. Optimize large product catalogs, fix technical gridlocks, and dominate retail search results."
+        },
+        {
+            "slug": "b2b-tech",
+            "name": "B2B Tech & Enterprise",
+            "heading": "SEO for B2B Tech and Enterprise Solutions",
+            "description": "Build unshakeable authority and drive high-value leads in complex, long-cycle B2B markets.",
+            "painPoints": [
+                "Long, complex buyer journeys",
+                "High-competition for enterprise keywords",
+                "Difficulty communicating complex value props"
+            ],
+            "solutions": [
+                "Executive-level thought leadership strategy",
+                "Advanced technical solution clusters",
+                "Intent-driven enterprise funnel mapping"
+            ],
+            "metaTitle": "B2B Tech SEO | Enterprise SEO Strategy",
+            "metaDescription": "Strategic SEO for B2B Tech and Enterprise companies. Dominate long-cycle sales funnels and build brand authority where it matters."
+        },
+        {
+            "slug": "real-estate",
+            "name": "Real Estate & PropTech",
+            "heading": "SEO for Real Estate and Property Technology",
+            "description": "Outrank aggregators and capture local home buyers with neighborhood-focused technical SEO.",
+            "painPoints": [
+                "Competing with Zillow and aggregators",
+                "Keeping listings indexed and fresh",
+                "Hyper-local market competition"
+            ],
+            "solutions": [
+                "Hyper-local neighborhood content hubs",
+                "Technical listing index optimization",
+                "Advanced Map Pack & Local SEO dominance"
+            ],
+            "metaTitle": "Real Estate SEO | Outrank the Aggregators",
+            "metaDescription": "Dominate local real estate search. We help agents and PropTech firms beat the big aggregators through hyper-local technical excellence."
+        },
+        {
+            "slug": "home-services",
+            "name": "Home Services",
+            "heading": "SEO for Home Services & Local Contractors",
+            "description": "Dominate the Local Map Pack and capture high-intent leads when customers need you most.",
+            "painPoints": [
+                "High reliance on expensive paid leads",
+                "Low visibility in Local Map Packs",
+                "Fluctuating lead volume in off-seasons"
+            ],
+            "solutions": [
+                "Local Map Pack dominance strategy",
+                "Service-area page scaling",
+                "Review and reputation SEO management"
+            ],
+            "metaTitle": "Home Services SEO | Dominate Local Search",
+            "metaDescription": "Expert SEO for contractors and home service businesses. Stop paying for leads and start owning the Map Pack in your local area."
+        }
+    ]
+}
