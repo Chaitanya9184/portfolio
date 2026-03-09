@@ -19,9 +19,55 @@ interface MegaMenuProps {
 
 export default function MegaMenu({ title, items }: MegaMenuProps) {
     const [isOpen, setIsOpen] = useState(false);
+    const triggerRef = React.useRef<HTMLDivElement>(null);
+    const [leftOffset, setLeftOffset] = useState("50%");
+    const [translateX, setTranslateX] = useState("-50%");
+
+    // Dynamic positioning effect to prevent screen-edge clipping
+    React.useEffect(() => {
+        if (!isOpen || !triggerRef.current) return;
+
+        const updatePosition = () => {
+            const rect = triggerRef.current?.getBoundingClientRect();
+            if (!rect) return;
+
+            const menuWidth = 640; // The fixed width of our menu
+            const viewportWidth = window.innerWidth;
+            const margin = 16; // Minimum distance from screen edge
+
+            // Calculate current center position
+            const triggerCenter = rect.left + rect.width / 2;
+
+            let idealLeft = triggerCenter;
+            let idealTranslate = "-50%";
+
+            // Check Left Edge
+            if (triggerCenter - menuWidth / 2 < margin) {
+                // Shift right if overflow left
+                setLeftOffset(`${margin}px`);
+                setTranslateX("0%");
+            }
+            // Check Right Edge
+            else if (triggerCenter + menuWidth / 2 > viewportWidth - margin) {
+                // Shift left if overflow right
+                setLeftOffset(`${viewportWidth - margin}px`);
+                setTranslateX("-100%");
+            }
+            // Default: Perfect center
+            else {
+                setLeftOffset("50%");
+                setTranslateX("-50%");
+            }
+        };
+
+        updatePosition();
+        window.addEventListener('resize', updatePosition);
+        return () => window.removeEventListener('resize', updatePosition);
+    }, [isOpen]);
 
     return (
         <div
+            ref={triggerRef}
             className="relative"
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
@@ -49,11 +95,12 @@ export default function MegaMenu({ title, items }: MegaMenuProps) {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: 10, x: "-50%", scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, x: "-50%", scale: 1 }}
-                        exit={{ opacity: 0, y: 10, x: "-50%", scale: 0.95 }}
+                        initial={{ opacity: 0, y: 10, x: translateX, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, x: translateX, scale: 1 }}
+                        exit={{ opacity: 0, y: 10, x: translateX, scale: 0.95 }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
-                        className="absolute top-full left-1/2 pt-2 w-[640px] max-w-[calc(100vw-2rem)]"
+                        className="absolute top-full pt-2 w-[640px] max-w-[calc(100vw-2rem)]"
+                        style={{ left: leftOffset }}
                     >
                         <div className="bg-[#121212]/95 backdrop-blur-2xl border border-zinc-800 rounded-2xl p-4 sm:p-5 shadow-2xl overflow-hidden ring-1 ring-white/5">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
