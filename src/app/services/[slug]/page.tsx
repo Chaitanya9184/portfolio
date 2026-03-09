@@ -19,6 +19,12 @@ function getService(slug: string): SEOData | undefined {
     return (servicesData.services as SEOData[]).find((srv) => srv.slug === slug);
 }
 
+export async function generateStaticParams() {
+    return servicesData.services.map((srv) => ({
+        slug: srv.slug,
+    }));
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const service = getService(params.slug);
     if (!service) return {};

@@ -18,6 +18,12 @@ function getIndustry(slug: string): SEOData | undefined {
     return (industriesData.industries as SEOData[]).find((ind) => ind.slug === slug);
 }
 
+export async function generateStaticParams() {
+    return industriesData.industries.map((ind) => ({
+        slug: ind.slug,
+    }));
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const industry = getIndustry(params.slug);
     if (!industry) return {};
