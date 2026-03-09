@@ -202,19 +202,14 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                 {/* Right: article content */}
                 <div className="flex-1 min-w-0 max-w-4xl">
 
-                    {/* Back Link */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="mb-12"
-                    >
-                        <Link href="/blog" className="text-zinc-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest flex items-center gap-2">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 rotate-180">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                            Back to Insights
-                        </Link>
-                    </motion.div>
+                    {/* Breadcrumbs */}
+                    <nav className="flex items-center gap-2 text-zinc-500 text-[10px] font-bold uppercase tracking-widest mb-12">
+                        <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                        <span>/</span>
+                        <Link href="/blog" className="hover:text-white transition-colors">Insights</Link>
+                        <span>/</span>
+                        <span className="text-zinc-400">{post.title}</span>
+                    </nav>
 
                     {/* Header */}
                     <div className="mb-8">

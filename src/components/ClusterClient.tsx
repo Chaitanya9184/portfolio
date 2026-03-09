@@ -139,6 +139,15 @@ export default function ClusterClient({ cluster }: ClusterClientProps) {
 
                 {/* Main Content Area */}
                 <div className="flex-1 min-w-0 max-w-4xl">
+                    {/* Breadcrumbs */}
+                    <nav className="flex items-center gap-2 text-zinc-500 text-[10px] font-bold uppercase tracking-widest mb-12">
+                        <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                        <span>/</span>
+                        <Link href="/blog" className="hover:text-white transition-colors">Insights</Link>
+                        <span>/</span>
+                        <span className="text-zinc-400">{cluster.title}</span>
+                    </nav>
+
                     <div className="mb-12">
                         <div className="inline-flex px-3 py-1 mb-6 rounded-full bg-zinc-800 border border-white/5 text-zinc-400 text-[10px] font-bold uppercase tracking-widest">
                             {cluster.pillar} Cluster

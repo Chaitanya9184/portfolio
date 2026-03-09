@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import industriesData from '@/data/seo/industries.json';
+import servicesData from '@/data/seo/services.json';
 import { generateSEOMetadata, SEOData } from '@/lib/seo-utils';
 import FAQSection from "@/components/FAQSection";
 import SchemaMarkup from "@/components/SchemaMarkup";
@@ -13,7 +14,6 @@ interface PageProps {
     };
 }
 
-// Find the industry data based on the slug
 function getIndustry(slug: string): SEOData | undefined {
     return (industriesData.industries as SEOData[]).find((ind) => ind.slug === slug);
 }
@@ -21,7 +21,7 @@ function getIndustry(slug: string): SEOData | undefined {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const industry = getIndustry(params.slug);
     if (!industry) return {};
-    return generateSEOMetadata(industry);
+    return generateSEOMetadata(industry, '/industries');
 }
 
 export default function DynamicIndustryPage({ params }: PageProps) {
@@ -31,7 +31,6 @@ export default function DynamicIndustryPage({ params }: PageProps) {
         notFound();
     }
 
-    // Placeholder FAQs (In a real pSEO engine, these would also be in the JSON)
     const defaultFaqs = [
         {
             question: `Why is specialized SEO important for ${industry.name}?`,
@@ -54,21 +53,30 @@ export default function DynamicIndustryPage({ params }: PageProps) {
         }
     };
 
+    // Find related service details
+    const relatedServices = industry.relatedServices?.map(slug =>
+        (servicesData.services as SEOData[]).find(s => s.slug === slug)
+    ).filter(Boolean) as SEOData[];
+
     return (
         <main className="min-h-screen bg-[#0a0a0a] pt-32 pb-24">
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
 
-                <Link href="/industries" className="inline-flex items-center gap-2 text-zinc-500 hover:text-white text-sm font-bold uppercase tracking-widest mb-12 transition-colors">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="m15 18-6-6 6-6" /></svg>
-                    All Industries
-                </Link>
+                {/* Breadcrumbs */}
+                <nav className="flex items-center gap-2 text-zinc-500 text-xs font-bold uppercase tracking-widest mb-12">
+                    <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                    <span>/</span>
+                    <Link href="/industries" className="hover:text-white transition-colors">Industries</Link>
+                    <span>/</span>
+                    <span className="text-zinc-300">{industry.name}</span>
+                </nav>
 
                 {/* Hero */}
                 <div className="mb-12">
                     <div className="inline-flex px-3 py-1 mb-6 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest">
                         {industry.name} Strategy
                     </div>
-                    <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-6">
+                    <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-6 font-space-grotesk">
                         {industry.heading}
                     </h1>
                     <p className="text-zinc-400 text-xl font-light max-w-2xl leading-relaxed">
@@ -102,6 +110,28 @@ export default function DynamicIndustryPage({ params }: PageProps) {
                     </div>
                 </div>
 
+                {/* Related Services (Internal Linking) */}
+                {relatedServices.length > 0 && (
+                    <div className="mb-24">
+                        <h2 className="text-3xl font-bold text-white mb-8 font-space-grotesk">Recommended Solutions</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {relatedServices.map((service) => (
+                                <Link
+                                    key={service.slug}
+                                    href={`/services/${service.slug}`}
+                                    className="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800 hover:border-emerald-500/50 transition-all group"
+                                >
+                                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">{service.name}</h3>
+                                    <p className="text-zinc-500 text-sm line-clamp-2">{service.description}</p>
+                                    <div className="mt-4 flex items-center gap-2 text-emerald-500 text-xs font-bold uppercase tracking-widest">
+                                        View Solution <span className="group-hover:translate-x-1 transition-transform">→</span>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
                 {/* Dynamic CTA */}
                 <div className="p-12 text-center rounded-3xl bg-gradient-to-b from-zinc-900/80 to-[#0a0a0a] border border-zinc-800 relative overflow-hidden mb-24">
                     <div className="absolute inset-0 bg-emerald-500/5 blur-3xl pointer-events-none" />
@@ -132,3 +162,4 @@ export default function DynamicIndustryPage({ params }: PageProps) {
         </main>
     );
 }
+

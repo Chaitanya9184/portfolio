@@ -3,17 +3,24 @@
 import React, { useRef } from 'react';
 import Link from 'next/link';
 import { motion, useScroll } from 'framer-motion';
-import { blogPosts } from '@/lib/blog-data';
+import { blogPosts, BlogPost } from '@/lib/blog-data';
 
-export default function BlogCarousel({ industry, title, subtitle }: { industry?: string, title?: string, subtitle?: string }) {
+interface BlogCarouselProps {
+    industry?: string;
+    title?: string;
+    subtitle?: string;
+    posts?: BlogPost[];
+}
+
+export default function BlogCarousel({ industry, title, subtitle, posts }: BlogCarouselProps) {
     const sectionRef = useRef<HTMLDivElement>(null);
     const { scrollXProgress } = useScroll({
         container: sectionRef,
     });
 
-    const filteredPosts = industry
+    const filteredPosts = posts || (industry
         ? blogPosts.filter(post => post.industry === industry).slice(0, 10)
-        : blogPosts.slice(0, 10);
+        : blogPosts.slice(0, 10));
 
     if (filteredPosts.length === 0) return null;
 
@@ -66,30 +73,30 @@ export default function BlogCarousel({ industry, title, subtitle }: { industry?:
                 className="flex gap-6 overflow-x-auto pb-12 px-6 md:px-12 lg:px-24 no-scrollbar snap-x snap-mandatory"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-                {filteredPosts.map((post) => (
+                {filteredPosts.filter(Boolean).map((post) => (
                     <motion.div
-                        key={post.slug}
+                        key={post!.slug}
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         className="w-[85vw] md:w-[550px] shrink-0 snap-start"
                     >
-                        <Link href={`/blog/${post.slug}`} className="block group h-full">
+                        <Link href={`/blog/${post!.slug}`} className="block group h-full">
                             <div className="relative h-full p-8 rounded-3xl bg-zinc-900/30 border border-white/5 hover:border-blue-500/30 hover:bg-zinc-900/50 transition-all flex flex-col">
                                 <div className="flex items-center gap-3 mb-6">
-                                    <span className={`px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-widest ${post.category === 'GEO' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' :
-                                        post.category === 'AEO' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' :
+                                    <span className={`px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-widest ${post!.category === 'GEO' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' :
+                                        post!.category === 'AEO' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' :
                                             'bg-purple-500/10 text-purple-400 border border-purple-500/20'
                                         }`}>
-                                        {post.category}
+                                        {post!.category}
                                     </span>
-                                    <span className="text-zinc-600 text-[9px] uppercase font-bold tracking-widest">{post.date}</span>
+                                    <span className="text-zinc-600 text-[9px] uppercase font-bold tracking-widest">{post!.date}</span>
                                 </div>
                                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors leading-tight">
-                                    {post.title}
+                                    {post!.title}
                                 </h3>
                                 <p className="text-zinc-500 text-sm leading-relaxed mb-8 flex-1">
-                                    {post.excerpt}
+                                    {post!.excerpt}
                                 </p>
                                 <div className="mt-auto flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-zinc-400 group-hover:text-white transition-colors">
                                     Read Analysis
@@ -122,3 +129,4 @@ export default function BlogCarousel({ industry, title, subtitle }: { industry?:
         </section >
     );
 }
+

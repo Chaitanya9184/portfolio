@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import servicesData from '@/data/seo/services.json';
+import industriesData from '@/data/seo/industries.json';
+import { blogPosts, BlogPost } from '@/lib/blog-data';
 import { generateSEOMetadata, SEOData } from '@/lib/seo-utils';
 import FAQSection from "@/components/FAQSection";
 import SchemaMarkup from "@/components/SchemaMarkup";
@@ -13,7 +15,6 @@ interface PageProps {
     };
 }
 
-// Find the service data based on the slug
 function getService(slug: string): SEOData | undefined {
     return (servicesData.services as SEOData[]).find((srv) => srv.slug === slug);
 }
@@ -21,7 +22,7 @@ function getService(slug: string): SEOData | undefined {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const service = getService(params.slug);
     if (!service) return {};
-    return generateSEOMetadata(service);
+    return generateSEOMetadata(service, '/services');
 }
 
 export default function DynamicServicePage({ params }: PageProps) {
@@ -53,14 +54,28 @@ export default function DynamicServicePage({ params }: PageProps) {
         }
     };
 
+    // Find related industry details
+    const relatedIndustries = service.relatedIndustries?.map(slug =>
+        (industriesData.industries as SEOData[]).find(i => i.slug === slug)
+    ).filter(Boolean) as SEOData[];
+
+    // Find related blog details
+    const relatedBlogs = (service.relatedBlogs?.map(slug =>
+        blogPosts.find(b => b.slug === slug)
+    ).filter(Boolean) as BlogPost[]) || [];
+
     return (
         <main className="min-h-screen bg-[#0a0a0a] pt-32 pb-24">
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
 
-                <Link href="/services" className="inline-flex items-center gap-2 text-zinc-500 hover:text-white text-sm font-bold uppercase tracking-widest mb-12 transition-colors">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="m15 18-6-6 6-6" /></svg>
-                    All Services
-                </Link>
+                {/* Breadcrumbs */}
+                <nav className="flex items-center gap-2 text-zinc-500 text-xs font-bold uppercase tracking-widest mb-12">
+                    <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                    <span>/</span>
+                    <Link href="/services" className="hover:text-white transition-colors">Services</Link>
+                    <span>/</span>
+                    <span className="text-zinc-300">{service.name}</span>
+                </nav>
 
                 {/* Hero */}
                 <div className="mb-12">
@@ -101,6 +116,28 @@ export default function DynamicServicePage({ params }: PageProps) {
                     </div>
                 </div>
 
+                {/* Related Industries (Internal Linking) */}
+                {relatedIndustries.length > 0 && (
+                    <div className="mb-24">
+                        <h2 className="text-3xl font-bold text-white mb-8 font-space-grotesk">Target Verticals</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {relatedIndustries.map((ind) => (
+                                <Link
+                                    key={ind.slug}
+                                    href={`/industries/${ind.slug}`}
+                                    className="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800 hover:border-blue-500/50 transition-all group"
+                                >
+                                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">{ind.name}</h3>
+                                    <p className="text-zinc-500 text-sm line-clamp-2">{ind.description}</p>
+                                    <div className="mt-4 flex items-center gap-2 text-blue-500 text-xs font-bold uppercase tracking-widest">
+                                        View Strategy <span className="group-hover:translate-x-1 transition-transform">→</span>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
                 {/* Dynamic CTA */}
                 <div className="p-12 text-center rounded-3xl bg-gradient-to-b from-zinc-900/80 to-[#0a0a0a] border border-zinc-800 relative overflow-hidden mb-24">
                     <div className="absolute inset-0 bg-blue-500/5 blur-3xl pointer-events-none" />
@@ -119,6 +156,7 @@ export default function DynamicServicePage({ params }: PageProps) {
                 <BlogCarousel
                     title="Related Insights"
                     subtitle="& SEO Intelligence."
+                    posts={relatedBlogs}
                 />
             </div>
 
@@ -129,3 +167,4 @@ export default function DynamicServicePage({ params }: PageProps) {
         </main>
     );
 }
+

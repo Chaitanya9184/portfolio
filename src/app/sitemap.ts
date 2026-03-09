@@ -36,6 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     const allStaticRoutes = [...staticRoutes, ...industryRoutes, ...serviceRoutes];
 
+
     const routes = allStaticRoutes.map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),

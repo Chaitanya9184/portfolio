@@ -1,10 +1,10 @@
 {
     "services": [
         {
-            "slug": "ai-search-audit",
-            "name": "AI Search audit",
-            "heading": "AI Search Readiness Audit",
-            "description": "Discover how AI engines like Perplexity and ChatGPT perceive your brand. We audit your citation accuracy and GEO potential.",
+            "slug": "aeo-optimization",
+            "name": "AEO Optimization",
+            "heading": "AI Search / Answer Engine Optimization",
+            "description": "Discover how AI engines like Perplexity and ChatGPT perceive your brand. We audit and optimize your citation accuracy and GEO potential.",
             "painPoints": [
                 "Invisible to AI answer engines",
                 "Inaccurate citations in LLM responses",
@@ -15,8 +15,16 @@
                 "Entity-relation mapping for LLMs",
                 "Citations & sources optimization plan"
             ],
-            "metaTitle": "AI Search Audit | GEO Readiness Assessment",
-            "metaDescription": "Is your brand ready for the AI search revolution? Get a deep audit of your visibility in ChatGPT, Perplexity, and Gemini."
+            "relatedIndustries": [
+                "fintech",
+                "professional-services"
+            ],
+            "relatedBlogs": [
+                "aeo-content-format-checklist-2026",
+                "how-to-become-cited-source-chatgpt-perplexity-2026"
+            ],
+            "metaTitle": "AEO Optimization | AI Search Presence",
+            "metaDescription": "Is your brand ready for the AI search revolution? Get a deep audit and optimization for ChatGPT, Perplexity, and Gemini."
         },
         {
             "slug": "fractional-seo-lead",
@@ -32,6 +40,10 @@
                 "Strategic SEO roadmap development",
                 "Technical-marketing team alignment",
                 "Performance-based growth oversight"
+            ],
+            "relatedIndustries": [
+                "enterprise-software",
+                "professional-services"
             ],
             "metaTitle": "Fractional SEO Lead | Strategic Growth Leadership",
             "metaDescription": "Expert SEO leadership for scaling companies. Get executive-level strategy and team coordination to drive organic revenue."
@@ -51,6 +63,13 @@
                 "BOFU content funnel engineering",
                 "Conversion-led technical optimization"
             ],
+            "relatedIndustries": [
+                "fintech",
+                "b2b-saas"
+            ],
+            "relatedInsights": [
+                "seo-revenue-forecasting"
+            ],
             "metaTitle": "SEO Revenue Strategy | Performance SEO Plans",
             "metaDescription": "Align your SEO with your bottom line. We build strategies focused on pipeline revenue, not just traffic volume."
         },
@@ -69,14 +88,18 @@
                 "High-intent keyword 'quick wins'",
                 "Long-term authority roadmap"
             ],
+            "relatedIndustries": [
+                "b2b-saas",
+                "enterprise-software"
+            ],
             "metaTitle": "SEO Strategy Sprint | Rapid Organic Results",
             "metaDescription": "Accelerate your organic growth with a 6-week strategy sprint. Identify quick wins and build a scalable long-term engine."
         },
         {
-            "slug": "technical-seo-for-saas",
-            "name": "Technical SEO for SaaS",
-            "heading": "Enterprise-Grade Technical SEO for SaaS",
-            "description": "Fixing the complex JavaScript, crawl budget, and indexing gridlocks that hold modern SaaS platforms back.",
+            "slug": "technical-seo-audit",
+            "name": "Technical SEO Audit",
+            "heading": "Enterprise Technical SEO Audit",
+            "description": "Fixing the complex JavaScript, crawl budget, and indexing gridlocks that hold modern platforms back.",
             "painPoints": [
                 "Next.js/React rendering issues",
                 "Poor crawl efficiency on deep apps",
@@ -87,8 +110,83 @@
                 "Advanced programmatic schema",
                 "Dynamic content rendering audit"
             ],
-            "metaTitle": "Technical SEO for SaaS | JavaScript SEO Experts",
+            "relatedIndustries": [
+                "ecommerce-marketplaces",
+                "cybersecurity",
+                "healthcare-it"
+            ],
+            "relatedBlogs": [
+                "how-to-fix-indexing-react-nextjs-seo-2026",
+                "technical-seo-large-saas-sites-2026"
+            ],
+            "metaTitle": "Technical SEO Audit | Enterprise Scale Performance",
             "metaDescription": "Master Next.js and React SEO. We fix the technical issues that keep modern SaaS marketing sites from ranking."
+        },
+        {
+            "slug": "programmatic-seo-engine",
+            "name": "Programmatic SEO Engine",
+            "heading": "Scaling Content with Programmatic SEO",
+            "description": "Build high-converting landing pages at scale using data-driven dynamic routing and intent-based templates.",
+            "painPoints": [
+                "Manual content creation too slow",
+                "Unable to target long-tail keywords",
+                "Inconsistent page templates"
+            ],
+            "solutions": [
+                "Custom pSEO architecture design",
+                "Automated metadata scaling",
+                "Dynamic intent-based routing"
+            ],
+            "relatedIndustries": [
+                "ecommerce-marketplaces",
+                "b2b-saas",
+                "edtech"
+            ],
+            "metaTitle": "Programmatic SEO Engine | Scale Content Automatically",
+            "metaDescription": "Scale your organic footprint with programmatic SEO. Build thousands of high-converting pages automatically."
+        },
+        {
+            "slug": "content-velocity-machine",
+            "name": "Content Velocity Machine",
+            "heading": "High-Volume Authority Content Scaling",
+            "description": "Accelerate your topical authority by publishing high-quality, expert-led content clusters at scale.",
+            "painPoints": [
+                "Low publishing frequency",
+                "Disconnected content topics",
+                "Lack of topical authority"
+            ],
+            "solutions": [
+                "Topic cluster automation",
+                "SME-led content pipelines",
+                "Authority transfer linkage"
+            ],
+            "relatedIndustries": [
+                "edtech",
+                "healthcare-it"
+            ],
+            "metaTitle": "Content Velocity Machine | High-Authority Scaling",
+            "metaDescription": "Build topical authority fast. Our content velocity machine scales your expert content clusters seamlessly."
+        },
+        {
+            "slug": "link-authority-builder",
+            "name": "Link Authority Builder",
+            "heading": "Data-Driven Link Authority Building",
+            "description": "Earn high-authority, relevant backlinks through proprietary data studies and digital PR.",
+            "painPoints": [
+                "Difficulty earning high-DR links",
+                "Irrelevant backlink profile",
+                "Stagnant domain authority"
+            ],
+            "solutions": [
+                "Proprietary data PR campaigns",
+                "Authoritative entity linking",
+                "Competitor link gap analysis"
+            ],
+            "relatedIndustries": [
+                "cybersecurity"
+            ],
+            "metaTitle": "Link Authority Builder | High-Authority Backlinks",
+            "metaDescription": "Earn the links that matter. We build high-authority domain trust through data-driven digital PR and entity linking."
         }
     ]
 }

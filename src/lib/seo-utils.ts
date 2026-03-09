@@ -9,25 +9,32 @@ export interface SEOData {
     metaDescription: string;
     painPoints?: string[];
     solutions?: string[];
+    relatedServices?: string[];
+    relatedIndustries?: string[];
+    relatedBlogs?: string[];
+    relatedInsights?: string[];
 }
 
 const siteConfig = {
-    name: "Chaitanya's Portfolio",
-    url: "https://chaitanya.dev", // Replace with actual URL
-    author: "Chaitanya",
+    name: "Chaitanya Kore",
+    url: "https://www.chaitanyakore.in",
+    author: "Chaitanya Kore",
 };
 
-export function generateSEOMetadata(data: SEOData): Metadata {
+export function generateSEOMetadata(data: SEOData, pathPrefix?: string): Metadata {
+    const fullPath = pathPrefix ? `${pathPrefix}/${data.slug}` : `/${data.slug}`;
+    const canonicalUrl = `${siteConfig.url}${fullPath}`;
+
     return {
         title: `${data.metaTitle} | ${siteConfig.name}`,
         description: data.metaDescription,
         alternates: {
-            canonical: `${siteConfig.url}/${data.slug}`,
+            canonical: canonicalUrl,
         },
         openGraph: {
             title: data.metaTitle,
             description: data.metaDescription,
-            url: `${siteConfig.url}/${data.slug}`,
+            url: canonicalUrl,
             siteName: siteConfig.name,
             locale: 'en_US',
             type: 'website',
@@ -36,7 +43,8 @@ export function generateSEOMetadata(data: SEOData): Metadata {
             card: 'summary_large_image',
             title: data.metaTitle,
             description: data.metaDescription,
-            creator: '@chaitanya', // Replace with actual handle
+            creator: '@chaitanya9184',
         },
     };
 }
+
