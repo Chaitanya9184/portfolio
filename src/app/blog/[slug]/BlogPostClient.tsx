@@ -243,9 +243,20 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                             {post.summary && (
                                 <div className="mb-14 relative z-10">
                                     <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-blue-500/80 block mb-6">Strategic Overview</span>
-                                    <p className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-[1.1] whitespace-pre-wrap max-w-3xl">
-                                        {post.summary}
-                                    </p>
+                                    {post.summary.includes('•') ? (
+                                        <div className="space-y-4 max-w-3xl">
+                                            {post.summary.split(/\r?\n/).filter(line => line.trim()).map((line, idx) => (
+                                                <p key={idx} className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-snug flex items-start gap-4">
+                                                    <span className="text-blue-500 mt-1 shrink-0">•</span>
+                                                    <span>{line.replace(/^[•\u2022]\s*/, '').trim()}</span>
+                                                </p>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <p className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-[1.1] whitespace-pre-wrap max-w-3xl">
+                                            {post.summary}
+                                        </p>
+                                    )}
                                 </div>
                             )}
 
