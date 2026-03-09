@@ -243,7 +243,7 @@ export default function Navigation() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden border-t border-zinc-900 bg-[#121212] overflow-hidden"
+                        className="md:hidden border-t border-zinc-900 bg-[#121212] overflow-y-auto max-h-[calc(100vh-80px)]"
                     >
                         <div className="px-6 py-8 flex flex-col gap-6">
                             <Link href="/about" className="text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-white">About</Link>
