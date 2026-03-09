@@ -28,6 +28,20 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+    return (
+        <Link href={href} className="relative px-5 py-2 group">
+            <span className="relative z-10 text-zinc-400 group-hover:text-white transition-colors text-[10px] font-bold uppercase tracking-widest">
+                {children}
+            </span>
+            <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 bg-emerald-500/10 blur-xl rounded-full scale-150" />
+                <div className="absolute inset-0 bg-white/5 rounded-xl border border-white/5" />
+            </div>
+        </Link>
+    );
+}
+
 export default function Navigation() {
     const pathname = usePathname();
     const [isVisible, setIsVisible] = React.useState(true);
@@ -172,44 +186,38 @@ export default function Navigation() {
             className={`fixed top-0 z-50 w-full bg-[#121212]/80 backdrop-blur-xl border-b border-zinc-900 shadow-sm transition-transform duration-500 ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-full"
                 }`}
         >
-            <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 h-20 flex items-center justify-between">
+            <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 h-20 flex items-center justify-center relative">
 
-                {/* Logo / Brand */}
-                <Link href="/" className="flex items-center gap-3 group">
-                    <div className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-sm font-bold text-white group-hover:border-emerald-500/50 group-hover:text-emerald-400 transition-colors">
-                        CK
-                    </div>
-                </Link>
-
-                {/* Desktop Navigation Links */}
-                <nav className="hidden md:flex items-center gap-8">
-                    <Link href="/about" className="text-zinc-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">
-                        About
+                {/* Logo / Brand - Left Aligned */}
+                <div className="absolute left-6 md:left-12 lg:left-24">
+                    <Link href="/" className="flex items-center gap-3 group">
+                        <div className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-sm font-bold text-white group-hover:border-emerald-500/50 group-hover:text-emerald-400 transition-colors">
+                            CK
+                        </div>
                     </Link>
+                </div>
+
+                {/* Desktop Navigation Links - Center Aligned */}
+                <nav className="hidden md:flex items-center gap-2">
+                    <NavLink href="/about">About</NavLink>
 
                     <MegaMenu title="Expertise" items={expertiseItems} />
                     <MegaMenu title="Industries" items={industryItems} />
 
-                    <Link href="/blog" className="text-zinc-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">
-                        AI Insights
-                    </Link>
-                    <Link href="/roi-calculator" className="text-zinc-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">
-                        ROI Predictor
-                    </Link>
-                    <Link href="/contact" className="text-zinc-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">
-                        Contact
-                    </Link>
+                    <NavLink href="/blog">AI Insights</NavLink>
+                    <NavLink href="/roi-calculator">ROI Predictor</NavLink>
+                    <NavLink href="/contact">Contact</NavLink>
                 </nav>
 
-                {/* LinkedIn CTA (Desktop) */}
-                <div className="hidden lg:flex items-center">
+                {/* LinkedIn CTA (Desktop) - Right Aligned */}
+                <div className="hidden lg:flex items-center absolute right-6 md:right-12 lg:right-24">
                     <a
                         href="https://linkedin.com/in/chaitanya-kore-342069140"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-widest rounded-full transition-colors flex items-center gap-2"
                     >
-                        Connect on LinkedIn
+                        Connect
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
                             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                             <rect x="2" y="9" width="4" height="12"></rect>

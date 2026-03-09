@@ -27,15 +27,23 @@ export default function MegaMenu({ title, items }: MegaMenuProps) {
             onMouseLeave={() => setIsOpen(false)}
         >
             <button
-                className={`flex items-center gap-1.5 text-zinc-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest py-8 focus:outline-none ${isOpen ? 'text-white' : ''}`}
+                className={`relative px-5 py-8 group transition-colors focus:outline-none ${isOpen ? 'text-white' : 'text-zinc-400 hover:text-white'}`}
             >
-                {title}
-                <motion.div
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                >
-                    <ChevronDown size={14} />
-                </motion.div>
+                <div className="relative z-10 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest">
+                    {title}
+                    <motion.div
+                        animate={{ rotate: isOpen ? 180 : 0 }}
+                        transition={{ duration: 0.2 }}
+                    >
+                        <ChevronDown size={14} />
+                    </motion.div>
+                </div>
+
+                {/* Light source background effect */}
+                <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                    <div className="w-1/2 h-1/2 bg-emerald-500/10 blur-xl rounded-full scale-150" />
+                    <div className="absolute inset-x-2 inset-y-6 bg-white/5 rounded-xl border border-white/5" />
+                </div>
             </button>
 
             <AnimatePresence>
