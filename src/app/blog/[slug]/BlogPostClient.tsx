@@ -294,7 +294,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
                     >
-                        <FAQSection faqs={post.faqs} title="Topic Frequently Asked Questions" />
+                        <FAQSection faqs={post.faqs} title="Graduate Deep-Dive: Advanced FAQS" />
                     </motion.div>
                 )}
 
