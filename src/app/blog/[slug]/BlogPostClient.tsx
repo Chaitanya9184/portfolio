@@ -114,11 +114,14 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                 const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
                 rendered.push(<p key={i} id={id} className="scroll-mt-32 text-xl font-bold text-zinc-400 mt-8 mb-4">{parseTextFormat(text)}</p>);
             }
-            else if (trimmed.startsWith('• ') || trimmed.startsWith('- ') || trimmed.includes('\n• ') || trimmed.includes('\n- ')) {
+            else if (trimmed.startsWith('• ') || trimmed.startsWith('- ') || trimmed.startsWith('* ') ||
+                trimmed.includes('\n• ') || trimmed.includes('\n- ') || trimmed.includes('\n* ')) {
                 const lines = trimmed.split('\n');
-                const hasTitle = !lines[0].startsWith('• ') && !lines[0].startsWith('- ');
+                // A line is a bullet if it starts with •, -, or *
+                const isBullet = (l: string) => /^\s*[•\-*]\s+/.test(l);
+                const hasTitle = !isBullet(lines[0]);
                 const title = hasTitle ? lines[0] : null;
-                const items = (hasTitle ? lines.slice(1) : lines).map(l => l.replace(/^[•-]\s*/, ''));
+                const items = (hasTitle ? lines.slice(1) : lines).map(l => l.replace(/^\s*[•\-*]\s+/, ''));
 
                 rendered.push(
                     <div key={i} className="my-12">
