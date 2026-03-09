@@ -39,36 +39,36 @@ export default function Navigation() {
             icon: <Zap size={20} />
         },
         {
-            title: "AI Search Audit",
+            title: "AEO Optimization",
             description: "Specialized assessment of how AI engines (Gemini, Perplexity) cite your brand.",
-            href: "/services/ai-search-audit",
+            href: "/services/aeo-optimization",
             icon: <Search size={20} />
         },
         {
-            title: "Technical SEO and Data",
+            title: "Technical SEO Audit",
             description: "Advanced log analysis, indexation at scale, and semantic schema architecture.",
-            href: "/services/technical-seo-for-saas",
+            href: "/services/technical-seo-audit",
             icon: <BarChart3 size={20} />
         }
     ];
 
     const industryItems = [
         {
-            title: "SaaS & B2B Tech",
+            title: "B2B SaaS",
             description: "Dominate the recommendation layer for software-as-a-service platforms.",
-            href: "/industries/saas",
+            href: "/industries/b2b-saas",
             icon: <Cpu size={20} />
         },
         {
-            title: "Finance & Healthcare",
+            title: "FinTech SEO",
             description: "Trust-critical SEO for high-compliance and regulated industries.",
-            href: "/industries/finance",
+            href: "/industries/fintech",
             icon: <Wallet size={20} />
         },
         {
-            title: "Ecommerce & Real Estate",
+            title: "E-commerce SEO",
             description: "Scaling high-volume, data-driven platforms for maximum visibility.",
-            href: "/industries/ecommerce",
+            href: "/industries/ecommerce-marketplaces",
             icon: <ShoppingCart size={20} />
         }
     ];

@@ -6,8 +6,8 @@ import { motion } from 'framer-motion';
 
 const industries = [
     {
-        name: 'SaaS & Technology',
-        slug: 'saas',
+        name: 'B2B SaaS',
+        slug: 'b2b-saas',
         description: 'Accelerate user acquisition and MRR growth with targeted technical SEO and AI-driven content strategies for B2B SaaS platforms.',
         icon: (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
@@ -21,8 +21,8 @@ const industries = [
         borderColor: 'border-blue-500/20'
     },
     {
-        name: 'Enterprise eCommerce',
-        slug: 'ecommerce',
+        name: 'eCommerce & Retail',
+        slug: 'ecommerce-marketplaces',
         description: 'Dominate product categories, optimize faceted navigation, and maximize visibility across Search and generative AI shopping experiences.',
         icon: (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
@@ -36,8 +36,8 @@ const industries = [
         borderColor: 'border-emerald-500/20'
     },
     {
-        name: 'B2B Enterprise',
-        slug: 'b2b-tech',
+        name: 'Enterprise Software',
+        slug: 'enterprise-software',
         description: 'Generate high-quality leads and establish topical authority through rigorous technical optimization and comprehensive content clusters.',
         icon: (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
@@ -52,7 +52,7 @@ const industries = [
     },
     {
         name: 'Healthcare & MedTech',
-        slug: 'healthcare',
+        slug: 'healthcare-it',
         description: 'Drive secure patient acquisition through E-E-A-T optimization, strict medical schema, and YMYL authority building.',
         icon: (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
@@ -64,8 +64,8 @@ const industries = [
         borderColor: 'border-emerald-500/20'
     },
     {
-        name: 'Real Estate & PropTech',
-        slug: 'real-estate',
+        name: 'Professional Services',
+        slug: 'professional-services',
         description: 'Outrank massive aggregators with hyper-local neighborhood strategies, property schema, and technical architecture.',
         icon: (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
@@ -78,8 +78,8 @@ const industries = [
         borderColor: 'border-cyan-500/20'
     },
     {
-        name: 'Finance & Fintech',
-        slug: 'finance',
+        name: 'Finance & FinTech',
+        slug: 'fintech',
         description: 'Engineer digital trust and compliance-driven organic growth for banks, advisory firms, and complex Fintech products.',
         icon: (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
@@ -92,8 +92,8 @@ const industries = [
         borderColor: 'border-violet-500/20'
     },
     {
-        name: 'Home Services',
-        slug: 'home-services',
+        name: 'EdTech & Learning',
+        slug: 'edtech',
         description: 'Dominate the Google Map Pack and local search to intercept high-intent customers and lower reliance on paid leads.',
         icon: (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">

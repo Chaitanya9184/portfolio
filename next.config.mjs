@@ -40,6 +40,19 @@ const nextConfig = {
     },
     async redirects() {
         return [
+            // Industry & Service Redirects (Permanent 301)
+            { source: '/industries/saas', destination: '/industries/b2b-saas', permanent: true },
+            { source: '/industries/finance', destination: '/industries/fintech', permanent: true },
+            { source: '/industries/ecommerce', destination: '/industries/ecommerce-marketplaces', permanent: true },
+            { source: '/industries/b2b-tech', destination: '/industries/enterprise-software', permanent: true },
+            { source: '/industries/healthcare', destination: '/industries/healthcare-it', permanent: true },
+            { source: '/industries/real-estate', destination: '/industries/professional-services', permanent: true },
+            { source: '/ai-search-seo-strategy', destination: '/services/aeo-optimization', permanent: true },
+            { source: '/seo-for-revenue-growth', destination: '/services/seo-revenue-growth-strategy', permanent: true },
+            { source: '/technical-seo-for-saas', destination: '/services/technical-seo-audit', permanent: true },
+            { source: '/services/ai-search-audit', destination: '/services/aeo-optimization', permanent: true },
+            { source: '/services/technical-seo-for-saas', destination: '/services/technical-seo-audit', permanent: true },
+
             // Blog Redirects (Permanent 301)
             { source: '/blog/aeo-for-b2b-saas-roi-guide', destination: '/blog/is-aeo-worth-it-for-b2b-saas-2026', permanent: true },
             { source: '/blog/geo-cac-reduction-saas-strategies', destination: '/blog/how-geo-reduces-cac-for-saas', permanent: true },

@@ -30,21 +30,21 @@ export default function Footer() {
                         <div>
                             <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-8">Strategy</h4>
                             <ul className="flex flex-col gap-4">
-                                <li><Link href="/ai-search-seo-strategy" className="text-zinc-500 hover:text-blue-400 text-sm transition-colors">AEO & GEO</Link></li>
-                                <li><Link href="/seo-for-revenue-growth" className="text-zinc-500 hover:text-emerald-400 text-sm transition-colors">Revenue SEO</Link></li>
-                                <li><Link href="/technical-seo-for-saas" className="text-zinc-500 hover:text-blue-500 text-sm transition-colors">SaaS Scale</Link></li>
-                                <li><Link href="/services/ai-search-audit" className="text-zinc-500 hover:text-white text-sm transition-colors">AI Search Audit</Link></li>
+                                <li><Link href="/services/aeo-optimization" className="text-zinc-500 hover:text-blue-400 text-sm transition-colors">AEO & GEO</Link></li>
+                                <li><Link href="/services/seo-revenue-growth-strategy" className="text-zinc-500 hover:text-emerald-400 text-sm transition-colors">Revenue SEO</Link></li>
+                                <li><Link href="/services/technical-seo-audit" className="text-zinc-500 hover:text-blue-500 text-sm transition-colors">SaaS Scale</Link></li>
+                                <li><Link href="/services/fractional-seo-lead" className="text-zinc-500 hover:text-white text-sm transition-colors">Fractional Lead</Link></li>
                             </ul>
                         </div>
                         <div>
                             <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.3em] mb-8">Industries</h4>
                             <ul className="flex flex-col gap-4">
-                                <li><Link href="/industries/saas" className="text-zinc-500 hover:text-white text-sm transition-colors">SaaS</Link></li>
-                                <li><Link href="/industries/ecommerce" className="text-zinc-500 hover:text-white text-sm transition-colors">E-commerce</Link></li>
-                                <li><Link href="/industries/b2b-tech" className="text-zinc-500 hover:text-white text-sm transition-colors">B2B Tech</Link></li>
-                                <li><Link href="/industries/healthcare" className="text-zinc-500 hover:text-white text-sm transition-colors">Healthcare</Link></li>
-                                <li><Link href="/industries/finance" className="text-zinc-500 hover:text-white text-sm transition-colors">Finance</Link></li>
-                                <li><Link href="/industries/real-estate" className="text-zinc-500 hover:text-white text-sm transition-colors">Real Estate</Link></li>
+                                <li><Link href="/industries/b2b-saas" className="text-zinc-500 hover:text-white text-sm transition-colors">B2B SaaS</Link></li>
+                                <li><Link href="/industries/ecommerce-marketplaces" className="text-zinc-500 hover:text-white text-sm transition-colors">E-commerce</Link></li>
+                                <li><Link href="/industries/enterprise-software" className="text-zinc-500 hover:text-white text-sm transition-colors">Enterprise</Link></li>
+                                <li><Link href="/industries/healthcare-it" className="text-zinc-500 hover:text-white text-sm transition-colors">Healthcare IT</Link></li>
+                                <li><Link href="/industries/fintech" className="text-zinc-500 hover:text-white text-sm transition-colors">FinTech</Link></li>
+                                <li><Link href="/industries/edtech" className="text-zinc-500 hover:text-white text-sm transition-colors">EdTech</Link></li>
                             </ul>
                         </div>
                     </div>
