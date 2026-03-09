@@ -79,7 +79,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                                         return (
                                             <ul key={idx} className="space-y-3 !mb-0">
                                                 {items.map((item, sidx) => (
-                                                    <li key={sidx} className="flex gap-3 text-zinc-300 leading-relaxed text-base md:text-lg">
+                                                    <li key={sidx} className="flex gap-3 text-zinc-300 leading-[1.8] text-base md:text-lg">
                                                         <span className={`${isSummary ? 'text-blue-500' : 'text-emerald-500'} mt-1.5 shrink-0`}>
                                                             <div className="w-1.5 h-1.5 rounded-full bg-current" />
                                                         </span>
@@ -89,7 +89,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                                             </ul>
                                         );
                                     }
-                                    return <p key={idx} className="text-zinc-300 text-lg leading-relaxed !mb-0">{parseTextFormat(para)}</p>;
+                                    return <p key={idx} className="text-zinc-300 text-lg leading-[1.8] !mb-0">{parseTextFormat(para)}</p>;
                                 }) : null}
                             </div>
                         </div>
@@ -143,7 +143,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                         )}
                         <ul className="space-y-4">
                             {items.map((item, idx) => (
-                                <li key={idx} className="flex gap-4 text-zinc-300 leading-relaxed group text-base md:text-lg">
+                                <li key={idx} className="flex gap-4 text-zinc-300 leading-[1.8] group text-base md:text-lg">
                                     <span className="text-blue-500 mt-1 transition-transform group-hover:scale-125">•</span>
                                     <span className="group-hover:text-zinc-100 transition-colors">{parseTextFormat(item)}</span>
                                 </li>
@@ -153,7 +153,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                 );
             }
             else {
-                rendered.push(<p key={i} className="whitespace-pre-wrap text-zinc-300 text-base md:text-lg leading-relaxed mb-8">{parseTextFormat(trimmed)}</p>);
+                rendered.push(<p key={i} className="whitespace-pre-wrap text-zinc-300 text-base md:text-lg leading-[1.8] mb-8">{parseTextFormat(trimmed)}</p>);
             }
             i++;
         }
@@ -265,7 +265,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                                     <span className="w-8 h-[1px] bg-blue-500/50" />
                                     Expert Verdict
                                 </h3>
-                                <p className="text-white text-xl md:text-2xl font-medium leading-normal italic">
+                                <p className="text-white text-xl md:text-2xl font-medium leading-[1.6] italic">
                                     &quot;{post.verdict}&quot;
                                 </p>
                                 <div className="mt-8 flex items-center gap-3">
