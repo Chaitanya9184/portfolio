@@ -38,9 +38,6 @@ export default function MegaMenu({ title, items }: MegaMenuProps) {
             // Calculate current center position
             const triggerCenter = rect.left + rect.width / 2;
 
-            let idealLeft = triggerCenter;
-            let idealTranslate = "-50%";
-
             // Check Left Edge
             if (triggerCenter - menuWidth / 2 < margin) {
                 // Shift right if overflow left
