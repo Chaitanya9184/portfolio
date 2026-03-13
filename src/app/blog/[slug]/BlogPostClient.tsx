@@ -17,12 +17,33 @@ interface BlogPostClientProps {
 export default function BlogPostClient({ post }: BlogPostClientProps) {
     // Custom renderer for Markdown-style headings and paragraphs
     const renderContent = (rawContent: string) => {
-        const parseTextFormat = (text: string) => {
-            const parts = text.split(/(\*\*.*?\*\*)/g);
+        // Parses inline **bold**, *italic*, and [text](url) markdown within a text string
+        const parseTextFormat = (text: string): React.ReactNode[] => {
+            // Split on bold, italic, and markdown link patterns
+            const tokenRegex = /(\*\*.*?\*\*|\*[^*]+\*|_[^_]+_|\[[^\]]+\]\([^)]+\))/g;
+            const parts = text.split(tokenRegex);
             return parts.map((part, i) => {
                 if (part.startsWith('**') && part.endsWith('**')) {
-                    // Use colors to highlight instead of background block
                     return <span key={i} className="text-blue-400 font-bold">{part.slice(2, -2)}</span>;
+                }
+                if ((part.startsWith('*') && part.endsWith('*') && part.length > 2) ||
+                    (part.startsWith('_') && part.endsWith('_') && part.length > 2)) {
+                    return <em key={i} className="text-zinc-400 italic">{part.slice(1, -1)}</em>;
+                }
+                // Markdown link: [label](url)
+                const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+                if (linkMatch) {
+                    return (
+                        <a
+                            key={i}
+                            href={linkMatch[2]}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors"
+                        >
+                            {linkMatch[1]}
+                        </a>
+                    );
                 }
                 return part;
             });
