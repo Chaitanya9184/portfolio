@@ -61,6 +61,9 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
         while (i < paragraphs.length) {
             const trimmed = paragraphs[i].trim();
 
+            // Skip horizontal rules — they render as raw "---" text otherwise
+            if (trimmed === '---' || trimmed === '***' || trimmed === '___') { i++; continue; }
+
             const isExecutiveSummary = trimmed.toUpperCase().startsWith('## EXECUTIVE SUMMARY');
             const isKeyTakeaways = trimmed.toUpperCase().startsWith('## KEY TAKEAWAYS');
 
