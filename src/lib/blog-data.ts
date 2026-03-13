@@ -19,6 +19,257 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
     {
+        slug: 'february-2026-seo-ai-search-news-recap',
+        title: "February 2026: The Month That Rewrote the Rules of Search & AI",
+        metaTitle: "February 2026 SEO & AI Search News Recap | Monthly Industry Roundup",
+        date: 'February 28, 2026',
+        category: 'SEO',
+        excerpt: "February 2026 was a seismic month for SEO and AI search — Google fired off a broad core update, Microsoft unveiled a publisher content marketplace, Cloudflare started serving Markdown to AI bots, and WebMCP emerged as a new protocol for human-AI web interaction. Here's everything you missed and what it means for your strategy.",
+        image: '/blog/feb-2026-recap.jpg',
+        summary: "• Google's Feb 2026 Core Update targeted clickbait and multi-niche sites — thin-content consolidators are the primary casualties.\n• Microsoft's Publisher Content Marketplace and Bing's AI Performance Report signal a new monetisation and measurement era for content in agentic search.\n• WebMCP, Cloudflare's Markdown-for-agents, and Google's AI Configuration Tool collectively redefine how sites communicate with AI systems.",
+        takeaways: [
+            "The February 2026 Core Update hammers clickbait and multi-niche aggregators — audit your site's topical coherence before March.",
+            "Google confirmed a 2MB crawl cap for HTML pages — content beyond that boundary is invisible to Googlebot.",
+            "Bing's AI Performance Report is now live — set it up immediately to benchmark your AI-search visibility.",
+            "Cloudflare's Markdown-for-agents feature is a low-effort, high-impact win for any site using Cloudflare.",
+            "WebMCP + Google's AI Configuration Tool signal that structured machine-communication standards are no longer optional.",
+            "Perplexity's pivot away from ads-first shows the monetisation model for AI search is still in flux — diversify your attribution strategy now.",
+        ],
+        content: `# February 2026: The Month That Rewrote the Rules of Search & AI
+
+## Quick Summary
+
+February 2026 was the densest month of platform changes and protocol announcements the SEO and AI search industry has seen in years. In 28 days, search professionals absorbed a Google broad core update, a confirmed 2MB HTML crawl cap, Microsoft's push into publisher content licensing, a new Bing AI performance dashboard, a jointly proposed web protocol for AI communication, Cloudflare's Markdown-serving feature for AI bots, Google's AI Configuration Tool in Search Console, and Perplexity's monetisation pivot. Taken together, these developments make one thing clear: the search industry is no longer iterating — it is reconstructing itself from first principles.
+
+---
+
+## Key Takeaways
+
+- **February 2026 Core Update** hit clickbait and multi-niche blog consolidators hardest — topical coherence is now a survival requirement.
+- **Google confirmed the 2MB HTML crawl limit** — anything beyond that boundary is effectively invisible to Googlebot.
+- **Microsoft launched Bing's AI Performance Report** — first-party measurement for AI-search visibility is finally here.
+- **Cloudflare's Markdown-for-agents feature** is the most friction-free win available to publishers right now.
+- **WebMCP** is the clearest signal yet that a formal protocol layer between websites and AI is inevitable.
+- **Perplexity's ad pivot** reveals that no one has cracked the monetisation model for AI search — diversify how you measure organic value.
+
+---
+
+## February 2, 2026 — Microsoft Introduces Multi-Turn Search on Bing
+
+Microsoft quietly shipped one of the most consequential UX changes to Bing in years: **Multi-Turn Search**, which allows users to refine and follow up on their initial queries within a continuous conversational thread. The feature bridges the gap between traditional keyword search and fully conversational AI interaction.
+
+For SEO professionals, the implication is fundamental. Multi-turn search means a user's intent can shift across multiple exchanges before they reach a final destination. That means **content depth matters more than ever** — shallow, single-answer pages will fail to anchor users across a multi-step query chain, while comprehensive, well-structured content that anticipates follow-up questions will see increased engagement signals.
+
+The practical takeaway: audit your top landing pages and ask whether the content logically answers at least three follow-up questions a user might naturally ask after reading the primary answer. If it doesn't, you are at risk of being abandoned mid-session.
+
+*Source: [Jordi Rib on X, February 2, 2026](https://x.com/JordiRib1/status/2018381010547667210)*
+
+---
+
+## February 3, 2026 — Microsoft Launches the Publisher Content Marketplace
+
+One day later, Microsoft announced the **Publisher Content Marketplace** — a formal mechanism allowing major publishers to license their content to AI agents in exchange for a fee. This is Microsoft's most explicit acknowledgement to date that high-quality, licensed content is a prerequisite for trustworthy agentic experiences, not an optional enhancement.
+
+The commercial logic is straightforward: AI agents can now execute multi-step tasks — booking, researching, purchasing — on behalf of users. To do that responsibly, they need access to reliable, licensed information. The Marketplace formalises that pipeline.
+
+For publishers large enough to participate, this is a direct revenue channel that bypasses traditional click-based monetisation entirely. For everyone else, it is a warning: AI agents are forming privileged relationships with a curated tier of content providers. If your content is not licensed or discoverable in the right format, it risks being deprioritised in agentic outputs.
+
+The longer-term consequence is a **two-tier content economy**: licensed, verified publishers in Tier 1, and everyone else competing for organic citation. Start thinking now about how your content earns a place in Tier 1.
+
+*Source: [Microsoft Advertising Blog, February 3, 2026](https://about.ads.microsoft.com/en/blog/post/february-2026/building-toward-a-sustainable-content-economy-for-the-agentic-web)*
+
+---
+
+## February 4, 2026 — Google Confirms the 2MB HTML Crawl Limit
+
+Google updated its official documentation to clarify that **Googlebot only crawls the first 2MB of an HTML file**, and any content beyond that threshold is simply not indexed. This is not new behaviour — the 2MB cap has existed for years — but its formal documentation is significant because it signals Google intends to enforce it more explicitly.
+
+The practical stakes are high. A 2MB HTML file is approximately 2 million characters of raw HTML. For most modern websites built on frameworks like Next.js or Nuxt, that budget evaporates quickly once you account for inline scripts, JSON-LD blocks, client-side component data, and verbose class names from utility-first CSS frameworks like Tailwind.
+
+**Immediate action items:**
+1. Run a crawl of your most important pages and measure raw HTML file sizes.
+2. Move large JSON-LD blocks to the top of the \`<head>\` to ensure they are captured before the 2MB cap is hit.
+3. Defer non-critical JavaScript and component data to client-side hydration rather than server rendering.
+4. Audit pages with heavy inline styles or large embedded datasets first.
+
+Any editorial content, FAQs, or schema that lives past the 2MB mark is invisible to Googlebot. Period.
+
+*Source: [Google Search Central Documentation](https://developers.google.com/search/docs/crawling-indexing/googlebot#how-googlebot-accesses-your-site)*
+
+---
+
+## February 4, 2026 — Google Ads Rolls Out Multi-Party Approvals
+
+On the same day, Google Ads launched **Multi-Party Approvals** for sensitive account actions: adding or removing users, changing roles, and altering billing configurations now require a secondary approval from an account administrator beyond the user initiating the change. This governance layer mirrors multi-factor approvals common in enterprise software.
+
+While this is primarily an account security feature, it carries an indirect SEO implication. Agencies and consultants working with enterprise clients will need to update their access-request workflows to accommodate the new approval gate. Build lead time into onboarding and permission-change processes, or risk delays in campaign launches and reporting access.
+
+*Source: [Google Ads Help, Multi-Party Approvals](https://support.google.com/google-ads/answer/16891189)*
+
+---
+
+## February 5, 2026 — Google Launches the February 2026 Broad Core Update
+
+The biggest algorithmic event of the month: Google confirmed the **February 2026 Broad Core Update**, with a specific targeting lens on **clickbait content and multi-niche blog consolidation**. The rollout began on February 5 and concluded on February 27 — a full 22-day window that is notably longer than most recent core updates, suggesting Google deployed a more comprehensive algorithmic reweighting rather than a targeted adjustment.
+
+The "multi-niche blog consolidation" framing is significant. This appears to directly penalise sites that mechanically aggregate content across unrelated verticals under a single domain — a common pattern in programmatic content operations that use AI to mass-produce articles across incompatible topic clusters.
+
+The signals you need to evaluate after this update:
+
+- **Topical authority depth**: Are you a genuine expert within a defined subject area, or does your site talk about everything from travel to finance to health with no coherent expertise signal?
+- **Clickbait headlines vs. content alignment**: Does your headline match the actual value delivered in the body? Google's systems are increasingly able to measure this gap.
+- **User engagement quality**: Bounce rate, dwell time, and whether users return to Google immediately after landing on your page remain proxy signals for content satisfaction.
+
+If your traffic has dropped since February 5, run a topical coherence audit before reaching for technical fixes. The issue is almost certainly content strategy, not site structure.
+
+*Source: [Google Search Central Blog, February 5, 2026](https://developers.google.com/search/blog/2026/02/discover-core-update)*
+
+---
+
+## February 7, 2026 — Google and Microsoft Reject the "llms.txt" Proposal
+
+The \`llms.txt\` standard — proposed as a file that website owners could use to signal preferences to AI crawlers, analogous to \`robots.txt\` — received a public rejection from representatives of both Google and Microsoft. John Mueller (Google) was among those who characterised the proposal as unnecessary or impractical, pushing back on the premise that AI crawlers needed a new protocol layer for content preferences when existing mechanisms already existed.
+
+The rejection has polarising implications. On one hand, it reinforces the existing authority of \`robots.txt\` and server-side crawler management — if you are not using \`robots.txt\` correctly today, start there. On the other hand, it leaves a significant functional gap: there is currently no standardised, granular way to communicate with AI-specific crawlers differently from traditional search bots.
+
+This gap is precisely why **WebMCP** (announced just days later) is so significant. The industry is clearly converging toward a formal AI-communication layer — the debate is about what form it takes, not whether it is needed.
+
+*Source: [John Mueller on Bluesky, February 7, 2026](https://bsky.app/profile/johnmu.com/post/3m6dayx6iyc2r)*
+
+---
+
+## February 10, 2026 — Bing Launches the AI Performance Report
+
+Microsoft's Bing Webmaster Tools shipped the **AI Performance Report** in public preview — the first native dashboard allowing content creators to track how their pages perform inside Bing's AI-powered search surface. Metrics include impressions, clicks, and engagement signals specifically from AI-generated response contexts, not just traditional blue-link placement.
+
+This is a watershed moment for measurement. Until this release, AI-search performance was essentially a black box: you knew AI products were sending traffic, but you had little visibility into which content was being cited, at what frequency, or in response to which queries. The AI Performance Report begins to close that gap — at least within the Bing ecosystem.
+
+**Setup priority is high**: the tool is in public preview, adoption is currently low, and early data provides a competitive baseline advantage. Connect your Bing Webmaster Tools account, verify your property, and begin collecting AI performance baseline data immediately. In 60 days, you will have actionable trend data. In 90 days, you will be optimising against it.
+
+*Source: [Bing Webmaster Blog, February 10, 2026](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview)*
+
+---
+
+## February 10, 2026 — Google and Microsoft Propose WebMCP
+
+On the same day as Bing's AI Performance Report, Google and Microsoft jointly proposed **WebMCP** — a new standard web protocol designed to formalise communication between websites and AI models. WebMCP extends the existing Model Context Protocol (MCP) from the server-to-application layer into the browser-and-web layer, providing a structured, permissioned way for AI systems to request, receive, and act on web content.
+
+The proposal is significant for three reasons:
+
+1. **Joint cross-company initiative**: Google and Microsoft rarely cooperate on protocol-level standards. Joint authorship signals this is not a proprietary play — it is genuine infrastructure thinking.
+2. **Permission-based model**: WebMCP includes a consent and permission architecture, meaning websites will be able to express what actions AI agents are permitted to take on their behalf — a significant step beyond the blunt instrument of \`robots.txt\`.
+3. **Browser-native implementation**: The proposal targets implementation at the browser level, meaning adoption could scale rapidly once Chrome and Edge ship support.
+
+For SEO professionals, WebMCP is the clearest signal yet that structured machine-communication will be a formal part of the web stack within 12–18 months. The sites that prepare now — with clean semantic structure, well-defined entities, and explicit permission signals — will have a meaningful head start.
+
+*Source: [Chrome Developers Blog, WebMCP EPP](https://developer.chrome.com/blog/webmcp-epp)*
+
+---
+
+## February 12, 2026 — Cloudflare Launches Markdown Serving for AI Bots
+
+Cloudflare announced a new feature that allows websites served through its network to **automatically deliver Markdown-formatted versions of HTML pages to AI bots**. Instead of receiving the full HTML payload — complete with navigation, scripts, ads, and DOM overhead — AI crawlers receive a clean, structured, prose-formatted document optimised for machine ingestion.
+
+This is arguably the highest-effort-to-value ratio announcement of the month for mid-market publishers. The feature requires minimal configuration and delivers immediate benefits:
+
+- **Reduced noise in AI training data**: AI systems receive the content signal, not the presentation layer.
+- **Faster crawl efficiency**: Smaller payloads mean faster processing and potentially improved crawl frequency.
+- **Better citation quality**: Cleaner content structure produces more accurate, attributable AI citations.
+
+If your site is on Cloudflare, enabling this feature should be among your first technical SEO actions in March. If you are not on Cloudflare, this development is worth watching: expect similar functionality from other CDN and reverse-proxy providers within 60–90 days.
+
+*Source: [Cloudflare Blog, Markdown for Agents](https://blog.cloudflare.com/markdown-for-agents/)*
+
+---
+
+## February 17, 2026 — Google Search Console Rolls Out AI Configuration Tool
+
+Google made the **AI Configuration Tool** in Search Console available to all users. The tool allows site owners to specify how AI agents should interact with their site — a pragmatic response to the growing complexity of managing AI-bot traffic differently from traditional search crawler traffic.
+
+The rollout to all users (following an earlier limited release) confirms Google is treating AI-agent management as a standard webmaster function, not a niche concern for large publishers. If you have not yet explored this tool, access it immediately through your Search Console dashboard.
+
+Practical configuration priorities:
+- Define which sections of your site AI agents may reference and summarise.
+- Set parameters for how your content can be incorporated into AI-generated responses.
+- Monitor the AI agent activity logs that accompany the tool to identify unexpected access patterns.
+
+The tool does not yet have the precision of a full crawl policy configuration, but it is the clearest intent signal from Google that AI-agent governance will be part of the standard webmaster toolkit going forward.
+
+*Source: [LinkedIn – Search Console AI Configuration Tool Announcement, February 17, 2026](https://www.linkedin.com/posts/the-search-consoles-new-ai-powered-configuration-share-7429518168726974464-2nTQ/)*
+
+---
+
+## February 18, 2026 — Perplexity AI Pivots Away from Ad-Supported Model
+
+Closing out the month, the Financial Times reported that **Perplexity AI has moved away from its initial ad-supported monetisation strategy**, signalling a fundamental rethink of how the platform intends to generate revenue. While the full details of the pivot remain undisclosed, the directional change suggests Perplexity is exploring subscription, enterprise licensing, or API-access models over a programmatic advertising approach.
+
+For content creators and SEO strategists, this matters for one specific reason: **the monetisation model of an AI search platform heavily influences what content it prioritises**. An ad-supported Perplexity has incentives to surface popular, broadly appealing content to maximise impressions. A subscription or enterprise-focused Perplexity has incentives to surface accurate, authoritative content that justifies the premium price.
+
+The practical implication: **authority and accuracy are now more strongly correlated with visibility across AI platforms than clickability or engagement bait**. A mid-pivot Perplexity optimising for subscriber retention will disproportionately favour sources that users trust and return to — which is a significant advantage for niche expertise and primary-source content.
+
+*Source: [Financial Times, February 18, 2026](https://www.ft.com/content/6eec07a5-34a8-4f78-a9ed-93ab4263d43c)*
+
+---
+
+## The Bigger Picture: February 2026 as an Inflection Point
+
+Step back from the individual news items and a coherent narrative emerges. February 2026 was not a collection of unrelated product announcements — it was a coordinated, if unintentional, industry-wide alignment around several structural shifts.
+
+**Shift 1: The content economy is bifurcating.** Microsoft's Publisher Marketplace and Perplexity's monetisation pivot both point toward a world where licensed, verified, high-authority content earns preferential placement in AI-generated outputs. Everyone else competes for organic citation — a harder game as AI responses become more self-contained.
+
+**Shift 2: The technical crawl environment is hardening.** Google's 2MB crawl confirmation and Cloudflare's Markdown delivery feature both point toward a world where content that is not technically legible to machines in its first payload is effectively invisible. Technical SEO is no longer primarily about page speed — it is about **information density and structural clarity within strict size constraints**.
+
+**Shift 3: Protocol-level standards are arriving.** WebMCP, the AI Configuration Tool in Search Console, and even the \`llms.txt\` rejection debate all point toward a world where AI-web communication will be governed by formal, standardised protocols rather than ad-hoc crawl behaviour. The sites that build toward structured machine-communication today will have a significant advantage when those protocols become mandatory.
+
+**Shift 4: Measurement is catching up, but slowly.** Bing's AI Performance Report is an important first step, but the measurement gap for AI-search performance remains vast. In February 2026, you still cannot reliably attribute traffic, conversions, or brand mentions that originate from AI-generated responses across most major platforms. That measurement deficit is the single largest inhibitor to confident AI-search investment — and closing it should be a strategic priority for the next 12 months.
+
+---
+
+## Frequently Asked Questions
+
+**Q: Did the February 2026 Core Update affect multi-niche sites specifically?**
+
+Yes. Google's communications around the update explicitly called out clickbait content and multi-niche blog consolidation as primary targets. Sites that publish across disparate topic clusters without a coherent thematic identity appear to be disproportionately affected. The remediation path is topical consolidation — not removing content, but restructuring the site so that content depth in a defined niche is clearly communicated to Google's systems through internal linking architecture and authoritative on-page signals.
+
+**Q: What should I prioritise first in response to this month's news?**
+
+Start with the 2MB HTML crawl limit audit — it is a binary issue with a clear technical fix. Then set up Bing's AI Performance Report to begin establishing baseline AI-search measurement. Third, enable Cloudflare's Markdown-for-agents feature if your site uses Cloudflare. These three actions are low-cost, high-certainty improvements that can be completed within a single sprint.
+
+**Q: Is WebMCP something I need to act on now?**
+
+Not yet — WebMCP is at the proposal stage, not implementation. However, the right preparation is to ensure your site's content is built around clean semantic structure, explicit entity relationships, and well-defined permission boundaries. Sites that already publish clean, structured content will adopt WebMCP with minimal friction when it ships. Sites built around presentation-layer complexity will face significant refactoring work.
+
+**Q: How does Perplexity's monetisation pivot affect my content strategy?**
+
+Directionally, it reinforces a strategy you should already be pursuing: maximising genuine authority and accuracy over clickability. If Perplexity moves toward a premium subscriber model, its recommendation algorithm will optimise for user trust — which benefits authoritative, specialist content over general-interest aggregation. The practical shift is subtle but meaningful: prioritise depth and primary-source credibility over volume and broad appeal.
+
+`,
+        verdict: "February 2026 did not present a single dominant trend — it presented four simultaneous structural shifts happening in parallel. The crawl environment is hardening around technical legibility, the content economy is bifurcating toward licensed authority, protocol-level AI communication standards are arriving, and measurement is just beginning to catch up. The strategists who will win the next 12 months are those who treat these as an interconnected system, not isolated product changes. Technical hygiene, topical coherence, structured authority signals, and early adoption of AI measurement tools are not competing priorities — they are mutually reinforcing pillars of the same adaptive strategy.",
+        faqs: [
+            {
+                question: "Did the February 2026 Core Update affect multi-niche sites specifically?",
+                answer: "Yes. Google's communications explicitly called out clickbait content and multi-niche blog consolidation as primary targets. Sites publishing across disparate topic clusters without coherent thematic identity appear disproportionately affected. The remediation path is topical consolidation — restructuring rather than removing content, so that depth within a defined niche is clearly communicated through internal linking and authoritative on-page signals."
+            },
+            {
+                question: "What should I prioritise first in response to February 2026's news?",
+                answer: "Start with the 2MB HTML crawl limit audit — it's binary and fixable. Then set up Bing's AI Performance Report to establish baseline AI-search measurement. Third, enable Cloudflare's Markdown-for-agents feature. These three actions are low-cost, high-certainty improvements completable within a single sprint."
+            },
+            {
+                question: "Is WebMCP something I need to act on now?",
+                answer: "Not yet — WebMCP is at the proposal stage. The right preparation is building clean semantic structure, explicit entity relationships, and well-defined permission boundaries into your site. Sites already publishing well-structured content will adopt WebMCP with minimal friction when it ships."
+            },
+            {
+                question: "How does Perplexity's monetisation pivot affect my content strategy?",
+                answer: "It reinforces a strategy you should already be pursuing: maximise genuine authority and accuracy over clickability. If Perplexity moves toward a premium subscriber model, its algorithm will optimise for user trust — which benefits authoritative, specialist content over general-interest aggregation."
+            },
+            {
+                question: "What does the 2MB Googlebot crawl limit mean in practice?",
+                answer: "Googlebot stops processing HTML at the 2MB mark. For modern JavaScript-heavy sites built with Next.js or Tailwind, it is easy to push critical content — FAQs, schema, body copy — past this threshold. Audit your largest pages, move JSON-LD schema to the top of the document, and defer non-critical JavaScript to keep indexable content within the first 2MB."
+            },
+        ],
+        industry: 'saas',
+    },
+    {
         slug: 'is-aeo-worth-it-for-b2b-saas-2026',
         title: "[Prediction] Is AEO Worth It for B2B SaaS? (2026 Analysis)",
         metaTitle: "[Prediction] Is AEO Worth It for B2B SaaS? (2026 Analysis) | Expert Analysis 2026",
