@@ -28,7 +28,8 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                 }
                 if ((part.startsWith('*') && part.endsWith('*') && part.length > 2) ||
                     (part.startsWith('_') && part.endsWith('_') && part.length > 2)) {
-                    return <em key={i} className="text-zinc-400 italic">{part.slice(1, -1)}</em>;
+                    // Recursively parse the inner content so nested links work
+                    return <em key={i} className="text-zinc-400 italic">{parseTextFormat(part.slice(1, -1))}</em>;
                 }
                 // Markdown link: [label](url)
                 const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
