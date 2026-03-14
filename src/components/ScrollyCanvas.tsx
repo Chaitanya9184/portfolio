@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, useMotionValueEvent, MotionValue } fro
 
 const FRAME_COUNT = 75; // Total frames
 const FRAME_PREFIX = "frame_";
-const FRAME_SUFFIX = "_delay-0.066s.png";
+const FRAME_SUFFIX = "_delay-0.066s_cropped_processed_by_imagy.webp";
 
 export default function ScrollyCanvas() {
     const containerRef = useRef<HTMLDivElement>(null);
