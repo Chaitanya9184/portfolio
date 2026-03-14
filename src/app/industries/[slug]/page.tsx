@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import industriesData from '@/data/seo/industries.json';
-import servicesData from '@/data/seo/services.json';
+
 import { generateSEOMetadata, SEOData } from '@/lib/seo-utils';
 import FAQSection from "@/components/FAQSection";
 import SchemaMarkup from "@/components/SchemaMarkup";
@@ -59,10 +59,7 @@ export default function DynamicIndustryPage({ params }: PageProps) {
         }
     };
 
-    // Find related service details
-    const relatedServices = industry.relatedServices?.map(slug =>
-        (servicesData.services as SEOData[]).find(s => s.slug === slug)
-    ).filter(Boolean) as SEOData[];
+
 
     return (
         <main className="min-h-screen bg-[#0a0a0a] pt-32 pb-24">
@@ -116,27 +113,7 @@ export default function DynamicIndustryPage({ params }: PageProps) {
                     </div>
                 </div>
 
-                {/* Related Services (Internal Linking) */}
-                {relatedServices.length > 0 && (
-                    <div className="mb-24">
-                        <h2 className="text-3xl font-bold text-white mb-8 font-space-grotesk">Recommended Solutions</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {relatedServices.map((service) => (
-                                <Link
-                                    key={service.slug}
-                                    href={`/services/${service.slug}`}
-                                    className="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800 hover:border-emerald-500/50 transition-all group"
-                                >
-                                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">{service.name}</h3>
-                                    <p className="text-zinc-500 text-sm line-clamp-2">{service.description}</p>
-                                    <div className="mt-4 flex items-center gap-2 text-emerald-500 text-xs font-bold uppercase tracking-widest">
-                                        View Solution <span className="group-hover:translate-x-1 transition-transform">→</span>
-                                    </div>
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                )}
+
 
                 {/* Dynamic CTA */}
                 <div className="p-12 text-center rounded-3xl bg-gradient-to-b from-zinc-900/80 to-[#0a0a0a] border border-zinc-800 relative overflow-hidden mb-24">
