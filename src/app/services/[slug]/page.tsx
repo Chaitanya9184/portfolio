@@ -10,9 +10,9 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 import BlogCarousel from "@/components/BlogCarousel";
 
 interface PageProps {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 function getService(slug: string): SEOData | undefined {
@@ -26,13 +26,15 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-    const service = getService(params.slug);
+    const { slug } = await params;
+    const service = getService(slug);
     if (!service) return {};
     return generateSEOMetadata(service, '/services');
 }
 
-export default function DynamicServicePage({ params }: PageProps) {
-    const service = getService(params.slug);
+export default async function DynamicServicePage({ params }: PageProps) {
+    const { slug } = await params;
+    const service = getService(slug);
 
     if (!service) {
         notFound();

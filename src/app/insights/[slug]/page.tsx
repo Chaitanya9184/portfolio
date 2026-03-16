@@ -5,9 +5,9 @@ import { clusters } from '@/lib/cluster-data';
 import ClusterClient from '@/components/ClusterClient';
 
 interface Props {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 export async function generateStaticParams() {
@@ -17,7 +17,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const post = clusters.find((p) => p.slug === params.slug);
+    const { slug } = await params;
+    const post = clusters.find((p) => p.slug === slug);
 
     if (!post) return { title: 'Insight Not Found' };
 
@@ -30,8 +31,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-export default function ClusterPage({ params }: Props) {
-    const post = clusters.find((p) => p.slug === params.slug);
+export default async function ClusterPage({ params }: Props) {
+    const { slug } = await params;
+    const post = clusters.find((p) => p.slug === slug);
 
     if (!post) {
         notFound();

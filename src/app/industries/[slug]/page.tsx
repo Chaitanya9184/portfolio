@@ -9,9 +9,9 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 import BlogCarousel from "@/components/BlogCarousel";
 
 interface PageProps {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 function getIndustry(slug: string): SEOData | undefined {
@@ -25,13 +25,15 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-    const industry = getIndustry(params.slug);
+    const { slug } = await params;
+    const industry = getIndustry(slug);
     if (!industry) return {};
     return generateSEOMetadata(industry, '/industries');
 }
 
-export default function DynamicIndustryPage({ params }: PageProps) {
-    const industry = getIndustry(params.slug);
+export default async function DynamicIndustryPage({ params }: PageProps) {
+    const { slug } = await params;
+    const industry = getIndustry(slug);
 
     if (!industry) {
         notFound();

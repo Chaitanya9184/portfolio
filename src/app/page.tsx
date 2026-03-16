@@ -163,9 +163,6 @@ export default function Home() {
       {/* Featured Blog Insights Carousel */}
       <BlogCarousel />
 
-      {/* Featured Blog Insights Carousel */}
-      <BlogCarousel />
-
       {/* FAQs */}
       <FAQSection faqs={homeFaqs} title="SEO & Technical Expertise FAQs" />
 
