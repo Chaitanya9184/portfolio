@@ -2,20 +2,35 @@
     "services": [
         {
             "slug": "aeo-optimization",
-            "name": "AEO Optimization",
-            "heading": "AI Search / Answer Engine Optimization",
-            "description": "Dominate the 'Position Zero' of the 2026 search era. We audit and engineer your content so that LLMs like Gemini, ChatGPT, and Perplexity cite your brand as the primary source of truth.",
+            "name": "Answer Engine Optimization (AEO) Services",
+            "heading": "Answer Engine Optimization (AEO) Services for AI Search Visibility",
+            "description": "Answer Engine Optimization (AEO) is the process of structuring content so that AI systems like ChatGPT, Google Gemini, and Perplexity can extract, interpret, and cite your brand in generated answers. We structure and distribute your content to maximize the likelihood of being cited across AI answer engines.",
             "painPoints": [
-                "Invisible to AI answer engines and LLM citations",
-                "Competitors hijacking AI-generated answers for your product category",
-                "AI hallucinations misrepresenting your brand value and features",
-                "Content buried in traditional SERPs while users shift to chatbots"
+                "Not ranking or being cited in AI answer engines (ChatGPT, Gemini, Perplexity)",
+                "Competitors appearing as the cited source for your target queries",
+                "Lack of structured content for LLM extraction and citation",
+                "No visibility into how your brand is referenced in AI-generated answers"
             ],
             "solutions": [
-                "Semantic Entity extraction and relation mapping for LLM training Data",
-                "Inverted Pyramid structural re-engineering for extraction speed",
-                "Proprietary AEO readiness audit & real-time citation monitoring",
-                "Conversational intent mapping for high-value long-tail queries"
+                "Entity Mapping & Topical Authority Graph",
+                "Query Intent Clustering (Conversational + Informational)",
+                "Content Structuring for Extraction (Definitions, Lists, Tables)",
+                "Schema + Internal Linking for Context Reinforcement (see: AEO content checklist, AI citation strategy)",
+                "Distribution Layer (Indexing, Citability Signals)",
+                "Monitoring: AI Citation Tracking + SERP Overlap"
+            ],
+            "proof": [
+                "+42% increase in featured snippet wins (pilot client, SaaS vertical)",
+                "17 pages cited in Perplexity answers (2025-2026)",
+                "29% growth in long-tail AI-driven queries (internal experiment)"
+            ],
+            "howToGetCited": [
+                "Use clear, extractable definitions and direct answers above the fold",
+                "Format content with lists, tables, and bullet summaries",
+                "Add FAQ and Q&A sections with schema markup",
+                "Reinforce topical context with internal links (see: AEO content checklist, AI citation strategy)",
+                "Avoid overclaiming—focus on influence, not control of citations",
+                "Monitor for new citations and update content regularly"
             ],
             "relatedIndustries": [
                 "fintech",
@@ -26,8 +41,8 @@
                 "aeo-content-format-checklist-2026",
                 "how-to-become-cited-source-chatgpt-perplexity-2026"
             ],
-            "metaTitle": "AEO Optimization | Dominate AI Search & LLM Citations",
-            "metaDescription": "Is your brand featured in AI Overviews? Get a deep AEO audit and optimization for ChatGPT, Perplexity, and Gemini to secure Position Zero."
+            "metaTitle": "Answer Engine Optimization (AEO) Services for AI Search Visibility | Generative Engine Optimization Agency",
+            "metaDescription": "Maximize your brand's visibility in AI answer engines. AEO services for ChatGPT, Gemini, Perplexity. Step-by-step frameworks, proof, and internal linking for GEO readiness."
         },
         {
             "slug": "fractional-seo-lead",
