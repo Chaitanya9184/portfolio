@@ -11,7 +11,7 @@ const blogSchema = {
     "@type": "CollectionPage",
     "name": "AI Search Insights | AEO, GEO & Technical SEO Blog",
     "description": "Expert analysis and deep dives into the evolution of AI-driven search (GEO/AEO) and advanced technical SEO strategies for 2026.",
-    "url": "https://www.chaitanyakore.in/blog/"
+    "url": "https://www.chaitanyakore.in/blog"
 };
 
 const breadcrumbSchema = {
@@ -28,7 +28,7 @@ const breadcrumbSchema = {
             "@type": "ListItem",
             "position": 2,
             "name": "Blog",
-            "item": "https://www.chaitanyakore.in/blog/"
+            "item": "https://www.chaitanyakore.in/blog"
         }
     ]
 };

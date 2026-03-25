@@ -199,7 +199,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Blog",
-                "item": "https://www.chaitanyakore.in/blog/"
+                "item": "https://www.chaitanyakore.in/blog"
             },
             {
                 "@type": "ListItem",

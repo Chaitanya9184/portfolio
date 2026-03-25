@@ -40,6 +40,9 @@ const nextConfig = {
     },
     async redirects() {
         return [
+            // Trailing slash canonical redirect (301)
+            { source: '/:path+/', destination: '/:path+', permanent: true },
+
             // Industry & Service Redirects (Permanent 301)
             { source: '/industries/saas', destination: '/industries/b2b-saas', permanent: true },
             { source: '/industries/finance', destination: '/industries/fintech', permanent: true },

@@ -7,7 +7,7 @@ const industriesSchema = {
     "@type": "CollectionPage",
     "name": "Industries We Serve | SEO & AI Search Solutions",
     "description": "Specialized SEO, AEO, and GEO strategies tailored for SaaS, eCommerce, B2B Tech, and local businesses.",
-    "url": "https://www.chaitanyakore.in/industries/"
+    "url": "https://www.chaitanyakore.in/industries"
 };
 
 export const metadata: Metadata = {

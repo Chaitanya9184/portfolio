@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         title: 'AI Search Insights | Chaitanya Kore',
         description: 'Deep dives into the evolution of AEO, GEO, and technical SEO in 2026. Expert analysis for the generative search era.',
         type: 'website',
-        url: 'https://www.chaitanyakore.in/blog/',
+        url: 'https://www.chaitanyakore.in/blog',
     }
 };
 

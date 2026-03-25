@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'SEO ROI Opportunity Calculator | Chaitanya Kore',
         description: 'Professionally forecast your organic growth and ROI. Data-driven estimates for eCommerce and SaaS brands.',
-        url: 'https://www.chaitanyakore.in/roi-calculator/',
+        url: 'https://www.chaitanyakore.in/roi-calculator',
     }
 };
 

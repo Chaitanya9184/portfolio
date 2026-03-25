@@ -16,7 +16,7 @@ const servicesSchema = {
     "@type": "CollectionPage",
     "name": "Expertise & SEO Services | Chaitanya Kore",
     "description": "High-impact SEO services including AI Search audits, technical SEO at scale, and fractional growth leadership.",
-    "url": "https://www.chaitanyakore.in/services/"
+    "url": "https://www.chaitanyakore.in/services"
 };
 
 export default function ServicesPage() {
