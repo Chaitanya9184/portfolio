@@ -4,34 +4,34 @@
     <p className="text-zinc-300 mb-4">
         If you’re wondering how AEO, SEO, and GEO compare, here’s the real-world breakdown I use with clients:
     </p>
-    <div className="overflow-x-auto">
-        <table className="min-w-full text-sm text-zinc-200 border border-zinc-700 rounded-xl">
-            <thead className="bg-zinc-900">
+    <div className="overflow-x-auto rounded-2xl border border-blue-900/30 bg-blue-950/20 shadow-lg">
+        <table className="min-w-full text-sm text-zinc-200">
+            <thead className="bg-blue-900/40">
                 <tr>
-                    <th className="px-4 py-2 border-b border-zinc-700">Factor</th>
-                    <th className="px-4 py-2 border-b border-zinc-700">SEO</th>
-                    <th className="px-4 py-2 border-b border-zinc-700">AEO</th>
-                    <th className="px-4 py-2 border-b border-zinc-700">GEO</th>
+                    <th className="px-4 py-3 text-left font-bold border-r border-blue-900/30">Factor</th>
+                    <th className="px-4 py-3 text-left font-bold border-r border-blue-900/30">SEO</th>
+                    <th className="px-4 py-3 text-left font-bold border-r border-blue-900/30">AEO</th>
+                    <th className="px-4 py-3 text-left font-bold">GEO</th>
                 </tr>
             </thead>
             <tbody>
-                <tr className="bg-zinc-800">
-                    <td className="px-4 py-2 border-b border-zinc-700 font-bold">Goal</td>
-                    <td className="px-4 py-2 border-b border-zinc-700">Rank in SERPs</td>
-                    <td className="px-4 py-2 border-b border-zinc-700">Get cited in answers</td>
-                    <td className="px-4 py-2 border-b border-zinc-700">Influence AI outputs</td>
+                <tr className="bg-blue-900/10">
+                    <td className="px-4 py-3 font-semibold text-blue-200 border-r border-blue-900/20">Goal</td>
+                    <td className="px-4 py-3 border-r border-blue-900/20">Rank in SERPs</td>
+                    <td className="px-4 py-3 border-r border-blue-900/20">Get cited in answers</td>
+                    <td className="px-4 py-3">Influence AI outputs</td>
                 </tr>
                 <tr>
-                    <td className="px-4 py-2 border-b border-zinc-700 font-bold">Format</td>
-                    <td className="px-4 py-2 border-b border-zinc-700">Pages</td>
-                    <td className="px-4 py-2 border-b border-zinc-700">Snippets</td>
-                    <td className="px-4 py-2 border-b border-zinc-700">Context</td>
+                    <td className="px-4 py-3 font-semibold text-blue-200 border-r border-blue-900/20">Format</td>
+                    <td className="px-4 py-3 border-r border-blue-900/20">Pages</td>
+                    <td className="px-4 py-3 border-r border-blue-900/20">Snippets</td>
+                    <td className="px-4 py-3">Context</td>
                 </tr>
-                <tr className="bg-zinc-800">
-                    <td className="px-4 py-2 border-b border-zinc-700 font-bold">Engines</td>
-                    <td className="px-4 py-2 border-b border-zinc-700">Google</td>
-                    <td className="px-4 py-2 border-b border-zinc-700">ChatGPT, Perplexity</td>
-                    <td className="px-4 py-2 border-b border-zinc-700">LLM ecosystems</td>
+                <tr className="bg-blue-900/10">
+                    <td className="px-4 py-3 font-semibold text-blue-200 border-r border-blue-900/20">Engines</td>
+                    <td className="px-4 py-3 border-r border-blue-900/20">Google</td>
+                    <td className="px-4 py-3 border-r border-blue-900/20">ChatGPT, Perplexity</td>
+                    <td className="px-4 py-3">LLM ecosystems</td>
                 </tr>
             </tbody>
         </table>
@@ -152,7 +152,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
                     <span className="text-zinc-300">{service.name}</span>
                 </nav>
 
-                {/* Humanized Expert Intro + Definition Block */}
+                {/* Hero + Definition Info Box */}
                 <div className="mb-12">
                     <div className="inline-flex px-3 py-1 mb-6 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest">
                         AEO & GEO Services
@@ -160,48 +160,59 @@ export default async function DynamicServicePage({ params }: PageProps) {
                     <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-6 font-space-grotesk">
                         {service.heading}
                     </h1>
-                    <div className="bg-blue-950/20 border border-blue-900/30 rounded-2xl p-6 mb-4">
-                        <strong className="block text-blue-300 mb-2">What is AEO? (In Plain English)</strong>
-                        <p className="text-zinc-300 text-base">
-                            If you want your brand to show up as the answer in ChatGPT, Perplexity, or Google’s AI Overviews, you need more than just good SEO. You need to structure your content so these systems can easily find, understand, and quote you. That’s what Answer Engine Optimization (AEO) is all about—making your expertise the go-to answer for both people and AI.
-                        </p>
+                    <div className="flex flex-col md:flex-row gap-6">
+                        <div className="flex-1 bg-blue-950/30 border border-blue-900/40 rounded-2xl p-6 flex flex-col justify-center shadow-lg">
+                            <div className="flex items-center gap-3 mb-2">
+                                <svg width="28" height="28" fill="none" viewBox="0 0 24 24" className="text-blue-400"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path d="M12 8v4l3 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
+                                <strong className="text-blue-300 text-lg">What is AEO?</strong>
+                            </div>
+                            <p className="text-zinc-300 text-base">
+                                If you want your brand to show up as the answer in ChatGPT, Perplexity, or Google’s AI Overviews, you need more than just good SEO. You need to structure your content so these systems can easily find, understand, and quote you. That’s what Answer Engine Optimization (AEO) is all about—making your expertise the go-to answer for both people and AI.
+                            </p>
+                        </div>
+                        <div className="flex-1 flex flex-col gap-4 justify-center">
+                            <div className="bg-blue-900/30 border border-blue-800/40 rounded-xl p-4 flex items-center gap-3">
+                                <svg width="22" height="22" fill="none" viewBox="0 0 24 24" className="text-blue-400"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" strokeWidth="2"/><path d="M8 12h8M12 8v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
+                                <span className="text-blue-200 text-base">AEO = Structuring your content so AI can extract, interpret, and cite your brand as the answer.</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 {/* Pain Points & Methodology */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
-                    <div className="p-8 rounded-3xl bg-red-950/20 border border-red-900/30">
+                    <div className="p-8 rounded-3xl bg-red-950/20 border border-red-900/30 shadow-lg">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                             <span className="text-red-500">⚠️</span> Why Brands Miss AEO
                         </h2>
                         <ul className="space-y-4 text-zinc-400 text-sm leading-relaxed">
                             {service.painPoints?.map((point, i) => (
-                                <li key={i} className="flex gap-3"><span className="text-red-500/50 mt-1">→</span> {point}</li>
+                                <li key={i} className="flex gap-3 items-start"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" className="text-red-400 mt-1"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2"/><path d="M12 8v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg> {point}</li>
                             ))}
                         </ul>
                     </div>
-                    <div className="p-8 rounded-3xl bg-blue-950/20 border border-blue-900/30">
+                    <div className="p-8 rounded-3xl bg-blue-950/20 border border-blue-900/30 shadow-lg">
                         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                             <span className="text-blue-400">⚡</span> Step-by-Step Methodology
                         </h2>
                         <ol className="space-y-4 text-zinc-400 text-sm leading-relaxed list-decimal list-inside">
                             <li>
-                                <strong>Entity Mapping & Topical Authority Graph:</strong> We identify and structure all key entities (brands, products, people, concepts) relevant to your niche. This forms the backbone for both Google and LLMs to understand your expertise. Example: For a SaaS client, we mapped 40+ unique features and industry terms, resulting in richer snippet coverage.
+                                <strong>Entity Mapping & Topical Authority Graph:</strong> <span className="inline-block align-middle"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" className="inline text-blue-400"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/></svg></span> We identify and structure all key entities (brands, products, people, concepts) relevant to your niche. This forms the backbone for both Google and LLMs to understand your expertise. Example: For a SaaS client, we mapped 40+ unique features and industry terms, resulting in richer snippet coverage.
                             </li>
                             <li>
-                                <strong>Query Intent Clustering (Conversational + Informational):</strong> We analyze not just keywords, but the actual questions users ask in ChatGPT, Perplexity, and Google SGE. This ensures your content answers the queries that AI engines surface. Example: We surfaced 120+ unique buyer-stage questions for a fintech client, leading to 3x more answer box wins.
+                                <strong>Query Intent Clustering (Conversational + Informational):</strong> <span className="inline-block align-middle"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" className="inline text-blue-400"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" strokeWidth="2"/></svg></span> We analyze not just keywords, but the actual questions users ask in ChatGPT, Perplexity, and Google SGE. This ensures your content answers the queries that AI engines surface. Example: We surfaced 120+ unique buyer-stage questions for a fintech client, leading to 3x more answer box wins.
                             </li>
                             <li>
-                                <strong>Content Structuring for Extraction:</strong> We rewrite and format your content with extractable blocks—definitions, lists, tables, and Q&A. This makes it easy for LLMs to pull direct answers. Example: After adding a definition block and FAQ schema, a client’s page was cited in Perplexity for “What is AEO in SEO?”
+                                <strong>Content Structuring for Extraction:</strong> <span className="inline-block align-middle"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" className="inline text-blue-400"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg></span> We rewrite and format your content with extractable blocks—definitions, lists, tables, and Q&A. This makes it easy for LLMs to pull direct answers. Example: After adding a definition block and FAQ schema, a client’s page was cited in Perplexity for “What is AEO in SEO?”
                             </li>
                             <li>
-                                <strong>Schema + Internal Linking for Context Reinforcement:</strong> We implement advanced schema markup and embed contextual internal links within your content. For example, our approach aligns with our <Link href="/checklists/aeo" className="underline hover:text-blue-400">AEO content checklist</Link> and <Link href="/insights/how-to-become-cited-source-chatgpt-perplexity-2026" className="underline hover:text-blue-400">AI citation strategy framework</Link>, ensuring every key topic is both crawlable and citable by AI engines.
+                                <strong>Schema + Internal Linking for Context Reinforcement:</strong> <span className="inline-block align-middle"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" className="inline text-blue-400"><path d="M12 4v16M4 12h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg></span> We implement advanced schema markup and embed contextual internal links within your content. For example, our approach aligns with our <Link href="/checklists/aeo" className="underline hover:text-blue-400">AEO content checklist</Link> and <Link href="/insights/how-to-become-cited-source-chatgpt-perplexity-2026" className="underline hover:text-blue-400">AI citation strategy framework</Link>, ensuring every key topic is both crawlable and citable by AI engines.
                             </li>
                             <li>
-                                <strong>Distribution Layer (Indexing, Citability Signals):</strong> We ensure your content is indexed by both Google and AI crawlers (PerplexityBot, GPTBot, etc.), and monitor for new citation signals. Example: Our monitoring detected 17 new Perplexity citations within 60 days of launch.
+                                <strong>Distribution Layer (Indexing, Citability Signals):</strong> <span className="inline-block align-middle"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" className="inline text-blue-400"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path d="M8 12h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg></span> We ensure your content is indexed by both Google and AI crawlers (PerplexityBot, GPTBot, etc.), and monitor for new citation signals. Example: Our monitoring detected 17 new Perplexity citations within 60 days of launch.
                             </li>
                             <li>
-                                <strong>Monitoring: AI Citation Tracking + SERP Overlap:</strong> We track where and how your brand is cited in AI answers and compare overlap with traditional SERPs. This closes the loop between SEO and AEO/GEO.
+                                <strong>Monitoring: AI Citation Tracking + SERP Overlap:</strong> <span className="inline-block align-middle"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" className="inline text-blue-400"><path d="M4 4l16 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg></span> We track where and how your brand is cited in AI answers and compare overlap with traditional SERPs. This closes the loop between SEO and AEO/GEO.
                             </li>
                         </ol>
                     </div>
@@ -211,12 +222,14 @@ export default async function DynamicServicePage({ params }: PageProps) {
                 {service.proof && (
                     <div className="mb-24">
                         <h2 className="text-3xl font-bold text-white mb-4 font-space-grotesk">Proof & Results</h2>
-                        <ul className="space-y-3 text-zinc-300 text-base">
-                            {service.proof.map((item, i) => (
-                                <li key={i} className="flex gap-2"><span className="text-green-400">✔</span> {item}</li>
-                            ))}
-                        </ul>
-                        <div className="mt-6 bg-zinc-900/60 border border-zinc-800 rounded-xl p-6">
+                        <div className="bg-green-900/20 border border-green-800/30 rounded-2xl p-6 mb-6 shadow-md">
+                            <ul className="space-y-3 text-zinc-300 text-base">
+                                {service.proof.map((item, i) => (
+                                    <li key={i} className="flex gap-2"><span className="text-green-400">✔</span> {item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="bg-blue-950/20 border border-blue-900/30 rounded-2xl p-6 shadow-md">
                             <h3 className="text-xl font-bold text-white mb-2">Citation Examples</h3>
                             <ul className="space-y-3 text-zinc-200 text-sm">
                                 <li>
@@ -239,15 +252,17 @@ export default async function DynamicServicePage({ params }: PageProps) {
                 {/* How to Get Cited in AI Search Engines (Advanced) */}
                 <div className="mb-24">
                     <h2 className="text-3xl font-bold text-white mb-4 font-space-grotesk">How to Get Cited in AI Search Engines</h2>
-                    <ul className="space-y-3 text-zinc-300 text-base">
-                        <li className="flex gap-2"><span className="text-blue-400">→</span> LLMs prioritize concise, self-contained answers—put your definitive answer in the first 1–2 sentences, then elaborate below.</li>
-                        <li className="flex gap-2"><span className="text-blue-400">→</span> Citations are biased toward pages with clear entity definitions and multi-source consistency. If your definition matches what’s cited elsewhere, you’re more likely to be referenced.</li>
-                        <li className="flex gap-2"><span className="text-blue-400">→</span> Pages ranking #3–#8 in Google often get cited more than #1, as LLMs seek diversity and avoid over-relying on the top result.</li>
-                        <li className="flex gap-2"><span className="text-blue-400">→</span> Use structured formats: lists, tables, and FAQ blocks are easier for AI to extract and cite than long paragraphs.</li>
-                        <li className="flex gap-2"><span className="text-blue-400">→</span> Add FAQ schema and Q&A sections—these are prime extraction targets for both Google SGE and LLMs.</li>
-                        <li className="flex gap-2"><span className="text-blue-400">→</span> Monitor your citations using tools like Perplexity, ChatGPT web search, and Google SGE. Update your content when you see new citation patterns emerge.</li>
-                        <li className="flex gap-2"><span className="text-blue-400">→</span> For a full implementation guide, explore our <Link href="/checklists/aeo" className="underline hover:text-blue-400">AEO content checklist</Link> and learn how our <Link href="/insights/how-to-become-cited-source-chatgpt-perplexity-2026" className="underline hover:text-blue-400">AI citation strategy framework</Link> can help you become the cited source in AI answers.</li>
-                    </ul>
+                    <div className="bg-yellow-900/20 border border-yellow-800/30 rounded-2xl p-6 shadow-md">
+                        <ul className="space-y-3 text-zinc-300 text-base">
+                            <li className="flex gap-2"><span className="text-blue-400">→</span> LLMs prioritize concise, self-contained answers—put your definitive answer in the first 1–2 sentences, then elaborate below.</li>
+                            <li className="flex gap-2"><span className="text-blue-400">→</span> Citations are biased toward pages with clear entity definitions and multi-source consistency. If your definition matches what’s cited elsewhere, you’re more likely to be referenced.</li>
+                            <li className="flex gap-2"><span className="text-blue-400">→</span> Pages ranking #3–#8 in Google often get cited more than #1, as LLMs seek diversity and avoid over-relying on the top result.</li>
+                            <li className="flex gap-2"><span className="text-blue-400">→</span> Use structured formats: lists, tables, and FAQ blocks are easier for AI to extract and cite than long paragraphs.</li>
+                            <li className="flex gap-2"><span className="text-blue-400">→</span> Add FAQ schema and Q&A sections—these are prime extraction targets for both Google SGE and LLMs.</li>
+                            <li className="flex gap-2"><span className="text-blue-400">→</span> Monitor your citations using tools like Perplexity, ChatGPT web search, and Google SGE. Update your content when you see new citation patterns emerge.</li>
+                            <li className="flex gap-2"><span className="text-blue-400">→</span> For a full implementation guide, explore our <Link href="/checklists/aeo" className="underline hover:text-blue-400">AEO content checklist</Link> and learn how our <Link href="/insights/how-to-become-cited-source-chatgpt-perplexity-2026" className="underline hover:text-blue-400">AI citation strategy framework</Link> can help you become the cited source in AI answers.</li>
+                        </ul>
+                    </div>
                 </div>
 
                 {/* Related Industries (Internal Linking) */}
