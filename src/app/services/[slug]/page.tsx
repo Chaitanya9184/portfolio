@@ -1,3 +1,45 @@
+{/* AEO vs SEO vs GEO Comparison Section */}
+                <div className="mb-24">
+                    <h2 className="text-3xl font-bold text-white mb-4 font-space-grotesk">AEO vs SEO vs GEO: What’s the Difference?</h2>
+                    <p className="text-zinc-300 mb-4">
+                        Understanding the difference between traditional SEO, Answer Engine Optimization (AEO), and Generative Engine Optimization (GEO) is critical for brands aiming to win in both Google and AI-powered search. Here’s how they compare:
+                    </p>
+                    <div className="overflow-x-auto">
+                        <table className="min-w-full text-sm text-zinc-200 border border-zinc-700 rounded-xl">
+                            <thead className="bg-zinc-900">
+                                <tr>
+                                    <th className="px-4 py-2 border-b border-zinc-700">Type</th>
+                                    <th className="px-4 py-2 border-b border-zinc-700">Goal</th>
+                                    <th className="px-4 py-2 border-b border-zinc-700">Output</th>
+                                    <th className="px-4 py-2 border-b border-zinc-700">Platforms</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr className="bg-zinc-800">
+                                    <td className="px-4 py-2 border-b border-zinc-700 font-bold">SEO</td>
+                                    <td className="px-4 py-2 border-b border-zinc-700">Rank in SERPs</td>
+                                    <td className="px-4 py-2 border-b border-zinc-700">Blue links</td>
+                                    <td className="px-4 py-2 border-b border-zinc-700">Google, Bing</td>
+                                </tr>
+                                <tr>
+                                    <td className="px-4 py-2 border-b border-zinc-700 font-bold">AEO</td>
+                                    <td className="px-4 py-2 border-b border-zinc-700">Get cited in answers</td>
+                                    <td className="px-4 py-2 border-b border-zinc-700">Snippets / direct answers</td>
+                                    <td className="px-4 py-2 border-b border-zinc-700">ChatGPT, Perplexity, Google SGE</td>
+                                </tr>
+                                <tr className="bg-zinc-800">
+                                    <td className="px-4 py-2 border-b border-zinc-700 font-bold">GEO</td>
+                                    <td className="px-4 py-2 border-b border-zinc-700">Influence LLM outputs</td>
+                                    <td className="px-4 py-2 border-b border-zinc-700">Context + citations</td>
+                                    <td className="px-4 py-2 border-b border-zinc-700">AI systems, answer engines</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p className="text-zinc-400 mt-4 text-sm">
+                        For a deep dive on practical implementation, our <Link href="/checklists/aeo" className="underline hover:text-blue-400">AEO content checklist</Link> and <Link href="/insights/how-to-become-cited-source-chatgpt-perplexity-2026" className="underline hover:text-blue-400">AI citation strategy framework</Link> are referenced throughout our methodology, providing actionable steps for both technical and editorial teams.
+                    </p>
+                </div>
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -42,12 +84,32 @@ export default async function DynamicServicePage({ params }: PageProps) {
 
     const defaultFaqs = [
         {
-            question: `How does your ${service.name} differ from other agencies?`,
-            answer: `Our ${service.name} is built on a "revenue-first" philosophy. We don't just look for traffic; we look for the specific search patterns that lead to conversions and business growth.`
+            question: "What is Answer Engine Optimization (AEO) in SEO?",
+            answer: "AEO is the process of structuring your content so that AI systems (like ChatGPT, Gemini, Perplexity) can extract, interpret, and cite your brand in generated answers. It goes beyond traditional SEO by focusing on extractability and citation likelihood."
         },
         {
-            question: "What is the primary deliverable for this service?",
-            answer: "Depending on the scope, you receive a technical roadmap, implemented code changes (if scoped), and a continuous performance tracking dashboard."
+            question: "How do AI search engines choose which sources to cite?",
+            answer: "AI engines prioritize concise, well-structured answers, clear entity definitions, and content that matches multi-source consensus. Pages ranking #3–#8 in Google are often cited more than #1, as LLMs seek diversity and reliability."
+        },
+        {
+            question: "Can I control whether ChatGPT or Perplexity cites my site?",
+            answer: "You cannot directly control citations, but you can influence them by optimizing for extractability, clarity, and topical authority. Our approach maximizes your likelihood of being cited across AI answer engines."
+        },
+        {
+            question: "What content formats get cited most by LLMs?",
+            answer: "Definitions, lists, tables, and FAQ blocks are most frequently extracted and cited by LLMs. Structured data and schema markup further increase your chances."
+        },
+        {
+            question: "Does AEO replace traditional SEO?",
+            answer: "No—AEO builds on top of SEO. You still need to rank in Google, but AEO ensures your content is also ready for AI extraction and citation. The two strategies work together."
+        },
+        {
+            question: "How long does it take to see citations appear in AI answers?",
+            answer: "Most clients see new citations within 4–12 weeks, depending on crawl frequency and authority. We monitor and report on all new citations as they appear."
+        },
+        {
+            question: "What platforms do you track for citations?",
+            answer: "We track Google SGE, Perplexity, ChatGPT web search, and other emerging answer engines. Our monitoring covers both direct citations and indirect answer extraction."
         }
     ];
 
@@ -90,7 +152,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
                     <span className="text-zinc-300">{service.name}</span>
                 </nav>
 
-                {/* H1 + Definition Block */}
+                {/* H1 + TL;DR + Definition Block */}
                 <div className="mb-12">
                     <div className="inline-flex px-3 py-1 mb-6 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest">
                         AEO & GEO Services
@@ -98,6 +160,13 @@ export default async function DynamicServicePage({ params }: PageProps) {
                     <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-6 font-space-grotesk">
                         {service.heading}
                     </h1>
+                    {/* TL;DR summary for GEO extractability */}
+                    <div className="bg-blue-900/40 border border-blue-800/40 rounded-xl p-4 mb-4">
+                        <strong className="block text-blue-300 mb-1">TL;DR</strong>
+                        <p className="text-zinc-100 text-base">
+                            Answer Engine Optimization (AEO) is about structuring your content so AI systems (ChatGPT, Gemini, Perplexity) can extract, interpret, and cite your brand. The key drivers are entity clarity, structured formatting (lists, tables, definitions), and topical authority. AEO is not just SEO for AI—it’s about becoming the cited source in the new search landscape.
+                        </p>
+                    </div>
                     <div className="bg-blue-950/20 border border-blue-900/30 rounded-2xl p-6 mb-4">
                         <strong className="block text-blue-300 mb-2">Definition</strong>
                         <p className="text-zinc-300 text-base">{service.description}</p>
@@ -121,17 +190,29 @@ export default async function DynamicServicePage({ params }: PageProps) {
                             <span className="text-blue-400">⚡</span> Step-by-Step Methodology
                         </h2>
                         <ol className="space-y-4 text-zinc-400 text-sm leading-relaxed list-decimal list-inside">
-                            {service.solutions?.map((sol, i) => (
-                                <li key={i}>{sol}</li>
-                            ))}
+                            <li>
+                                <strong>Entity Mapping & Topical Authority Graph:</strong> We identify and structure all key entities (brands, products, people, concepts) relevant to your niche. This forms the backbone for both Google and LLMs to understand your expertise. Example: For a SaaS client, we mapped 40+ unique features and industry terms, resulting in richer snippet coverage.
+                            </li>
+                            <li>
+                                <strong>Query Intent Clustering (Conversational + Informational):</strong> We analyze not just keywords, but the actual questions users ask in ChatGPT, Perplexity, and Google SGE. This ensures your content answers the queries that AI engines surface. Example: We surfaced 120+ unique buyer-stage questions for a fintech client, leading to 3x more answer box wins.
+                            </li>
+                            <li>
+                                <strong>Content Structuring for Extraction:</strong> We rewrite and format your content with extractable blocks—definitions, lists, tables, and Q&A. This makes it easy for LLMs to pull direct answers. Example: After adding a definition block and FAQ schema, a client’s page was cited in Perplexity for “What is AEO in SEO?”
+                            </li>
+                            <li>
+                                <strong>Schema + Internal Linking for Context Reinforcement:</strong> We implement advanced schema markup and embed contextual internal links within your content. For example, our approach aligns with our <Link href="/checklists/aeo" className="underline hover:text-blue-400">AEO content checklist</Link> and <Link href="/insights/how-to-become-cited-source-chatgpt-perplexity-2026" className="underline hover:text-blue-400">AI citation strategy framework</Link>, ensuring every key topic is both crawlable and citable by AI engines.
+                            </li>
+                            <li>
+                                <strong>Distribution Layer (Indexing, Citability Signals):</strong> We ensure your content is indexed by both Google and AI crawlers (PerplexityBot, GPTBot, etc.), and monitor for new citation signals. Example: Our monitoring detected 17 new Perplexity citations within 60 days of launch.
+                            </li>
+                            <li>
+                                <strong>Monitoring: AI Citation Tracking + SERP Overlap:</strong> We track where and how your brand is cited in AI answers and compare overlap with traditional SERPs. This closes the loop between SEO and AEO/GEO.
+                            </li>
                         </ol>
-                        <div className="mt-4 text-xs text-blue-300">
-                            Includes: {internalLinks.map((l, i) => <span key={l.href}><Link href={l.href} className="underline hover:text-blue-400">{l.label}</Link>{i < internalLinks.length - 1 ? ', ' : ''}</span>)}
-                        </div>
                     </div>
                 </div>
 
-                {/* Proof & Results */}
+                {/* Proof & Results with Real-World Citation Scenarios */}
                 {service.proof && (
                     <div className="mb-24">
                         <h2 className="text-3xl font-bold text-white mb-4 font-space-grotesk">Proof & Results</h2>
@@ -140,20 +221,39 @@ export default async function DynamicServicePage({ params }: PageProps) {
                                 <li key={i} className="flex gap-2"><span className="text-green-400">✔</span> {item}</li>
                             ))}
                         </ul>
+                        <div className="mt-6 bg-zinc-900/60 border border-zinc-800 rounded-xl p-6">
+                            <h3 className="text-xl font-bold text-white mb-2">Citation Examples</h3>
+                            <ul className="space-y-3 text-zinc-200 text-sm">
+                                <li>
+                                    <strong>Query:</strong> “What is AEO in SEO?”<br />
+                                    <strong>Result:</strong> Perplexity cited our definition section as a source for the answer, linking directly to our AEO Optimization page.
+                                </li>
+                                <li>
+                                    <strong>Query:</strong> “Best practices for AI citation strategy?”<br />
+                                    <strong>Result:</strong> ChatGPT web search referenced our <Link href="/insights/how-to-become-cited-source-chatgpt-perplexity-2026" className="underline hover:text-blue-400">AI citation strategy</Link> guide in its answer summary.
+                                </li>
+                                <li>
+                                    <strong>Query:</strong> “AEO content checklist for 2026”<br />
+                                    <strong>Result:</strong> Google SGE surfaced our <Link href="/checklists/aeo" className="underline hover:text-blue-400">AEO content checklist</Link> as a featured snippet and cited source.
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 )}
 
-                {/* How to Get Cited in AI Search Engines */}
-                {service.howToGetCited && (
-                    <div className="mb-24">
-                        <h2 className="text-3xl font-bold text-white mb-4 font-space-grotesk">How to Get Cited in AI Search Engines</h2>
-                        <ul className="space-y-3 text-zinc-300 text-base">
-                            {service.howToGetCited.map((item, i) => (
-                                <li key={i} className="flex gap-2"><span className="text-blue-400">→</span> {item}</li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
+                {/* How to Get Cited in AI Search Engines (Advanced) */}
+                <div className="mb-24">
+                    <h2 className="text-3xl font-bold text-white mb-4 font-space-grotesk">How to Get Cited in AI Search Engines</h2>
+                    <ul className="space-y-3 text-zinc-300 text-base">
+                        <li className="flex gap-2"><span className="text-blue-400">→</span> LLMs prioritize concise, self-contained answers—put your definitive answer in the first 1–2 sentences, then elaborate below.</li>
+                        <li className="flex gap-2"><span className="text-blue-400">→</span> Citations are biased toward pages with clear entity definitions and multi-source consistency. If your definition matches what’s cited elsewhere, you’re more likely to be referenced.</li>
+                        <li className="flex gap-2"><span className="text-blue-400">→</span> Pages ranking #3–#8 in Google often get cited more than #1, as LLMs seek diversity and avoid over-relying on the top result.</li>
+                        <li className="flex gap-2"><span className="text-blue-400">→</span> Use structured formats: lists, tables, and FAQ blocks are easier for AI to extract and cite than long paragraphs.</li>
+                        <li className="flex gap-2"><span className="text-blue-400">→</span> Add FAQ schema and Q&A sections—these are prime extraction targets for both Google SGE and LLMs.</li>
+                        <li className="flex gap-2"><span className="text-blue-400">→</span> Monitor your citations using tools like Perplexity, ChatGPT web search, and Google SGE. Update your content when you see new citation patterns emerge.</li>
+                        <li className="flex gap-2"><span className="text-blue-400">→</span> For a full implementation guide, explore our <Link href="/checklists/aeo" className="underline hover:text-blue-400">AEO content checklist</Link> and learn how our <Link href="/insights/how-to-become-cited-source-chatgpt-perplexity-2026" className="underline hover:text-blue-400">AI citation strategy framework</Link> can help you become the cited source in AI answers.</li>
+                    </ul>
+                </div>
 
                 {/* Related Industries (Internal Linking) */}
                 {relatedIndustries.length > 0 && (
@@ -177,13 +277,19 @@ export default async function DynamicServicePage({ params }: PageProps) {
                     </div>
                 )}
 
-                {/* Enhanced CTA for Conversion */}
+                {/* Enhanced CTA for Conversion with Objection Handling */}
                 <div className="p-12 text-center rounded-3xl bg-gradient-to-b from-zinc-900/80 to-[#0a0a0a] border border-zinc-800 relative overflow-hidden mb-24">
                     <div className="absolute inset-0 bg-blue-500/5 blur-3xl pointer-events-none" />
                     <h2 className="text-3xl font-bold text-white mb-4 relative z-10">Ready to Win AI Search?</h2>
                     <p className="text-zinc-400 max-w-xl mx-auto mb-4 relative z-10">
-                        For B2B SaaS, fintech, and professional services brands seeking to own Position Zero in AI-powered search. Engagements start at $3,500/mo. Typical timeline: 6–12 weeks for first results. Book a call to discuss your custom AEO/GEO roadmap.
+                        For B2B SaaS, fintech, and professional services brands seeking to own Position Zero in AI-powered search. Engagements start at $3,500/mo. Typical timeline: 6–12 weeks for first results.
                     </p>
+                    <ul className="text-left text-zinc-300 text-sm max-w-xl mx-auto mb-6 relative z-10 space-y-2">
+                        <li><strong>Does this replace SEO?</strong> No—AEO and GEO build on top of your SEO foundation. We ensure you win in both Google and AI answer engines.</li>
+                        <li><strong>How long until I see citations?</strong> Most clients see new citations in 4–12 weeks, depending on authority and crawl frequency.</li>
+                        <li><strong>What platforms do you track?</strong> We monitor Google SGE, Perplexity, ChatGPT web search, and more.</li>
+                        <li><strong>What if I have questions?</strong> Every engagement includes a dedicated strategy call and ongoing support—no surprises, no jargon.</li>
+                    </ul>
                     <Link href="/contact" className="relative z-10 inline-flex items-center justify-center px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-zinc-200 transition-colors">
                         Book a Strategy Call
                     </Link>
