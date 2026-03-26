@@ -1,45 +1,45 @@
-{/* AEO vs SEO vs GEO Comparison Section */}
-                <div className="mb-24">
-                    <h2 className="text-3xl font-bold text-white mb-4 font-space-grotesk">AEO vs SEO vs GEO: What’s the Difference?</h2>
-                    <p className="text-zinc-300 mb-4">
-                        Understanding the difference between traditional SEO, Answer Engine Optimization (AEO), and Generative Engine Optimization (GEO) is critical for brands aiming to win in both Google and AI-powered search. Here’s how they compare:
-                    </p>
-                    <div className="overflow-x-auto">
-                        <table className="min-w-full text-sm text-zinc-200 border border-zinc-700 rounded-xl">
-                            <thead className="bg-zinc-900">
-                                <tr>
-                                    <th className="px-4 py-2 border-b border-zinc-700">Type</th>
-                                    <th className="px-4 py-2 border-b border-zinc-700">Goal</th>
-                                    <th className="px-4 py-2 border-b border-zinc-700">Output</th>
-                                    <th className="px-4 py-2 border-b border-zinc-700">Platforms</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr className="bg-zinc-800">
-                                    <td className="px-4 py-2 border-b border-zinc-700 font-bold">SEO</td>
-                                    <td className="px-4 py-2 border-b border-zinc-700">Rank in SERPs</td>
-                                    <td className="px-4 py-2 border-b border-zinc-700">Blue links</td>
-                                    <td className="px-4 py-2 border-b border-zinc-700">Google, Bing</td>
-                                </tr>
-                                <tr>
-                                    <td className="px-4 py-2 border-b border-zinc-700 font-bold">AEO</td>
-                                    <td className="px-4 py-2 border-b border-zinc-700">Get cited in answers</td>
-                                    <td className="px-4 py-2 border-b border-zinc-700">Snippets / direct answers</td>
-                                    <td className="px-4 py-2 border-b border-zinc-700">ChatGPT, Perplexity, Google SGE</td>
-                                </tr>
-                                <tr className="bg-zinc-800">
-                                    <td className="px-4 py-2 border-b border-zinc-700 font-bold">GEO</td>
-                                    <td className="px-4 py-2 border-b border-zinc-700">Influence LLM outputs</td>
-                                    <td className="px-4 py-2 border-b border-zinc-700">Context + citations</td>
-                                    <td className="px-4 py-2 border-b border-zinc-700">AI systems, answer engines</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p className="text-zinc-400 mt-4 text-sm">
-                        For a deep dive on practical implementation, our <Link href="/checklists/aeo" className="underline hover:text-blue-400">AEO content checklist</Link> and <Link href="/insights/how-to-become-cited-source-chatgpt-perplexity-2026" className="underline hover:text-blue-400">AI citation strategy framework</Link> are referenced throughout our methodology, providing actionable steps for both technical and editorial teams.
-                    </p>
-                </div>
+{/* AEO vs SEO vs GEO: Key Differences (Category Ownership) */}
+<div className="mb-24">
+    <h2 className="text-3xl font-bold text-white mb-4 font-space-grotesk">AEO vs SEO vs GEO: Key Differences</h2>
+    <p className="text-zinc-300 mb-4">
+        If you’re wondering how AEO, SEO, and GEO compare, here’s the real-world breakdown I use with clients:
+    </p>
+    <div className="overflow-x-auto">
+        <table className="min-w-full text-sm text-zinc-200 border border-zinc-700 rounded-xl">
+            <thead className="bg-zinc-900">
+                <tr>
+                    <th className="px-4 py-2 border-b border-zinc-700">Factor</th>
+                    <th className="px-4 py-2 border-b border-zinc-700">SEO</th>
+                    <th className="px-4 py-2 border-b border-zinc-700">AEO</th>
+                    <th className="px-4 py-2 border-b border-zinc-700">GEO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr className="bg-zinc-800">
+                    <td className="px-4 py-2 border-b border-zinc-700 font-bold">Goal</td>
+                    <td className="px-4 py-2 border-b border-zinc-700">Rank in SERPs</td>
+                    <td className="px-4 py-2 border-b border-zinc-700">Get cited in answers</td>
+                    <td className="px-4 py-2 border-b border-zinc-700">Influence AI outputs</td>
+                </tr>
+                <tr>
+                    <td className="px-4 py-2 border-b border-zinc-700 font-bold">Format</td>
+                    <td className="px-4 py-2 border-b border-zinc-700">Pages</td>
+                    <td className="px-4 py-2 border-b border-zinc-700">Snippets</td>
+                    <td className="px-4 py-2 border-b border-zinc-700">Context</td>
+                </tr>
+                <tr className="bg-zinc-800">
+                    <td className="px-4 py-2 border-b border-zinc-700 font-bold">Engines</td>
+                    <td className="px-4 py-2 border-b border-zinc-700">Google</td>
+                    <td className="px-4 py-2 border-b border-zinc-700">ChatGPT, Perplexity</td>
+                    <td className="px-4 py-2 border-b border-zinc-700">LLM ecosystems</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p className="text-zinc-400 mt-4 text-sm">
+        Our approach follows a structured <Link href="/checklists/aeo" className="underline hover:text-blue-400">AEO content checklist</Link> and is reinforced by our <Link href="/insights/how-to-become-cited-source-chatgpt-perplexity-2026" className="underline hover:text-blue-400">AI citation strategy framework</Link>, so you’re not just ranking—you’re defining the category.
+    </p>
+</div>
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -152,7 +152,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
                     <span className="text-zinc-300">{service.name}</span>
                 </nav>
 
-                {/* H1 + TL;DR + Definition Block */}
+                {/* Humanized Expert Intro + Definition Block */}
                 <div className="mb-12">
                     <div className="inline-flex px-3 py-1 mb-6 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest">
                         AEO & GEO Services
@@ -160,16 +160,11 @@ export default async function DynamicServicePage({ params }: PageProps) {
                     <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tighter mb-6 font-space-grotesk">
                         {service.heading}
                     </h1>
-                    {/* TL;DR summary for GEO extractability */}
-                    <div className="bg-blue-900/40 border border-blue-800/40 rounded-xl p-4 mb-4">
-                        <strong className="block text-blue-300 mb-1">TL;DR</strong>
-                        <p className="text-zinc-100 text-base">
-                            Answer Engine Optimization (AEO) is about structuring your content so AI systems (ChatGPT, Gemini, Perplexity) can extract, interpret, and cite your brand. The key drivers are entity clarity, structured formatting (lists, tables, definitions), and topical authority. AEO is not just SEO for AI—it’s about becoming the cited source in the new search landscape.
-                        </p>
-                    </div>
                     <div className="bg-blue-950/20 border border-blue-900/30 rounded-2xl p-6 mb-4">
-                        <strong className="block text-blue-300 mb-2">Definition</strong>
-                        <p className="text-zinc-300 text-base">{service.description}</p>
+                        <strong className="block text-blue-300 mb-2">What is AEO? (In Plain English)</strong>
+                        <p className="text-zinc-300 text-base">
+                            If you want your brand to show up as the answer in ChatGPT, Perplexity, or Google’s AI Overviews, you need more than just good SEO. You need to structure your content so these systems can easily find, understand, and quote you. That’s what Answer Engine Optimization (AEO) is all about—making your expertise the go-to answer for both people and AI.
+                        </p>
                     </div>
                 </div>
 
