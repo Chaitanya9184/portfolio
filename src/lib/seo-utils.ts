@@ -13,6 +13,8 @@ export interface SEOData {
     relatedIndustries?: string[];
     relatedBlogs?: string[];
     relatedInsights?: string[];
+    proof?: string[];
+    howToGetCited?: string[];
 }
 
 const siteConfig = {
