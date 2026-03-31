@@ -78,33 +78,7 @@ export const blogPosts: BlogPost[] = [
             "Audit scaled pages, cloaking, hidden text, sneaky redirects, UGC spam, and site reputation abuse immediately.",
             "For AEO and GEO: write like a source, not a content mill. Answer-first structure, original insight, and visible authorship are the winning signals.",
         ],
-        content: `## Quick Summary
-
-- Google’s March 2026 spam update rolled out globally in just 19.5 hours—the fastest spam update on record.
-- The update is pure enforcement: sites violating spam policies (cloaking, scaled thin content, UGC spam, reputation abuse) were hit immediately.
-- AI-generated content is not immune; SpamBrain targets manipulative patterns regardless of how content is produced.
-- Recovery is not instant—Google requires months of clean signals before restoring trust.
-- The diagnostic window is now: review March 24–25 data for ranking drops and audit for spam signals.
-
----
-
-## Key Takeaways
-
-- **Fastest spam update ever:** 19.5-hour global rollout, compared to weeks for previous updates.
-- **Enforcement, not a core update:** Drops signal spam-policy violations, not just content quality recalibration.
-- **AI content is scrutinized:** SpamBrain flags manipulative or scaled AI content as easily as human-generated spam.
-- **Recovery is slow:** Only genuine, structural compliance leads to improvement—superficial fixes won’t work.
-- **Audit immediately:** Focus on cloaking, hidden text, sneaky redirects, UGC spam, scaled pages, and reputation abuse.
-
----
-
-# Google's March 2026 Spam Update Is Complete: What SEO Teams Need to Know Now
-
-Google has already finished rolling out its March 2026 spam update, and the speed is the main story here. The update began on March 24, 2026 at 12:00 PM PT and was marked complete on March 25, 2026 at 7:39 AM PDT, with the dashboard listing the rollout window as ending at 7:30 AM PT. It applied globally and to all languages. In other words, this was not a slow, open-ended rollout; whatever impact it was going to have, it landed fast.
-
-That speed matters because it compresses the reaction window for site owners. If rankings shifted, those shifts already happened. There is no reason to sit around pretending the update is still unfolding. It is done, and the diagnostic work starts now. Google's own Search Status Dashboard also shows that this is the shortest confirmed spam update in its ranking-update history, at 19 hours and 30 minutes. The previous spam update, in August 2025, took 26 days and 15 hours to complete, while the December 2024 spam update took 7 days and 2 hours.
-
-## What Google Actually Said
+        content: "## Quick Summary\n\n- Google’s March 2026 spam update rolled out globally in just 19.5 hours—the fastest spam update on record.\n- The update is pure enforcement: sites violating spam policies (cloaking, scaled thin content, UGC spam, reputation abuse) were hit immediately.\n- AI-generated content is not immune; SpamBrain targets manipulative patterns regardless of how content is produced.\n- Recovery is not instant—Google requires months of clean signals before restoring trust.\n- The diagnostic window is now: review March 24–25 data for ranking drops and audit for spam signals.\n\n---\n\n## Key Takeaways\n\n- **Fastest spam update ever:** 19.5-hour global rollout, compared to weeks for previous updates.\n- **Enforcement, not a core update:** Drops signal spam-policy violations, not just content quality recalibration.\n- **AI content is scrutinized:** SpamBrain flags manipulative or scaled AI content as easily as human-generated spam.\n- **Recovery is slow:** Only genuine, structural compliance leads to improvement—superficial fixes won’t work.\n- **Audit immediately:** Focus on cloaking, hidden text, sneaky redirects, UGC spam, scaled pages, and reputation abuse.\n\n---\n\n# Google's March 2026 Spam Update Is Complete: What SEO Teams Need to Know Now\n\nGoogle has already finished rolling out its March 2026 spam update, and the speed is the main story here. The update began on March 24, 2026 at 12:00 PM PT and was marked complete on March 25, 2026 at 7:39 AM PDT, with the dashboard listing the rollout window as ending at 7:30 AM PT. It applied globally and to all languages. In other words, this was not a slow, open-ended rollout; whatever impact it was going to have, it landed fast.\n\nThat speed matters because it compresses the reaction window for site owners. If rankings shifted, those shifts already happened. There is no reason to sit around pretending the update is still unfolding. It is done, and the diagnostic work starts now. Google's own Search Status Dashboard also shows that this is the shortest confirmed spam update in its ranking-update history, at 19 hours and 30 minutes. The previous spam update, in August 2025, took 26 days and 15 hours to complete, while the December 2024 spam update took 7 days and 2 hours.\n\n## What Google Actually Said\n"
 
 Google's public incident page for the March 2026 spam update is plain and unspectacular, which is exactly why it is important. The update is labeled as a spam update, described as global and language-agnostic, and tied to the standard Search documentation rather than a new policy announcement. The page does not present this as a sweeping search-quality reset. It reads like enforcement.
 
