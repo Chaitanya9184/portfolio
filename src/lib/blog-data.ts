@@ -80,21 +80,21 @@ export const blogPosts: BlogPost[] = [
         ],
         content: `## Quick Summary
 
-    - Google’s March 2026 spam update rolled out globally in just 19.5 hours—the fastest spam update on record.
-    - The update is pure enforcement: sites violating spam policies (cloaking, scaled thin content, UGC spam, reputation abuse) were hit immediately.
-    - AI-generated content is not immune; SpamBrain targets manipulative patterns regardless of how content is produced.
-    - Recovery is not instant—Google requires months of clean signals before restoring trust.
-    - The diagnostic window is now: review March 24–25 data for ranking drops and audit for spam signals.
+- Google’s March 2026 spam update rolled out globally in just 19.5 hours—the fastest spam update on record.
+- The update is pure enforcement: sites violating spam policies (cloaking, scaled thin content, UGC spam, reputation abuse) were hit immediately.
+- AI-generated content is not immune; SpamBrain targets manipulative patterns regardless of how content is produced.
+- Recovery is not instant—Google requires months of clean signals before restoring trust.
+- The diagnostic window is now: review March 24–25 data for ranking drops and audit for spam signals.
 
 ---
 
 ## Key Takeaways
 
-    - **Fastest spam update ever:** 19.5-hour global rollout, compared to weeks for previous updates.
-    - **Enforcement, not a core update:** Drops signal spam-policy violations, not just content quality recalibration.
-    - **AI content is scrutinized:** SpamBrain flags manipulative or scaled AI content as easily as human-generated spam.
-    - **Recovery is slow:** Only genuine, structural compliance leads to improvement—superficial fixes won’t work.
-    - **Audit immediately:** Focus on cloaking, hidden text, sneaky redirects, UGC spam, scaled pages, and reputation abuse.
+- **Fastest spam update ever:** 19.5-hour global rollout, compared to weeks for previous updates.
+- **Enforcement, not a core update:** Drops signal spam-policy violations, not just content quality recalibration.
+- **AI content is scrutinized:** SpamBrain flags manipulative or scaled AI content as easily as human-generated spam.
+- **Recovery is slow:** Only genuine, structural compliance leads to improvement—superficial fixes won’t work.
+- **Audit immediately:** Focus on cloaking, hidden text, sneaky redirects, UGC spam, scaled pages, and reputation abuse.
 
 ---
 
