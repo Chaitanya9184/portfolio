@@ -14,7 +14,11 @@ interface FAQSectionProps {
 }
 
 export default function FAQSection({ faqs, title = "Frequently Asked Questions" }: FAQSectionProps) {
+    // Show first 3 answers expanded by default
     const [activeIndex, setActiveIndex] = useState<number>(0);
+    const [expanded, setExpanded] = useState<boolean[]>(
+        Array.from({ length: faqs.length }, (_, i) => i < 3)
+    );
 
     return (
         <section className="w-full py-12 mb-12 bg-[#0a0a0a] border-t border-zinc-900 border-dashed relative overflow-hidden">
@@ -47,7 +51,14 @@ export default function FAQSection({ faqs, title = "Frequently Asked Questions" 
                             return (
                                 <button
                                     key={index}
-                                    onClick={() => setActiveIndex(index)}
+                                    onClick={() => {
+                                        setActiveIndex(index);
+                                        setExpanded(expanded => {
+                                            const next = [...expanded];
+                                            next[index] = !next[index];
+                                            return next;
+                                        });
+                                    }}
                                     className={`relative flex items-center gap-6 p-4 rounded-2xl text-left transition-all duration-300 group ${isActive ? 'bg-zinc-900/60 shadow-xl shadow-black/40 ring-1 ring-white/5' : 'hover:bg-zinc-900/30'
                                         }`}
                                 >
@@ -98,21 +109,25 @@ export default function FAQSection({ faqs, title = "Frequently Asked Questions" 
 
                             <div className="relative z-10 flex-1 flex flex-col justify-center">
                                 <AnimatePresence mode="wait">
-                                    <motion.div
-                                        key={activeIndex}
-                                        initial={{ opacity: 0, y: 15, filter: "blur(5px)" }}
-                                        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                                        exit={{ opacity: 0, y: -15, filter: "blur(5px)" }}
-                                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                                    >
-                                        <h4 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">
-                                            {faqs[activeIndex].question}
-                                        </h4>
-                                        <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full mb-8" />
-                                        <p className="text-zinc-400 text-lg md:text-xl leading-relaxed font-light">
-                                            {faqs[activeIndex].answer}
-                                        </p>
-                                    </motion.div>
+                                    {faqs.map((faq, idx) => (
+                                        expanded[idx] && (
+                                            <motion.div
+                                                key={idx}
+                                                initial={{ opacity: 0, y: 15, filter: "blur(5px)" }}
+                                                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                                exit={{ opacity: 0, y: -15, filter: "blur(5px)" }}
+                                                transition={{ duration: 0.3, ease: "easeInOut" }}
+                                            >
+                                                <h4 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">
+                                                    {faq.question}
+                                                </h4>
+                                                <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full mb-8" />
+                                                <p className="text-zinc-400 text-lg md:text-xl leading-relaxed font-light">
+                                                    {faq.answer}
+                                                </p>
+                                            </motion.div>
+                                        )
+                                    ))}
                                 </AnimatePresence>
                             </div>
                         </div>
