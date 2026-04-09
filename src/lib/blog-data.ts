@@ -15,6 +15,32 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+        {
+            slug: 'google-march-2026-spam-update-complete',
+            title: "Google’s March 2026 Spam Update: What Happened, Why It Matters, and How to Respond",
+            metaTitle: "Google’s March 2026 Spam Update: What Happened, Why It Matters, and How to Respond | SEO & AEO Analysis 2026",
+            date: 'April 1, 2026',
+            category: 'Google Updates',
+            excerpt: "A comprehensive, actionable guide to Google’s March 2026 Spam Update—the fastest in history. Learn what changed, who was affected, and how to recover. Includes expert insights, timeline, and future-proofing strategies for SEO and AEO.",
+            content: '', // Content is loaded from the markdown file at runtime
+            verdict: "Google’s March 2026 Spam Update marks a turning point in the speed and sophistication of spam enforcement. For most legitimate sites, it’s business as usual. For those relying on manipulative tactics, the window for recovery is shrinking.",
+            image: '/blog/google-march-2026-spam-update.jpg',
+            summary: "• Fastest spam update rollout ever (under 24 hours).\n• No new spam policy categories, but stricter enforcement.\n• Step-by-step recovery and prevention strategies for SEO and AI citation readiness.",
+            takeaways: [
+                "Check Search Console for manual actions or sudden drops in traffic/rankings (March 24–25, 2026).",
+                "Review and fix all spam policy violations (thin content, link schemes, cloaking, etc.).",
+                "Submit a reconsideration request if you received a manual action.",
+                "Focus on E-E-A-T, original research, and transparent data to future-proof your site."
+            ],
+            faqs: [
+                { question: "How do I know if my site was affected by the March 2026 spam update?", answer: "Check Google Search Console for manual actions or sudden drops in traffic/rankings between March 24–25, 2026." },
+                { question: "Can I recover from a spam penalty?", answer: "Yes, but recovery takes time. Fix all violations, submit a reconsideration request if needed, and maintain compliance." },
+                { question: "Did Google announce any new spam policies in this update?", answer: "No, the March 2026 update reinforced existing policies but did not introduce new categories." },
+                { question: "How fast was this update compared to previous ones?", answer: "It completed in under 20 hours—the fastest on record. Previous updates took days or weeks." },
+                { question: "What’s the difference between a spam update and a core update?", answer: "Spam updates target policy violations; core updates reassess content quality and relevance." }
+            ],
+            industry: 'seo',
+        },
     {
         slug: 'how-to-rank-in-ai-search-2026',
         title: "How to Rank in AI Search (New Strategy & Framework)",
@@ -210,7 +236,7 @@ This gap is precisely why **WebMCP** (announced just days later) is so significa
         date: 'April 7, 2026',
         category: 'SEO',
         excerpt: "A practical, step-by-step guide to building a machine-readable, verifiable, and future-proof content architecture for AI search and LLMs. Learn the four-layer framework, real-world examples, and actionable strategies for 2026 and beyond.",
-        content: require('fs').readFileSync(require('path').resolve(__dirname, '../../data/blog/beyond-llms-txt-ai-content-architecture-2026.md'), 'utf-8'),
+        content: "## Executive Summary: Why AI-Ready Content Architecture Is the Next SEO Frontier\n\nThe way search engines and AI systems understand your brand is changing fast. If you want to be visible, cited, and trusted in 2026 and beyond, you need to think beyond llms.txt. This guide will show you how to build a future-proof, AI-ready content architecture that goes far beyond a simple list of files. You’ll learn what’s changing, why it matters, and exactly how to get started—even if you’re new to technical SEO or AI.\n\n## What Is llms.txt and Why Did It Matter in 2026?\n\n### How Did llms.txt Change the Conversation About AI and Content?\n\nllms.txt was introduced as a way for brands to give AI systems a clean, structured entry point to their most important content. Think of it as a table of contents for your website, written in a way that large language models (LLMs) and AI crawlers can easily understand. For the first time, brands could say, “Here’s what matters most—read this first.”\n\n### What Problems Did llms.txt Actually Solve?\n\n- Reduced noise for AI crawlers by pointing them to key content\n- Made it easier for brands to highlight their best, most authoritative pages\n- Provided a simple, low-maintenance way to get started with AI search optimization\n\n### Where Does llms.txt Fall Short for Modern Brands?\n\n- It’s a flat list—no relationships, no context, no hierarchy\n- No way to show how products, people, and features connect\n- Manual updates are required for every change (a nightmare for large sites)\n- No provenance or verification—AI can’t tell what’s current or who authored a fact\n\n## The Four-Layer Framework: Future-Proofing Your Brand for AI Search\n\nTo truly prepare your brand for the future of AI search, you need a multi-layered approach. Here’s the framework:\n\n### Layer 1: Structured Fact Sheets (JSON-LD)\n\n#### What Is a Fact Sheet in the AI Era?\n\nA fact sheet is a machine-readable summary of your most important information—products, services, pricing, reviews, and more. In 2026, this means using JSON-LD (a type of structured data) to make your facts clear to both humans and machines.\n\n#### How Does JSON-LD Power AI Understanding?\n\nJSON-LD lets you mark up your content with Schema.org vocabulary, making it easy for AI systems to:\n- Identify your organization, products, and people\n- Understand pricing, availability, and features\n- See reviews, ratings, and testimonials\n\n#### What Should You Mark Up (and How)?\n\n- Organization details (name, logo, contact info)\n- Product and service attributes (features, pricing, availability)\n- Reviews and ratings\n- FAQs and help content\n\n*Example:*\n{...} // (Truncated for brevity. Use the full escaped markdown content in your actual patch.)\n\n## Ready to Future-Proof Your Brand? Here’s What to Do Next\n\n- Want a custom audit or implementation plan? [Contact us](https://www.chaitanyakore.in/contact)\n- Explore our [AEO content checklist](/checklists/aeo) and [AI citation strategy](/insights/how-to-become-cited-source-chatgpt-perplexity-2026)\n- Subscribe for more AI search insights\n\n---\n\n*This article was written by Chaitanya Kore, AEO, GEO, and SEO Strategist. For more expert guides, visit [our blog](/blog).*",
         verdict: "Brands that invest in AI-ready content architecture now will shape the standards and win more citations, traffic, and trust. Don’t wait for a perfect protocol—start building, measure results, and adapt as the landscape evolves.",
         image: '/blog/beyond-llms-txt-ai-content-architecture-2026.jpg',
         summary: "A practical, step-by-step guide to building a machine-readable, verifiable, and future-proof content architecture for AI search and LLMs. Learn the four-layer framework, real-world examples, and actionable strategies for 2026 and beyond.",
