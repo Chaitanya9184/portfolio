@@ -250,7 +250,8 @@ This gap is precisely why **WebMCP** (announced just days later) is so significa
         image: '/blog/seo-vs-ppc-2026.jpg',
         summary: "\u2022 Strengthening technical moats through architectural audits.\n\u2022 Transitioning from keyword visibility to entity authority.\n\u2022 Infrastructure audit for Next.js and React server engines.",
         takeaways: ["Optimize for TTB (Time to Bot).", "Build structured Knowledge Moats.", "Prioritize Information Gain."],
-            { "question": "Is organic pipeline still the primary driver for B2B SaaS?", "answer": "Yes, but the funnel has changed. Users enter the funnel via an AI recommendation and move to your site for the **Technical Validation** phase. Your site is the \"Source of Truth\" where the final purchase decision is solidified through deep-dive technical clarity." },
+        faqs: [
+            { "question": "Is organic pipeline still the primary driver for B2B SaaS?", "answer": "Yes, but the funnel has changed. Users enter the funnel via an AI recommendation and move to your site for the **Technical Validation** phase. Your site is the \"Source of Truth\" where the final purchase decision is solidified through deep-dive technical clarity." }
         ],
         industry: 'saas',
     },
