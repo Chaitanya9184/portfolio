@@ -50,6 +50,7 @@ import { generateSEOMetadata, SEOData } from '@/lib/seo-utils';
 import FAQSection from "@/components/FAQSection";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import BlogCarousel from "@/components/BlogCarousel";
+import AEOExtendedContent from "@/components/services/AEOExtendedContent";
 
 interface PageProps {
     params: Promise<{
@@ -472,6 +473,7 @@ export default async function DynamicServicePage({ params }: PageProps) {
             </div>
 
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+                {service.slug === 'aeo-optimization' && <AEOExtendedContent />}
                 <FAQSection faqs={defaultFaqs} title={`${service.name} Details`} />
                 <SchemaMarkup schema={schema} />
             </div>
